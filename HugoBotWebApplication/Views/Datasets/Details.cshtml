@@ -1,0 +1,264 @@
+﻿@model HugoBotWebApplication.ViewModels.DatasetDetailsViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<style>
+</style>
+<div class="row">
+    <div class="col-md-4">
+            <a href="@Url.Action("Details", "Datasets", new { id = @Model.DatasetID})" class="btn btn-outline-primary w-100" style="font-weight: bold">
+                @Model.DatasetName
+            </a>
+        </div>
+    <div class="col-md-4">
+            <a href="@Url.Action("Edit", "Discretizations", new { id = @Model.DatasetID})" class="btn btn-outline-primary w-100" style="font-weight: bold">Temporal Abstraction </a>
+        </div>
+    <div class="col-md-4">
+        <a href="@Url.Action("Index", "KarmaLego", new { id = @Model.DatasetID})" class="btn btn-outline-primary w-100" style="font-weight: bold"> Time Intervals Mining</a>
+    </div>
+</div>
+
+<br/>
+
+<div class="container-fluid">
+  <!--   <div class="row">
+        <div class="col-md-12">
+            <div class="btn-group d-flex" role="group">
+                       <a href="@Url.Action("DownloadDatasetFile", "Datasets", new { id = @Model.DatasetID})" class="btn btn-outline-primary w-100">Download dataset </a>
+            <a href="@Url.Action("DownloadMetadataFile", "Datasets", new { id = @Model.DatasetID})" class="btn btn-outline-primary w-100">Download dataset's metadata</a>
+            <a href="@Url.Action("DownloadlEntitiesFile", "Datasets", new { id = @Model.DatasetID})" class="btn btn-outline-primary w-100">Download dataset's Entities </a>
+                <a href="/hugobot/Datasets/DownloadAllDatasetFiles/@Model.DatasetID" class="btn btn-outline-primary w-100">Download all files</a>
+
+            </div>
+        </div>
+
+    </div>
+    <hr /> -->
+
+    <div class="row ">
+        <div class="col-md-5" style="max-height:510px">
+            <div class="card">
+                <div class="card-header bg-primary font-weight-light" style="color:white">
+                    <span class="fas fa-info"></span>
+                    Basic Information
+                </div>
+                <div class="card-body">
+
+                    <p class="card-text">
+                        <label style="font-weight: 900">Dataset name:</label> 
+                         @Model.DatasetName
+
+                    </p>
+                    <p class="card-text">
+                        <label style="font-weight: 900">Category: </label>
+                          @Model.Category
+</p>
+                    <p class="card-text">
+                        @if (Model.Owner != null)
+                        {
+                            @: <label style="font-weight: 900">Owner:</label> 
+                             @Model.Owner.FirstName @Model.Owner.LastName
+
+
+
+
+                        }
+                        else
+                        {
+                            @: <label style="font-weight: 900"> Owner:</label>
+                            @: None
+                        }
+                    </p>
+                    <p class="card-text">
+                        <label style="font-weight: 900">Description: </label>
+                         @Model.Description
+</p>
+                </div>
+            </div>
+            <hr />
+            <div class="card">
+                <div class="card-header bg-primary font-weight-light" style="color:white">
+                    <span class="fas fa-chart-pie"></span>
+                    Statistics
+                </div>
+                <div class="card-body">
+
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <p class="card-text">
+                                Size: @Math.Round(Model.Dataset.Size, 3) MB
+
+                            </p>
+                            <p class="card-text">
+                                # Views: @Model.Dataset.NumberOfViews
+                            </p>
+                            <p class="card-text">
+                                # Downloads: @Model.Dataset.NumberOfDownloads
+                            </p>
+
+                        </div>
+
+                        @*<div class="col-md-8">
+                        <canvas id="mycanvas" width="128" height="128"></canvas>
+                    </div>*@
+                    </div>
+
+
+
+                </div>
+            </div>
+            <br/>
+            <div>
+                <a href="@Url.Action("DownloadAllDatasetFiles", "Datasets", new { id = @Model.DatasetID})" class="btn btn-sm btn-primary" style="background-color:#006400; color:white">Download Dataset files</a>
+            </div>   
+        </div>
+        <div class="col-md-7">
+            <div class="card">
+                <div class="card-header bg-primary font-weight-light" style="color:white">
+                    <span class="fas fa-info"></span>
+                    Variables Information
+                </div>
+                <div class="card-body">
+                    <div class="" style="max-height:510px; overflow-y:scroll">
+
+                        <table class="table table-responsive-md table-responsive-sm table-responsive-lg table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        Variable ID
+                                    </th>
+                                    <th>
+                                        Variable Name
+                                    </th>
+                                    <th>
+                                        Description
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model.Metadata)
+                                {
+                                    <tr>
+                                        <td name="TemporalPropertyID">
+                                            @item.TemporalPropertyID
+                                        </td>
+                                        <td name="TemporalPropertyName">
+                                            @item.TemporalPropertyName
+                                        </td>
+                                        <td name="Description">
+                                            @item.Description
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    @*<div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header bg-primary font-weight-light" style="color:white">
+                        <span class="fas fa-info"></span>
+                        Basic Information
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">
+                            Dataset name: @Model.DatasetName
+
+                        </p>
+                        <p class="card-text">
+                            Category : @Model.Category
+                        </p>
+                        <p class="card-text">
+                            Description : @Model.Description
+                        </p>
+                        <p class="card-text">
+                            Owner : @Model.Owner
+                        </p>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>*@
+</div>
+
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/Scripts/Chart.min.js" type="text/javascript"></script>
+
+    <script src="~/Scripts/jquery-3.0.0.min.js" type="text/javascript"></script>
+
+
+
+    <script>
+        $(document).ready(function () {
+            var ctx = $("#mycanvas").get(0).getContext("2d");
+            //pie chart data
+            //sum of values = 360
+            var data = {
+                labels: ["match1", "match2", "match3", "match4", "match5"],
+                datasets: [
+                    {
+                        label: "TeamA Score",
+                        data: [10, 50, 25, 70, 40],
+                        backgroundColor: [
+                            "#DEB887",
+                            "#A9A9A9",
+                            "#DC143C",
+                            "#F4A460",
+                            "#2E8B57"
+                        ],
+                        borderColor: [
+                            "#CDA776",
+                            "#989898",
+                            "#CB252B",
+                            "#E39371",
+                            "#1D7A46"
+                        ],
+                        borderWidth: [1, 1, 1, 1, 1]
+                    }
+                ]
+            };
+            var options = {
+                responsive: true,
+                title: {
+                    display: true,
+                    position: "top",
+                    text: "Pie Chart",
+                    fontSize: 18,
+                    fontColor: "#111"
+                },
+                legend: {
+                    display: true,
+                    position: "bottom",
+                    labels: {
+                        fontColor: "#333",
+                        fontSize: 16
+                    }
+                }
+            };
+            //draw
+            //var piechart = new Chart(ctx).Pie(data);
+            var myPieChart = new Chart(ctx, {
+                type: 'pie',
+                data: data,
+                options: options
+
+            });
+        });
+    </script>
+    <script>
+
+    </script>
+}

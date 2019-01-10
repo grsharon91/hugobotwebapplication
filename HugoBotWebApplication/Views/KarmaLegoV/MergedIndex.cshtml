@@ -1,0 +1,358 @@
+﻿
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+<script src="~/Content/JS/karmaLegoVControllerMerged.js"></script>
+
+<script src="~/Content/Chart_Module/chartjs-directive.js"></script>
+<script src="https://cdn.jsdelivr.net/angular.chartjs/latest/angular-chart.min.js"></script>
+<link href="~/Style/karmaLegoV.css" rel="stylesheet" />
+@*<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">*@
+<style>
+    .padding-0 {
+        padding-right: 0;
+        padding-left: 0;
+    }
+</style>
+<div ng-app="myApp">
+
+    <div class="mainDiv" @*id="karmaController_div"*@ ng-controller="KarmalegoVcontrollerMerged  as KarmaV">
+        <div class="row">
+            <div class="rootPath">
+                <span>Current Path:</span>
+                <span><label style="margin-left:6px" ng-repeat="level in KarmaV.treePath" ng-click="KarmaV.path_Click($index)">{{level.stateName}} >></label></span>
+
+            </div>
+
+        </div>
+       
+        <div class="row ">
+            <div class="col-3 p-md-0">
+                <div class=" card " name="information">
+
+                    <div class=" font-weight-light card-header bg-primary" style="color:white">
+                            information
+                    </div>
+                     <div style="max-height:300px; overflow-y:scroll">
+                        <table class="card-body table" ng-show="KarmaV.showInformationTable1">
+                            <thead>
+                                <tr>
+                                    <th class="col-2">Measure</th>
+                                    <th class="col-2">value</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-xs-2"># Avail. States</td>
+                                    <td class="col-xs-2">{{KarmaV.currentNumOfStates}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-xs-2">Maximum depth</td>
+                                    <td class="col-xs-2">1</td>
+                                </tr>
+                            </tbody>
+
+                        </table>
+                            <table class=" card-body table  " ng-show="KarmaV.showInformationTable2">
+                                <thead>
+                                    <tr>
+                                        <th class="col-xs-11">Measure</th>
+                                        <th class="col-xs-1">value</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="col-xs-11">TIV</td>
+                                        <td class="col-xs-1">{{KarmaV.information.TIV | limitTo : 4}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="col-xs-11">Vert. support</td>
+                                        <td class="col-xs-1">{{KarmaV.information.vertSupport}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="col-xs-11">Local horz. support</td>
+                                        <td class="col-xs-1">{{KarmaV.information.localHorzSupport | limitTo : 4}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="col-xs-11">Global horz. support</td>
+                                        <td class="col-xs-1">{{KarmaV.information.globalHorzSupport | limitTo : 4}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="col-xs-11">Maximum depth</td>
+                                        <td class="col-xs-1">{{KarmaV.information.maxDepth}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="col-sm-11">Level</td>
+                                        <td class="col-sm-1">{{KarmaV.treeLevel+1}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="col-sm-11"># Instances</td>
+                                        <td class="col-sm-1">{{KarmaV.information.numOfInstances}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="col-sm-11"># Next level</td>
+                                        <td class="col-sm-1">{{KarmaV.information.numOfStatesInNextLevel}}</td>
+                                    </tr>
+                                </tbody>
+
+
+                            </table>
+                        </div>
+                    
+
+                    </div>
+
+
+
+                  
+
+
+
+            </div>
+          
+
+            <div class="col-4 p-0">
+                <div class="card " name="currentLevel">
+                    <div class=" font-weight-light card-header bg-primary" style="color:white">
+                            Current Level
+                    </div>
+                    <div style="max-height:300px; overflow-y:scroll">
+                        <table class="card-body table" ng-show="KarmaV.showInformationTable1">
+
+                            <thead>
+                                <tr>
+                                    <th class="">Relation</th>
+                                    <th class="">State</th>
+                                    <th class="">Vertical</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-class="{ 'ChosenRow' : KarmaV.isChosenRow[$index]==true, 'notLeaf': KarmaV.metadata.chunkesLargerThanZero.includes(state.stateName)==true}" sglclick="KarmaV.singleClick(state.stateID)" ng-dblClick="KarmaV.doubleClick(state.stateID)" ng-repeat="state in KarmaV.rootStatesNames track by $index">
+                                    <td>{{KarmaV.relationDic[state.relation]}}</td>
+                                    <td >{{state.stateName}}</td>
+                                    <td >{{state.vertical}}</td>
+                                </tr>
+                            </tbody>
+
+                        </table>
+                        <table id="currentLevel" class="card-body table " ng-show="KarmaV.showCurrentLevel">
+                            <thead>
+                                <tr>
+                                    <th class=" ">Relation</th>
+                                    <th class="">State</th>
+
+                                    <th class="">Vertical Support</th>
+                                    <th class="">Horz. Support</th>
+                                    <th class="">Mean Duration</th>
+
+                                    <th class="">Vertical Support 2</th>
+                                    <th class="">Horz. Support 2</th>
+                                    <th class="">Mean Duration 2</th>
+
+
+
+                                    @*<th class="col-sm-2">Global Horz</th>*@
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-class="{ 'ChosenRow' : KarmaV.isChosenRow[$index]==true, 'notLeaf': KarmaV.currentElementsList[$index].NextLevel.PropertiesList.length!=0}" sglclick="KarmaV.singleClick(state.stateID,$index)" ng-dblClick="KarmaV.doubleClick(state.stateID,$index)" ng-repeat="state in KarmaV.currentStatesNames track by $index">
+                                    <td >{{KarmaV.relationDic[state.relation]}}</td>
+                                    <td >{{state.stateName}}</td>
+
+                                    <td >{{state.vertical}}</td>
+                                    <td >{{state.localHorz | limitTo : 4}}</td>
+                                    <td >{{state.meanDuration}}</td>
+
+                                    <td >{{state.vertical_2}}</td>
+                                    <td >{{state.localHorz_2 | limitTo : 4}}</td>
+                                    <td >{{state.meanDuration_2}}</td>
+
+
+                                    @*<td class="col-sm-2">{{state.globalHorz | limitTo : 4}}</td>*@
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                 
+                </div>
+            </div>
+            
+
+            <div class="col-3 p-0">
+                <div class="card" name="nextLevel">
+                        <div class=" font-weight-light card-header bg-primary" style="color:white">
+                            Next Level
+                        </div>
+                    <div style="max-height:300px; overflow-y:scroll">
+                        <table id="nextLevel" class=" card-body table">
+                            <thead>
+                                <tr>
+                                    <th class=" ">Relation</th>
+                                    <th class="">State</th>
+
+                                    <th class="">Vertical Support</th>
+                                    <th class="">Horz. Support</th>
+                                    <th class="">Mean Duration</th>
+
+                                    <th class="">Vertical Support 2</th>
+                                    <th class="">Horz. Support 2</th>
+                                    <th class="">Mean Duration 2</th>
+                                    @*<th class="col-xs-2">Globsl Horz</th>*@
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="nextState in KarmaV.nextLevelStatesNames">
+                                    <td class="col-xs-2">{{KarmaV.relationDic[nextState.relation]}}</td>
+                                    <td class="col-xs-6">{{nextState.stateName}}</td>
+                                    <td class="col-xs-3">{{nextState.vertical}}</td>
+                                    <td class="col-xs-2">{{nextState.localHorz | limitTo : 4}}</td>
+                                    @*<td class="col-xs-2">{{nextState.globalHorz | limitTo : 4}}</td>*@
+
+                                    <td>{{nextState.vertical_2}}</td>
+                                    <td>{{nextState.localHorz_2 | limitTo : 4}}</td>
+                                    <td>{{nextState.meanDuration_2}}</td>
+
+                                </tr>
+                            </tbody>
+
+                        </table>
+                    </div>
+                       
+
+
+
+
+
+                    </div>
+                </div>
+        
+
+            <div class="col-2 p-0">
+                <div class="card" name="statistics" ng-show="KarmaV.showStatistics">
+                    <div class="card-header bg-primary font-weight-light" style="color:white">
+                            Statistics
+                    </div>
+                    <div class="card-body">
+                        <label>Property:</label>
+                        <select ng-options="o as o for o in KarmaV.entitiesColums" ng-change="KarmaV.dropDownSelect()" ng-model="KarmaV.selected"></select>
+
+                        <div class="mr-5" id="pieContainer" style="position:relative;right:60px; width:20%;">
+
+                            @*<canvas id="pieCanvas"></canvas>*@
+                        </div>
+                        @*<div id="chartjs-tooltip"></div>*@
+                    </div>
+                   
+                </div>
+            </div>
+           
+        </div>
+        <div class=" bottomContainer row" >
+                <div class="instancesContainer" ng-show="KarmaV.showInstances">
+                    <div class="panel-heading">
+                        <h5>
+                            Relation Data
+                        </h5>
+                    </div>
+                    <div calss="relationDataContainer" name="relationData">
+                        <div class="relationData1">
+                            <table class="table">
+
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Label</th>
+                                </tr>
+
+
+                                <tr ng-repeat="property in KarmaV.relationsID">
+                                    <td>{{property}}</td>
+                                    <td>{{KarmaV.metadata.dictState[property]}}</td>
+                                </tr>
+
+
+                            </table>
+                        </div>
+                        <div class="relationData2">
+
+                            <table id="relationTable" class="table"></table>
+                        </div>
+
+                    </div>
+
+                    <div class="instancesList">
+                        <div class="panel-heading">
+                            <h5>
+                                Instances List
+                            </h5>
+                        </div>
+                        <div style="max-height:300px; overflow-y:scroll">
+                            <table class="table ">
+                                <thead>
+                                    <tr>
+                                        <th class="col-xs-2" text-align="left">Entity ID</th>
+                                        <th class="col-xs-2">Intervals</th>
+                                        @*<th ng-repeat="key in KarmaV.entitiesColums">{{key}}</th>*@
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-click="KarmaV.ClickInstanceAddCanvas($index)" ng-repeat="instance in KarmaV.currentInstances.Instances" on-finish-render="ngRepeatFinished">
+                                        <th class="col-xs-2">{{instance.EntityID}}</th>
+                                        <th class="col-xs-2"><canvas width="150" height="25" style="border: 1px solid black" id="{{'canvas' + $index}}"></canvas></th>
+                                        @*<th ng-repeat="key in KarmaV.entitiesColums">{{KarmaV.entitiesDetailsByID[instance.EntityID][key]}}</th>*@
+                                    </tr>
+                                </tbody>
+
+                            </table>
+
+                        </div>
+                        </div>
+                </div>
+
+                <div class="canvasesDiv" ng-show="KarmaV.showCanvas">
+                    <div class="panel-heading">
+                        <h5>
+                            Visual Pattern View
+                        </h5>
+                    </div>
+                    <div class="avgCanContainer">
+                        <div class="lblRelation">
+                            <label id="relationLbl" style="background-color: {{element.propertyColor}}" ng-repeat="element in KarmaV.currrentRelation">{{element.propertyName}}</label>
+                        </div>
+                        <div class="canvasForAVG">
+                            <canvas style="background-color: white" width="600" height="150" id="avgCanvas"></canvas>
+                        </div>
+
+                    </div>
+                    <div class="IdCanvas" id="canvasContainer">
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+      
+
+</div>
+
+<script>
+    // event on submit form
+    //$(document).ready(function () {
+    //    event.preventDefault();
+
+    //    alert('start upload');
+
+    //    // Perform the ajax POST
+    //    $.ajax({
+    //        url: '/KarmaLegoV/loadFiles',
+    //        processData: false,
+    //        contentType: false,
+    //        type: 'POST',
+    //        success: function (data) {
+    //            alert('end upload');
+    //            // trigger function in Angular KarmaLegoV contoller to get data server
+    //            //angular.element('#karmaController_div').scope().KarmaV.getMetadata();
+    //            //angular.element('#karmaController_div').scope().KarmaV.getRootElements();
+    //        }
+    //    });
+    //});
+</script>
+

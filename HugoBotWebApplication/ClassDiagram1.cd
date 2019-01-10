@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="HugoBotWebApplication.Models.Dataset">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IEAAAASAAAAAAAICAAAAAAAAAAAAAAEAAYBAAAAACAA=</HashCode>
+      <FileName>Models\Dataset.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HugoBotWebApplication.Models.DatasetIndexViewModel">
+    <Position X="0.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAQAABAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\DatasetIndexViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HugoBotWebApplication.Models.DatasetViewModel">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IEAAAAAAAAAAAAICAAAAAAAAAAAAAAAAAQAAAAAACAA=</HashCode>
+      <FileName>Models\DatasetViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HugoBotWebApplication.Models.DiscretizationViewModel">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>JEAIAAAAAAAAAQICAAQAAAAABAAAiAEAQYAAAAAACAA=</HashCode>
+      <FileName>Models\DiscretizationViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HugoBotWebApplication.Models.ApplicationUser">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\IdentityModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HugoBotWebApplication.Models.KarmaLegoViewModel">
+    <Position X="2.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAgAAAAAAAAEAAAAAAAAAAAAAAAQAAAABAAAAAAAAAA=</HashCode>
+      <FileName>Models\KarmaLegoViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HugoBotWebApplication.Models.MetadataViewModel">
+    <Position X="8.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>Models\MetadataViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HugoBotWebApplication.Models.Formats_Handling.Measurement">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAgAgAAAAAAAAAAAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Models\Formats_Handling\Measurement.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HugoBotWebApplication.Models.Formats_Handling.VariableMetadata">
+    <Position X="5.75" Y="4.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAQAAAAAAA=</HashCode>
+      <FileName>Models\Formats_Handling\VariableMetadata.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HugoBotWebApplication.Models.ServiceLayer.DatasetService">
+    <Position X="7.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABACAAAAABAAAAAAAgAAACACAECAAAAAAACA=</HashCode>
+      <FileName>Models\ServiceLayer\DatasetService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

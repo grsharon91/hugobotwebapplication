@@ -1,0 +1,46 @@
+﻿@model HugoBotWebApplication.ViewModels.ApproveUsersViewModel
+@{
+    ViewBag.Title = "ApproveUsers";
+}
+
+<h3>ApproveUsers</h3>
+
+<div class="row">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Email
+                </th>
+                <th>
+                    Status
+                </th>
+                <th>
+                    Actions
+                </th>
+            </tr>
+
+        </thead>
+        <tbody>
+            @foreach (var user in Model.Users)
+            {
+                <tr>
+                    <td>
+                        @user.Email
+                    </td>
+                    <td>
+                        @if(user.OwnConfirmation)
+                        {
+                            
+                        }
+                    </td>
+                    <td>
+
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+</div>
+

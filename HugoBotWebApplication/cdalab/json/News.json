@@ -1,0 +1,71 @@
+[
+    {
+        "id": "n1",
+        "description": "Robert Moskovitch was invited to the Program Committee of ACM KDD 2018",
+        "dateDay": "29",
+        "dateMonth": "January",
+        "dateYear": "2018",
+        "link": "http://www.kdd.org/kdd2018/",
+        "important": true
+    },
+    {
+        "id": "n2",
+        "description": "Robert Moskovitch was invited to be an Academic Editor at the Editorial Board of PLOS ONE",
+        "dateDay": "6",
+        "dateMonth": "March",
+        "dateYear": "2018",
+        "link": "https://journals.plos.org/plosone/static/editorial-board",
+        "important": false
+    },
+    {
+        "id": "n3",
+        "description": "During the 2nd Israel-China Healthcare Summit Robert Moskovitch was invited to give a talk at the Data Science in Healthcare Center at Peking University",
+        "dateDay": "1",
+        "dateMonth": "December",
+        "dateYear": "2017",
+        "link": "http://english.bjmu.edu.cn/newsevents/news/270.htm",
+        "important": false
+    },
+    {
+        "id": "n4",
+        "description": "Robert Moskovitch gave a talk about the Israeli Ministry of Health Big Data initiative at the 2nd Israel-China Healthcare summit in Yangzhou, China",
+        "dateDay": "30",
+        "dateMonth": "November",
+        "dateYear": "2017",
+        "important": true
+    },
+    {
+        "id": "n5",
+        "description": "Robert Moskovitch is the Organizer of BGU Data Science in Healthcare - Whats Next?",
+        "dateDay": "11",
+        "dateMonth": "September",
+        "dateYear": "2017",
+        "important": true
+    },
+    {
+        "id": "n6",
+        "description": "Robert Moskovitch gave a talk about KarmaLego and its use for Classification of Multivariate Time Series at the Machine Learning seminar of Google Research Tel Aviv",
+        "dateDay": "3",
+        "dateMonth": "August",
+        "dateYear": "2017",
+        "important": true
+    },
+    {
+        "id": "n7",
+        "description": "Robert Moskovitch was invited to give a Keynote talk at the IEEE UEMCON 2018 that will be held at Columbia University in NYC",
+        "dateDay": "13",
+        "dateMonth": "October",
+        "dateYear": "2018",
+        "link": "http://ieee-uemcon.org/research-talk/",
+        "important": true
+    },
+    {
+        "id": "n8",
+        "description": "Robert Moskovitch was invited to give a Keynote talk at the 4th China Healthcare Information Processing conference (CHIP 2018) that will be held in Shenzhen, China.",
+        "dateDay": "25",
+        "dateMonth": "October",
+        "dateYear": "2018",
+        "link": "http://icrc.hitsz.edu.cn/chip2018/keynote.html",
+        "important": true
+    }
+  ]

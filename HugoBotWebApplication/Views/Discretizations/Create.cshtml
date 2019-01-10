@@ -1,0 +1,566 @@
+﻿@model HugoBotWebApplication.ViewModels.DiscretizationViewModel
+
+@{
+	ViewBag.Title = "Upload dataset for discretization";
+	ViewBag.Params = "aaa";
+	HtmlHelper.ClientValidationEnabled = false;
+	HtmlHelper.UnobtrusiveJavaScriptEnabled = false;
+}
+
+<h2>Upload dataset for discretization</h2>
+
+<p style="display:inline">
+	Unsure about the format?
+	<a href="@Url.Action("FirstSteps", "Home")" id="FirstStepsButton" title="First steps" class="btn " type="button" target="_blank" style="background-color:#006400; color:white"> <span class="glyphicon glyphicon-info-sign"></span> Take a look at first steps with HugoBot</a>
+
+</p>
+
+<style>
+	.glyphicon.glyphicon-asterisk {
+		font-size: 10px;
+	}
+
+	#hide input[type=file] {
+		display: none;
+		margin: 10px;
+	}
+
+		#hide input[type=file] + label {
+			display: inline-block;
+			margin: 20px;
+			padding: 4px 32px;
+			background-color: #FFFFFF;
+			border: solid 1px #666F77;
+			border-radius: 6px;
+			color: #666F77;
+		}
+
+		#hide input[type=file]:active + label {
+			background-image: none;
+			background-color: #2D6C7A;
+			color: #FFFFFF;
+		}
+
+	#Path input[type=file] {
+		display: none;
+		margin: 10px;
+	}
+
+		#Path input[type=file] + label {
+			display: inline-block;
+			margin: 20px;
+			padding: 4px 32px;
+			background-color: #FFFFFF;
+			border: solid 1px #666F77;
+			border-radius: 6px;
+			color: #666F77;
+		}
+
+		#Path input[type=file]:active + label {
+			background-image: none;
+			background-color: #2D6C7A;
+			color: #FFFFFF;
+		}
+</style>
+@using (Html.BeginForm("Create", "Discretizations", FormMethod.Post, new { enctype = "multipart/form-data", id = "UploadDatasetForm", name = "UploadDatasetForm" }))
+
+{
+	@Html.AntiForgeryToken()
+	<input type="text" id="AbstractionMethods" name="AbstractionMethods" value="" style="display:none" />
+	<div class="form-horizontal">
+		<h4>@*Discretization*@</h4>
+		<hr />
+		<label class="text-danger">
+			@ViewBag.Errors
+		</label>
+		@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+		<div class="form-group">
+			<label class="control-label col-md-2">Absraction Methods</label>
+			<div class="col-md-10">
+				<button id="showAbstractionMethodsButton" type="button" onclick="showMethods()" class="btn btn-primary">
+					show/hide
+				</button>
+				<fieldset id="methodsCheckboxes">
+					<div>
+						<input type="checkbox" id="eqw" name="abstraction_method" value="EQW">
+						<label for="eqw">Equal Width</label>
+					</div>
+					<div>
+						<input type="checkbox" id="eqf" name="abstraction_method" value="EQF">
+						<label for="eqf">Equal Frequency</label>
+					</div>
+					<div>
+						<input type="checkbox" id="persist" name="abstraction_method" value="PERSIST">
+						<label for="persist">Persist</label>
+					</div>
+					<div style="display:inline">
+						<input type="checkbox" id="expert" name="abstraction_method" value="EXPERT" onclick="hideBins()">
+						<label for="expert">Knowlegde based</label>
+						<button type="button" onclick="showParameters('EXPERT')" class="btn btn-primary btn-xs">
+							show/hide Additional Parameters
+						</button>
+						<fieldset id="EXPERT_parameters" style="display:none;" class="col-md-offset-1">
+							<input type="file" name="expert_param" />
+						</fieldset>
+
+					</div>
+					<div>
+
+					</div>
+					<div style="display:inline">
+						<input type="checkbox" id="sax" name="abstraction_method" value="SAX" onclick="">
+						<label for="sax">SAX</label>
+						<span id="sax_error" class="sax_error"></span>
+						<button type="button" onclick="showParameters('SAX')" class="btn btn-primary btn-xs">
+							show/hide Additional Parameters
+						</button>
+						<fieldset id="SAX_parameters" style="display:none;" class="col-md-offset-1">
+							<div class="input-group col-md-10">
+								<label for="window_size" class="col-md-2">Paa window size</label>
+								<div>
+									<input id="window_size" name="sax_param" type="number" style="width:70px" class="form-control text-box single-line"  />
+
+								</div>
+							</div>
+
+						</fieldset>
+
+					</div>
+					<div>
+						<input type="checkbox" id="kmeans" name="abstraction_method" value="KMEANS">
+						<label for="kmeans">Kmeans</label>
+					</div>
+					<div>
+						<input type="checkbox" id="binary" name="abstraction_method" value="BINARY">
+						<label for="binary">Binary</label>
+					</div>
+					<div style="display:inline;">
+						<input type="checkbox" id="td4c" name="abstraction_method" value="TD4C">
+						<label for="td4c">TD4C</label>
+						<span id="td4c_error" class="td4c_error"></span>
+						<button type="button" onclick="showParameters('TD4C')" class="btn btn-primary btn-xs">
+							show/hide Additional Parameters
+						</button>
+						<fieldset id="TD4C_parameters" style="display:none;" class="col-md-8 col-md-offset-1">
+							<div style="display:inline">
+								<label> Scoring Methods</label>
+								<div>
+									<input type="checkbox" id="td4c_e" name="td4c_param" value="Entropy">
+									<label for="td4c_e">Entropy</label>
+								</div>
+								<div>
+									<input type="checkbox" id="td4c_c" name="td4c_param" value="Cosine">
+									<label for="td4c_c">Cosine</label>
+								</div>
+								<div>
+									<input type="checkbox" id="td4c_k" name="td4c_param" value="KullbackLiebler">
+									<label for="td4c_k">KullbackLiebler</label>
+								</div>
+							</div>
+							<div class="errorTxt"></div>
+						</fieldset>
+					</div>
+
+				</fieldset>
+			</div>
+		</div>
+
+
+
+		<br />
+
+
+		<div id="binsNumberDiv" class="input-group col-md-10">
+			@Html.LabelFor(model => model.BinsNumber, htmlAttributes: new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@Html.EditorFor(model => model.BinsNumber, new { htmlAttributes = new { @class = "form-control" } })
+				<span class="glyphicon glyphicon-asterisk"></span>
+				@*@Html.ValidationMessageFor(model => model.BinsNumber, "", new { @class = "text-danger" })*@
+
+			</div>
+			@*<small class="col-md-offset-2"> Specify Bins  </small>*@
+
+		</div>
+
+		<br />
+
+		<div class="input-group col-md-10">
+			@Html.LabelFor(model => model.MaxGap, htmlAttributes: new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@Html.EditorFor(model => model.MaxGap, new { htmlAttributes = new { @class = "form-control" } })
+			</div>
+		</div>
+
+		<br />
+
+		@*<div class="input-group col-md-2">
+				<div class="control-label col-md-10">
+					<label>Abstract Time Serires</label>
+					<input type="checkbox" id="AbstractedTimeSeries" name="AbstractedTimeSeries" value="true">
+
+
+				</div>
+			</div>
+
+			<br />*@
+		<div class="input-group col-md-10">
+			@Html.LabelFor(model => model.DatasetName, htmlAttributes: new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@Html.EditorFor(model => model.DatasetName, new { htmlAttributes = new { @class = "form-control" } })
+				<span>
+					<span class="glyphicon glyphicon-asterisk"></span>
+				</span>
+				@Html.ValidationMessageFor(model => model.DatasetName, "", new { @class = "text-danger" })
+			</div>
+		</div>
+
+
+		<br />
+
+
+		<div class="input-group col-md-10">
+			@Html.LabelFor(model => model.Category, htmlAttributes: new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@Html.DropDownListFor(model => model.Category, new SelectList(new[] { "", "Medicine", "Finance", "Other" }), new { @ID = "CategoryDropDown", @name = "CategoryDropDown", @class = "form-control" })
+				<span>
+					<span class="glyphicon glyphicon-asterisk"></span>
+				</span>
+				@*@Html.ValidationMessageFor(model => model.Category, "", new { @class = "text-danger" })*@
+			</div>
+			<div class=" col-md-offset-2 col-md-10">
+				@Html.EditorFor(model => model.Category, new { htmlAttributes = new { @ID = "CategoryOtherEdit", @class = "form-control", @Style = "display:none;", @placeholder = "Enter Category" } })
+
+			</div>
+		</div>
+		<br />
+		<div class="input-group col-md-10">
+			@Html.LabelFor(model => model.Visibility, htmlAttributes: new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@if (User.Identity.IsAuthenticated)
+				{
+					@Html.DropDownListFor(model => model.Visibility, new SelectList(new[] { "Public", "Private" }), new { @ID = "VisibilityDropDown", @name = "VisibilityDropDown", @class = "form-control" })
+
+				}
+				else
+				{
+					@Html.DropDownListFor(model => model.Visibility, new SelectList(new[] { "Public" }), new { @ID = "VisibilityDropDown", @name = "VisibilityDropDown", @class = "form-control" })
+
+				}
+				@Html.ValidationMessageFor(model => model.Visibility, "", new { @class = "text-danger" })
+			</div>
+		</div>
+		<br />
+
+
+
+		<div class="input-group col-md-10">
+			<div class="control-label col-md-2">
+				<label>Dataset File</label>
+			</div>
+
+			<div class="checkbox col-md-10">
+				<div id="DatasetFile" style="display: inline">
+					<label style="font-size: 17px" class="label label-warning">
+						<span id="Path1">Browse</span>
+						<input id="Path" accept=".csv" type="file" name="Path" class="btn btn-success" style="display: none;" />
+					</label>
+					<label class="label label-primary" id="filePath" style="display:none;font-size: 16px"></label>
+					<span id="Dataset_file_error"></span>
+				</div>
+			</div>
+
+			@*<button type="button" id="setDatasetNameBtn" onclick="setDatasetName()" class="btn btn-group-sm" >
+					Set as dataset name
+				</button>*@
+
+		</div>
+		<br />
+		<div class="input-group col-md-10">
+			<div class="control-label col-md-2">
+				<label>Upload Vmap</label>
+			</div>
+
+			<div class="checkbox col-md-10">
+				<div id="VMap">
+					<label style="font-size: 17px" class="label label-warning">
+						<span id="uploadVmap">Browse</span>
+						<input id="hide" accept=".csv" type="file" name="VMap_file" class="btn btn-success" style="display: none;" />
+
+					</label>
+					<label class="label label-primary" id="filePath" style="display:none;font-size: 16px"></label>
+					<span id="VMap_file_error"></span>
+				</div>
+			</div>
+
+
+		</div>
+		<br />
+
+		<div class="input-group col-md-10">
+			<div class="col-md-10 col-md-offset-2">
+
+				<input type="submit" id="Upload" name="Upload" value="Upload" class="btn btn-warning" readonly />
+				@*@Html.ValidationMessage("Path", new { @class = "text-danger" })*@
+
+				<label id="LoadingLabel" style="display: none">Uploading... When finished you will be redirected to datasets page</label>
+			</div>
+		</div>
+
+
+	</div>
+}
+
+<div>
+	@Html.ActionLink("Back to List", "Index", "Datasets")
+</div>
+
+@section Scripts {
+	@Scripts.Render("~/bundles/jqueryval")
+
+	<script>
+		$(document).ready(function () {
+			$.validator.setDefaults({
+				ignore: []
+			});
+			$("#LoadingLabel").hide()
+			$("#CategoryDropDown").val("")
+		});
+	</script>
+	<script>
+		// Wait for the DOM to be ready
+		$(function () {
+			// Initialize form validation on the registration form.
+			// It has the name attribute "registration"
+			$('#UploadDatasetForm').validate({
+				errorElement: 'span',
+				errorClass: "text-danger field-validation-error",
+				// Specify validation rules
+				rules: {
+					// The key name on the left side is the name attribute
+					// of an input field. Validation rules are defined
+					// on the right side
+					firstname: "required",
+					lastname: "required",
+					email: {
+						required: true,
+						// Specify that email should be validated
+						// by the built-in "email" rule
+						email: true
+					},
+                    BinsNumber: {
+                        required: true,
+						digits: true,
+						number: true,
+						min: 2
+					},
+					MaxGap: {
+						//required: true,
+						digits: true,
+						number: true
+					},
+					DatasetName: {
+						required: true
+					},
+					Category: {
+						required: true
+					},
+
+					Visiblity: {
+						required: true
+					},
+					Path: {
+						required: true
+					},
+					VMap_file: {
+						required: true
+					},
+					abstraction_method: {
+						required: true,
+						minlength: 1
+					},
+					td4c_param: {
+						required: "#td4c:checked",
+						minlength: 1
+					},
+					sax_param: {
+						required: "#sax:checked",
+						number: true,
+						min: 2
+					},
+					Description: {
+						required: true
+					}
+				},
+				// Specify validation error messages
+				messages: {
+					firstname: "Please enter your firstname",
+					BinsNumber: { required: "Please enter the bins number", digits: "Must be an integer greater than 1", number: "Must be an integer greater than 1" },
+					MaxGap: { digits: "Must be an integer ", number: "Must be an integer " },
+					DatasetName: { required: "Please specify a name for the dataset" },
+					Category: { required: "Please choose a category" },
+					Visiblity: { required: "Please choose visibliy for your dataset" },
+					Path: { required: "Please choose a dataset file to upload" },
+					VMap_file: { required: "Please choose a variable map file to upload" },
+					td4c_param: "Please select at least one scoring method",
+					sax_param : "Please enter a windows size of at least 2",
+					abstraction_method: "Please select at least one abstraction method",
+					Description: { required: "Please provide a description for your dataset" }
+
+
+				},
+				errorPlacement: function (error, element) {
+					if (element.attr("name") == "td4c_param") {
+						error.insertAfter(".td4c_error");
+					}
+					if (element.attr("name") == "sax_param") {
+						error.insertAfter(".sax_error");
+					}
+					else if (element.attr("name") == "abstraction_method") {
+						error.insertAfter("#showAbstractionMethodsButton");
+					}
+					else if (element.attr("name") == "VMap_file") {
+						error.insertAfter("#VMap_file_error")
+					}
+					else if (element.attr("name") == "Path") {
+						error.insertAfter("#Dataset_file_error")
+					}
+					else
+						error.insertAfter(element);
+				},
+				// Make sure the form is submitted to the destination defined
+				// in the "action" attribute of the form when valid
+				submitHandler: function (form) {
+					form.submit();
+				}
+			});
+		});
+
+
+	</script>
+	@*<script src="~/Scripts/Discretizations/Validation.js"></script>*@
+	<script>
+		$('#hide').change(function () {
+			$('#uploadVmap').text($("#hide").val().split("\\").slice(-1)[0]);
+
+		});
+	</script>
+	<script>
+		$('#Path').change(function () {
+			$('#Path1').text($("#Path").val().split("\\").slice(-1)[0]);
+			$("#Upload").prop("disabled", false);
+
+
+		});
+	</script>
+	<script>
+		function showMethods() {
+			if ($("#methodsCheckboxes").css("display") == 'none') {
+				$("#methodsCheckboxes").show();
+
+			}
+			else {
+				$("#methodsCheckboxes").hide();
+			}
+		}
+	</script>
+
+	<script>
+		function showParameters(methodName) {
+			var tag = "#" + methodName + "_parameters"
+			if ($(tag).css("display") == 'none') {
+				$(tag).show();
+
+			}
+			else {
+				$(tag).hide();
+			}
+		}
+	</script>
+
+
+	<script>
+		$('#CategoryDropDown').change(function () {
+			var category = $("#CategoryDropDown option:selected").text();
+			if (category == 'Other') {
+				$("#CategoryOtherEdit").show();
+				$("#CategoryDropDown").attr("name", "None")
+			}
+			else {
+				//if user select 'other' and later select something else, you should hide textbox
+				$("#CategoryOtherEdit").hide();
+				$("#CategoryDropDown").attr("name", "Category")
+			}
+
+		});
+	</script>
+
+
+	<script>
+		$(function () {
+			$("input[name='abstraction_method']").change(function () {
+				var total = $("#methodsCheckboxes").find('input[name="abstraction_method"]:checked').length;
+				console.log(total);
+                if (document.getElementById('expert').checked && total == 1) {
+                    $("#BinsNumber").val(2)
+					$("#binsNumberDiv").hide();
+				}
+                else {
+                    $("#BinsNumber").val("")
+					$("#binsNumberDiv").show();
+				}
+			});
+		});
+		//function hideBins() {
+		//    var total = $("#methodsCheckboxes").find('input[name="abstraction_method"]:checked').length;
+		//    console.log(total);
+		//    if (document.getElementById('expert').checked && total == 1) {
+		//        $("#binsNumberDiv").hide();
+		//    }
+		//    else {
+		//        $("#binsNumberDiv").show();
+		//    }
+		//}
+	</script>
+	<script>
+		$('#UploadDatasetForm').submit(function () {
+			console.log($(this).valid())
+			if ($(this).valid()) {
+				$(this).find(':submit').attr('disabled', 'disabled');
+				if (document.getElementById("Path").files.length != 0) {
+					$("#LoadingLabel").show()
+
+					var abstractMethodsFieldset = document.getElementById("methodsCheckboxes");
+					var abstractMethodsFieldsetTags = ['input'];
+					var fields = abstractMethodsFieldset.getElementsByTagName("input");
+
+					var methodsString = "";
+					console.log(methodsString);
+					for (var fieldi = fields.length; fieldi-- > 0;) {
+						var method = fields[fieldi];
+						if (method.checked) {
+							methodsString = methodsString.concat(fields[fieldi].value + ";");
+						}
+					}
+					console.log(methodsString);
+					methodsString = methodsString.slice(0, -1);
+					$("#AbstractionMethods").val(methodsString);
+					$("#AbstractionMethods").text(methodsString);
+
+				}
+
+				else {
+					("input[type=submit]").attr("disabled", "disabled");
+				}
+
+			}
+		});
+	</script>
+	<script>
+		function setDatasetName() {
+			console.log("Hi")
+			$("#DatasetName").val($("#Path1").text());
+
+		}
+	</script>
+
+}

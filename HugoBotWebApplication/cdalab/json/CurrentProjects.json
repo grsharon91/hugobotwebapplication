@@ -1,0 +1,34 @@
+[
+    {
+        "id": "diabetes-Maccabi",
+        "name": "Diabetes Outcomes Prediction in EHR with Maccabi",
+        "description": "Diabetes Outcomes Prediction in EHR with Maccabi Diabetes Outcomes Prediction in EHR with Maccabi Diabetes Outcomes Prediction in EHR with Maccabi Diabetes Outcomes Prediction in EHR with Maccabi Diabetes Outcomes Prediction in EHR with Maccabi Diabetes Outcomes Prediction in EHR with Maccabi Diabetes Outcomes Prediction in EHR with Maccabi Diabetes Outcomes Prediction in EHR with Maccabi Diabetes Outcomes Prediction in EHR with Maccabi",
+        "leader": "Student1",
+        "image": "maccabi.jpg"
+    },
+    {
+        "id": "icu-New-Delhi",
+        "name": "Complications Prediction in ICU with IIT New Delhi",
+        "leader": "Student2",
+        "description": "Complications Prediction in ICU with IIT New Delhi"
+    },
+    {
+        "id": "call-Center-Amdocs",
+        "name": "Call Center Calls Prediction with Amdocs",
+        "description": "Call Center Calls Prediction with Amdocs",
+        "leader": "Student3",
+        "image": "amdocs.jpg"
+    },
+    {
+        "id": "MIMIC-III",
+        "name": "MIMIC III discretization and Cohorts preparation",
+        "description": "First step in the project: Transform the data from the MIMIC III database into a uniform symbolic time intervals format using several discretization methods (SAX, EWD, TD4C) on pre-processed data. Processing the data included several steps: (1) Understand which data is relevant for our goals (2) Explore the database scheme and challenges in working with it (3) Understanding in which resolution we want to work with and process the data (4) Cleaning the data by removing duplicate or irrelevant data, fixing structural errors, filtering unwanted outliers, transform data from different sources to a uniform format using uniform measurement units and a main OMOP ETL step. Second step in the project: Define our cohorts patients, we started by defining the next cohort- Sepsis acquired during ICU admission as patient with suspected infection and SOFA higher or equal to 2. Next, we will define more cohorts. ",
+        "leader": "Maya Schvetz"
+    },
+    {
+        "id": "charts-Analytics-Admits",
+        "name": "Cant Charts Analytics with Admits",
+        "leader": "Student4",
+        "description": "Cant Charts Analytics with Admits"
+    }
+  ]

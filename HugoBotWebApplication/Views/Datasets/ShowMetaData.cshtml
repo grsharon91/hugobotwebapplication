@@ -1,0 +1,143 @@
+﻿@model HugoBotWebApplication.ViewModels.MetadataViewModel
+
+@{
+    ViewBag.Title = "Vmap";
+}
+<style>
+    .Red {
+        color: red;
+    }
+</style>
+<h2>Variable Information</h2>
+
+<div>
+    @*<input id="stuff" type="text" value="hahahaha" />*@
+    <h4>For @Model.TempDatasetName</h4>
+    <hr />
+    <div>
+        @Model.Description
+    </div>
+    @*<button id="bestButton" class="btn btn-primary" onclick="addrow()"> Add new Row</button>*@
+    @*<button class="btn btn-danger" onclick="saveVmap()">Save changes</button>*@
+    <table id="metadataTable" class="table table-bordered">
+        <tr>
+            <th>Variable ID</th>
+            <th>Variable Name</th>
+            <th> Description </th>
+        </tr>
+        @foreach (var item in Model.Vmap)
+        {
+            <tr>
+                <td name="TemporalPropertyID" id=@item.Key>
+                    @item.Key
+                </td>
+                <td name="TemporalPropertyName">
+                    @item.Value[0]
+                </td>
+                <td name="Description">
+                    @item.Value[1]
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+<p>
+    @*@Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |*@
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+    function changeId(id) {
+        //console.log(id);
+        var idChanged = parseInt($("#" + id).html());
+        //console.log(idChanged)
+        var keys = @Html.Raw(Json.Encode(Model.Vmap.Keys));
+        var flag = false;
+        $('#metadataTable tr').each(function (i, row) {
+            if (i != 0) {
+                var $row = $(row),
+                    $TemporalPropertyID = parseInt($row.find('td[name="TemporalPropertyID"]').html());
+                var currenntTdId = $row.find('td[name="TemporalPropertyID"]').attr('id');
+
+                if ($TemporalPropertyID == idChanged) {
+                    //console.log($TemporalPropertyID)
+                    //console.log(idChanged)
+
+                    $("#" + id).addClass("Red");
+                    flag = true;
+                    //break;
+                }
+
+            }
+
+        });
+        if(!flag)
+            $("#" + id).removeClass("Red");
+
+        //$("#stuff").val($("#" + id).html())
+    }
+    </script>
+
+    <script>
+        function addrow() {
+            var count = $('#metadataTable tr').length;
+            var table = document.getElementById("metadataTable");
+            var row = table.insertRow(count);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            cell1.innerHTML = "Please Enter an id for the new variable";
+            cell2.innerHTML = "Please Enter a name for the new variable";
+            //cell1.a = "contenteditable=\"true\""
+            cell1.setAttribute("contenteditable", "true")
+            cell1.setAttribute("name", "TemporalPropertyID")
+            cell2.setAttribute("contenteditable", "true")
+            cell2.setAttribute("name", "TemporalPropertyName")
+
+        }
+    </script>
+
+    <script>
+        function saveVmap() {
+            var newTable = [];
+            //run through each row
+            $('#metadataTable tr').each(function (i, row) {
+
+                if (i != 0) {
+                    var $row = $(row),
+                        $TemporalPropertyID = parseInt($row.find('td[name="TemporalPropertyID"]').html()),
+                        $TemporalPropertyName = ($row.find('td[name="TemporalPropertyName"]').html()).trim();
+                        $Description = ($row.find('td[name="Description"]').html()).trim();
+                    var metadataObject = {
+                        TemporalPropertyID: $TemporalPropertyID,
+                        TemporalPropertyName: $TemporalPropertyName,
+                        Description: $Description
+                     };
+                    newTable.push(metadataObject)
+                    console.log(newTable)
+                }
+
+            });
+
+
+            $.ajax({
+    type: 'POST',
+                url: '@Url.Action("SaveMetaData", new {datasetId = @Model.TempDatasetId})',
+                datatype: 'JSON',
+                data: { metadataList: newTable, datasetId: @Model.TempDatasetId},
+                success: function (returnValue) {
+        console.log(returnValue)
+                    alert("Saved changes");
+    },
+                error: function () {
+        alert("Oops! Something went wrong");
+    }
+});
+        }
+    </script>
+
+}
+
+

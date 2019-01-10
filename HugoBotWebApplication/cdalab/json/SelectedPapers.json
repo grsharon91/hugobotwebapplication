@@ -1,0 +1,33 @@
+[
+    {
+        "id": "Classification Driven Temporal-Discretization-Multivariate-Time-Series",
+        "name": "Classification Driven Temporal Discretization of Multivariate Time Series",
+        "authors": "Robert Moskovitch, Yuval Shahar",
+        "year": "2015",
+        "journal": "Data Mining and Knowledge Discovery, 29, 4, 871-913",
+        "link": ""
+    },
+    {
+        "id": "Classification-Multivariate-Time-Series-Temporal-Abstraction",
+        "name": "Classification of Multivariate Time Series via Temporal Abstraction and Time Intervals Mining",
+        "authors": "Robert Moskovitch, Yuval Shahar",
+        "year": "2015",
+        "link": "Moskovitch.KarmaLegoSification_KAIS.pdf",
+        "journal": "Knowledge and Information Systems, 45, 1, 35-74"
+    },
+    {
+        "id": "Fast-Time-Intervals-Mining",
+        "name": "Fast Time Intervals Mining using the Transitivity of Temporal Relations",
+        "authors": "Robert Moskovitch, Yuval Shahar",
+        "year": "2015",
+        "link": "Moskovitch.FastTimeIntervalsMining.KAIS2014.pdf",
+        "journal": "Knowledge and Information Systems, 42, 1, 21-48"
+    },
+    {
+        "id": "Outcomes-Prediction-Time-Intervals",
+        "name": "Outcomes Prediction via Time Intervals Related Patterns",
+        "authors": "Robert Moskovitch, Colin Walsh, Fei Wang, George Hripcsak, Nicholas Tatonetti",
+        "year": "2015",
+        "journal": "IEEE International Conference on Data Mining (ICDM), Atlantic City, USA"
+    }
+]

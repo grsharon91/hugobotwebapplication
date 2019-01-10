@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - HugoBot</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/angular") @* register angular *@
+    @Scripts.Render("~/bundles/angular_app") @*register the app module*@
+    <!-- Add Angular Services -->
+    <script src="~/Content/JS/UploadDataset.js"></script>
+    <link href="@BotDetect.Web.CaptchaUrls.Absolute.LayoutStyleSheetUrl"
+          rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <br />
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary ">
+
+
+        <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav mr-auto ">
+                <li class="nav-item ">
+                    <a class="nav-link" href=@Url.Action("Index","Home")>Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href=@Url.Action("FirstSteps","Home")>Tutorial</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href=@Url.Action("Index","Datasets")>My Files</a>
+                </li>
+                @*<li class="nav-item">
+                <a class="nav-link" href="/Home/About">About</a>
+            </li>*@
+
+            </ul>
+            <a class="navbar-brand" href=@Url.Action("Index","Home") style="position: relative; padding-right: 500px; text-align: center; font-size: 40px">HugoBot</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            @Html.Partial("_LoginPartial")
+        </div>
+    </nav>
+    <div class="container body-content">
+        @if (ViewBag.Confirm != null)
+        {
+            <p class="alert alert-warning">
+                @ViewBag.Confirm
+            </p>
+        }
+        <br />
+        <br />
+        @RenderBody()
+        <hr />
+
+        @*<footer class="navbar fixed-bottom">
+                <p>
+                    &copy; @DateTime.Now.Year - HugoBot
+                    <img width="13%" src="~/Images/CDALABLOGO.png" />
+
+                </p>
+            </footer>*@
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

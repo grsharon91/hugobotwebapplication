@@ -1,0 +1,175 @@
+[
+    {
+        "id": "consistent-Discovery-Frequent-Interval-Based",
+        "name": "Consistent Discovery of Frequent Interval-Based Temporal Patterns",
+        "authors": "Alexander Shknevsky, Yuval Shahar, Robert Moskovitch",
+        "year": "2017",
+        "journal": "Chronic Patients Data, Journal of Biomedical Informatics, In Press"
+    },
+    {
+        "id": "Special-Issue-on-Biomedical-Big-Data",
+        "name": "Special Issue on Biomedical Big Data",
+        "authors": "Fei Wang, Liqiang Nie, Luming Zhang, Robert Moskovitch",
+        "year": "2017",
+        "journal": "Editorial Letter, IEEE Transactions on Big Data, In Press"
+    },
+    {
+        "id": "Special-Issue-on-Biomedical-Information-Retrieval",
+        "name": "Special Issue on Biomedical Information Retrieval",
+        "authors": "Robert Moskovitch, Fei Wang, Jian Pei, Carol Friedman",
+        "year": "2017",
+        "journal": "Editorial Letter, JASIST, In Press"
+    },
+    {
+        "id": "Procedure-Events-Prediction-Time-Intervals-Analytics",
+        "name": "Procedure Events Prediction via Time Intervals Analytics",
+        "authors": "Robert Moskovitch, Fernanda Polubriaginof, Aviram Weiss, Patrick Ryan, Nicholas Tatonetti",
+        "year": "2017",
+        "journal": "Journal of Biomedical Informatics"
+    },
+    {
+        "id": "Inter-Labeler-Variability",
+        "name": "Inter-Labeler Variability of Condition-Severity Classification Models Using Active and Passive Learning Models",
+        "authors": "Nir Nissim, Yuval Elovici, Yuval Shahar, George Hripcsak, Robert Moskovitch",
+        "year": "2017",
+        "journal": "Artificial Intelligence in Medicine"
+    },
+    {
+        "id": "Boosting-Condition-Severity-Classification",
+        "name": "Boosting Condition Severity Classification Using an Active Learning Framework",
+        "authors": "Nir Nissim, Mary Regina Boland, Nicholas P Tatonetti, Yuval Elovici, Yuval Shahar, George Hripcsak, Robert Moskovitch",
+        "year": "2016",
+        "journal": "Journal of Biomedical Informatics, 61, 44-54"
+    },
+    {
+        "id": "Prognosis-of-Clinical-Procedures",
+        "name": "Prognosis of Clinical Procedures with Temporal Patternsand One Class Feature Selection",
+        "authors": "Robert Moskovitch, Hyunmi Choi, George Hripsack, Nicholas Tatonetti",
+        "year": "2016",
+        "journal": "ACM/IEEE Transactions on Computational Biology and Bioinformatics"
+    },
+    {
+        "id": "Catching-Up-with-Creation-New-Malicious-PDF",
+        "name": "Catching Up with Creation of New Malicious PDF Files Using Active Learning Based Detection Framework",
+        "authors": "Nir Nissim, Aviad Cohen, Robert Moskovitch, Assaf Shabtai, Matan Edry, Oren Bar-Ad, Yuval Elovici",
+        "year": "2016",
+        "journal": "Security Informatics [New Springer Journal]"
+    },
+    {
+        "id": "Efficient-Update-Android-Anti-Virus",
+        "name": "ALDROID: Efficient Update of Android Anti-Virus Software Using Designated Active Learning Methods",
+        "authors": "Nir Nissim, Robert Moskovitch, Lior Rokach, Yuval Elovici",
+        "year": "2016",
+        "journal": "Knowledge and Information Systems, 49 (3), 795-833"
+    },
+    {
+        "id": "Systems-Biology-Approaches-for-Identifying",
+        "name": "Systems Biology Approaches for Identifying Adverse Drug Reactions and Elucidating Their Underlying Biological Mechanisms",
+        "authors": "Mary Regina Boland, Alexandra Jacunski, Tal Lorberbaum, Joseph Romano, Robert Moskovitch, Nicholas P. Tatonetti",
+        "year": "2016",
+        "journal": "Systems Biology and Medicine"
+    },
+    {
+        "id": "Novel-active-learning-methods",
+        "name": "Novel active learning methods for enhanced PC malware detection in windows OS",
+        "authors": "Nir Nissim, Robert Moskovitch, Lior Rokach, Yuval Elovici",
+        "year": "2014",
+        "journal": "Expert Systems with Applications, 41(13)"
+    },
+    {
+        "id": "Detecting-unknown-computer-worm-activity",
+        "name": "Detecting unknown computer worm activity via support vector machines and active learning",
+        "authors": "N Nissim, R Moskovitch, L Rokach, Y Elovici",
+        "year": "2012",
+        "journal": "Pattern Analysis and Applications, 15 (4)"
+    },
+    {
+        "id": "User-identity-verification",
+        "name": "User identity verification via mouse dynamics",
+        "authors": "Clint Feher, Yuval Elovici, Robert Moskovitch, Lior Rokach, Alon Schclar",
+        "year": "2012",
+        "journal": "Information Sciences, 201"
+    },
+    {
+        "id": "Detecting-Unknown-Malicious-Code",
+        "name": "Detecting Unknown Malicious Code by Applying Classification Techniques on OPCODEs Representation",
+        "authors": "Shabtai, A., Moskovitch, R., Feher, C., Dolev, S., Elovici, Y.",
+        "year": "2012",
+        "journal": "Security Informatics, 1:1"
+    },
+    {
+        "id": "Monitoring-analysis-and-filtering-system",
+        "name": "Monitoring, analysis, and filtering system for purifying network traffic of known and unknown malicious content",
+        "authors": "Asaf Shabtai, Robert Moskovitch, Yuval Elovici, Chanan Glezer",
+        "year": "2010",
+        "journal": "Security and Communication Networks"
+    },
+    {
+        "id": "Detection-of-malicious-code",
+        "name": "Detection of malicious code by applying machine learning classifiers on static features: A state-of-the-art survey",
+        "authors": "Asaf shabtai, Dennis Potashnik, Yuval Fledel, Robert Moskovitch, Yuval Elovici",
+        "year": "2009",
+        "journal": "Information Security Technical Report, 14 (1)"
+    },
+    {
+        "id": "Unknown-Malcode-Detection-Imbalance-Problem",
+        "name": "Unknown Malcode Detection and the Imbalance Problem",
+        "authors": "Robert Moskovitch, Dima Stopel, Clint Feher, Nir Nissim, Nathalie Japkowicz and Yuval Elovici",
+        "year": "2009",
+        "link": "Moskovitch.UnknownMalcodeDetection.JiCV09.pdf",
+        "journal": "Journal in Computer Virology, 5:295-308"
+    },
+    {
+        "id": "Using-Artificial-Neural-Networks",
+        "name": "Using Artificial Neural Networks to Detect Unknown Computer Worms",
+        "authors": "Dima Stopel, Robert Moskovitch, Zvi Boger, Yuval Shahar, Yuval Elovici",
+        "year": "2009",
+        "journal": "Neural Computing and Applications, 18:663-674"
+    },
+    {
+        "id": "Vaidurya-Multiple-Ontology-Concept-Based",
+        "name": "Vaidurya: A Multiple-Ontology, Concept-Based, Context-Sensitive Clinical-Guideline Search Engine",
+        "authors": "Robert Moskovitch, Yuval Shahar",
+        "year": "2009",
+        "link": "Moskovitch.Vaidurya.JBI.pdf",
+        "journal": "Journal of Biomedical Informatics, 42(1), 11-21"
+    },
+    {
+        "id": "Detection-Unknown-Computer-Worms",
+        "name": "Detection of Unknown Computer Worms based on Behavioral Classification of the Host",
+        "authors": "Robert Moskovitch, Lior Rokach, Yuval Elovici",
+        "year": "2008",
+        "link": "Moskovitch.UnWormsDetect.CS_DAJ.pdf",
+        "journal": "Computational Statistics and Data Analysis, 52"
+    },
+    {
+        "id": "Optimization-Fire-blight-scouting",
+        "name": "Optimization of Fire blight scouting with a decision support system based on infection risk",
+        "authors": "Tsvi Kuflik, Ilaria Pertot, Robert Moskovitch, Rosaly Zasso, Elisabetta Pellegrini and Cesare Gessler",
+        "year": "2008",
+        "journal": "Computers and Electronics in Agriculture, 62-2, 118-127"
+    },
+    {
+        "id": "Comparative-Evaluation-Full-text",
+        "name": "A Comparative Evaluation of a Full-text, Concept Based, and Context Sensitive Search Engine",
+        "authors": "Robert Moskovitch, Susana B. Martins, Eytan Behiri, Aviram Weiss, and Yuval Shahar",
+        "year": "2007",
+        "link": "Moskovitch.Vaidurya.JAMIA07.pdf",
+        "journal": "Journal Of American Medical Informatics Association, 14, 164-174 Selected for the 2008 IMIA Yearbook of Medical Informatics"
+    },
+    {
+        "id": "Multiple-hierarchical-classification",
+        "name": "Multiple hierarchical classification of free-text clinical guidelines",
+        "authors": "Moskovitch R, Cohen-Kashi S, Dror, U, Levy I, Maimon A, and Shahar Y.",
+        "year": "2006",
+        "link": "Moskovitch.HTC.AIMJ06.pdf", 
+        "journal": "Artificial Intelligence in Medicine, 37, 177-190"
+    },
+    {
+        "id": "Hybrid-Multiple-Ontology-Clinical-Guideline",
+        "name": "Hybrid, Multiple-Ontology Clinical-Guideline Library and Automated Guideline-Support Tools",
+        "authors": "Shahar, Y, Young, O, Shalom, E, Galperin, M, Mayaffit, M, Moskovitch, R and Hessing, A",
+        "year": "2004",
+        "journal": "Journal of Biomedical Informatics, 37, 325-344"
+    }
+]

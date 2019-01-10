@@ -1,0 +1,2039 @@
+id,gender,single/marries,age,age_group,Area_code,Area_name,Market_code,Market,Sub_market_code,Sub_market,Social_type_code,Social_type,SocioEconomic_code,SocioEconomic_type
+1,Female   ,Single,79,75-84      ,1,Jerusalem,9,General,2,General- Religious,9,General,2,Medium
+2,Female   ,Single,92,85+        ,1,Jerusalem,9,General,1,General - General,9,General,2,Medium
+3,Male    ,Married,69,65-74      ,1,Jerusalem,9,General,1,General - General,9,General,3,High
+4,Male    ,Married,73,65-74      ,1,Jerusalem,9,General,1,General - General,9,General,2,Medium
+5,Female   ,Married,84,75-84      ,1,Jerusalem,9,General,1,General - General,9,General,2,Medium
+6,Male    ,Married,57,55-64      ,1,Jerusalem,2,Orthodox,0,None,2,Orthodox     ,2,Medium
+7,Male    ,Single,57,55-64      ,1,Jerusalem,9,General,1,General - General,9,General,2,Medium
+8,Female   ,Single,75,75-84      ,1,Jerusalem,9,General,2,General- Religious,9,General,3,High
+9,Male    ,Married,60,55-64      ,1,Jerusalem,9,General,1,General - General,9,General,2,Medium
+10,Female   ,Married,71,65-74      ,1,Jerusalem,9,General,1,General - General,9,General,2,Medium
+11,Female   ,Single,66,65-74      ,1,Jerusalem,9,General,1,General - General,9,General,2,Medium
+12,Male    ,Married,78,75-84      ,1,Jerusalem,9,General,1,General - General,9,General,2,Medium
+13,Female   ,Single,78,75-84      ,1,Jerusalem,9,General,1,General - General,9,General,2,Medium
+14,Female   ,Single,71,65-74      ,1,Jerusalem,9,General,1,General - General,9,General,2,Medium
+15,Female   ,Married,64,55-64      ,1,Jerusalem,9,General,1,General - General,9,General,3,High
+16,Male    ,Married,74,65-74      ,1,Jerusalem,9,General,1,General - General,9,General,3,High
+17,Female   ,Single,60,55-64      ,1,Jerusalem,9,General,1,General - General,9,General,2,Medium
+18,Male    ,Single,64,55-64      ,1,Jerusalem,1,Arab,2,Arab - Other,1,Arab,1,Low
+19,Male    ,Married,70,65-74      ,1,Jerusalem,9,General,1,General - General,9,General,3,High
+20,Male    ,Married,74,65-74      ,1,Jerusalem,9,General,1,General - General,9,General,3,High
+21,Male    ,Married,59,55-64      ,1,Jerusalem,9,General,1,General - General,9,General,2,Medium
+22,Female   ,Married,66,65-74      ,1,Jerusalem,9,General,1,General - General,9,General,3,High
+23,Female   ,Single,72,65-74      ,1,Jerusalem,2,Orthodox,0,None,2,Orthodox     ,2,Medium
+24,Male    ,Married,75,75-84      ,1,Jerusalem,9,General,2,General- Religious,9,General,3,High
+25,Male    ,Married,64,55-64      ,1,Jerusalem,9,General,2,General- Religious,9,General,1,Low
+26,Male    ,Married,84,75-84      ,1,Jerusalem,2,Orthodox,0,None,2,Orthodox     ,2,Medium
+27,Female   ,Married,58,55-64      ,1,Jerusalem,2,Orthodox,0,None,2,Orthodox     ,2,Medium
+28,Male    ,Married,71,65-74      ,1,Jerusalem,9,General,1,General - General,9,General,3,High
+29,Female   ,Married,61,55-64      ,1,Jerusalem,9,General,2,General- Religious,9,General,3,High
+30,Female   ,Married,61,55-64      ,1,Jerusalem,9,General,1,General - General,9,General,2,Medium
+31,Male    ,Married,74,65-74      ,1,Jerusalem,9,General,2,General- Religious,9,General,1,Low
+32,Male    ,Married,91,85+        ,1,Jerusalem,2,Orthodox,0,None,2,Orthodox     ,2,Medium
+33,Male    ,Married,60,55-64      ,1,Jerusalem,2,Orthodox,0,None,2,Orthodox     ,2,Medium
+34,Female   ,Married,59,55-64      ,1,Jerusalem,9,General,1,General - General,9,General,3,High
+35,Male    ,Married,61,55-64      ,1,Jerusalem,2,Orthodox,0,None,2,Orthodox     ,2,Medium
+36,Male    ,Married,74,65-74      ,1,Jerusalem,9,General,1,General - General,9,General,2,Medium
+37,Female   ,Single,81,75-84      ,1,Jerusalem,9,General,1,General - General,9,General,2,Medium
+38,Male    ,Single,59,55-64      ,1,Jerusalem,2,Orthodox,0,None,2,Orthodox     ,1,Low
+39,Female   ,Married,66,65-74      ,1,Jerusalem,2,Orthodox,0,None,2,Orthodox     ,1,Low
+40,Male    ,Married,84,75-84      ,1,Jerusalem,9,General,1,General - General,9,General,3,High
+41,Male    ,Married,84,75-84      ,1,Jerusalem,9,General,1,General - General,9,General,2,Medium
+42,Male    ,Married,81,75-84      ,1,Jerusalem,9,General,1,General - General,9,General,2,Medium
+43,Male    ,Married,59,55-64      ,1,Jerusalem,9,General,1,General - General,9,General,3,High
+44,Male    ,Married,80,75-84      ,1,Jerusalem,9,General,1,General - General,9,General,2,Medium
+45,Male    ,Married,61,55-64      ,1,Jerusalem,9,General,1,General - General,9,General,2,Medium
+46,Male    ,Married,70,65-74      ,1,Jerusalem,2,Orthodox,0,None,2,Orthodox     ,2,Medium
+47,Female   ,Married,69,65-74      ,1,Jerusalem,9,General,2,General- Religious,9,General,3,High
+48,Male    ,Married,72,65-74      ,1,Jerusalem,2,Orthodox,0,None,2,Orthodox     ,2,Medium
+49,Female   ,Married,74,65-74      ,1,Jerusalem,9,General,1,General - General,9,General,3,High
+50,Male    ,Married,56,55-64      ,1,Jerusalem,9,General,2,General- Religious,9,General,3,High
+51,Female   ,Married,78,75-84      ,1,Jerusalem,2,Orthodox,0,None,2,Orthodox     ,1,Low
+52,Female   ,Married,59,55-64      ,1,Jerusalem,9,General,1,General - General,9,General,3,High
+53,Male    ,Married,86,85+        ,1,Jerusalem,9,General,1,General - General,9,General,2,Medium
+54,Male    ,Married,65,65-74      ,1,Jerusalem,9,General,2,General- Religious,9,General,3,High
+55,Female   ,Married,68,65-74      ,1,Jerusalem,2,Orthodox,0,None,2,Orthodox     ,1,Low
+56,Male    ,Married,57,55-64      ,1,Jerusalem,2,Orthodox,0,None,2,Orthodox     ,2,Medium
+57,Female   ,Single,72,65-74      ,1,Jerusalem,9,General,1,General - General,9,General,3,High
+58,Male    ,Married,67,65-74      ,1,Jerusalem,9,General,1,General - General,9,General,3,High
+59,Female   ,Single,70,65-74      ,1,Jerusalem,9,General,1,General - General,9,General,3,High
+60,Female   ,Single,92,85+        ,1,Jerusalem,2,Orthodox,0,None,2,Orthodox     ,2,Medium
+61,Female   ,Single,79,75-84      ,1,Jerusalem,9,General,1,General - General,9,General,2,Medium
+62,Male    ,Single,84,75-84      ,1,Jerusalem,9,General,1,General - General,9,General,2,Medium
+63,Male    ,Married,73,65-74      ,1,Jerusalem,9,General,1,General - General,9,General,2,Medium
+64,Female   ,Single,62,55-64      ,1,Jerusalem,9,General,1,General - General,9,General,3,High
+65,Female   ,Married,53,45-54      ,1,Jerusalem,9,General,2,General- Religious,9,General,2,Medium
+66,Male    ,Single,55,55-64      ,1,Jerusalem,9,General,1,General - General,9,General,2,Medium
+67,Female   ,Single,77,75-84      ,1,Jerusalem,2,Orthodox,0,None,2,Orthodox     ,2,Medium
+68,Male    ,Married,75,75-84      ,1,Jerusalem,9,General,1,General - General,9,General,2,Medium
+69,Female   ,Married,53,45-54      ,1,Jerusalem,9,General,1,General - General,9,General,2,Medium
+70,Male    ,Married,60,55-64      ,1,Jerusalem,9,General,1,General - General,9,General,2,Medium
+71,Female   ,Married,70,65-74      ,1,Jerusalem,9,General,1,General - General,9,General,2,Medium
+72,Female   ,Married,71,65-74      ,1,Jerusalem,9,General,1,General - General,9,General,3,High
+73,Male    ,Married,51,45-54      ,1,Jerusalem,9,General,2,General- Religious,9,General,3,High
+74,Male    ,Married,88,85+        ,1,Jerusalem,2,Orthodox,0,None,2,Orthodox     ,2,Medium
+75,Female   ,Single,57,55-64      ,1,Jerusalem,9,General,1,General - General,9,General,2,Medium
+76,Male    ,Married,54,45-54      ,1,Jerusalem,9,General,2,General- Religious,9,General,2,Medium
+77,Female   ,Single,78,75-84      ,1,Jerusalem,9,General,1,General - General,9,General,2,Medium
+78,Female   ,Married,60,55-64      ,1,Jerusalem,9,General,1,General - General,9,General,3,High
+79,Female   ,Married,69,65-74      ,1,Jerusalem,9,General,1,General - General,9,General,2,Medium
+80,Male    ,Married,46,45-54      ,1,Jerusalem,9,General,1,General - General,9,General,2,Medium
+81,Male    ,Married,69,65-74      ,1,Jerusalem,1,Arab,2,Arab - Other,1,Arab,2,Medium
+82,Male    ,Married,41,35-44      ,1,Jerusalem,9,General,1,General - General,9,General,2,Medium
+83,Female   ,Married,65,65-74      ,1,Jerusalem,9,General,1,General - General,9,General,2,Medium
+84,Female   ,Single,87,85+        ,1,Jerusalem,9,General,1,General - General,9,General,2,Medium
+85,Female   ,Married,57,55-64      ,1,Jerusalem,9,General,1,General - General,9,General,3,High
+86,Male    ,Married,72,65-74      ,1,Jerusalem,9,General,1,General - General,9,General,2,Medium
+87,Female   ,Single,81,75-84      ,1,Jerusalem,9,General,1,General - General,9,General,2,Medium
+88,Male    ,Single,78,75-84      ,1,Jerusalem,1,Arab,2,Arab - Other,1,Arab,1,Low
+89,Female   ,Single,73,65-74      ,1,Jerusalem,9,General,1,General - General,9,General,3,High
+90,Male    ,Single,70,65-74      ,1,Jerusalem,2,Orthodox,0,None,2,Orthodox     ,2,Medium
+91,Male    ,Married,59,55-64      ,1,Jerusalem,2,Orthodox,0,None,2,Orthodox     ,1,Low
+92,Female   ,Single,69,65-74      ,1,Jerusalem,9,General,1,General - General,9,General,2,Medium
+93,Male    ,Married,67,65-74      ,1,Jerusalem,9,General,1,General - General,9,General,2,Medium
+94,Female   ,Single,84,75-84      ,1,Jerusalem,9,General,1,General - General,9,General,3,High
+95,Female   ,Married,60,55-64      ,1,Jerusalem,9,General,1,General - General,9,General,2,Medium
+96,Male    ,Single,57,55-64      ,1,Jerusalem,2,Orthodox,0,None,2,Orthodox     ,2,Medium
+97,Female   ,Married,73,65-74      ,1,Jerusalem,9,General,1,General - General,9,General,2,Medium
+98,Female   ,Married,69,65-74      ,1,Jerusalem,9,General,2,General- Religious,9,General,2,Medium
+99,Male    ,Married,60,55-64      ,1,Jerusalem,9,General,1,General - General,9,General,2,Medium
+100,Male    ,Married,74,65-74      ,1,Jerusalem,9,General,1,General - General,9,General,2,Medium
+101,Female   ,Married,64,55-64      ,1,Jerusalem,2,Orthodox,0,None,2,Orthodox     ,2,Medium
+102,Female   ,Married,69,65-74      ,1,Jerusalem,2,Orthodox,0,None,2,Orthodox     ,2,Medium
+103,Female   ,Single,64,55-64      ,1,Jerusalem,9,General,1,General - General,9,General,2,Medium
+104,Female   ,Married,68,65-74      ,1,Jerusalem,9,General,1,General - General,9,General,2,Medium
+105,Female   ,Married,68,65-74      ,1,Jerusalem,9,General,1,General - General,9,General,3,High
+106,Male    ,Married,58,55-64      ,1,Jerusalem,9,General,1,General - General,9,General,2,Medium
+107,Male    ,Married,60,55-64      ,1,Jerusalem,9,General,1,General - General,9,General,2,Medium
+108,Female   ,Married,75,75-84      ,1,Jerusalem,9,General,1,General - General,9,General,2,Medium
+109,Male    ,Married,58,55-64      ,1,Jerusalem,9,General,1,General - General,9,General,2,Medium
+110,Male    ,Married,66,65-74      ,1,Jerusalem,9,General,1,General - General,9,General,2,Medium
+111,Male    ,Married,73,65-74      ,1,Jerusalem,9,General,1,General - General,9,General,1,Low
+112,Female   ,Single,56,55-64      ,1,Jerusalem,2,Orthodox,0,None,2,Orthodox     ,2,Medium
+113,Female   ,Single,56,55-64      ,1,Jerusalem,9,General,1,General - General,9,General,2,Medium
+114,Male    ,Married,55,55-64      ,1,Jerusalem,2,Orthodox,0,None,2,Orthodox     ,2,Medium
+115,Female   ,Married,55,55-64      ,1,Jerusalem,9,General,1,General - General,9,General,2,Medium
+116,Female   ,Married,55,55-64      ,1,Jerusalem,9,General,1,General - General,9,General,2,Medium
+117,Male    ,Married,53,45-54      ,1,Jerusalem,1,Arab,2,Arab - Other,1,Arab,2,Medium
+118,Female   ,Married,52,45-54      ,1,Jerusalem,1,Arab,2,Arab - Other,1,Arab,2,Medium
+119,Female   ,Single,54,45-54      ,1,Jerusalem,9,General,1,General - General,9,General,2,Medium
+120,Male    ,Single,54,45-54      ,1,Jerusalem,9,General,1,General - General,9,General,2,Medium
+121,Female   ,Married,54,45-54      ,1,Jerusalem,9,General,1,General - General,9,General,2,Medium
+122,Female   ,Married,53,45-54      ,1,Jerusalem,9,General,1,General - General,9,General,3,High
+123,Female   ,Married,53,45-54      ,1,Jerusalem,9,General,1,General - General,9,General,3,High
+124,Female   ,Married,52,45-54      ,1,Jerusalem,1,Arab,2,Arab - Other,1,Arab,2,Medium
+125,Male    ,Married,51,45-54      ,1,Jerusalem,9,General,1,General - General,9,General,1,Low
+126,Female   ,Single,51,45-54      ,1,Jerusalem,1,Arab,2,Arab - Other,1,Arab,1,Low
+127,Female   ,Married,51,45-54      ,1,Jerusalem,9,General,1,General - General,9,General,1,Low
+128,Male    ,Married,50,45-54      ,1,Jerusalem,9,General,1,General - General,9,General,3,High
+129,Female   ,Married,50,45-54      ,1,Jerusalem,9,General,1,General - General,9,General,2,Medium
+130,Male    ,Single,49,45-54      ,1,Jerusalem,9,General,1,General - General,9,General,2,Medium
+131,Male    ,Married,49,45-54      ,1,Jerusalem,2,Orthodox,0,None,2,Orthodox     ,2,Medium
+132,Male    ,Married,48,45-54      ,1,Jerusalem,2,Orthodox,0,None,2,Orthodox     ,2,Medium
+133,Female   ,Married,47,45-54      ,1,Jerusalem,9,General,1,General - General,9,General,3,High
+134,Female   ,Married,46,45-54      ,1,Jerusalem,1,Arab,2,Arab - Other,1,Arab,2,Medium
+135,Male    ,Married,46,45-54      ,1,Jerusalem,9,General,1,General - General,9,General,3,High
+136,Male    ,Single,45,45-54      ,1,Jerusalem,2,Orthodox,0,None,2,Orthodox     ,2,Medium
+137,Male    ,Married,45,45-54      ,1,Jerusalem,2,Orthodox,0,None,2,Orthodox     ,2,Medium
+138,Female   ,Single,44,35-44      ,1,Jerusalem,9,General,1,General - General,9,General,2,Medium
+139,Female   ,Married,44,35-44      ,1,Jerusalem,9,General,1,General - General,9,General,1,Low
+140,Female   ,Married,43,35-44      ,1,Jerusalem,9,General,2,General- Religious,9,General,3,High
+141,Male    ,Single,42,35-44      ,1,Jerusalem,9,General,1,General - General,9,General,3,High
+142,Female   ,Married,40,35-44      ,1,Jerusalem,1,Arab,2,Arab - Other,1,Arab,2,Medium
+143,Male    ,Married,56,55-64      ,1,Jerusalem,2,Orthodox,0,None,2,Orthodox     ,2,Medium
+144,Female   ,Married,56,55-64      ,1,Jerusalem,9,General,1,General - General,9,General,2,Medium
+145,Male    ,Married,79,75-84      ,1,Jerusalem,9,General,1,General - General,9,General,2,Medium
+146,Male    ,Married,51,45-54      ,1,Jerusalem,9,General,1,General - General,9,General,2,Medium
+147,Female   ,Single,89,85+        ,1,Jerusalem,9,General,1,General - General,9,General,1,Low
+148,Female   ,Married,70,65-74      ,1,Jerusalem,2,Orthodox,0,None,2,Orthodox     ,2,Medium
+149,Male    ,Married,56,55-64      ,1,Jerusalem,9,General,1,General - General,9,General,1,Low
+150,Male    ,Married,56,55-64      ,1,Jerusalem,9,General,2,General- Religious,9,General,3,High
+151,Male    ,Married,70,65-74      ,1,Jerusalem,9,General,1,General - General,9,General,2,Medium
+152,Female   ,Married,53,45-54      ,1,Jerusalem,9,General,1,General - General,9,General,2,Medium
+153,Female   ,Married,58,55-64      ,1,Jerusalem,9,General,1,General - General,9,General,1,Low
+154,Male    ,Married,56,55-64      ,1,Jerusalem,9,General,1,General - General,9,General,2,Medium
+155,Female   ,Single,87,85+        ,1,Jerusalem,2,Orthodox,0,None,2,Orthodox     ,2,Medium
+156,Male    ,Married,69,65-74      ,1,Jerusalem,2,Orthodox,0,None,2,Orthodox     ,2,Medium
+157,Female   ,Married,81,75-84      ,1,Jerusalem,9,General,1,General - General,9,General,2,Medium
+158,Female   ,Single,81,75-84      ,1,Jerusalem,9,General,1,General - General,9,General,2,Medium
+159,Male    ,Married,55,55-64      ,1,Jerusalem,9,General,1,General - General,9,General,2,Medium
+160,Female   ,Single,49,45-54      ,1,Jerusalem,9,General,1,General - General,9,General,2,Medium
+161,Male    ,Single,76,75-84      ,1,Jerusalem,9,General,2,General- Religious,9,General,2,Medium
+162,Male    ,Single,82,75-84      ,1,Jerusalem,9,General,1,General - General,9,General,2,Medium
+163,Male    ,Single,50,45-54      ,1,Jerusalem,2,Orthodox,0,None,2,Orthodox     ,2,Medium
+164,Female   ,Married,87,85+        ,1,Jerusalem,9,General,1,General - General,9,General,2,Medium
+165,Male    ,Married,53,45-54      ,1,Jerusalem,9,General,1,General - General,9,General,2,Medium
+166,Female   ,Single,73,65-74      ,1,Jerusalem,9,General,1,General - General,9,General,2,Medium
+167,Male    ,Married,46,45-54      ,1,Jerusalem,2,Orthodox,0,None,2,Orthodox     ,2,Medium
+168,Female   ,Single,46,45-54      ,1,Jerusalem,9,General,1,General - General,9,General,2,Medium
+169,Male    ,Married,49,45-54      ,1,Jerusalem,9,General,1,General - General,9,General,2,Medium
+170,Female   ,Married,58,55-64      ,1,Jerusalem,9,General,1,General - General,9,General,2,Medium
+171,Male    ,Married,78,75-84      ,1,Jerusalem,9,General,1,General - General,9,General,2,Medium
+172,Female   ,Single,79,75-84      ,1,Jerusalem,2,Orthodox,0,None,2,Orthodox     ,2,Medium
+173,Male    ,Married,74,65-74      ,1,Jerusalem,9,General,1,General - General,9,General,2,Medium
+174,Male    ,Married,56,55-64      ,1,Jerusalem,9,General,1,General - General,9,General,2,Medium
+175,Male    ,Married,68,65-74      ,1,Jerusalem,9,General,1,General - General,9,General,2,Medium
+176,Female   ,Married,87,85+        ,1,Jerusalem,2,Orthodox,0,None,2,Orthodox     ,1,Low
+177,Male    ,Married,99,85+        ,1,Jerusalem,2,Orthodox,0,None,2,Orthodox     ,2,Medium
+178,Female   ,Married,64,55-64      ,1,Jerusalem,9,General,1,General - General,9,General,2,Medium
+179,Female   ,Married,67,65-74      ,1,Jerusalem,9,General,1,General - General,9,General,2,Medium
+180,Female   ,Single,64,55-64      ,1,Jerusalem,9,General,1,General - General,9,General,3,High
+181,Male    ,Married,59,55-64      ,1,Jerusalem,9,General,1,General - General,9,General,2,Medium
+182,Female   ,Married,72,65-74      ,1,Jerusalem,2,Orthodox,0,None,2,Orthodox     ,2,Medium
+183,Female   ,Married,68,65-74      ,1,Jerusalem,1,Arab,2,Arab - Other,1,Arab,2,Medium
+184,Female   ,Single,73,65-74      ,1,Jerusalem,1,Arab,2,Arab - Other,1,Arab,1,Low
+185,Male    ,Married,42,35-44      ,1,Jerusalem,1,Arab,2,Arab - Other,1,Arab,1,Low
+186,Male    ,Married,49,45-54      ,1,Jerusalem,1,Arab,2,Arab - Other,1,Arab,1,Low
+187,Male    ,Married,62,55-64      ,1,Jerusalem,1,Arab,2,Arab - Other,1,Arab,1,Low
+188,Female   ,Single,45,45-54      ,1,Jerusalem,1,Arab,2,Arab - Other,1,Arab,1,Low
+189,Female   ,Single,80,75-84      ,1,Jerusalem,1,Arab,2,Arab - Other,1,Arab,2,Medium
+190,Female   ,Married,54,45-54      ,1,Jerusalem,1,Arab,2,Arab - Other,1,Arab,2,Medium
+191,Male    ,Married,39,35-44      ,1,Jerusalem,1,Arab,2,Arab - Other,1,Arab,1,Low
+192,Male    ,Married,49,45-54      ,1,Jerusalem,1,Arab,2,Arab - Other,1,Arab,2,Medium
+193,Male    ,Married,80,75-84      ,1,Jerusalem,1,Arab,2,Arab - Other,1,Arab,2,Medium
+194,Female   ,Married,75,75-84      ,1,Jerusalem,1,Arab,2,Arab - Other,1,Arab,1,Low
+195,Female   ,Single,69,65-74      ,1,Jerusalem,1,Arab,2,Arab - Other,1,Arab,1,Low
+196,Female   ,Married,40,35-44      ,1,Jerusalem,1,Arab,2,Arab - Other,1,Arab,2,Medium
+197,Male    ,Married,79,75-84      ,1,Jerusalem,1,Arab,2,Arab - Other,1,Arab,1,Low
+198,Male    ,Married,55,55-64      ,1,Jerusalem,1,Arab,2,Arab - Other,1,Arab,1,Low
+199,Female   ,Married,69,65-74      ,1,Jerusalem,1,Arab,2,Arab - Other,1,Arab,2,Medium
+200,Male    ,Married,46,45-54      ,1,Jerusalem,1,Arab,2,Arab - Other,1,Arab,2,Medium
+201,Female   ,Single,40,35-44      ,1,Jerusalem,1,Arab,2,Arab - Other,1,Arab,2,Medium
+202,Female   ,Married,52,45-54      ,1,Jerusalem,1,Arab,2,Arab - Other,1,Arab,2,Medium
+203,Male    ,Married,43,35-44      ,1,Jerusalem,1,Arab,2,Arab - Other,1,Arab,2,Medium
+204,Male    ,Married,58,55-64      ,1,Jerusalem,1,Arab,2,Arab - Other,1,Arab,2,Medium
+205,Male    ,Married,50,45-54      ,1,Jerusalem,1,Arab,2,Arab - Other,1,Arab,2,Medium
+206,Female   ,Married,62,55-64      ,1,Jerusalem,1,Arab,2,Arab - Other,1,Arab,2,Medium
+207,Male    ,Married,83,75-84      ,1,Jerusalem,1,Arab,2,Arab - Other,1,Arab,2,Medium
+208,Female   ,Married,53,45-54      ,1,Jerusalem,1,Arab,2,Arab - Other,1,Arab,2,Medium
+209,Female   ,Single,51,45-54      ,1,Jerusalem,1,Arab,2,Arab - Other,1,Arab,1,Low
+210,Female   ,Married,73,65-74      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,1,Low
+211,Male    ,Married,61,55-64      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,1,Low
+212,Male    ,Single,68,65-74      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,3,High
+213,Female   ,Single,61,55-64      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+214,Male    ,Married,59,55-64      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,3,High
+215,Female   ,Married,82,75-84      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+216,Female   ,Single,78,75-84      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+217,Male    ,Married,63,55-64      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+218,Female   ,Married,83,75-84      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,3,High
+219,Male    ,Single,82,75-84      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,3,High
+220,Male    ,Married,59,55-64      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+221,Female   ,Married,67,65-74      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,3,High
+222,Male    ,Married,64,55-64      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+223,Female   ,Single,67,65-74      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+224,Female   ,Married,91,85+        ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+225,Female   ,Single,92,85+        ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,3,High
+226,Female   ,Married,75,75-84      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,3,High
+227,Female   ,Single,77,75-84      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,1,Low
+228,Male    ,Married,59,55-64      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+229,Male    ,Married,67,65-74      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,3,High
+230,Male    ,Married,69,65-74      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+231,Female   ,Married,60,55-64      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+232,Female   ,Married,81,75-84      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,3,High
+233,Male    ,Married,85,85+        ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,3,High
+234,Male    ,Married,81,75-84      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+235,Male    ,Married,77,75-84      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,3,High
+236,Male    ,Married,78,75-84      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+237,Male    ,Single,78,75-84      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+238,Male    ,Single,75,75-84      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,3,High
+239,Male    ,Single,77,75-84      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+240,Male    ,Married,70,65-74      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,3,High
+241,Male    ,Married,84,75-84      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+242,Male    ,Married,80,75-84      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+243,Male    ,Married,76,75-84      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,3,High
+244,Male    ,Married,83,75-84      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,3,High
+245,Male    ,Married,84,75-84      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+246,Male    ,Single,76,75-84      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+247,Male    ,Married,81,75-84      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+248,Male    ,Single,70,65-74      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+249,Male    ,Single,81,75-84      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+250,Male    ,Married,84,75-84      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+251,Male    ,Married,93,85+        ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+252,Female   ,Single,80,75-84      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,1,Low
+253,Male    ,Married,86,85+        ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+254,Male    ,Married,84,75-84      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+255,Male    ,Married,82,75-84      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+256,Male    ,Single,80,75-84      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,3,High
+257,Male    ,Single,83,75-84      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+258,Male    ,Married,87,85+        ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,3,High
+259,Male    ,Married,89,85+        ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,3,High
+260,Male    ,Married,88,85+        ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+261,Male    ,Single,79,75-84      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+262,Male    ,Single,73,65-74      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,3,High
+263,Male    ,Married,80,75-84      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,3,High
+264,Female   ,Married,73,65-74      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+265,Male    ,Married,61,55-64      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,3,High
+266,Female   ,Single,60,55-64      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+267,Male    ,Single,59,55-64      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+268,Male    ,Single,61,55-64      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,3,High
+269,Male    ,Married,59,55-64      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+270,Male    ,Married,74,65-74      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,3,High
+271,Female   ,Married,75,75-84      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+272,Female   ,Single,68,65-74      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+273,Female   ,Married,74,65-74      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+274,Female   ,Single,77,75-84      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,1,Low
+275,Female   ,Single,85,85+        ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,1,Low
+276,Male    ,Married,63,55-64      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+277,Male    ,Married,64,55-64      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,3,High
+278,Female   ,Married,71,65-74      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+279,Male    ,Married,89,85+        ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,3,High
+280,Female   ,Single,81,75-84      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,3,High
+281,Female   ,Single,57,55-64      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,3,High
+282,Female   ,Married,68,65-74      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+283,Male    ,Married,70,65-74      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+284,Male    ,Married,74,65-74      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,1,Low
+285,Female   ,Married,70,65-74      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,1,Low
+286,Male    ,Married,75,75-84      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+287,Female   ,Married,65,65-74      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+288,Female   ,Married,58,55-64      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,1,Low
+289,Male    ,Married,59,55-64      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+290,Female   ,Single,78,75-84      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,1,Low
+291,Female   ,Married,81,75-84      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+292,Female   ,Married,70,65-74      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+293,Female   ,Married,69,65-74      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,1,Low
+294,Female   ,Married,58,55-64      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+295,Female   ,Single,78,75-84      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+296,Female   ,Married,60,55-64      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+297,Female   ,Married,60,55-64      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,1,Low
+298,Female   ,Married,75,75-84      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,3,High
+299,Female   ,Single,81,75-84      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,3,High
+300,Female   ,Single,62,55-64      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+301,Female   ,Married,68,65-74      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,3,High
+302,Female   ,Single,64,55-64      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,1,Low
+303,Female   ,Married,70,65-74      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+304,Female   ,Married,71,65-74      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,1,Low
+305,Female   ,Single,84,75-84      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+306,Female   ,Single,67,65-74      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,1,Low
+307,Male    ,Married,71,65-74      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+308,Male    ,Married,69,65-74      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+309,Female   ,Married,85,85+        ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,1,Low
+310,Female   ,Single,64,55-64      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+311,Female   ,Married,61,55-64      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,3,High
+312,Male    ,Married,72,65-74      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,1,Low
+313,Male    ,Married,61,55-64      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+314,Female   ,Married,58,55-64      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+315,Female   ,Single,78,75-84      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,1,Low
+316,Male    ,Married,82,75-84      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+317,Female   ,Single,82,75-84      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,3,High
+318,Female   ,Single,80,75-84      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+319,Female   ,Married,64,55-64      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,1,Low
+320,Female   ,Married,74,65-74      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,3,High
+321,Male    ,Single,74,65-74      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,3,High
+322,Female   ,Single,80,75-84      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,3,High
+323,Male    ,Married,72,65-74      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+324,Female   ,Single,89,85+        ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+325,Female   ,Married,81,75-84      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+326,Female   ,Married,70,65-74      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+327,Male    ,Married,66,65-74      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+328,Male    ,Married,56,55-64      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+329,Female   ,Married,76,75-84      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+330,Female   ,Married,75,75-84      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+331,Male    ,Single,96,85+        ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+332,Female   ,Married,70,65-74      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+333,Male    ,Married,75,75-84      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+334,Male    ,Married,84,75-84      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+335,Female   ,Married,60,55-64      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,1,Low
+336,Female   ,Married,79,75-84      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+337,Female   ,Single,59,55-64      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,3,High
+338,Female   ,Single,73,65-74      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+339,Male    ,Single,65,65-74      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+340,Female   ,Single,63,55-64      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,3,High
+341,Female   ,Single,63,55-64      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,3,High
+342,Female   ,Married,82,75-84      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,1,Low
+343,Female   ,Married,66,65-74      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,3,High
+344,Female   ,Married,93,85+        ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,3,High
+345,Male    ,Married,60,55-64      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,3,High
+346,Female   ,Single,68,65-74      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,3,High
+347,Male    ,Married,77,75-84      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,3,High
+348,Male    ,Married,64,55-64      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,3,High
+349,Male    ,Single,65,65-74      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,3,High
+350,Female   ,Married,67,65-74      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,1,Low
+351,Female   ,Single,87,85+        ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,1,Low
+352,Female   ,Married,66,65-74      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+353,Female   ,Single,61,55-64      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+354,Female   ,Married,65,65-74      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+355,Male    ,Married,57,55-64      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+356,Male    ,Single,80,75-84      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+357,Female   ,Single,83,75-84      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+358,Female   ,Single,93,85+        ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,3,High
+359,Male    ,Married,67,65-74      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,3,High
+360,Female   ,Single,80,75-84      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,3,High
+361,Female   ,Single,73,65-74      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+362,Male    ,Married,67,65-74      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,1,Low
+363,Male    ,Married,69,65-74      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+364,Male    ,Married,65,65-74      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+365,Male    ,Married,86,85+        ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,3,High
+366,Female   ,Single,70,65-74      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,3,High
+367,Male    ,Married,75,75-84      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+368,Male    ,Married,69,65-74      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,1,Low
+369,Female   ,Single,60,55-64      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+370,Female   ,Married,73,65-74      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+371,Male    ,Single,66,65-74      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,3,High
+372,Male    ,Married,59,55-64      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,3,High
+373,Female   ,Single,81,75-84      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,3,High
+374,Male    ,Married,61,55-64      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,3,High
+375,Male    ,Married,62,55-64      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+376,Male    ,Single,63,55-64      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+377,Female   ,Married,73,65-74      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,3,High
+378,Male    ,Married,57,55-64      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+379,Male    ,Married,70,65-74      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,3,High
+380,Male    ,Married,69,65-74      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+381,Female   ,Married,60,55-64      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+382,Female   ,Single,61,55-64      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,3,High
+383,Male    ,Married,68,65-74      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,3,High
+384,Female   ,Married,77,75-84      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,3,High
+385,Female   ,Married,83,75-84      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+386,Female   ,Married,63,55-64      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+387,Female   ,Single,63,55-64      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+388,Female   ,Married,82,75-84      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,3,High
+389,Female   ,Single,84,75-84      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+390,Male    ,Married,58,55-64      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,1,Low
+391,Male    ,Single,63,55-64      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+392,Female   ,Married,63,55-64      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+393,Male    ,Single,64,55-64      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+394,Female   ,Single,60,55-64      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+395,Male    ,Married,66,65-74      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,1,Low
+396,Male    ,Married,65,65-74      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+397,Male    ,Married,58,55-64      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+398,Male    ,Married,57,55-64      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+399,Male    ,Married,71,65-74      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+400,Female   ,Married,66,65-74      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+401,Female   ,Married,59,55-64      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+402,Female   ,Single,63,55-64      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,1,Low
+403,Male    ,Married,71,65-74      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,1,Low
+404,Male    ,Married,64,55-64      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,1,Low
+405,Female   ,Married,64,55-64      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+406,Male    ,Married,57,55-64      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,3,High
+407,Female   ,Single,57,55-64      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+408,Female   ,Married,67,65-74      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,1,Low
+409,Female   ,Single,88,85+        ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+410,Male    ,Single,75,75-84      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,3,High
+411,Male    ,Married,68,65-74      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,1,Low
+412,Female   ,Married,74,65-74      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+413,Female   ,Single,77,75-84      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+414,Male    ,Married,57,55-64      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+415,Female   ,Single,78,75-84      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+416,Male    ,Married,67,65-74      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+417,Male    ,Married,64,55-64      ,2,Tel-Aviv-Jaffa,9,General,1,General - General,9,General,2,Medium
+418,Female   ,Single,72,65-74      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,3,High
+419,Female   ,Single,82,75-84      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,2,Medium
+420,Male    ,Married,62,55-64      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,3,High
+421,Female   ,Single,78,75-84      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,2,Medium
+422,Female   ,Single,73,65-74      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,2,Medium
+423,Male    ,Single,73,65-74      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,2,Medium
+424,Female   ,Single,57,55-64      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,2,Medium
+425,Male    ,Married,67,65-74      ,4,Dan-Petah Tikva,9,General,2,General- Religious,9,General,1,Low
+426,Male    ,Married,83,75-84      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,3,High
+427,Male    ,Married,64,55-64      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,1,Low
+428,Male    ,Married,61,55-64      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,2,Medium
+429,Female   ,Married,58,55-64      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,1,Low
+430,Male    ,Married,80,75-84      ,4,Dan-Petah Tikva,2,Orthodox,0,None,2,Orthodox     ,1,Low
+431,Female   ,Single,98,85+        ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,2,Medium
+432,Female   ,Married,67,65-74      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,3,High
+433,Female   ,Single,86,85+        ,4,Dan-Petah Tikva,2,Orthodox,0,None,2,Orthodox     ,1,Low
+434,Male    ,Married,70,65-74      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,3,High
+435,Male    ,Married,74,65-74      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,3,High
+436,Female   ,Married,78,75-84      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,3,High
+437,Male    ,Married,64,55-64      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,2,Medium
+438,Male    ,Married,66,65-74      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,3,High
+439,Female   ,Single,82,75-84      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,2,Medium
+440,Female   ,Married,67,65-74      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,2,Medium
+441,Female   ,Married,73,65-74      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,3,High
+442,Male    ,Married,61,55-64      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,3,High
+443,Male    ,Married,67,65-74      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,2,Medium
+444,Male    ,Married,86,85+        ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,3,High
+445,Female   ,Married,75,75-84      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,3,High
+446,Female   ,Single,80,75-84      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,2,Medium
+447,Male    ,Married,69,65-74      ,4,Dan-Petah Tikva,9,General,2,General- Religious,9,General,1,Low
+448,Female   ,Single,72,65-74      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,3,High
+449,Male    ,Married,64,55-64      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,2,Medium
+450,Female   ,Married,59,55-64      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,3,High
+451,Male    ,Single,84,75-84      ,4,Dan-Petah Tikva,2,Orthodox,0,None,2,Orthodox     ,1,Low
+452,Male    ,Married,81,75-84      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,2,Medium
+453,Male    ,Married,86,85+        ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,2,Medium
+454,Female   ,Married,77,75-84      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,3,High
+455,Male    ,Married,77,75-84      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,2,Medium
+456,Male    ,Married,57,55-64      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,3,High
+457,Male    ,Single,88,85+        ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,3,High
+458,Male    ,Single,87,85+        ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,2,Medium
+459,Male    ,Married,78,75-84      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,2,Medium
+460,Female   ,Single,76,75-84      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,2,Medium
+461,Male    ,Married,84,75-84      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,3,High
+462,Female   ,Single,79,75-84      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,2,Medium
+463,Male    ,Married,79,75-84      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,3,High
+464,Male    ,Married,77,75-84      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,2,Medium
+465,Male    ,Married,79,75-84      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,2,Medium
+466,Male    ,Married,83,75-84      ,4,Dan-Petah Tikva,2,Orthodox,0,None,2,Orthodox     ,1,Low
+467,Male    ,Single,78,75-84      ,4,Dan-Petah Tikva,2,Orthodox,0,None,2,Orthodox     ,1,Low
+468,Male    ,Married,81,75-84      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,2,Medium
+469,Female   ,Married,73,65-74      ,4,Dan-Petah Tikva,2,Orthodox,0,None,2,Orthodox     ,1,Low
+470,Female   ,Single,79,75-84      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,2,Medium
+471,Male    ,Married,78,75-84      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,2,Medium
+472,Male    ,Married,62,55-64      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,3,High
+473,Male    ,Single,93,85+        ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,2,Medium
+474,Female   ,Married,61,55-64      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,2,Medium
+475,Male    ,Single,67,65-74      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,3,High
+476,Female   ,Married,59,55-64      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,2,Medium
+477,Female   ,Married,70,65-74      ,4,Dan-Petah Tikva,9,General,2,General- Religious,9,General,1,Low
+478,Female   ,Married,66,65-74      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,2,Medium
+479,Female   ,Married,75,75-84      ,4,Dan-Petah Tikva,9,General,2,General- Religious,9,General,1,Low
+480,Female   ,Married,66,65-74      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,2,Medium
+481,Female   ,Single,79,75-84      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,2,Medium
+482,Female   ,Single,76,75-84      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,3,High
+483,Female   ,Married,57,55-64      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,2,Medium
+484,Female   ,Married,57,55-64      ,4,Dan-Petah Tikva,2,Orthodox,0,None,2,Orthodox     ,1,Low
+485,Female   ,Married,79,75-84      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,2,Medium
+486,Male    ,Single,74,65-74      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,3,High
+487,Male    ,Married,57,55-64      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,2,Medium
+488,Male    ,Married,71,65-74      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,2,Medium
+489,Male    ,Married,59,55-64      ,4,Dan-Petah Tikva,2,Orthodox,0,None,2,Orthodox     ,1,Low
+490,Female   ,Single,83,75-84      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,2,Medium
+491,Female   ,Married,75,75-84      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,2,Medium
+492,Female   ,Married,60,55-64      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,3,High
+493,Male    ,Married,57,55-64      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,2,Medium
+494,Female   ,Married,72,65-74      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,2,Medium
+495,Female   ,Married,57,55-64      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,2,Medium
+496,Female   ,Single,82,75-84      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,2,Medium
+497,Female   ,Married,57,55-64      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,2,Medium
+498,Male    ,Married,65,65-74      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,3,High
+499,Female   ,Married,61,55-64      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,3,High
+500,Male    ,Married,61,55-64      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,2,Medium
+501,Male    ,Single,58,55-64      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,1,Low
+502,Male    ,Married,75,75-84      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,3,High
+503,Female   ,Single,68,65-74      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,3,High
+504,Female   ,Single,83,75-84      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,2,Medium
+505,Female   ,Married,70,65-74      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,3,High
+506,Male    ,Married,73,65-74      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,3,High
+507,Female   ,Single,63,55-64      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,2,Medium
+508,Female   ,Married,60,55-64      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,1,Low
+509,Female   ,Married,57,55-64      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,3,High
+510,Male    ,Single,63,55-64      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,3,High
+511,Female   ,Single,72,65-74      ,4,Dan-Petah Tikva,2,Orthodox,0,None,2,Orthodox     ,1,Low
+512,Female   ,Married,64,55-64      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,2,Medium
+513,Female   ,Single,84,75-84      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,3,High
+514,Male    ,Married,70,65-74      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,2,Medium
+515,Female   ,Single,75,75-84      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,2,Medium
+516,Male    ,Married,74,65-74      ,4,Dan-Petah Tikva,2,Orthodox,0,None,2,Orthodox     ,1,Low
+517,Female   ,Single,77,75-84      ,4,Dan-Petah Tikva,2,Orthodox,0,None,2,Orthodox     ,1,Low
+518,Male    ,Married,63,55-64      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,3,High
+519,Male    ,Married,60,55-64      ,4,Dan-Petah Tikva,2,Orthodox,0,None,2,Orthodox     ,1,Low
+520,Female   ,Married,71,65-74      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,2,Medium
+521,Female   ,Married,80,75-84      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,3,High
+522,Female   ,Single,64,55-64      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,3,High
+523,Female   ,Married,64,55-64      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,1,Low
+524,Female   ,Married,63,55-64      ,4,Dan-Petah Tikva,9,General,2,General- Religious,9,General,2,Medium
+525,Female   ,Single,89,85+        ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,2,Medium
+526,Female   ,Married,57,55-64      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,1,Low
+527,Male    ,Married,77,75-84      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,3,High
+528,Female   ,Married,64,55-64      ,4,Dan-Petah Tikva,9,General,2,General- Religious,9,General,1,Low
+529,Male    ,Married,74,65-74      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,2,Medium
+530,Male    ,Married,60,55-64      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,2,Medium
+531,Male    ,Married,57,55-64      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,3,High
+532,Female   ,Married,75,75-84      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,3,High
+533,Male    ,Married,61,55-64      ,4,Dan-Petah Tikva,2,Orthodox,0,None,2,Orthodox     ,1,Low
+534,Female   ,Married,66,65-74      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,2,Medium
+535,Male    ,Married,72,65-74      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,2,Medium
+536,Male    ,Single,71,65-74      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,2,Medium
+537,Male    ,Married,62,55-64      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,2,Medium
+538,Male    ,Married,70,65-74      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,3,High
+539,Male    ,Single,90,85+        ,4,Dan-Petah Tikva,9,General,2,General- Religious,9,General,2,Medium
+540,Female   ,Single,79,75-84      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,3,High
+541,Female   ,Married,61,55-64      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,3,High
+542,Male    ,Married,63,55-64      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,3,High
+543,Male    ,Married,66,65-74      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,2,Medium
+544,Female   ,Married,68,65-74      ,4,Dan-Petah Tikva,2,Orthodox,0,None,2,Orthodox     ,1,Low
+545,Male    ,Married,58,55-64      ,4,Dan-Petah Tikva,9,General,2,General- Religious,9,General,2,Medium
+546,Male    ,Single,63,55-64      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,2,Medium
+547,Female   ,Married,68,65-74      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,3,High
+548,Male    ,Single,61,55-64      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,2,Medium
+549,Female   ,Married,70,65-74      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,3,High
+550,Female   ,Single,94,85+        ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,2,Medium
+551,Male    ,Married,72,65-74      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,3,High
+552,Female   ,Single,79,75-84      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,3,High
+553,Female   ,Single,89,85+        ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,3,High
+554,Female   ,Married,62,55-64      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,3,High
+555,Male    ,Married,70,65-74      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,2,Medium
+556,Male    ,Married,58,55-64      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,1,Low
+557,Male    ,Married,67,65-74      ,4,Dan-Petah Tikva,2,Orthodox,0,None,2,Orthodox     ,1,Low
+558,Male    ,Married,85,85+        ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,3,High
+559,Female   ,Married,58,55-64      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,3,High
+560,Female   ,Married,60,55-64      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,3,High
+561,Female   ,Married,61,55-64      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,3,High
+562,Female   ,Single,88,85+        ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,3,High
+563,Female   ,Married,59,55-64      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,3,High
+564,Male    ,Single,77,75-84      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,2,Medium
+565,Male    ,Married,63,55-64      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,2,Medium
+566,Female   ,Single,73,65-74      ,4,Dan-Petah Tikva,9,General,2,General- Religious,9,General,2,Medium
+567,Female   ,Married,77,75-84      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,3,High
+568,Female   ,Married,60,55-64      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,3,High
+569,Male    ,Married,61,55-64      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,2,Medium
+570,Female   ,Married,78,75-84      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,2,Medium
+571,Male    ,Married,62,55-64      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,3,High
+572,Female   ,Married,59,55-64      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,3,High
+573,Male    ,Married,61,55-64      ,4,Dan-Petah Tikva,9,General,2,General- Religious,9,General,2,Medium
+574,Female   ,Married,59,55-64      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,2,Medium
+575,Male    ,Married,82,75-84      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,3,High
+576,Male    ,Married,75,75-84      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,3,High
+577,Female   ,Single,80,75-84      ,4,Dan-Petah Tikva,2,Orthodox,0,None,2,Orthodox     ,1,Low
+578,Female   ,Married,66,65-74      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,1,Low
+579,Male    ,Married,61,55-64      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,2,Medium
+580,Female   ,Single,74,65-74      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,3,High
+581,Female   ,Single,81,75-84      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,3,High
+582,Female   ,Single,73,65-74      ,4,Dan-Petah Tikva,9,General,2,General- Religious,9,General,1,Low
+583,Female   ,Single,82,75-84      ,4,Dan-Petah Tikva,9,General,2,General- Religious,9,General,1,Low
+584,Male    ,Married,81,75-84      ,4,Dan-Petah Tikva,2,Orthodox,0,None,2,Orthodox     ,1,Low
+585,Male    ,Single,73,65-74      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,3,High
+586,Female   ,Married,60,55-64      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,2,Medium
+587,Female   ,Married,76,75-84      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,3,High
+588,Male    ,Married,71,65-74      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,2,Medium
+589,Male    ,Married,93,85+        ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,3,High
+590,Female   ,Single,94,85+        ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,3,High
+591,Female   ,Married,73,65-74      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,1,Low
+592,Female   ,Married,59,55-64      ,4,Dan-Petah Tikva,2,Orthodox,0,None,2,Orthodox     ,1,Low
+593,Female   ,Married,63,55-64      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,2,Medium
+594,Female   ,Married,64,55-64      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,2,Medium
+595,Female   ,Married,59,55-64      ,4,Dan-Petah Tikva,2,Orthodox,0,None,2,Orthodox     ,1,Low
+596,Male    ,Married,57,55-64      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,2,Medium
+597,Male    ,Married,51,45-54      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,1,Low
+598,Female   ,Single,51,45-54      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,1,Low
+599,Male    ,Married,60,55-64      ,4,Dan-Petah Tikva,2,Orthodox,0,None,2,Orthodox     ,1,Low
+600,Male    ,Single,47,45-54      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,2,Medium
+601,Female   ,Married,59,55-64      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,3,High
+602,Female   ,Married,58,55-64      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,2,Medium
+603,Male    ,Married,55,55-64      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,2,Medium
+604,Female   ,Married,68,65-74      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,2,Medium
+605,Male    ,Married,51,45-54      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,3,High
+606,Female   ,Married,53,45-54      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,2,Medium
+607,Female   ,Married,49,45-54      ,4,Dan-Petah Tikva,2,Orthodox,0,None,2,Orthodox     ,2,Medium
+608,Male    ,Married,84,75-84      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,2,Medium
+609,Female   ,Married,79,75-84      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,2,Medium
+610,Male    ,Married,83,75-84      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,3,High
+611,Male    ,Married,64,55-64      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,3,High
+612,Male    ,Married,54,45-54      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,3,High
+613,Female   ,Single,84,75-84      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,2,Medium
+614,Male    ,Single,59,55-64      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,3,High
+615,Female   ,Married,61,55-64      ,4,Dan-Petah Tikva,9,General,2,General- Religious,9,General,1,Low
+616,Male    ,Married,70,65-74      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,3,High
+617,Female   ,Married,57,55-64      ,4,Dan-Petah Tikva,1,Arab,2,Arab - Other,1,Arab,1,Low
+618,Male    ,Married,88,85+        ,4,Dan-Petah Tikva,2,Orthodox,0,None,2,Orthodox     ,1,Low
+619,Female   ,Single,77,75-84      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,3,High
+620,Female   ,Married,56,55-64      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,1,Low
+621,Female   ,Single,50,45-54      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,3,High
+622,Female   ,Married,64,55-64      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,1,Low
+623,Male    ,Married,46,45-54      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,2,Medium
+624,Female   ,Single,83,75-84      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,2,Medium
+625,Male    ,Married,58,55-64      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,3,High
+626,Female   ,Married,70,65-74      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,3,High
+627,Female   ,Single,65,65-74      ,4,Dan-Petah Tikva,9,General,1,General - General,9,General,1,Low
+628,Female   ,Married,66,65-74      ,5,Haifa,9,General,1,General - General,9,General,1,Low
+629,Male    ,Married,68,65-74      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+630,Male    ,Married,56,55-64      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+631,Female   ,Single,71,65-74      ,5,Haifa,9,General,1,General - General,9,General,3,High
+632,Female   ,Single,76,75-84      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+633,Female   ,Married,61,55-64      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+634,Female   ,Single,78,75-84      ,5,Haifa,9,General,1,General - General,9,General,1,Low
+635,Female   ,Married,63,55-64      ,5,Haifa,9,General,1,General - General,9,General,3,High
+636,Female   ,Married,77,75-84      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+637,Male    ,Married,80,75-84      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+638,Male    ,Married,82,75-84      ,5,Haifa,9,General,1,General - General,9,General,3,High
+639,Female   ,Married,65,65-74      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+640,Male    ,Married,81,75-84      ,5,Haifa,9,General,1,General - General,9,General,3,High
+641,Male    ,Single,77,75-84      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+642,Female   ,Single,57,55-64      ,5,Haifa,9,General,1,General - General,9,General,3,High
+643,Male    ,Single,86,85+        ,5,Haifa,9,General,1,General - General,9,General,3,High
+644,Male    ,Married,81,75-84      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+645,Male    ,Married,86,85+        ,5,Haifa,9,General,1,General - General,9,General,3,High
+646,Male    ,Married,75,75-84      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+647,Male    ,Married,76,75-84      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+648,Female   ,Married,61,55-64      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+649,Female   ,Married,59,55-64      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+650,Male    ,Married,84,75-84      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+651,Female   ,Single,78,75-84      ,5,Haifa,9,General,1,General - General,9,General,3,High
+652,Female   ,Married,61,55-64      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+653,Male    ,Married,65,65-74      ,5,Haifa,9,General,2,General- Religious,9,General,2,Medium
+654,Female   ,Married,80,75-84      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+655,Male    ,Married,77,75-84      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+656,Female   ,Married,79,75-84      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+657,Female   ,Married,81,75-84      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+658,Male    ,Married,73,65-74      ,5,Haifa,9,General,1,General - General,9,General,1,Low
+659,Female   ,Married,76,75-84      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+660,Male    ,Married,75,75-84      ,5,Haifa,9,General,1,General - General,9,General,3,High
+661,Male    ,Married,62,55-64      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+662,Female   ,Married,62,55-64      ,5,Haifa,9,General,1,General - General,9,General,3,High
+663,Female   ,Married,78,75-84      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+664,Female   ,Married,65,65-74      ,5,Haifa,9,General,1,General - General,9,General,3,High
+665,Female   ,Married,67,65-74      ,5,Haifa,9,General,1,General - General,9,General,3,High
+666,Male    ,Married,69,65-74      ,5,Haifa,9,General,1,General - General,9,General,3,High
+667,Female   ,Single,81,75-84      ,5,Haifa,9,General,1,General - General,9,General,3,High
+668,Female   ,Single,81,75-84      ,5,Haifa,9,General,1,General - General,9,General,1,Low
+669,Male    ,Married,60,55-64      ,5,Haifa,9,General,1,General - General,9,General,3,High
+670,Male    ,Married,70,65-74      ,5,Haifa,9,General,1,General - General,9,General,3,High
+671,Male    ,Married,66,65-74      ,5,Haifa,9,General,1,General - General,9,General,3,High
+672,Male    ,Married,71,65-74      ,5,Haifa,9,General,1,General - General,9,General,3,High
+673,Female   ,Single,81,75-84      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+674,Female   ,Single,92,85+        ,5,Haifa,9,General,2,General- Religious,9,General,1,Low
+675,Male    ,Married,63,55-64      ,5,Haifa,9,General,1,General - General,9,General,3,High
+676,Female   ,Single,62,55-64      ,5,Haifa,9,General,1,General - General,9,General,3,High
+677,Male    ,Married,60,55-64      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+678,Male    ,Married,60,55-64      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+679,Male    ,Married,63,55-64      ,5,Haifa,9,General,1,General - General,9,General,3,High
+680,Male    ,Married,59,55-64      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+681,Male    ,Married,65,65-74      ,5,Haifa,9,General,1,General - General,9,General,1,Low
+682,Female   ,Married,65,65-74      ,5,Haifa,9,General,1,General - General,9,General,1,Low
+683,Female   ,Married,61,55-64      ,5,Haifa,9,General,1,General - General,9,General,3,High
+684,Female   ,Single,78,75-84      ,5,Haifa,9,General,1,General - General,9,General,1,Low
+685,Male    ,Married,60,55-64      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+686,Female   ,Single,71,65-74      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+687,Male    ,Married,61,55-64      ,5,Haifa,9,General,2,General- Religious,9,General,1,Low
+688,Female   ,Single,93,85+        ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+689,Male    ,Married,60,55-64      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+690,Male    ,Married,60,55-64      ,5,Haifa,9,General,1,General - General,9,General,3,High
+691,Female   ,Single,72,65-74      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+692,Female   ,Single,74,65-74      ,5,Haifa,9,General,1,General - General,9,General,1,Low
+693,Female   ,Single,77,75-84      ,5,Haifa,9,General,1,General - General,9,General,1,Low
+694,Female   ,Single,74,65-74      ,5,Haifa,9,General,1,General - General,9,General,3,High
+695,Female   ,Single,69,65-74      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+696,Male    ,Married,72,65-74      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+697,Female   ,Single,65,65-74      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+698,Male    ,Married,69,65-74      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+699,Female   ,Single,74,65-74      ,5,Haifa,9,General,1,General - General,9,General,1,Low
+700,Male    ,Married,61,55-64      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+701,Female   ,Single,82,75-84      ,5,Haifa,9,General,1,General - General,9,General,1,Low
+702,Female   ,Married,61,55-64      ,5,Haifa,9,General,2,General- Religious,9,General,1,Low
+703,Male    ,Married,59,55-64      ,5,Haifa,9,General,1,General - General,9,General,1,Low
+704,Female   ,Single,71,65-74      ,5,Haifa,9,General,1,General - General,9,General,3,High
+705,Male    ,Married,72,65-74      ,5,Haifa,9,General,1,General - General,9,General,1,Low
+706,Female   ,Single,84,75-84      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+707,Female   ,Single,58,55-64      ,5,Haifa,9,General,1,General - General,9,General,3,High
+708,Female   ,Single,58,55-64      ,5,Haifa,9,General,1,General - General,9,General,3,High
+709,Male    ,Married,68,65-74      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+710,Male    ,Married,62,55-64      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+711,Male    ,Married,58,55-64      ,5,Haifa,9,General,2,General- Religious,9,General,1,Low
+712,Male    ,Married,69,65-74      ,5,Haifa,9,General,1,General - General,9,General,1,Low
+713,Female   ,Single,54,45-54      ,5,Haifa,9,General,2,General- Religious,9,General,1,Low
+714,Female   ,Married,72,65-74      ,5,Haifa,9,General,1,General - General,9,General,1,Low
+715,Male    ,Married,65,65-74      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+716,Male    ,Single,84,75-84      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+717,Female   ,Single,80,75-84      ,5,Haifa,9,General,1,General - General,9,General,3,High
+718,Female   ,Married,57,55-64      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,1,Low
+719,Female   ,Single,58,55-64      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+720,Female   ,Married,62,55-64      ,5,Haifa,9,General,1,General - General,9,General,1,Low
+721,Male    ,Single,53,45-54      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+722,Female   ,Married,52,45-54      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,1,Low
+723,Female   ,Single,78,75-84      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+724,Female   ,Married,53,45-54      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+725,Female   ,Married,56,55-64      ,5,Haifa,9,General,1,General - General,9,General,1,Low
+726,Female   ,Single,80,75-84      ,5,Haifa,9,General,1,General - General,9,General,1,Low
+727,Male    ,Married,70,65-74      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+728,Male    ,Married,39,35-44      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+729,Male    ,Married,73,65-74      ,5,Haifa,9,General,1,General - General,9,General,1,Low
+730,Female   ,Married,59,55-64      ,5,Haifa,9,General,1,General - General,9,General,1,Low
+731,Female   ,Single,70,65-74      ,5,Haifa,9,General,2,General- Religious,9,General,1,Low
+732,Female   ,Married,74,65-74      ,5,Haifa,9,General,1,General - General,9,General,1,Low
+733,Female   ,Married,75,75-84      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+734,Male    ,Married,58,55-64      ,5,Haifa,9,General,1,General - General,9,General,3,High
+735,Male    ,Single,92,85+        ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+736,Female   ,Married,62,55-64      ,5,Haifa,3,Immigrants,5,Argentina,9,General,2,Medium
+737,Male    ,Single,66,65-74      ,5,Haifa,9,General,1,General - General,9,General,3,High
+738,Female   ,Single,57,55-64      ,5,Haifa,9,General,1,General - General,9,General,1,Low
+739,Male    ,Married,70,65-74      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+740,Female   ,Married,61,55-64      ,5,Haifa,9,General,1,General - General,9,General,1,Low
+741,Female   ,Married,72,65-74      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+742,Male    ,Married,70,65-74      ,5,Haifa,9,General,1,General - General,9,General,1,Low
+743,Male    ,Married,73,65-74      ,5,Haifa,9,General,1,General - General,9,General,1,Low
+744,Female   ,Single,86,85+        ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+745,Male    ,Married,64,55-64      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+746,Female   ,Single,76,75-84      ,5,Haifa,9,General,1,General - General,9,General,1,Low
+747,Male    ,Married,57,55-64      ,5,Haifa,9,General,1,General - General,9,General,1,Low
+748,Male    ,Single,79,75-84      ,5,Haifa,9,General,1,General - General,9,General,1,Low
+749,Male    ,Married,74,65-74      ,5,Haifa,9,General,1,General - General,9,General,1,Low
+750,Female   ,Married,68,65-74      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,1,Low
+751,Male    ,Married,63,55-64      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,1,Low
+752,Female   ,Married,62,55-64      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,1,Low
+753,Male    ,Married,62,55-64      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,1,Low
+754,Male    ,Married,74,65-74      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,1,Low
+755,Female   ,Married,75,75-84      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,1,Low
+756,Male    ,Married,61,55-64      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,1,Low
+757,Male    ,Married,66,65-74      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,1,Low
+758,Male    ,Married,60,55-64      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,1,Low
+759,Female   ,Married,83,75-84      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,1,Low
+760,Male    ,Married,69,65-74      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,2,Medium
+761,Male    ,Single,69,65-74      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,1,Low
+762,Male    ,Married,61,55-64      ,5,Haifa,1,Arab,1,Arabs-Bedouins,1,Arab,1,Low
+763,Female   ,Single,74,65-74      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,2,Medium
+764,Female   ,Single,72,65-74      ,5,Haifa,9,General,1,General - General,9,General,1,Low
+765,Female   ,Single,66,65-74      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,2,Medium
+766,Male    ,Married,74,65-74      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,2,Medium
+767,Male    ,Married,69,65-74      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,1,Low
+768,Female   ,Single,84,75-84      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,1,Low
+769,Female   ,Married,61,55-64      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,1,Low
+770,Male    ,Married,80,75-84      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,1,Low
+771,Female   ,Single,77,75-84      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,1,Low
+772,Female   ,Married,60,55-64      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,1,Low
+773,Male    ,Married,67,65-74      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,1,Low
+774,Female   ,Married,75,75-84      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,1,Low
+775,Male    ,Married,70,65-74      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,1,Low
+776,Female   ,Single,58,55-64      ,5,Haifa,1,Arab,1,Arabs-Bedouins,1,Arab,1,Low
+777,Male    ,Married,82,75-84      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,1,Low
+778,Male    ,Married,66,65-74      ,5,Haifa,9,General,1,General - General,9,General,1,Low
+779,Male    ,Married,61,55-64      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,2,Medium
+780,Male    ,Married,62,55-64      ,5,Haifa,9,General,1,General - General,9,General,1,Low
+781,Male    ,Married,67,65-74      ,5,Haifa,9,General,2,General- Religious,9,General,2,Medium
+782,Female   ,Married,60,55-64      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,1,Low
+783,Male    ,Married,66,65-74      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,1,Low
+784,Male    ,Married,60,55-64      ,5,Haifa,9,General,1,General - General,9,General,1,Low
+785,Male    ,Married,66,65-74      ,5,Haifa,9,General,1,General - General,9,General,1,Low
+786,Male    ,Married,71,65-74      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,1,Low
+787,Female   ,Single,78,75-84      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,2,Medium
+788,Female   ,Married,80,75-84      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,1,Low
+789,Male    ,Married,64,55-64      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,1,Low
+790,Female   ,Single,60,55-64      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,1,Low
+791,Male    ,Married,73,65-74      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,1,Low
+792,Female   ,Married,76,75-84      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,1,Low
+793,Male    ,Married,80,75-84      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,1,Low
+794,Female   ,Single,84,75-84      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,1,Low
+795,Female   ,Single,75,75-84      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,1,Low
+796,Male    ,Married,68,65-74      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,1,Low
+797,Female   ,Married,58,55-64      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,1,Low
+798,Male    ,Married,61,55-64      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,1,Low
+799,Male    ,Married,68,65-74      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,1,Low
+800,Female   ,Married,63,55-64      ,5,Haifa,1,Arab,1,Arabs-Bedouins,1,Arab,1,Low
+801,Female   ,Married,64,55-64      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,1,Low
+802,Female   ,Single,60,55-64      ,5,Haifa,1,Arab,1,Arabs-Bedouins,1,Arab,1,Low
+803,Female   ,Married,62,55-64      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,1,Low
+804,Female   ,Married,64,55-64      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,1,Low
+805,Male    ,Married,66,65-74      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,1,Low
+806,Female   ,Married,57,55-64      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,1,Low
+807,Female   ,Single,67,65-74      ,5,Haifa,9,General,1,General - General,9,General,1,Low
+808,Female   ,Married,41,35-44      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+809,Female   ,Married,39,35-44      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+810,Male    ,Married,57,55-64      ,5,Haifa,9,General,1,General - General,9,General,3,High
+811,Female   ,Married,62,55-64      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+812,Female   ,Single,80,75-84      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+813,Male    ,Married,57,55-64      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+814,Female   ,Married,76,75-84      ,5,Haifa,9,General,1,General - General,9,General,1,Low
+815,Female   ,Married,57,55-64      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+816,Male    ,Married,65,65-74      ,5,Haifa,9,General,1,General - General,9,General,3,High
+817,Male    ,Married,57,55-64      ,5,Haifa,9,General,1,General - General,9,General,3,High
+818,Male    ,Married,57,55-64      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+819,Male    ,Married,57,55-64      ,5,Haifa,9,General,1,General - General,9,General,1,Low
+820,Male    ,Married,70,65-74      ,5,Haifa,9,General,1,General - General,9,General,3,High
+821,Female   ,Married,81,75-84      ,5,Haifa,9,General,1,General - General,9,General,1,Low
+822,Male    ,Married,69,65-74      ,5,Haifa,9,General,1,General - General,9,General,1,Low
+823,Male    ,Married,77,75-84      ,5,Haifa,9,General,1,General - General,9,General,3,High
+824,Male    ,Married,56,55-64      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,1,Low
+825,Male    ,Married,63,55-64      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,1,Low
+826,Female   ,Single,71,65-74      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,1,Low
+827,Male    ,Married,69,65-74      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,1,Low
+828,Female   ,Married,57,55-64      ,5,Haifa,9,General,1,General - General,9,General,1,Low
+829,Female   ,Single,57,55-64      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,1,Low
+830,Female   ,Single,57,55-64      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,1,Low
+831,Male    ,Married,67,65-74      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,1,Low
+832,Female   ,Single,74,65-74      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,1,Low
+833,Female   ,Married,62,55-64      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,1,Low
+834,Female   ,Married,63,55-64      ,5,Haifa,9,General,1,General - General,9,General,1,Low
+835,Male    ,Married,87,85+        ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+836,Female   ,Single,74,65-74      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+837,Female   ,Single,75,75-84      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+838,Male    ,Single,72,65-74      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+839,Male    ,Married,71,65-74      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+840,Female   ,Single,67,65-74      ,5,Haifa,9,General,1,General - General,9,General,1,Low
+841,Female   ,Single,61,55-64      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+842,Male    ,Married,76,75-84      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+843,Male    ,Married,69,65-74      ,5,Haifa,9,General,1,General - General,9,General,1,Low
+844,Female   ,Single,87,85+        ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+845,Male    ,Single,87,85+        ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+846,Male    ,Married,63,55-64      ,5,Haifa,9,General,1,General - General,9,General,1,Low
+847,Female   ,Single,78,75-84      ,5,Haifa,9,General,1,General - General,9,General,1,Low
+848,Female   ,Married,77,75-84      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+849,Female   ,Single,79,75-84      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+850,Male    ,Married,75,75-84      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+851,Female   ,Single,69,65-74      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+852,Male    ,Single,69,65-74      ,5,Haifa,9,General,1,General - General,9,General,1,Low
+853,Female   ,Married,76,75-84      ,5,Haifa,9,General,2,General- Religious,9,General,2,Medium
+854,Female   ,Single,77,75-84      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+855,Male    ,Married,68,65-74      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+856,Female   ,Married,70,65-74      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+857,Female   ,Married,64,55-64      ,5,Haifa,9,General,1,General - General,9,General,1,Low
+858,Male    ,Single,62,55-64      ,5,Haifa,9,General,1,General - General,9,General,3,High
+859,Male    ,Married,56,55-64      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,1,Low
+860,Male    ,Married,56,55-64      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,2,Medium
+861,Male    ,Married,56,55-64      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+862,Male    ,Married,56,55-64      ,5,Haifa,9,General,1,General - General,9,General,3,High
+863,Female   ,Married,56,55-64      ,5,Haifa,9,General,2,General- Religious,9,General,2,Medium
+864,Male    ,Married,56,55-64      ,5,Haifa,9,General,1,General - General,9,General,1,Low
+865,Male    ,Married,56,55-64      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+866,Female   ,Married,56,55-64      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,1,Low
+867,Female   ,Married,56,55-64      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,2,Medium
+868,Male    ,Married,55,55-64      ,5,Haifa,9,General,1,General - General,9,General,1,Low
+869,Male    ,Married,55,55-64      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,1,Low
+870,Female   ,Married,55,55-64      ,5,Haifa,9,General,1,General - General,9,General,1,Low
+871,Male    ,Married,55,55-64      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,1,Low
+872,Male    ,Married,55,55-64      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+873,Female   ,Married,55,55-64      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,1,Low
+874,Female   ,Married,54,45-54      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,1,Low
+875,Female   ,Married,55,55-64      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,1,Low
+876,Female   ,Married,54,45-54      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,1,Low
+877,Male    ,Married,55,55-64      ,5,Haifa,9,General,1,General - General,9,General,3,High
+878,Female   ,Married,54,45-54      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,1,Low
+879,Male    ,Married,55,55-64      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,1,Low
+880,Male    ,Married,54,45-54      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+881,Male    ,Single,54,45-54      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+882,Male    ,Single,54,45-54      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+883,Male    ,Married,53,45-54      ,5,Haifa,9,General,1,General - General,9,General,3,High
+884,Male    ,Married,54,45-54      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+885,Female   ,Married,54,45-54      ,5,Haifa,9,General,1,General - General,9,General,1,Low
+886,Male    ,Married,53,45-54      ,5,Haifa,9,General,1,General - General,9,General,3,High
+887,Female   ,Married,52,45-54      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+888,Male    ,Married,53,45-54      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+889,Female   ,Married,53,45-54      ,5,Haifa,9,General,1,General - General,9,General,3,High
+890,Female   ,Married,52,45-54      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+891,Female   ,Single,53,45-54      ,5,Haifa,9,General,1,General - General,9,General,1,Low
+892,Male    ,Married,53,45-54      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,1,Low
+893,Male    ,Married,52,45-54      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,2,Medium
+894,Female   ,Married,53,45-54      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,1,Low
+895,Female   ,Married,52,45-54      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,1,Low
+896,Male    ,Married,53,45-54      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,1,Low
+897,Male    ,Married,52,45-54      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+898,Female   ,Single,51,45-54      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,1,Low
+899,Male    ,Married,51,45-54      ,5,Haifa,9,General,1,General - General,9,General,3,High
+900,Female   ,Married,51,45-54      ,5,Haifa,9,General,1,General - General,9,General,1,Low
+901,Male    ,Married,51,45-54      ,5,Haifa,9,General,2,General- Religious,9,General,2,Medium
+902,Male    ,Married,51,45-54      ,5,Haifa,1,Arab,1,Arabs-Bedouins,1,Arab,1,Low
+903,Female   ,Married,51,45-54      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,1,Low
+904,Male    ,Married,51,45-54      ,5,Haifa,1,Arab,1,Arabs-Bedouins,1,Arab,1,Low
+905,Male    ,Married,51,45-54      ,5,Haifa,9,General,1,General - General,9,General,1,Low
+906,Female   ,Married,50,45-54      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,1,Low
+907,Male    ,Married,49,45-54      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,1,Low
+908,Male    ,Married,50,45-54      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,1,Low
+909,Female   ,Married,51,45-54      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+910,Female   ,Single,49,45-54      ,5,Haifa,9,General,1,General - General,9,General,1,Low
+911,Male    ,Married,49,45-54      ,5,Haifa,9,General,1,General - General,9,General,1,Low
+912,Female   ,Married,49,45-54      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+913,Male    ,Married,50,45-54      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+914,Female   ,Married,50,45-54      ,5,Haifa,9,General,1,General - General,9,General,1,Low
+915,Male    ,Married,50,45-54      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,1,Low
+916,Male    ,Married,50,45-54      ,5,Haifa,9,General,1,General - General,9,General,1,Low
+917,Female   ,Married,49,45-54      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+918,Female   ,Married,49,45-54      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,1,Low
+919,Female   ,Single,49,45-54      ,5,Haifa,9,General,2,General- Religious,9,General,1,Low
+920,Male    ,Married,48,45-54      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+921,Female   ,Married,48,45-54      ,5,Haifa,9,General,1,General - General,9,General,1,Low
+922,Female   ,Married,48,45-54      ,5,Haifa,9,General,1,General - General,9,General,1,Low
+923,Female   ,Married,48,45-54      ,5,Haifa,9,General,1,General - General,9,General,1,Low
+924,Male    ,Married,48,45-54      ,5,Haifa,9,General,1,General - General,9,General,3,High
+925,Male    ,Single,47,45-54      ,5,Haifa,9,General,1,General - General,9,General,1,Low
+926,Female   ,Married,48,45-54      ,5,Haifa,9,General,1,General - General,9,General,1,Low
+927,Male    ,Married,47,45-54      ,5,Haifa,9,General,1,General - General,9,General,1,Low
+928,Female   ,Married,46,45-54      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,1,Low
+929,Male    ,Married,46,45-54      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+930,Female   ,Married,56,55-64      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+931,Male    ,Married,47,45-54      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,1,Low
+932,Male    ,Married,46,45-54      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,1,Low
+933,Male    ,Married,46,45-54      ,5,Haifa,9,General,1,General - General,9,General,1,Low
+934,Female   ,Married,46,45-54      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+935,Male    ,Married,45,45-54      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+936,Female   ,Single,45,45-54      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,1,Low
+937,Male    ,Married,45,45-54      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,1,Low
+938,Female   ,Married,44,35-44      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,1,Low
+939,Male    ,Married,44,35-44      ,5,Haifa,1,Arab,1,Arabs-Bedouins,1,Arab,1,Low
+940,Male    ,Married,44,35-44      ,5,Haifa,9,General,1,General - General,9,General,1,Low
+941,Female   ,Married,42,35-44      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,1,Low
+942,Male    ,Married,44,35-44      ,5,Haifa,9,General,1,General - General,9,General,1,Low
+943,Male    ,Married,44,35-44      ,5,Haifa,9,General,1,General - General,9,General,1,Low
+944,Female   ,Single,43,35-44      ,5,Haifa,9,General,1,General - General,9,General,3,High
+945,Female   ,Married,43,35-44      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,1,Low
+946,Male    ,Single,42,35-44      ,5,Haifa,9,General,1,General - General,9,General,1,Low
+947,Female   ,Single,42,35-44      ,5,Haifa,9,General,1,General - General,9,General,1,Low
+948,Male    ,Married,42,35-44      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,1,Low
+949,Male    ,Married,42,35-44      ,5,Haifa,9,General,1,General - General,9,General,1,Low
+950,Female   ,Married,41,35-44      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,1,Low
+951,Female   ,Single,41,35-44      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,1,Low
+952,Male    ,Married,41,35-44      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+953,Male    ,Married,40,35-44      ,5,Haifa,1,Arab,2,Arab - Other,1,Arab,1,Low
+954,Male    ,Married,39,35-44      ,5,Haifa,9,General,1,General - General,9,General,3,High
+955,Male    ,Married,55,55-64      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+956,Female   ,Single,81,75-84      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+957,Female   ,Married,57,55-64      ,5,Haifa,9,General,1,General - General,9,General,1,Low
+958,Female   ,Single,59,55-64      ,5,Haifa,9,General,1,General - General,9,General,1,Low
+959,Female   ,Married,59,55-64      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+960,Female   ,Married,64,55-64      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+961,Female   ,Married,64,55-64      ,5,Haifa,9,General,1,General - General,9,General,1,Low
+962,Female   ,Single,76,75-84      ,5,Haifa,9,General,1,General - General,9,General,1,Low
+963,Female   ,Single,69,65-74      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+964,Male    ,Married,63,55-64      ,5,Haifa,9,General,1,General - General,9,General,1,Low
+965,Male    ,Married,59,55-64      ,5,Haifa,9,General,1,General - General,9,General,1,Low
+966,Female   ,Single,69,65-74      ,5,Haifa,9,General,1,General - General,9,General,1,Low
+967,Female   ,Married,65,65-74      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+968,Female   ,Married,68,65-74      ,5,Haifa,9,General,2,General- Religious,9,General,2,Medium
+969,Male    ,Married,68,65-74      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+970,Male    ,Married,70,65-74      ,5,Haifa,9,General,1,General - General,9,General,1,Low
+971,Female   ,Single,83,75-84      ,5,Haifa,9,General,1,General - General,9,General,1,Low
+972,Male    ,Married,69,65-74      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+973,Male    ,Married,70,65-74      ,5,Haifa,9,General,1,General - General,9,General,1,Low
+974,Female   ,Single,80,75-84      ,5,Haifa,9,General,1,General - General,9,General,1,Low
+975,Female   ,Single,77,75-84      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+976,Male    ,Married,52,45-54      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+977,Female   ,Single,85,85+        ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+978,Female   ,Single,84,75-84      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+979,Male    ,Married,86,85+        ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+980,Male    ,Married,52,45-54      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+981,Male    ,Married,76,75-84      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+982,Female   ,Married,70,65-74      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+983,Female   ,Single,87,85+        ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+984,Male    ,Married,52,45-54      ,5,Haifa,9,General,1,General - General,9,General,1,Low
+985,Male    ,Single,93,85+        ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+986,Female   ,Single,61,55-64      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+987,Female   ,Married,47,45-54      ,5,Haifa,9,General,1,General - General,9,General,1,Low
+988,Female   ,Single,45,45-54      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+989,Female   ,Single,81,75-84      ,5,Haifa,9,General,1,General - General,9,General,1,Low
+990,Female   ,Single,71,65-74      ,5,Haifa,9,General,1,General - General,9,General,2,Medium
+991,Female   ,Married,53,45-54      ,5,Haifa,9,General,1,General - General,9,General,1,Low
+992,Female   ,Single,74,65-74      ,7,Center,9,General,1,General - General,9,General,2,Medium
+993,Female   ,Married,58,55-64      ,7,Center,9,General,1,General - General,9,General,2,Medium
+994,Female   ,Married,71,65-74      ,7,Center,9,General,1,General - General,9,General,3,High
+995,Female   ,Single,77,75-84      ,7,Center,9,General,1,General - General,9,General,2,Medium
+996,Male    ,Married,70,65-74      ,7,Center,9,General,1,General - General,9,General,1,Low
+997,Female   ,Married,71,65-74      ,7,Center,9,General,2,General- Religious,9,General,2,Medium
+998,Male    ,Married,70,65-74      ,7,Center,9,General,1,General - General,9,General,2,Medium
+999,Female   ,Single,79,75-84      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1000,Male    ,Married,74,65-74      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1001,Female   ,Married,66,65-74      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1002,Male    ,Married,73,65-74      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1003,Male    ,Married,67,65-74      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1004,Female   ,Single,80,75-84      ,7,Center,2,Orthodox,0,None,2,Orthodox     ,1,Low
+1005,Male    ,Married,77,75-84      ,7,Center,9,General,1,General - General,9,General,1,Low
+1006,Male    ,Married,85,85+        ,7,Center,9,General,1,General - General,9,General,2,Medium
+1007,Male    ,Single,77,75-84      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1008,Male    ,Married,56,55-64      ,7,Center,9,General,1,General - General,9,General,3,High
+1009,Male    ,Married,86,85+        ,7,Center,9,General,1,General - General,9,General,2,Medium
+1010,Male    ,Married,76,75-84      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1011,Female   ,Married,72,65-74      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1012,Male    ,Married,71,65-74      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1013,Female   ,Married,72,65-74      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1014,Female   ,Married,69,65-74      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1015,Male    ,Married,68,65-74      ,7,Center,9,General,1,General - General,9,General,3,High
+1016,Female   ,Married,65,65-74      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1017,Female   ,Married,79,75-84      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1018,Female   ,Single,59,55-64      ,7,Center,9,General,1,General - General,9,General,3,High
+1019,Female   ,Married,73,65-74      ,7,Center,9,General,1,General - General,9,General,1,Low
+1020,Female   ,Single,71,65-74      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1021,Male    ,Married,56,55-64      ,7,Center,9,General,1,General - General,9,General,3,High
+1022,Female   ,Married,58,55-64      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1023,Male    ,Married,59,55-64      ,7,Center,9,General,1,General - General,9,General,3,High
+1024,Female   ,Single,79,75-84      ,7,Center,2,Orthodox,0,None,2,Orthodox     ,1,Low
+1025,Female   ,Married,74,65-74      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1026,Female   ,Married,71,65-74      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1027,Male    ,Married,60,55-64      ,7,Center,9,General,1,General - General,9,General,1,Low
+1028,Female   ,Single,88,85+        ,7,Center,9,General,1,General - General,9,General,1,Low
+1029,Male    ,Married,62,55-64      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1030,Male    ,Married,64,55-64      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1031,Male    ,Married,59,55-64      ,7,Center,9,General,1,General - General,9,General,3,High
+1032,Male    ,Married,87,85+        ,7,Center,9,General,1,General - General,9,General,1,Low
+1033,Female   ,Married,65,65-74      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1034,Male    ,Married,66,65-74      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1035,Male    ,Single,65,65-74      ,7,Center,9,General,1,General - General,9,General,3,High
+1036,Male    ,Married,72,65-74      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1037,Female   ,Married,56,55-64      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1038,Male    ,Married,64,55-64      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1039,Male    ,Married,82,75-84      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1040,Male    ,Married,84,75-84      ,7,Center,9,General,1,General - General,9,General,1,Low
+1041,Male    ,Married,78,75-84      ,7,Center,9,General,1,General - General,9,General,1,Low
+1042,Male    ,Single,70,65-74      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1043,Male    ,Married,67,65-74      ,7,Center,9,General,1,General - General,9,General,1,Low
+1044,Male    ,Single,65,65-74      ,7,Center,9,General,1,General - General,9,General,3,High
+1045,Male    ,Married,70,65-74      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1046,Female   ,Married,66,65-74      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1047,Female   ,Married,68,65-74      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1048,Female   ,Married,60,55-64      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1049,Female   ,Single,77,75-84      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1050,Female   ,Single,78,75-84      ,7,Center,9,General,2,General- Religious,9,General,3,High
+1051,Male    ,Married,78,75-84      ,7,Center,9,General,1,General - General,9,General,1,Low
+1052,Female   ,Married,57,55-64      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1053,Male    ,Married,68,65-74      ,7,Center,9,General,1,General - General,9,General,1,Low
+1054,Female   ,Married,71,65-74      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1055,Female   ,Single,82,75-84      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1056,Male    ,Single,57,55-64      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1057,Female   ,Married,60,55-64      ,7,Center,9,General,1,General - General,9,General,1,Low
+1058,Male    ,Married,60,55-64      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1059,Male    ,Single,68,65-74      ,7,Center,9,General,1,General - General,9,General,1,Low
+1060,Male    ,Married,78,75-84      ,7,Center,9,General,2,General- Religious,9,General,1,Low
+1061,Female   ,Married,67,65-74      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1062,Female   ,Married,76,75-84      ,7,Center,9,General,1,General - General,9,General,1,Low
+1063,Male    ,Single,58,55-64      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1064,Male    ,Married,61,55-64      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1065,Male    ,Married,92,85+        ,7,Center,9,General,1,General - General,9,General,2,Medium
+1066,Male    ,Married,75,75-84      ,7,Center,9,General,1,General - General,9,General,3,High
+1067,Male    ,Married,68,65-74      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1068,Male    ,Single,59,55-64      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1069,Male    ,Married,73,65-74      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1070,Male    ,Single,66,65-74      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1071,Male    ,Married,69,65-74      ,7,Center,9,General,1,General - General,9,General,1,Low
+1072,Male    ,Married,75,75-84      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1073,Female   ,Married,58,55-64      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1074,Female   ,Married,61,55-64      ,7,Center,9,General,1,General - General,9,General,1,Low
+1075,Female   ,Single,60,55-64      ,7,Center,9,General,1,General - General,9,General,1,Low
+1076,Male    ,Single,85,85+        ,7,Center,9,General,1,General - General,9,General,1,Low
+1077,Male    ,Married,54,45-54      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1078,Female   ,Single,64,55-64      ,7,Center,9,General,1,General - General,9,General,1,Low
+1079,Female   ,Married,47,45-54      ,7,Center,9,General,2,General- Religious,9,General,1,Low
+1080,Female   ,Married,46,45-54      ,7,Center,9,General,1,General - General,9,General,1,Low
+1081,Female   ,Married,52,45-54      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1082,Male    ,Married,56,55-64      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1083,Female   ,Single,80,75-84      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1084,Female   ,Single,70,65-74      ,7,Center,9,General,1,General - General,9,General,1,Low
+1085,Female   ,Single,72,65-74      ,7,Center,9,General,1,General - General,9,General,0,0
+1086,Female   ,Married,39,35-44      ,7,Center,9,General,2,General- Religious,2,Orthodox     ,1,Low
+1087,Female   ,Single,58,55-64      ,7,Center,9,General,1,General - General,9,General,1,Low
+1088,Male    ,Married,55,55-64      ,7,Center,9,General,1,General - General,9,General,1,Low
+1089,Female   ,Married,52,45-54      ,7,Center,9,General,1,General - General,9,General,1,Low
+1090,Female   ,Single,71,65-74      ,7,Center,2,Orthodox,0,None,2,Orthodox     ,1,Low
+1091,Female   ,Married,65,65-74      ,7,Center,9,General,1,General - General,9,General,1,Low
+1092,Female   ,Married,65,65-74      ,7,Center,9,General,1,General - General,9,General,1,Low
+1093,Male    ,Married,60,55-64      ,7,Center,9,General,1,General - General,9,General,1,Low
+1094,Female   ,Married,64,55-64      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1095,Male    ,Married,62,55-64      ,7,Center,9,General,1,General - General,9,General,1,Low
+1096,Male    ,Married,53,45-54      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1097,Male    ,Married,46,45-54      ,7,Center,9,General,1,General - General,9,General,1,Low
+1098,Female   ,Married,58,55-64      ,7,Center,9,General,1,General - General,9,General,1,Low
+1099,Male    ,Married,68,65-74      ,7,Center,9,General,2,General- Religious,9,General,1,Low
+1100,Male    ,Single,80,75-84      ,7,Center,9,General,1,General - General,9,General,1,Low
+1101,Male    ,Married,69,65-74      ,7,Center,9,General,1,General - General,9,General,1,Low
+1102,Male    ,Married,74,65-74      ,7,Center,9,General,2,General- Religious,9,General,1,Low
+1103,Male    ,Married,57,55-64      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1104,Male    ,Married,53,45-54      ,7,Center,9,General,1,General - General,9,General,1,Low
+1105,Male    ,Married,43,35-44      ,7,Center,9,General,1,General - General,9,General,1,Low
+1106,Female   ,Married,56,55-64      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1107,Male    ,Married,67,65-74      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1108,Female   ,Married,56,55-64      ,7,Center,9,General,1,General - General,9,General,1,Low
+1109,Female   ,Married,48,45-54      ,7,Center,9,General,1,General - General,9,General,1,Low
+1110,Male    ,Single,73,65-74      ,7,Center,9,General,1,General - General,9,General,1,Low
+1111,Male    ,Single,56,55-64      ,7,Center,9,General,1,General - General,9,General,1,Low
+1112,Male    ,Single,61,55-64      ,7,Center,9,General,1,General - General,9,General,1,Low
+1113,Male    ,Single,74,65-74      ,7,Center,9,General,1,General - General,9,General,1,Low
+1114,Female   ,Single,70,65-74      ,7,Center,9,General,1,General - General,9,General,1,Low
+1115,Male    ,Married,68,65-74      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1116,Female   ,Married,82,75-84      ,7,Center,9,General,1,General - General,9,General,1,Low
+1117,Female   ,Married,47,45-54      ,7,Center,9,General,2,General- Religious,2,Orthodox     ,1,Low
+1118,Male    ,Married,52,45-54      ,7,Center,9,General,1,General - General,9,General,1,Low
+1119,Male    ,Married,78,75-84      ,7,Center,9,General,1,General - General,9,General,1,Low
+1120,Male    ,Married,75,75-84      ,7,Center,9,General,1,General - General,9,General,1,Low
+1121,Female   ,Married,49,45-54      ,7,Center,9,General,1,General - General,9,General,1,Low
+1122,Male    ,Married,64,55-64      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1123,Female   ,Single,47,45-54      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1124,Male    ,Married,59,55-64      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1125,Male    ,Married,83,75-84      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1126,Female   ,Married,58,55-64      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1127,Male    ,Married,78,75-84      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1128,Female   ,Married,68,65-74      ,7,Center,9,General,1,General - General,9,General,1,Low
+1129,Female   ,Single,39,35-44      ,7,Center,9,General,1,General - General,9,General,1,Low
+1130,Female   ,Single,67,65-74      ,7,Center,9,General,1,General - General,9,General,1,Low
+1131,Male    ,Single,80,75-84      ,7,Center,9,General,1,General - General,9,General,1,Low
+1132,Female   ,Married,65,65-74      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1133,Female   ,Married,52,45-54      ,7,Center,9,General,1,General - General,9,General,1,Low
+1134,Male    ,Married,50,45-54      ,7,Center,9,General,2,General- Religious,9,General,3,High
+1135,Male    ,Married,66,65-74      ,7,Center,9,General,1,General - General,9,General,1,Low
+1136,Female   ,Married,59,55-64      ,7,Center,9,General,1,General - General,9,General,1,Low
+1137,Female   ,Single,69,65-74      ,7,Center,1,Arab,2,Arab - Other,1,Arab,1,Low
+1138,Male    ,Single,40,35-44      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1139,Male    ,Married,40,35-44      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1140,Male    ,Married,39,35-44      ,7,Center,9,General,1,General - General,9,General,1,Low
+1141,Female   ,Married,39,35-44      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1142,Male    ,Married,51,45-54      ,7,Center,9,General,1,General - General,9,General,1,Low
+1143,Female   ,Married,62,55-64      ,7,Center,9,General,1,General - General,9,General,1,Low
+1144,Male    ,Single,54,45-54      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1145,Male    ,Married,58,55-64      ,7,Center,9,General,2,General- Religious,9,General,2,Medium
+1146,Male    ,Married,67,65-74      ,7,Center,9,General,1,General - General,9,General,1,Low
+1147,Female   ,Married,69,65-74      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1148,Male    ,Married,80,75-84      ,7,Center,9,General,1,General - General,9,General,1,Low
+1149,Female   ,Single,86,85+        ,7,Center,9,General,1,General - General,9,General,2,Medium
+1150,Male    ,Married,56,55-64      ,7,Center,9,General,1,General - General,9,General,3,High
+1151,Male    ,Single,59,55-64      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1152,Female   ,Married,61,55-64      ,7,Center,9,General,1,General - General,9,General,1,Low
+1153,Male    ,Married,82,75-84      ,7,Center,9,General,1,General - General,9,General,1,Low
+1154,Male    ,Married,57,55-64      ,7,Center,9,General,1,General - General,9,General,1,Low
+1155,Female   ,Married,59,55-64      ,7,Center,9,General,1,General - General,9,General,1,Low
+1156,Male    ,Married,59,55-64      ,7,Center,9,General,1,General - General,9,General,1,Low
+1157,Male    ,Married,77,75-84      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1158,Male    ,Married,76,75-84      ,7,Center,9,General,1,General - General,9,General,3,High
+1159,Male    ,Married,81,75-84      ,7,Center,9,General,1,General - General,9,General,3,High
+1160,Male    ,Married,61,55-64      ,7,Center,9,General,1,General - General,9,General,1,Low
+1161,Male    ,Married,66,65-74      ,7,Center,1,Arab,2,Arab - Other,1,Arab,1,Low
+1162,Female   ,Single,64,55-64      ,7,Center,9,General,1,General - General,9,General,1,Low
+1163,Male    ,Single,68,65-74      ,7,Center,9,General,1,General - General,9,General,1,Low
+1164,Male    ,Single,82,75-84      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1165,Female   ,Married,59,55-64      ,7,Center,2,Orthodox,0,None,2,Orthodox     ,1,Low
+1166,Male    ,Married,72,65-74      ,7,Center,9,General,1,General - General,9,General,1,Low
+1167,Male    ,Married,59,55-64      ,7,Center,9,General,1,General - General,9,General,1,Low
+1168,Male    ,Married,70,65-74      ,7,Center,9,General,1,General - General,9,General,1,Low
+1169,Male    ,Married,63,55-64      ,7,Center,9,General,1,General - General,9,General,1,Low
+1170,Male    ,Married,58,55-64      ,7,Center,9,General,1,General - General,9,General,1,Low
+1171,Female   ,Married,65,65-74      ,7,Center,9,General,1,General - General,9,General,1,Low
+1172,Male    ,Married,86,85+        ,7,Center,9,General,1,General - General,9,General,2,Medium
+1173,Male    ,Married,59,55-64      ,7,Center,9,General,1,General - General,9,General,1,Low
+1174,Male    ,Single,72,65-74      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1175,Female   ,Married,73,65-74      ,7,Center,9,General,1,General - General,9,General,1,Low
+1176,Female   ,Married,66,65-74      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1177,Female   ,Single,72,65-74      ,7,Center,9,General,1,General - General,9,General,1,Low
+1178,Female   ,Single,81,75-84      ,7,Center,9,General,1,General - General,9,General,1,Low
+1179,Female   ,Single,71,65-74      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1180,Female   ,Single,82,75-84      ,7,Center,9,General,1,General - General,9,General,1,Low
+1181,Female   ,Married,71,65-74      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1182,Male    ,Married,73,65-74      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1183,Male    ,Married,78,75-84      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1184,Male    ,Married,61,55-64      ,7,Center,9,General,2,General- Religious,9,General,1,Low
+1185,Female   ,Single,85,85+        ,7,Center,9,General,1,General - General,9,General,2,Medium
+1186,Female   ,Single,74,65-74      ,7,Center,9,General,1,General - General,9,General,1,Low
+1187,Female   ,Single,77,75-84      ,7,Center,9,General,1,General - General,9,General,1,Low
+1188,Male    ,Married,59,55-64      ,7,Center,9,General,1,General - General,9,General,3,High
+1189,Male    ,Married,71,65-74      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1190,Female   ,Single,95,85+        ,7,Center,9,General,1,General - General,9,General,2,Medium
+1191,Male    ,Single,80,75-84      ,7,Center,9,General,1,General - General,9,General,1,Low
+1192,Male    ,Married,67,65-74      ,7,Center,9,General,1,General - General,9,General,1,Low
+1193,Male    ,Married,63,55-64      ,7,Center,9,General,1,General - General,9,General,3,High
+1194,Female   ,Married,57,55-64      ,7,Center,9,General,1,General - General,9,General,1,Low
+1195,Female   ,Single,85,85+        ,7,Center,9,General,1,General - General,9,General,1,Low
+1196,Male    ,Married,86,85+        ,7,Center,9,General,1,General - General,9,General,2,Medium
+1197,Female   ,Single,82,75-84      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1198,Male    ,Single,79,75-84      ,7,Center,9,General,1,General - General,9,General,1,Low
+1199,Female   ,Single,70,65-74      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1200,Female   ,Married,80,75-84      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1201,Male    ,Married,77,75-84      ,7,Center,9,General,1,General - General,9,General,3,High
+1202,Male    ,Single,56,55-64      ,7,Center,9,General,1,General - General,9,General,1,Low
+1203,Female   ,Married,56,55-64      ,7,Center,9,General,1,General - General,9,General,1,Low
+1204,Male    ,Married,56,55-64      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1205,Female   ,Married,56,55-64      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1206,Female   ,Single,56,55-64      ,7,Center,9,General,1,General - General,9,General,3,High
+1207,Male    ,Married,56,55-64      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1208,Male    ,Married,55,55-64      ,7,Center,9,General,1,General - General,9,General,1,Low
+1209,Male    ,Married,55,55-64      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1210,Male    ,Married,55,55-64      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1211,Male    ,Married,55,55-64      ,7,Center,9,General,1,General - General,9,General,1,Low
+1212,Male    ,Married,53,45-54      ,7,Center,9,General,1,General - General,9,General,1,Low
+1213,Male    ,Married,54,45-54      ,7,Center,9,General,1,General - General,9,General,1,Low
+1214,Female   ,Married,55,55-64      ,7,Center,9,General,1,General - General,9,General,1,Low
+1215,Female   ,Married,54,45-54      ,7,Center,9,General,1,General - General,9,General,1,Low
+1216,Male    ,Married,54,45-54      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1217,Male    ,Married,54,45-54      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1218,Male    ,Married,54,45-54      ,7,Center,9,General,1,General - General,9,General,1,Low
+1219,Male    ,Married,54,45-54      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1220,Male    ,Single,54,45-54      ,7,Center,9,General,1,General - General,9,General,3,High
+1221,Female   ,Married,54,45-54      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1222,Male    ,Married,53,45-54      ,7,Center,9,General,1,General - General,9,General,1,Low
+1223,Female   ,Married,53,45-54      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1224,Female   ,Married,53,45-54      ,7,Center,9,General,1,General - General,9,General,3,High
+1225,Male    ,Married,52,45-54      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1226,Male    ,Married,53,45-54      ,7,Center,9,General,1,General - General,9,General,3,High
+1227,Male    ,Married,52,45-54      ,7,Center,9,General,1,General - General,9,General,1,Low
+1228,Male    ,Married,52,45-54      ,7,Center,9,General,1,General - General,9,General,1,Low
+1229,Female   ,Married,52,45-54      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1230,Male    ,Married,51,45-54      ,7,Center,9,General,1,General - General,9,General,1,Low
+1231,Female   ,Married,51,45-54      ,7,Center,9,General,1,General - General,9,General,3,High
+1232,Male    ,Married,51,45-54      ,7,Center,9,General,1,General - General,9,General,1,Low
+1233,Male    ,Married,51,45-54      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1234,Female   ,Married,51,45-54      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1235,Female   ,Married,51,45-54      ,7,Center,9,General,1,General - General,9,General,1,Low
+1236,Female   ,Married,50,45-54      ,7,Center,9,General,1,General - General,9,General,3,High
+1237,Female   ,Single,51,45-54      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1238,Female   ,Married,50,45-54      ,7,Center,9,General,1,General - General,9,General,1,Low
+1239,Male    ,Married,50,45-54      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1240,Male    ,Married,50,45-54      ,7,Center,9,General,2,General- Religious,9,General,1,Low
+1241,Female   ,Married,48,45-54      ,7,Center,9,General,1,General - General,9,General,1,Low
+1242,Female   ,Married,49,45-54      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1243,Female   ,Married,49,45-54      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1244,Female   ,Married,49,45-54      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1245,Male    ,Married,49,45-54      ,7,Center,9,General,1,General - General,9,General,1,Low
+1246,Male    ,Married,48,45-54      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1247,Male    ,Single,48,45-54      ,7,Center,9,General,1,General - General,9,General,3,High
+1248,Male    ,Single,48,45-54      ,7,Center,9,General,1,General - General,9,General,1,Low
+1249,Male    ,Married,48,45-54      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1250,Male    ,Married,48,45-54      ,7,Center,9,General,1,General - General,9,General,3,High
+1251,Male    ,Single,47,45-54      ,7,Center,9,General,1,General - General,9,General,2,Medium
+1252,Male    ,Married,81,75-84      ,9,South,9,General,1,General - General,9,General,2,Medium
+1253,Female   ,Single,64,55-64      ,9,South,9,General,1,General - General,9,General,1,Low
+1254,Female   ,Married,61,55-64      ,9,South,9,General,1,General - General,9,General,2,Medium
+1255,Male    ,Married,61,55-64      ,9,South,9,General,1,General - General,9,General,2,Medium
+1256,Male    ,Married,67,65-74      ,9,South,9,General,1,General - General,9,General,2,Medium
+1257,Male    ,Married,79,75-84      ,9,South,9,General,1,General - General,9,General,2,Medium
+1258,Male    ,Married,79,75-84      ,9,South,9,General,1,General - General,9,General,3,High
+1259,Male    ,Married,77,75-84      ,9,South,9,General,1,General - General,9,General,2,Medium
+1260,Male    ,Married,73,65-74      ,9,South,9,General,1,General - General,9,General,1,Low
+1261,Male    ,Single,84,75-84      ,9,South,9,General,1,General - General,9,General,2,Medium
+1262,Female   ,Married,72,65-74      ,9,South,9,General,1,General - General,9,General,2,Medium
+1263,Male    ,Married,77,75-84      ,9,South,9,General,1,General - General,9,General,2,Medium
+1264,Male    ,Married,74,65-74      ,9,South,9,General,1,General - General,9,General,2,Medium
+1265,Female   ,Married,63,55-64      ,9,South,9,General,1,General - General,9,General,2,Medium
+1266,Female   ,Married,80,75-84      ,9,South,9,General,1,General - General,9,General,1,Low
+1267,Male    ,Married,61,55-64      ,9,South,9,General,1,General - General,9,General,1,Low
+1268,Female   ,Single,83,75-84      ,9,South,9,General,1,General - General,9,General,1,Low
+1269,Female   ,Married,74,65-74      ,9,South,9,General,1,General - General,9,General,2,Medium
+1270,Female   ,Married,63,55-64      ,9,South,9,General,1,General - General,9,General,3,High
+1271,Female   ,Married,77,75-84      ,9,South,9,General,1,General - General,9,General,1,Low
+1272,Female   ,Married,68,65-74      ,9,South,9,General,1,General - General,9,General,2,Medium
+1273,Female   ,Single,82,75-84      ,9,South,9,General,1,General - General,9,General,2,Medium
+1274,Male    ,Married,77,75-84      ,9,South,9,General,1,General - General,9,General,2,Medium
+1275,Male    ,Married,63,55-64      ,9,South,9,General,1,General - General,9,General,2,Medium
+1276,Male    ,Married,71,65-74      ,9,South,9,General,1,General - General,9,General,2,Medium
+1277,Male    ,Married,83,75-84      ,9,South,9,General,1,General - General,9,General,2,Medium
+1278,Female   ,Single,83,75-84      ,9,South,9,General,1,General - General,9,General,1,Low
+1279,Male    ,Married,67,65-74      ,9,South,9,General,1,General - General,9,General,1,Low
+1280,Female   ,Married,60,55-64      ,9,South,9,General,1,General - General,9,General,2,Medium
+1281,Female   ,Single,65,65-74      ,9,South,9,General,1,General - General,9,General,2,Medium
+1282,Female   ,Single,91,85+        ,9,South,9,General,1,General - General,9,General,2,Medium
+1283,Female   ,Single,78,75-84      ,9,South,3,Immigrants,5,Argentina,9,General,2,Medium
+1284,Female   ,Single,84,75-84      ,9,South,9,General,1,General - General,9,General,1,Low
+1285,Male    ,Married,81,75-84      ,9,South,9,General,1,General - General,9,General,1,Low
+1286,Male    ,Married,41,35-44      ,9,South,9,General,1,General - General,9,General,1,Low
+1287,Female   ,Married,77,75-84      ,9,South,9,General,1,General - General,9,General,1,Low
+1288,Male    ,Married,63,55-64      ,9,South,9,General,1,General - General,9,General,3,High
+1289,Female   ,Married,73,65-74      ,9,South,9,General,1,General - General,9,General,1,Low
+1290,Female   ,Married,47,45-54      ,9,South,9,General,1,General - General,9,General,1,Low
+1291,Female   ,Married,58,55-64      ,9,South,9,General,1,General - General,9,General,1,Low
+1292,Male    ,Single,63,55-64      ,9,South,9,General,1,General - General,9,General,1,Low
+1293,Female   ,Single,68,65-74      ,9,South,9,General,1,General - General,9,General,1,Low
+1294,Female   ,Married,44,35-44      ,9,South,9,General,1,General - General,9,General,1,Low
+1295,Female   ,Single,49,45-54      ,9,South,1,Arab,1,Arabs-Bedouins,1,Arab,1,Low
+1296,Male    ,Married,59,55-64      ,9,South,9,General,1,General - General,9,General,1,Low
+1297,Male    ,Married,56,55-64      ,9,South,9,General,1,General - General,9,General,1,Low
+1298,Female   ,Married,62,55-64      ,9,South,9,General,1,General - General,9,General,1,Low
+1299,Female   ,Married,54,45-54      ,9,South,9,General,1,General - General,9,General,1,Low
+1300,Female   ,Single,57,55-64      ,9,South,9,General,1,General - General,9,General,1,Low
+1301,Male    ,Single,84,75-84      ,9,South,9,General,1,General - General,9,General,2,Medium
+1302,Male    ,Married,65,65-74      ,9,South,9,General,1,General - General,9,General,1,Low
+1303,Female   ,Married,59,55-64      ,9,South,9,General,1,General - General,9,General,2,Medium
+1304,Female   ,Single,74,65-74      ,9,South,9,General,1,General - General,9,General,2,Medium
+1305,Male    ,Single,41,35-44      ,9,South,9,General,1,General - General,9,General,1,Low
+1306,Female   ,Married,43,35-44      ,9,South,9,General,1,General - General,9,General,1,Low
+1307,Female   ,Single,76,75-84      ,9,South,9,General,1,General - General,9,General,2,Medium
+1308,Female   ,Single,57,55-64      ,9,South,9,General,1,General - General,9,General,2,Medium
+1309,Male    ,Married,60,55-64      ,9,South,9,General,1,General - General,9,General,1,Low
+1310,Female   ,Single,44,35-44      ,9,South,9,General,1,General - General,9,General,1,Low
+1311,Female   ,Married,67,65-74      ,9,South,9,General,1,General - General,9,General,1,Low
+1312,Female   ,Married,60,55-64      ,9,South,9,General,1,General - General,9,General,1,Low
+1313,Female   ,Married,78,75-84      ,9,South,9,General,1,General - General,9,General,1,Low
+1314,Female   ,Single,76,75-84      ,9,South,9,General,1,General - General,9,General,1,Low
+1315,Female   ,Married,71,65-74      ,9,South,9,General,1,General - General,9,General,1,Low
+1316,Female   ,Married,55,55-64      ,9,South,9,General,1,General - General,9,General,1,Low
+1317,Male    ,Single,53,45-54      ,9,South,9,General,1,General - General,9,General,1,Low
+1318,Female   ,Single,75,75-84      ,9,South,9,General,2,General- Religious,9,General,1,Low
+1319,Male    ,Married,66,65-74      ,9,South,9,General,1,General - General,9,General,1,Low
+1320,Female   ,Single,60,55-64      ,9,South,9,General,1,General - General,9,General,1,Low
+1321,Female   ,Married,67,65-74      ,9,South,9,General,1,General - General,9,General,2,Medium
+1322,Female   ,Married,49,45-54      ,9,South,9,General,1,General - General,9,General,1,Low
+1323,Male    ,Married,53,45-54      ,9,South,9,General,1,General - General,9,General,1,Low
+1324,Male    ,Married,43,35-44      ,9,South,9,General,1,General - General,9,General,1,Low
+1325,Female   ,Single,72,65-74      ,9,South,9,General,1,General - General,9,General,1,Low
+1326,Male    ,Single,41,35-44      ,9,South,9,General,1,General - General,9,General,2,Medium
+1327,Female   ,Single,41,35-44      ,9,South,9,General,1,General - General,9,General,2,Medium
+1328,Female   ,Single,40,35-44      ,9,South,9,General,1,General - General,9,General,1,Low
+1329,Female   ,Single,40,35-44      ,9,South,9,General,1,General - General,9,General,1,Low
+1330,Female   ,Married,44,35-44      ,9,South,1,Arab,1,Arabs-Bedouins,1,Arab,1,Low
+1331,Female   ,Single,73,65-74      ,9,South,9,General,1,General - General,9,General,1,Low
+1332,Female   ,Married,48,45-54      ,9,South,9,General,1,General - General,9,General,1,Low
+1333,Male    ,Married,72,65-74      ,9,South,9,General,1,General - General,9,General,1,Low
+1334,Male    ,Married,75,75-84      ,9,South,9,General,1,General - General,9,General,1,Low
+1335,Female   ,Single,69,65-74      ,9,South,9,General,1,General - General,9,General,1,Low
+1336,Male    ,Married,80,75-84      ,9,South,9,General,1,General - General,9,General,1,Low
+1337,Female   ,Married,61,55-64      ,9,South,9,General,1,General - General,9,General,1,Low
+1338,Male    ,Married,69,65-74      ,9,South,9,General,1,General - General,9,General,1,Low
+1339,Male    ,Married,62,55-64      ,9,South,9,General,1,General - General,9,General,1,Low
+1340,Female   ,Married,53,45-54      ,9,South,9,General,1,General - General,9,General,1,Low
+1341,Female   ,Married,52,45-54      ,9,South,9,General,1,General - General,9,General,3,High
+1342,Female   ,Married,77,75-84      ,9,South,9,General,1,General - General,9,General,1,Low
+1343,Female   ,Married,56,55-64      ,9,South,1,Arab,2,Arab - Other,1,Arab,1,Low
+1344,Female   ,Married,57,55-64      ,9,South,9,General,1,General - General,9,General,1,Low
+1345,Female   ,Single,60,55-64      ,9,South,9,General,1,General - General,9,General,1,Low
+1346,Male    ,Married,69,65-74      ,9,South,1,Arab,1,Arabs-Bedouins,1,Arab,1,Low
+1347,Female   ,Married,64,55-64      ,9,South,1,Arab,1,Arabs-Bedouins,1,Arab,1,Low
+1348,Female   ,Single,68,65-74      ,9,South,1,Arab,1,Arabs-Bedouins,1,Arab,1,Low
+1349,Male    ,Married,66,65-74      ,9,South,1,Arab,1,Arabs-Bedouins,1,Arab,1,Low
+1350,Female   ,Single,62,55-64      ,9,South,1,Arab,1,Arabs-Bedouins,1,Arab,1,Low
+1351,Female   ,Married,60,55-64      ,9,South,1,Arab,1,Arabs-Bedouins,1,Arab,1,Low
+1352,Male    ,Married,78,75-84      ,9,South,1,Arab,1,Arabs-Bedouins,1,Arab,1,Low
+1353,Male    ,Married,68,65-74      ,9,South,1,Arab,1,Arabs-Bedouins,1,Arab,1,Low
+1354,Male    ,Married,62,55-64      ,9,South,1,Arab,1,Arabs-Bedouins,1,Arab,1,Low
+1355,Male    ,Married,66,65-74      ,9,South,1,Arab,1,Arabs-Bedouins,1,Arab,1,Low
+1356,Female   ,Single,75,75-84      ,9,South,1,Arab,1,Arabs-Bedouins,1,Arab,1,Low
+1357,Male    ,Married,68,65-74      ,9,South,1,Arab,1,Arabs-Bedouins,1,Arab,1,Low
+1358,Male    ,Married,67,65-74      ,9,South,1,Arab,1,Arabs-Bedouins,1,Arab,1,Low
+1359,Female   ,Married,64,55-64      ,9,South,1,Arab,1,Arabs-Bedouins,1,Arab,1,Low
+1360,Male    ,Married,67,65-74      ,9,South,1,Arab,1,Arabs-Bedouins,1,Arab,1,Low
+1361,Female   ,Married,60,55-64      ,9,South,1,Arab,1,Arabs-Bedouins,1,Arab,1,Low
+1362,Female   ,Single,64,55-64      ,9,South,1,Arab,1,Arabs-Bedouins,1,Arab,1,Low
+1363,Male    ,Married,62,55-64      ,9,South,1,Arab,1,Arabs-Bedouins,1,Arab,1,Low
+1364,Female   ,Married,63,55-64      ,9,South,1,Arab,1,Arabs-Bedouins,1,Arab,1,Low
+1365,Female   ,Single,63,55-64      ,9,South,1,Arab,1,Arabs-Bedouins,1,Arab,1,Low
+1366,Male    ,Married,63,55-64      ,9,South,1,Arab,1,Arabs-Bedouins,1,Arab,1,Low
+1367,Male    ,Married,58,55-64      ,9,South,1,Arab,1,Arabs-Bedouins,1,Arab,1,Low
+1368,Male    ,Married,67,65-74      ,9,South,1,Arab,1,Arabs-Bedouins,1,Arab,1,Low
+1369,Male    ,Married,68,65-74      ,9,South,1,Arab,1,Arabs-Bedouins,1,Arab,1,Low
+1370,Female   ,Single,56,55-64      ,9,South,1,Arab,1,Arabs-Bedouins,1,Arab,1,Low
+1371,Male    ,Single,65,65-74      ,9,South,1,Arab,1,Arabs-Bedouins,1,Arab,1,Low
+1372,Female   ,Married,53,45-54      ,9,South,1,Arab,1,Arabs-Bedouins,1,Arab,1,Low
+1373,Female   ,Married,66,65-74      ,9,South,1,Arab,1,Arabs-Bedouins,1,Arab,1,Low
+1374,Female   ,Married,65,65-74      ,9,South,9,General,1,General - General,9,General,1,Low
+1375,Male    ,Married,62,55-64      ,9,South,9,General,1,General - General,9,General,2,Medium
+1376,Male    ,Married,63,55-64      ,9,South,9,General,1,General - General,9,General,2,Medium
+1377,Male    ,Married,60,55-64      ,9,South,9,General,1,General - General,9,General,2,Medium
+1378,Male    ,Married,76,75-84      ,9,South,9,General,1,General - General,9,General,1,Low
+1379,Female   ,Single,70,65-74      ,9,South,9,General,1,General - General,9,General,1,Low
+1380,Male    ,Married,74,65-74      ,9,South,9,General,1,General - General,9,General,2,Medium
+1381,Female   ,Married,75,75-84      ,9,South,9,General,1,General - General,9,General,2,Medium
+1382,Male    ,Single,66,65-74      ,9,South,9,General,1,General - General,9,General,1,Low
+1383,Male    ,Single,82,75-84      ,9,South,9,General,1,General - General,9,General,1,Low
+1384,Male    ,Married,63,55-64      ,9,South,9,General,1,General - General,9,General,1,Low
+1385,Male    ,Married,67,65-74      ,9,South,9,General,1,General - General,9,General,1,Low
+1386,Male    ,Married,76,75-84      ,9,South,9,General,1,General - General,9,General,1,Low
+1387,Female   ,Single,69,65-74      ,9,South,9,General,1,General - General,9,General,1,Low
+1388,Male    ,Single,78,75-84      ,9,South,9,General,1,General - General,9,General,1,Low
+1389,Female   ,Married,69,65-74      ,9,South,9,General,2,General- Religious,9,General,1,Low
+1390,Female   ,Single,80,75-84      ,9,South,9,General,1,General - General,9,General,1,Low
+1391,Male    ,Married,72,65-74      ,9,South,9,General,1,General - General,9,General,1,Low
+1392,Female   ,Married,69,65-74      ,9,South,9,General,1,General - General,9,General,2,Medium
+1393,Male    ,Single,76,75-84      ,9,South,9,General,1,General - General,9,General,1,Low
+1394,Male    ,Married,65,65-74      ,9,South,9,General,1,General - General,9,General,1,Low
+1395,Male    ,Married,57,55-64      ,9,South,9,General,1,General - General,9,General,2,Medium
+1396,Male    ,Married,68,65-74      ,9,South,9,General,1,General - General,9,General,1,Low
+1397,Female   ,Single,92,85+        ,9,South,9,General,1,General - General,9,General,1,Low
+1398,Female   ,Married,58,55-64      ,9,South,9,General,1,General - General,9,General,2,Medium
+1399,Female   ,Married,72,65-74      ,9,South,9,General,1,General - General,9,General,1,Low
+1400,Female   ,Married,60,55-64      ,9,South,9,General,1,General - General,9,General,1,Low
+1401,Male    ,Married,61,55-64      ,9,South,9,General,1,General - General,9,General,2,Medium
+1402,Male    ,Single,74,65-74      ,9,South,9,General,1,General - General,9,General,2,Medium
+1403,Male    ,Married,56,55-64      ,9,South,9,General,1,General - General,9,General,2,Medium
+1404,Female   ,Married,55,55-64      ,9,South,9,General,1,General - General,9,General,2,Medium
+1405,Female   ,Married,54,45-54      ,9,South,1,Arab,1,Arabs-Bedouins,1,Arab,1,Low
+1406,Male    ,Married,55,55-64      ,9,South,9,General,1,General - General,9,General,1,Low
+1407,Male    ,Married,55,55-64      ,9,South,1,Arab,1,Arabs-Bedouins,1,Arab,1,Low
+1408,Female   ,Single,55,55-64      ,9,South,9,General,1,General - General,9,General,2,Medium
+1409,Male    ,Married,55,55-64      ,9,South,9,General,1,General - General,9,General,1,Low
+1410,Female   ,Married,57,55-64      ,9,South,9,General,2,General- Religious,9,General,1,Low
+1411,Male    ,Married,54,45-54      ,9,South,9,General,1,General - General,9,General,1,Low
+1412,Male    ,Married,54,45-54      ,9,South,9,General,1,General - General,9,General,1,Low
+1413,Male    ,Married,54,45-54      ,9,South,9,General,1,General - General,9,General,2,Medium
+1414,Female   ,Married,53,45-54      ,9,South,9,General,1,General - General,9,General,1,Low
+1415,Male    ,Married,53,45-54      ,9,South,9,General,1,General - General,9,General,1,Low
+1416,Male    ,Married,52,45-54      ,9,South,9,General,1,General - General,9,General,2,Medium
+1417,Female   ,Single,55,55-64      ,9,South,1,Arab,1,Arabs-Bedouins,1,Arab,1,Low
+1418,Female   ,Married,53,45-54      ,9,South,1,Arab,1,Arabs-Bedouins,1,Arab,1,Low
+1419,Male    ,Married,52,45-54      ,9,South,1,Arab,1,Arabs-Bedouins,1,Arab,1,Low
+1420,Male    ,Married,55,55-64      ,9,South,1,Arab,1,Arabs-Bedouins,1,Arab,1,Low
+1421,Male    ,Single,52,45-54      ,9,South,9,General,1,General - General,9,General,1,Low
+1422,Male    ,Single,51,45-54      ,9,South,9,General,1,General - General,9,General,1,Low
+1423,Male    ,Married,52,45-54      ,9,South,9,General,1,General - General,9,General,1,Low
+1424,Female   ,Single,51,45-54      ,9,South,9,General,1,General - General,9,General,1,Low
+1425,Female   ,Single,51,45-54      ,9,South,9,General,1,General - General,9,General,1,Low
+1426,Female   ,Single,51,45-54      ,9,South,1,Arab,1,Arabs-Bedouins,1,Arab,1,Low
+1427,Female   ,Married,51,45-54      ,9,South,9,General,1,General - General,9,General,1,Low
+1428,Female   ,Single,49,45-54      ,9,South,9,General,1,General - General,9,General,1,Low
+1429,Female   ,Married,48,45-54      ,9,South,1,Arab,1,Arabs-Bedouins,1,Arab,1,Low
+1430,Female   ,Married,51,45-54      ,9,South,9,General,1,General - General,9,General,1,Low
+1431,Female   ,Married,50,45-54      ,9,South,9,General,1,General - General,9,General,2,Medium
+1432,Male    ,Married,48,45-54      ,9,South,1,Arab,1,Arabs-Bedouins,1,Arab,1,Low
+1433,Female   ,Married,49,45-54      ,9,South,1,Arab,1,Arabs-Bedouins,1,Arab,1,Low
+1434,Male    ,Single,50,45-54      ,9,South,9,General,1,General - General,9,General,1,Low
+1435,Female   ,Married,49,45-54      ,9,South,9,General,1,General - General,9,General,2,Medium
+1436,Male    ,Married,49,45-54      ,9,South,9,General,1,General - General,9,General,2,Medium
+1437,Male    ,Married,48,45-54      ,9,South,9,General,1,General - General,9,General,1,Low
+1438,Male    ,Married,48,45-54      ,9,South,9,General,1,General - General,9,General,1,Low
+1439,Female   ,Married,48,45-54      ,9,South,9,General,2,General- Religious,9,General,1,Low
+1440,Female   ,Married,48,45-54      ,9,South,9,General,1,General - General,9,General,1,Low
+1441,Male    ,Married,48,45-54      ,9,South,1,Arab,1,Arabs-Bedouins,1,Arab,1,Low
+1442,Male    ,Single,46,45-54      ,9,South,1,Arab,1,Arabs-Bedouins,1,Arab,1,Low
+1443,Female   ,Married,47,45-54      ,9,South,9,General,1,General - General,9,General,1,Low
+1444,Male    ,Married,46,45-54      ,9,South,9,General,1,General - General,9,General,1,Low
+1445,Female   ,Single,46,45-54      ,9,South,9,General,1,General - General,9,General,1,Low
+1446,Female   ,Single,46,45-54      ,9,South,9,General,1,General - General,9,General,2,Medium
+1447,Female   ,Married,46,45-54      ,9,South,9,General,1,General - General,9,General,1,Low
+1448,Male    ,Married,45,45-54      ,9,South,9,General,1,General - General,9,General,1,Low
+1449,Male    ,Married,46,45-54      ,9,South,1,Arab,1,Arabs-Bedouins,1,Arab,1,Low
+1450,Male    ,Single,44,35-44      ,9,South,1,Arab,1,Arabs-Bedouins,1,Arab,1,Low
+1451,Female   ,Married,45,45-54      ,9,South,9,General,1,General - General,9,General,2,Medium
+1452,Female   ,Single,45,45-54      ,9,South,9,General,1,General - General,9,General,1,Low
+1453,Male    ,Married,44,35-44      ,9,South,9,General,1,General - General,9,General,3,High
+1454,Female   ,Married,43,35-44      ,9,South,1,Arab,1,Arabs-Bedouins,1,Arab,1,Low
+1455,Female   ,Married,44,35-44      ,9,South,9,General,1,General - General,9,General,2,Medium
+1456,Female   ,Married,43,35-44      ,9,South,1,Arab,1,Arabs-Bedouins,1,Arab,1,Low
+1457,Female   ,Married,43,35-44      ,9,South,9,General,1,General - General,9,General,1,Low
+1458,Female   ,Married,43,35-44      ,9,South,9,General,1,General - General,9,General,2,Medium
+1459,Female   ,Married,44,35-44      ,9,South,1,Arab,1,Arabs-Bedouins,1,Arab,1,Low
+1460,Male    ,Married,42,35-44      ,9,South,1,Arab,1,Arabs-Bedouins,1,Arab,1,Low
+1461,Female   ,Single,41,35-44      ,9,South,1,Arab,1,Arabs-Bedouins,1,Arab,1,Low
+1462,Female   ,Single,41,35-44      ,9,South,9,General,1,General - General,9,General,2,Medium
+1463,Female   ,Married,40,35-44      ,9,South,1,Arab,1,Arabs-Bedouins,1,Arab,1,Low
+1464,Male    ,Single,41,35-44      ,9,South,9,General,1,General - General,9,General,1,Low
+1465,Male    ,Married,39,35-44      ,9,South,1,Arab,1,Arabs-Bedouins,1,Arab,1,Low
+1466,Female   ,Single,58,55-64      ,9,South,9,General,1,General - General,9,General,2,Medium
+1467,Female   ,Married,51,45-54      ,9,South,9,General,1,General - General,9,General,1,Low
+1468,Male    ,Married,55,55-64      ,9,South,9,General,1,General - General,9,General,2,Medium
+1469,Male    ,Married,59,55-64      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1470,Female   ,Single,74,65-74      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1471,Male    ,Married,59,55-64      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,1,Low
+1472,Male    ,Married,70,65-74      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1473,Male    ,Married,66,65-74      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1474,Female   ,Single,89,85+        ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1475,Female   ,Single,61,55-64      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1476,Male    ,Married,71,65-74      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1477,Male    ,Married,61,55-64      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1478,Female   ,Married,71,65-74      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1479,Male    ,Married,76,75-84      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1480,Male    ,Married,72,65-74      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,1,Low
+1481,Female   ,Married,84,75-84      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1482,Female   ,Single,57,55-64      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1483,Female   ,Single,80,75-84      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1484,Female   ,Single,80,75-84      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1485,Male    ,Married,79,75-84      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1486,Male    ,Single,77,75-84      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1487,Male    ,Married,75,75-84      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1488,Male    ,Single,86,85+        ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1489,Male    ,Married,77,75-84      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1490,Female   ,Married,73,65-74      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1491,Female   ,Married,57,55-64      ,12,Hasharon-Shomron,1,Arab,2,Arab - Other,1,Arab,1,Low
+1492,Male    ,Married,87,85+        ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1493,Male    ,Married,79,75-84      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1494,Male    ,Married,80,75-84      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1495,Female   ,Single,76,75-84      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1496,Male    ,Married,84,75-84      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1497,Female   ,Single,79,75-84      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1498,Female   ,Single,78,75-84      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1499,Male    ,Married,80,75-84      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1500,Male    ,Married,70,65-74      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1501,Male    ,Married,71,65-74      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1502,Male    ,Married,74,65-74      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1503,Male    ,Married,62,55-64      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1504,Male    ,Single,69,65-74      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1505,Female   ,Married,58,55-64      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1506,Male    ,Married,67,65-74      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1507,Male    ,Married,72,65-74      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1508,Female   ,Single,83,75-84      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1509,Female   ,Single,91,85+        ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1510,Female   ,Married,62,55-64      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1511,Male    ,Single,97,85+        ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1512,Male    ,Single,61,55-64      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1513,Male    ,Married,63,55-64      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1514,Female   ,Married,74,65-74      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1515,Female   ,Married,70,65-74      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1516,Male    ,Married,73,65-74      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1517,Female   ,Married,86,85+        ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1518,Male    ,Married,70,65-74      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1519,Female   ,Married,72,65-74      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1520,Male    ,Single,62,55-64      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1521,Female   ,Single,57,55-64      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1522,Male    ,Single,62,55-64      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1523,Female   ,Married,79,75-84      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1524,Male    ,Married,65,65-74      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1525,Female   ,Married,77,75-84      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1526,Female   ,Single,72,65-74      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,1,Low
+1527,Female   ,Married,66,65-74      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1528,Male    ,Married,57,55-64      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1529,Female   ,Married,60,55-64      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1530,Female   ,Married,61,55-64      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1531,Female   ,Married,67,65-74      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1532,Male    ,Married,59,55-64      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1533,Female   ,Single,87,85+        ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1534,Female   ,Single,76,75-84      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1535,Female   ,Married,61,55-64      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1536,Male    ,Married,60,55-64      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1537,Female   ,Married,59,55-64      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1538,Female   ,Married,66,65-74      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1539,Female   ,Single,89,85+        ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1540,Female   ,Single,66,65-74      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1541,Female   ,Single,86,85+        ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1542,Male    ,Married,61,55-64      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1543,Female   ,Married,58,55-64      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1544,Female   ,Married,66,65-74      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1545,Female   ,Married,83,75-84      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1546,Female   ,Single,86,85+        ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1547,Female   ,Married,70,65-74      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,1,Low
+1548,Male    ,Married,59,55-64      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1549,Female   ,Married,63,55-64      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1550,Male    ,Single,66,65-74      ,12,Hasharon-Shomron,9,General,2,General- Religious,9,General,2,Medium
+1551,Male    ,Married,57,55-64      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1552,Female   ,Married,79,75-84      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1553,Female   ,Single,72,65-74      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1554,Male    ,Married,88,85+        ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1555,Female   ,Married,68,65-74      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1556,Female   ,Married,71,65-74      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1557,Male    ,Married,83,75-84      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1558,Female   ,Married,67,65-74      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1559,Female   ,Single,62,55-64      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1560,Male    ,Single,57,55-64      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1561,Male    ,Married,68,65-74      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1562,Male    ,Married,63,55-64      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1563,Female   ,Married,62,55-64      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1564,Male    ,Married,73,65-74      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1565,Female   ,Single,59,55-64      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1566,Male    ,Single,63,55-64      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1567,Female   ,Married,75,75-84      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1568,Female   ,Single,82,75-84      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1569,Male    ,Married,69,65-74      ,12,Hasharon-Shomron,9,General,2,General- Religious,9,General,2,Medium
+1570,Female   ,Single,78,75-84      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1571,Male    ,Married,74,65-74      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1572,Male    ,Married,71,65-74      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1573,Female   ,Single,73,65-74      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1574,Female   ,Married,68,65-74      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1575,Male    ,Married,59,55-64      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1576,Female   ,Married,72,65-74      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1577,Female   ,Single,69,65-74      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1578,Female   ,Married,70,65-74      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1579,Male    ,Single,62,55-64      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1580,Male    ,Married,63,55-64      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,0,0
+1581,Male    ,Married,71,65-74      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1582,Female   ,Single,62,55-64      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1583,Male    ,Married,81,75-84      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1584,Male    ,Married,78,75-84      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,1,Low
+1585,Male    ,Married,69,65-74      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1586,Male    ,Married,67,65-74      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1587,Female   ,Single,77,75-84      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1588,Male    ,Married,68,65-74      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1589,Male    ,Single,67,65-74      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1590,Male    ,Married,66,65-74      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1591,Female   ,Single,79,75-84      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1592,Female   ,Single,78,75-84      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1593,Female   ,Married,57,55-64      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1594,Male    ,Married,65,65-74      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,1,Low
+1595,Male    ,Married,82,75-84      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1596,Female   ,Single,60,55-64      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1597,Male    ,Married,79,75-84      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1598,Female   ,Married,57,55-64      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1599,Female   ,Single,82,75-84      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1600,Female   ,Single,58,55-64      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1601,Female   ,Single,82,75-84      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1602,Male    ,Married,70,65-74      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1603,Female   ,Married,44,35-44      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1604,Male    ,Married,62,55-64      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1605,Male    ,Married,42,35-44      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1606,Female   ,Single,81,75-84      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1607,Male    ,Single,60,55-64      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,1,Low
+1608,Female   ,Single,84,75-84      ,12,Hasharon-Shomron,3,Immigrants,1,USSR,9,General,2,Medium
+1609,Male    ,Single,55,55-64      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1610,Female   ,Single,85,85+        ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1611,Female   ,Single,79,75-84      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,1,Low
+1612,Male    ,Married,48,45-54      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,1,Low
+1613,Female   ,Single,58,55-64      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1614,Male    ,Married,58,55-64      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1615,Female   ,Married,51,45-54      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1616,Female   ,Married,61,55-64      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1617,Female   ,Married,60,55-64      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1618,Female   ,Single,65,65-74      ,12,Hasharon-Shomron,3,Immigrants,4,Other,9,General,2,Medium
+1619,Female   ,Single,50,45-54      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1620,Male    ,Married,50,45-54      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1621,Male    ,Married,44,35-44      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1622,Male    ,Married,61,55-64      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1623,Female   ,Married,59,55-64      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1624,Female   ,Single,75,75-84      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1625,Male    ,Married,87,85+        ,12,Hasharon-Shomron,9,General,1,General - General,9,General,1,Low
+1626,Female   ,Single,77,75-84      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1627,Male    ,Married,72,65-74      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,1,Low
+1628,Female   ,Single,85,85+        ,12,Hasharon-Shomron,9,General,1,General - General,9,General,1,Low
+1629,Female   ,Married,80,75-84      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1630,Female   ,Married,66,65-74      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,1,Low
+1631,Male    ,Married,78,75-84      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1632,Male    ,Single,77,75-84      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1633,Male    ,Single,50,45-54      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,1,Low
+1634,Female   ,Married,40,35-44      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,1,Low
+1635,Male    ,Married,64,55-64      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1636,Female   ,Married,78,75-84      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1637,Female   ,Single,67,65-74      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,1,Low
+1638,Male    ,Married,51,45-54      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1639,Male    ,Married,67,65-74      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1640,Female   ,Single,42,35-44      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,1,Low
+1641,Female   ,Single,58,55-64      ,12,Hasharon-Shomron,3,Immigrants,2,Ethiopia,9,General,2,Medium
+1642,Male    ,Married,62,55-64      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,1,Low
+1643,Female   ,Single,81,75-84      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,1,Low
+1644,Female   ,Single,86,85+        ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1645,Female   ,Married,71,65-74      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,1,Low
+1646,Female   ,Single,72,65-74      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,1,Low
+1647,Male    ,Married,61,55-64      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1648,Female   ,Single,62,55-64      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1649,Female   ,Married,42,35-44      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1650,Male    ,Single,62,55-64      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1651,Female   ,Single,81,75-84      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1652,Female   ,Married,58,55-64      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1653,Female   ,Married,52,45-54      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1654,Female   ,Single,79,75-84      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1655,Female   ,Married,62,55-64      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1656,Male    ,Single,62,55-64      ,12,Hasharon-Shomron,1,Arab,2,Arab - Other,1,Arab,1,Low
+1657,Female   ,Single,67,65-74      ,12,Hasharon-Shomron,1,Arab,2,Arab - Other,1,Arab,1,Low
+1658,Male    ,Married,61,55-64      ,12,Hasharon-Shomron,1,Arab,2,Arab - Other,1,Arab,1,Low
+1659,Female   ,Single,75,75-84      ,12,Hasharon-Shomron,1,Arab,2,Arab - Other,1,Arab,1,Low
+1660,Male    ,Married,61,55-64      ,12,Hasharon-Shomron,1,Arab,2,Arab - Other,1,Arab,1,Low
+1661,Female   ,Single,72,65-74      ,12,Hasharon-Shomron,1,Arab,2,Arab - Other,1,Arab,1,Low
+1662,Female   ,Single,74,65-74      ,12,Hasharon-Shomron,1,Arab,2,Arab - Other,1,Arab,1,Low
+1663,Female   ,Married,64,55-64      ,12,Hasharon-Shomron,1,Arab,2,Arab - Other,1,Arab,1,Low
+1664,Male    ,Married,69,65-74      ,12,Hasharon-Shomron,1,Arab,2,Arab - Other,1,Arab,1,Low
+1665,Male    ,Married,69,65-74      ,12,Hasharon-Shomron,1,Arab,2,Arab - Other,1,Arab,1,Low
+1666,Male    ,Married,65,65-74      ,12,Hasharon-Shomron,1,Arab,2,Arab - Other,1,Arab,1,Low
+1667,Male    ,Married,62,55-64      ,12,Hasharon-Shomron,1,Arab,2,Arab - Other,1,Arab,1,Low
+1668,Male    ,Married,61,55-64      ,12,Hasharon-Shomron,1,Arab,2,Arab - Other,1,Arab,1,Low
+1669,Female   ,Single,62,55-64      ,12,Hasharon-Shomron,1,Arab,2,Arab - Other,1,Arab,1,Low
+1670,Female   ,Single,64,55-64      ,12,Hasharon-Shomron,1,Arab,2,Arab - Other,1,Arab,1,Low
+1671,Male    ,Married,71,65-74      ,12,Hasharon-Shomron,1,Arab,2,Arab - Other,1,Arab,1,Low
+1672,Female   ,Single,62,55-64      ,12,Hasharon-Shomron,1,Arab,2,Arab - Other,1,Arab,1,Low
+1673,Female   ,Married,69,65-74      ,12,Hasharon-Shomron,1,Arab,2,Arab - Other,1,Arab,1,Low
+1674,Male    ,Married,70,65-74      ,12,Hasharon-Shomron,1,Arab,2,Arab - Other,1,Arab,1,Low
+1675,Male    ,Married,61,55-64      ,12,Hasharon-Shomron,1,Arab,2,Arab - Other,1,Arab,1,Low
+1676,Male    ,Married,76,75-84      ,12,Hasharon-Shomron,1,Arab,2,Arab - Other,1,Arab,1,Low
+1677,Female   ,Married,59,55-64      ,12,Hasharon-Shomron,1,Arab,2,Arab - Other,1,Arab,1,Low
+1678,Female   ,Married,67,65-74      ,12,Hasharon-Shomron,1,Arab,2,Arab - Other,1,Arab,1,Low
+1679,Female   ,Single,72,65-74      ,12,Hasharon-Shomron,1,Arab,2,Arab - Other,1,Arab,1,Low
+1680,Male    ,Married,67,65-74      ,12,Hasharon-Shomron,1,Arab,2,Arab - Other,1,Arab,1,Low
+1681,Female   ,Married,66,65-74      ,12,Hasharon-Shomron,1,Arab,2,Arab - Other,1,Arab,1,Low
+1682,Male    ,Married,59,55-64      ,12,Hasharon-Shomron,1,Arab,2,Arab - Other,1,Arab,1,Low
+1683,Male    ,Married,65,65-74      ,12,Hasharon-Shomron,1,Arab,2,Arab - Other,1,Arab,1,Low
+1684,Male    ,Married,74,65-74      ,12,Hasharon-Shomron,1,Arab,2,Arab - Other,1,Arab,1,Low
+1685,Male    ,Married,68,65-74      ,12,Hasharon-Shomron,1,Arab,2,Arab - Other,1,Arab,1,Low
+1686,Male    ,Married,63,55-64      ,12,Hasharon-Shomron,1,Arab,2,Arab - Other,1,Arab,1,Low
+1687,Female   ,Married,60,55-64      ,12,Hasharon-Shomron,1,Arab,2,Arab - Other,1,Arab,1,Low
+1688,Male    ,Married,74,65-74      ,12,Hasharon-Shomron,1,Arab,2,Arab - Other,1,Arab,1,Low
+1689,Female   ,Single,70,65-74      ,12,Hasharon-Shomron,1,Arab,2,Arab - Other,1,Arab,1,Low
+1690,Female   ,Married,59,55-64      ,12,Hasharon-Shomron,1,Arab,2,Arab - Other,1,Arab,1,Low
+1691,Male    ,Married,59,55-64      ,12,Hasharon-Shomron,1,Arab,2,Arab - Other,1,Arab,1,Low
+1692,Male    ,Single,64,55-64      ,12,Hasharon-Shomron,1,Arab,2,Arab - Other,1,Arab,1,Low
+1693,Male    ,Married,73,65-74      ,12,Hasharon-Shomron,1,Arab,2,Arab - Other,1,Arab,1,Low
+1694,Male    ,Single,41,35-44      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1695,Male    ,Married,41,35-44      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1696,Male    ,Married,40,35-44      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1697,Male    ,Single,39,35-44      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1698,Female   ,Married,39,35-44      ,12,Hasharon-Shomron,1,Arab,2,Arab - Other,1,Arab,1,Low
+1699,Male    ,Married,54,45-54      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1700,Female   ,Married,59,55-64      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,1,Low
+1701,Male    ,Married,57,55-64      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1702,Female   ,Single,75,75-84      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,1,Low
+1703,Female   ,Married,61,55-64      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1704,Male    ,Married,92,85+        ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1705,Male    ,Married,74,65-74      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1706,Female   ,Single,62,55-64      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1707,Male    ,Married,86,85+        ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1708,Male    ,Married,57,55-64      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1709,Female   ,Single,83,75-84      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1710,Male    ,Married,57,55-64      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1711,Male    ,Single,77,75-84      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1712,Male    ,Married,56,55-64      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1713,Female   ,Single,75,75-84      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1714,Female   ,Married,68,65-74      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1715,Female   ,Married,60,55-64      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1716,Male    ,Single,87,85+        ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1717,Male    ,Married,84,75-84      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1718,Male    ,Married,79,75-84      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1719,Male    ,Married,80,75-84      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,1,Low
+1720,Female   ,Married,65,65-74      ,12,Hasharon-Shomron,1,Arab,2,Arab - Other,1,Arab,2,Medium
+1721,Female   ,Married,66,65-74      ,12,Hasharon-Shomron,1,Arab,2,Arab - Other,1,Arab,1,Low
+1722,Male    ,Married,66,65-74      ,12,Hasharon-Shomron,1,Arab,2,Arab - Other,1,Arab,1,Low
+1723,Male    ,Married,61,55-64      ,12,Hasharon-Shomron,1,Arab,2,Arab - Other,1,Arab,1,Low
+1724,Female   ,Single,65,65-74      ,12,Hasharon-Shomron,1,Arab,2,Arab - Other,1,Arab,1,Low
+1725,Male    ,Married,83,75-84      ,12,Hasharon-Shomron,1,Arab,2,Arab - Other,1,Arab,1,Low
+1726,Male    ,Married,57,55-64      ,12,Hasharon-Shomron,1,Arab,2,Arab - Other,1,Arab,1,Low
+1727,Male    ,Married,74,65-74      ,12,Hasharon-Shomron,1,Arab,2,Arab - Other,1,Arab,1,Low
+1728,Female   ,Married,63,55-64      ,12,Hasharon-Shomron,1,Arab,2,Arab - Other,1,Arab,1,Low
+1729,Male    ,Married,67,65-74      ,12,Hasharon-Shomron,1,Arab,2,Arab - Other,1,Arab,1,Low
+1730,Male    ,Married,61,55-64      ,12,Hasharon-Shomron,1,Arab,2,Arab - Other,1,Arab,1,Low
+1731,Female   ,Married,59,55-64      ,12,Hasharon-Shomron,1,Arab,2,Arab - Other,1,Arab,1,Low
+1732,Female   ,Married,61,55-64      ,12,Hasharon-Shomron,1,Arab,2,Arab - Other,1,Arab,1,Low
+1733,Female   ,Single,57,55-64      ,12,Hasharon-Shomron,1,Arab,2,Arab - Other,1,Arab,1,Low
+1734,Male    ,Married,66,65-74      ,12,Hasharon-Shomron,1,Arab,2,Arab - Other,1,Arab,1,Low
+1735,Male    ,Married,74,65-74      ,12,Hasharon-Shomron,1,Arab,2,Arab - Other,1,Arab,1,Low
+1736,Female   ,Single,71,65-74      ,12,Hasharon-Shomron,1,Arab,2,Arab - Other,1,Arab,1,Low
+1737,Male    ,Married,64,55-64      ,12,Hasharon-Shomron,1,Arab,2,Arab - Other,1,Arab,1,Low
+1738,Female   ,Married,62,55-64      ,12,Hasharon-Shomron,1,Arab,2,Arab - Other,1,Arab,1,Low
+1739,Female   ,Married,61,55-64      ,12,Hasharon-Shomron,1,Arab,2,Arab - Other,1,Arab,1,Low
+1740,Male    ,Married,61,55-64      ,12,Hasharon-Shomron,1,Arab,2,Arab - Other,1,Arab,1,Low
+1741,Female   ,Single,70,65-74      ,12,Hasharon-Shomron,1,Arab,2,Arab - Other,1,Arab,1,Low
+1742,Female   ,Married,57,55-64      ,12,Hasharon-Shomron,1,Arab,2,Arab - Other,1,Arab,1,Low
+1743,Male    ,Married,57,55-64      ,12,Hasharon-Shomron,1,Arab,2,Arab - Other,1,Arab,1,Low
+1744,Male    ,Married,56,55-64      ,12,Hasharon-Shomron,1,Arab,2,Arab - Other,1,Arab,1,Low
+1745,Female   ,Single,64,55-64      ,12,Hasharon-Shomron,1,Arab,2,Arab - Other,1,Arab,1,Low
+1746,Male    ,Married,60,55-64      ,12,Hasharon-Shomron,1,Arab,2,Arab - Other,1,Arab,1,Low
+1747,Female   ,Married,74,65-74      ,12,Hasharon-Shomron,1,Arab,2,Arab - Other,1,Arab,1,Low
+1748,Female   ,Married,73,65-74      ,12,Hasharon-Shomron,1,Arab,2,Arab - Other,1,Arab,1,Low
+1749,Female   ,Single,65,65-74      ,12,Hasharon-Shomron,1,Arab,2,Arab - Other,1,Arab,1,Low
+1750,Female   ,Married,56,55-64      ,12,Hasharon-Shomron,1,Arab,2,Arab - Other,1,Arab,1,Low
+1751,Male    ,Single,72,65-74      ,12,Hasharon-Shomron,1,Arab,2,Arab - Other,1,Arab,1,Low
+1752,Male    ,Married,73,65-74      ,12,Hasharon-Shomron,1,Arab,2,Arab - Other,1,Arab,1,Low
+1753,Female   ,Married,61,55-64      ,12,Hasharon-Shomron,1,Arab,2,Arab - Other,1,Arab,1,Low
+1754,Female   ,Single,60,55-64      ,12,Hasharon-Shomron,1,Arab,2,Arab - Other,1,Arab,1,Low
+1755,Female   ,Single,59,55-64      ,12,Hasharon-Shomron,1,Arab,2,Arab - Other,1,Arab,1,Low
+1756,Male    ,Married,62,55-64      ,12,Hasharon-Shomron,1,Arab,2,Arab - Other,1,Arab,1,Low
+1757,Female   ,Single,62,55-64      ,12,Hasharon-Shomron,1,Arab,2,Arab - Other,1,Arab,1,Low
+1758,Female   ,Married,61,55-64      ,12,Hasharon-Shomron,1,Arab,2,Arab - Other,1,Arab,1,Low
+1759,Female   ,Married,62,55-64      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,1,Low
+1760,Female   ,Single,71,65-74      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1761,Male    ,Married,64,55-64      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1762,Female   ,Single,82,75-84      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1763,Female   ,Married,69,65-74      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1764,Male    ,Single,75,75-84      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1765,Female   ,Single,73,65-74      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1766,Male    ,Married,69,65-74      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1767,Male    ,Married,67,65-74      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1768,Female   ,Single,97,85+        ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1769,Male    ,Married,73,65-74      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1770,Female   ,Single,88,85+        ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1771,Female   ,Single,75,75-84      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1772,Male    ,Married,62,55-64      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1773,Male    ,Married,76,75-84      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1774,Male    ,Married,67,65-74      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1775,Female   ,Single,88,85+        ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1776,Male    ,Single,76,75-84      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1777,Female   ,Married,66,65-74      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1778,Male    ,Married,76,75-84      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1779,Female   ,Married,61,55-64      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1780,Male    ,Married,64,55-64      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1781,Male    ,Married,61,55-64      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1782,Male    ,Single,94,85+        ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1783,Male    ,Married,60,55-64      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1784,Female   ,Single,72,65-74      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1785,Female   ,Single,78,75-84      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1786,Female   ,Married,59,55-64      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1787,Female   ,Single,73,65-74      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1788,Female   ,Married,60,55-64      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1789,Male    ,Married,57,55-64      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1790,Female   ,Single,66,65-74      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1791,Female   ,Single,70,65-74      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1792,Female   ,Married,62,55-64      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1793,Male    ,Single,63,55-64      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1794,Female   ,Single,72,65-74      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1795,Male    ,Married,74,65-74      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1796,Male    ,Single,70,65-74      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1797,Male    ,Married,70,65-74      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,1,Low
+1798,Female   ,Married,57,55-64      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1799,Female   ,Married,69,65-74      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1800,Female   ,Married,60,55-64      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1801,Female   ,Married,60,55-64      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1802,Female   ,Single,72,65-74      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1803,Male    ,Married,69,65-74      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1804,Female   ,Married,60,55-64      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,3,High
+1805,Female   ,Married,63,55-64      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1806,Male    ,Single,70,65-74      ,12,Hasharon-Shomron,9,General,1,General - General,9,General,2,Medium
+1807,Female   ,Married,63,55-64      ,15,North,9,General,1,General - General,9,General,1,Low
+1808,Male    ,Married,57,55-64      ,15,North,9,General,1,General - General,9,General,2,Medium
+1809,Female   ,Married,64,55-64      ,15,North,9,General,1,General - General,9,General,2,Medium
+1810,Female   ,Married,75,75-84      ,15,North,9,General,1,General - General,9,General,2,Medium
+1811,Male    ,Married,82,75-84      ,15,North,9,General,1,General - General,9,General,2,Medium
+1812,Male    ,Married,85,85+        ,15,North,9,General,1,General - General,9,General,2,Medium
+1813,Male    ,Married,84,75-84      ,15,North,9,General,2,General- Religious,9,General,1,Low
+1814,Male    ,Married,71,65-74      ,15,North,9,General,1,General - General,9,General,1,Low
+1815,Male    ,Single,67,65-74      ,15,North,9,General,1,General - General,9,General,2,Medium
+1816,Male    ,Married,81,75-84      ,15,North,9,General,1,General - General,9,General,2,Medium
+1817,Female   ,Single,73,65-74      ,15,North,9,General,1,General - General,9,General,2,Medium
+1818,Male    ,Married,60,55-64      ,15,North,9,General,1,General - General,9,General,2,Medium
+1819,Male    ,Married,63,55-64      ,15,North,9,General,1,General - General,9,General,2,Medium
+1820,Female   ,Single,60,55-64      ,15,North,9,General,1,General - General,9,General,3,High
+1821,Male    ,Married,86,85+        ,15,North,9,General,1,General - General,9,General,2,Medium
+1822,Female   ,Married,57,55-64      ,15,North,1,Arab,2,Arab - Other,1,Arab,2,Medium
+1823,Male    ,Married,70,65-74      ,15,North,9,General,1,General - General,9,General,2,Medium
+1824,Male    ,Married,61,55-64      ,15,North,9,General,1,General - General,9,General,2,Medium
+1825,Male    ,Married,63,55-64      ,15,North,9,General,1,General - General,9,General,3,High
+1826,Male    ,Single,82,75-84      ,15,North,9,General,1,General - General,9,General,2,Medium
+1827,Male    ,Married,66,65-74      ,15,North,9,General,1,General - General,9,General,2,Medium
+1828,Male    ,Married,61,55-64      ,15,North,9,General,1,General - General,9,General,2,Medium
+1829,Male    ,Married,67,65-74      ,15,North,9,General,1,General - General,9,General,2,Medium
+1830,Male    ,Married,72,65-74      ,15,North,9,General,1,General - General,9,General,2,Medium
+1831,Female   ,Single,84,75-84      ,15,North,9,General,1,General - General,9,General,3,High
+1832,Female   ,Single,56,55-64      ,15,North,9,General,1,General - General,9,General,2,Medium
+1833,Female   ,Single,95,85+        ,15,North,9,General,1,General - General,9,General,2,Medium
+1834,Male    ,Married,70,65-74      ,15,North,9,General,1,General - General,9,General,1,Low
+1835,Male    ,Married,85,85+        ,15,North,9,General,1,General - General,9,General,2,Medium
+1836,Female   ,Married,57,55-64      ,15,North,9,General,1,General - General,9,General,1,Low
+1837,Male    ,Married,60,55-64      ,15,North,9,General,1,General - General,9,General,2,Medium
+1838,Male    ,Married,73,65-74      ,15,North,9,General,1,General - General,9,General,2,Medium
+1839,Male    ,Married,63,55-64      ,15,North,9,General,1,General - General,9,General,2,Medium
+1840,Female   ,Married,61,55-64      ,15,North,9,General,1,General - General,9,General,1,Low
+1841,Female   ,Married,62,55-64      ,15,North,9,General,1,General - General,9,General,2,Medium
+1842,Female   ,Single,62,55-64      ,15,North,9,General,1,General - General,9,General,2,Medium
+1843,Female   ,Single,69,65-74      ,15,North,9,General,1,General - General,9,General,2,Medium
+1844,Male    ,Married,53,45-54      ,15,North,9,General,1,General - General,9,General,1,Low
+1845,Male    ,Married,56,55-64      ,15,North,9,General,1,General - General,9,General,2,Medium
+1846,Female   ,Single,78,75-84      ,15,North,9,General,1,General - General,9,General,1,Low
+1847,Male    ,Married,52,45-54      ,15,North,9,General,1,General - General,9,General,2,Medium
+1848,Female   ,Single,56,55-64      ,15,North,9,General,1,General - General,9,General,2,Medium
+1849,Male    ,Married,48,45-54      ,15,North,9,General,1,General - General,9,General,2,Medium
+1850,Female   ,Single,60,55-64      ,15,North,9,General,1,General - General,9,General,2,Medium
+1851,Female   ,Single,52,45-54      ,15,North,9,General,1,General - General,9,General,2,Medium
+1852,Female   ,Married,50,45-54      ,15,North,9,General,1,General - General,9,General,1,Low
+1853,Female   ,Single,57,55-64      ,15,North,9,General,1,General - General,9,General,2,Medium
+1854,Female   ,Single,45,45-54      ,15,North,9,General,1,General - General,9,General,2,Medium
+1855,Male    ,Married,53,45-54      ,15,North,9,General,1,General - General,9,General,2,Medium
+1856,Female   ,Single,71,65-74      ,15,North,9,General,1,General - General,9,General,2,Medium
+1857,Female   ,Single,81,75-84      ,15,North,9,General,1,General - General,9,General,2,Medium
+1858,Female   ,Married,61,55-64      ,15,North,1,Arab,2,Arab - Other,1,Arab,2,Medium
+1859,Male    ,Married,70,65-74      ,15,North,1,Arab,2,Arab - Other,1,Arab,1,Low
+1860,Female   ,Married,63,55-64      ,15,North,1,Arab,2,Arab - Other,1,Arab,1,Low
+1861,Female   ,Married,61,55-64      ,15,North,1,Arab,2,Arab - Other,1,Arab,2,Medium
+1862,Male    ,Married,65,65-74      ,15,North,1,Arab,2,Arab - Other,1,Arab,2,Medium
+1863,Male    ,Single,61,55-64      ,15,North,1,Arab,2,Arab - Other,1,Arab,2,Medium
+1864,Male    ,Married,70,65-74      ,15,North,1,Arab,2,Arab - Other,1,Arab,1,Low
+1865,Male    ,Married,61,55-64      ,15,North,1,Arab,2,Arab - Other,1,Arab,2,Medium
+1866,Male    ,Married,68,65-74      ,15,North,1,Arab,2,Arab - Other,1,Arab,1,Low
+1867,Female   ,Single,84,75-84      ,15,North,1,Arab,1,Arabs-Bedouins,1,Arab,1,Low
+1868,Male    ,Married,58,55-64      ,15,North,1,Arab,2,Arab - Other,1,Arab,2,Medium
+1869,Female   ,Single,82,75-84      ,15,North,1,Arab,2,Arab - Other,1,Arab,2,Medium
+1870,Female   ,Single,63,55-64      ,15,North,1,Arab,2,Arab - Other,1,Arab,2,Medium
+1871,Female   ,Married,69,65-74      ,15,North,1,Arab,2,Arab - Other,1,Arab,1,Low
+1872,Male    ,Married,64,55-64      ,15,North,1,Arab,2,Arab - Other,1,Arab,1,Low
+1873,Female   ,Single,65,65-74      ,15,North,1,Arab,2,Arab - Other,1,Arab,1,Low
+1874,Female   ,Single,59,55-64      ,15,North,1,Arab,2,Arab - Other,1,Arab,1,Low
+1875,Male    ,Married,58,55-64      ,15,North,1,Arab,2,Arab - Other,1,Arab,1,Low
+1876,Female   ,Married,62,55-64      ,15,North,1,Arab,2,Arab - Other,1,Arab,1,Low
+1877,Female   ,Married,84,75-84      ,15,North,1,Arab,2,Arab - Other,1,Arab,1,Low
+1878,Male    ,Single,62,55-64      ,15,North,1,Arab,1,Arabs-Bedouins,1,Arab,1,Low
+1879,Male    ,Married,66,65-74      ,15,North,1,Arab,2,Arab - Other,1,Arab,1,Low
+1880,Male    ,Married,67,65-74      ,15,North,1,Arab,2,Arab - Other,1,Arab,1,Low
+1881,Male    ,Married,71,65-74      ,15,North,1,Arab,2,Arab - Other,1,Arab,1,Low
+1882,Female   ,Married,67,65-74      ,15,North,1,Arab,2,Arab - Other,1,Arab,1,Low
+1883,Female   ,Single,71,65-74      ,15,North,1,Arab,2,Arab - Other,1,Arab,1,Low
+1884,Male    ,Single,71,65-74      ,15,North,1,Arab,2,Arab - Other,1,Arab,1,Low
+1885,Female   ,Married,66,65-74      ,15,North,1,Arab,2,Arab - Other,1,Arab,1,Low
+1886,Female   ,Married,84,75-84      ,15,North,1,Arab,1,Arabs-Bedouins,1,Arab,1,Low
+1887,Female   ,Single,75,75-84      ,15,North,1,Arab,2,Arab - Other,1,Arab,1,Low
+1888,Male    ,Married,67,65-74      ,15,North,1,Arab,2,Arab - Other,1,Arab,1,Low
+1889,Male    ,Married,73,65-74      ,15,North,1,Arab,2,Arab - Other,1,Arab,1,Low
+1890,Male    ,Married,65,65-74      ,15,North,1,Arab,2,Arab - Other,1,Arab,1,Low
+1891,Male    ,Married,63,55-64      ,15,North,1,Arab,1,Arabs-Bedouins,1,Arab,1,Low
+1892,Female   ,Married,67,65-74      ,15,North,1,Arab,2,Arab - Other,1,Arab,1,Low
+1893,Male    ,Married,66,65-74      ,15,North,1,Arab,2,Arab - Other,1,Arab,1,Low
+1894,Female   ,Single,80,75-84      ,15,North,1,Arab,2,Arab - Other,1,Arab,2,Medium
+1895,Male    ,Married,94,85+        ,15,North,1,Arab,1,Arabs-Bedouins,1,Arab,1,Low
+1896,Female   ,Married,71,65-74      ,15,North,1,Arab,2,Arab - Other,1,Arab,1,Low
+1897,Female   ,Married,69,65-74      ,15,North,1,Arab,2,Arab - Other,1,Arab,2,Medium
+1898,Female   ,Married,58,55-64      ,15,North,1,Arab,2,Arab - Other,1,Arab,1,Low
+1899,Male    ,Married,58,55-64      ,15,North,1,Arab,2,Arab - Other,1,Arab,1,Low
+1900,Male    ,Married,64,55-64      ,15,North,1,Arab,2,Arab - Other,1,Arab,1,Low
+1901,Male    ,Single,78,75-84      ,15,North,1,Arab,2,Arab - Other,1,Arab,1,Low
+1902,Female   ,Single,79,75-84      ,15,North,1,Arab,2,Arab - Other,1,Arab,2,Medium
+1903,Female   ,Married,67,65-74      ,15,North,1,Arab,2,Arab - Other,1,Arab,1,Low
+1904,Male    ,Married,63,55-64      ,15,North,1,Arab,2,Arab - Other,1,Arab,1,Low
+1905,Female   ,Married,58,55-64      ,15,North,9,General,3,General - Circassians,9,General,2,Medium
+1906,Female   ,Single,83,75-84      ,15,North,9,General,1,General - General,9,General,2,Medium
+1907,Male    ,Married,65,65-74      ,15,North,1,Arab,2,Arab - Other,1,Arab,2,Medium
+1908,Male    ,Married,60,55-64      ,15,North,1,Arab,2,Arab - Other,1,Arab,1,Low
+1909,Male    ,Single,40,35-44      ,15,North,9,General,1,General - General,9,General,1,Low
+1910,Female   ,Single,67,65-74      ,15,North,9,General,1,General - General,9,General,1,Low
+1911,Female   ,Married,48,45-54      ,15,North,9,General,1,General - General,9,General,2,Medium
+1912,Female   ,Married,53,45-54      ,15,North,9,General,1,General - General,9,General,1,Low
+1913,Female   ,Married,65,65-74      ,15,North,9,General,1,General - General,9,General,1,Low
+1914,Female   ,Single,57,55-64      ,15,North,9,General,1,General - General,9,General,2,Medium
+1915,Male    ,Married,64,55-64      ,15,North,9,General,1,General - General,9,General,2,Medium
+1916,Female   ,Married,57,55-64      ,15,North,1,Arab,2,Arab - Other,1,Arab,1,Low
+1917,Male    ,Married,64,55-64      ,15,North,1,Arab,2,Arab - Other,1,Arab,1,Low
+1918,Female   ,Married,66,65-74      ,15,North,1,Arab,2,Arab - Other,1,Arab,1,Low
+1919,Female   ,Single,57,55-64      ,15,North,1,Arab,1,Arabs-Bedouins,1,Arab,2,Medium
+1920,Female   ,Married,64,55-64      ,15,North,1,Arab,2,Arab - Other,1,Arab,1,Low
+1921,Female   ,Married,64,55-64      ,15,North,1,Arab,2,Arab - Other,1,Arab,2,Medium
+1922,Male    ,Married,61,55-64      ,15,North,9,General,1,General - General,9,General,2,Medium
+1923,Male    ,Married,78,75-84      ,15,North,9,General,1,General - General,9,General,2,Medium
+1924,Female   ,Single,66,65-74      ,15,North,9,General,1,General - General,9,General,2,Medium
+1925,Female   ,Married,56,55-64      ,15,North,9,General,1,General - General,9,General,1,Low
+1926,Male    ,Married,86,85+        ,15,North,9,General,1,General - General,9,General,1,Low
+1927,Male    ,Married,74,65-74      ,15,North,9,General,1,General - General,9,General,3,High
+1928,Female   ,Married,68,65-74      ,15,North,9,General,1,General - General,9,General,2,Medium
+1929,Male    ,Married,76,75-84      ,15,North,9,General,1,General - General,9,General,2,Medium
+1930,Male    ,Married,64,55-64      ,15,North,9,General,1,General - General,9,General,2,Medium
+1931,Female   ,Single,72,65-74      ,15,North,9,General,1,General - General,9,General,3,High
+1932,Male    ,Married,59,55-64      ,15,North,9,General,1,General - General,9,General,2,Medium
+1933,Male    ,Married,56,55-64      ,15,North,9,General,1,General - General,9,General,2,Medium
+1934,Female   ,Married,56,55-64      ,15,North,1,Arab,2,Arab - Other,1,Arab,1,Low
+1935,Male    ,Married,56,55-64      ,15,North,1,Arab,2,Arab - Other,1,Arab,1,Low
+1936,Female   ,Married,56,55-64      ,15,North,9,General,1,General - General,9,General,2,Medium
+1937,Male    ,Married,56,55-64      ,15,North,1,Arab,2,Arab - Other,1,Arab,1,Low
+1938,Female   ,Married,55,55-64      ,15,North,1,Arab,2,Arab - Other,1,Arab,1,Low
+1939,Female   ,Married,55,55-64      ,15,North,9,General,1,General - General,9,General,2,Medium
+1940,Female   ,Single,55,55-64      ,15,North,9,General,1,General - General,9,General,2,Medium
+1941,Female   ,Married,55,55-64      ,15,North,9,General,1,General - General,9,General,2,Medium
+1942,Male    ,Married,55,55-64      ,15,North,9,General,1,General - General,9,General,2,Medium
+1943,Male    ,Married,55,55-64      ,15,North,9,General,1,General - General,9,General,2,Medium
+1944,Female   ,Married,55,55-64      ,15,North,1,Arab,2,Arab - Other,1,Arab,1,Low
+1945,Male    ,Married,53,45-54      ,15,North,1,Arab,2,Arab - Other,1,Arab,2,Medium
+1946,Female   ,Married,53,45-54      ,15,North,1,Arab,2,Arab - Other,1,Arab,1,Low
+1947,Female   ,Married,55,55-64      ,15,North,9,General,1,General - General,9,General,2,Medium
+1948,Female   ,Married,54,45-54      ,15,North,1,Arab,2,Arab - Other,1,Arab,1,Low
+1949,Male    ,Married,54,45-54      ,15,North,9,General,1,General - General,9,General,2,Medium
+1950,Female   ,Married,54,45-54      ,15,North,9,General,1,General - General,9,General,1,Low
+1951,Male    ,Married,53,45-54      ,15,North,9,General,1,General - General,9,General,3,High
+1952,Female   ,Married,53,45-54      ,15,North,9,General,1,General - General,9,General,3,High
+1953,Female   ,Single,53,45-54      ,15,North,9,General,1,General - General,9,General,2,Medium
+1954,Male    ,Married,52,45-54      ,15,North,9,General,1,General - General,9,General,3,High
+1955,Female   ,Married,53,45-54      ,15,North,1,Arab,2,Arab - Other,1,Arab,1,Low
+1956,Male    ,Married,53,45-54      ,15,North,1,Arab,2,Arab - Other,1,Arab,1,Low
+1957,Male    ,Married,53,45-54      ,15,North,1,Arab,2,Arab - Other,1,Arab,1,Low
+1958,Male    ,Married,52,45-54      ,15,North,1,Arab,2,Arab - Other,1,Arab,2,Medium
+1959,Female   ,Single,52,45-54      ,15,North,1,Arab,2,Arab - Other,1,Arab,2,Medium
+1960,Female   ,Married,51,45-54      ,15,North,9,General,2,General- Religious,9,General,1,Low
+1961,Male    ,Married,51,45-54      ,15,North,9,General,1,General - General,9,General,2,Medium
+1962,Male    ,Single,51,45-54      ,15,North,9,General,1,General - General,9,General,1,Low
+1963,Male    ,Married,50,45-54      ,15,North,9,General,1,General - General,9,General,2,Medium
+1964,Female   ,Married,52,45-54      ,15,North,1,Arab,2,Arab - Other,1,Arab,1,Low
+1965,Male    ,Married,50,45-54      ,15,North,1,Arab,1,Arabs-Bedouins,1,Arab,1,Low
+1966,Female   ,Married,51,45-54      ,15,North,1,Arab,2,Arab - Other,1,Arab,2,Medium
+1967,Female   ,Married,51,45-54      ,15,North,1,Arab,2,Arab - Other,1,Arab,1,Low
+1968,Female   ,Married,50,45-54      ,15,North,1,Arab,2,Arab - Other,1,Arab,1,Low
+1969,Female   ,Married,50,45-54      ,15,North,1,Arab,2,Arab - Other,1,Arab,1,Low
+1970,Male    ,Married,50,45-54      ,15,North,9,General,1,General - General,9,General,2,Medium
+1971,Male    ,Married,50,45-54      ,15,North,9,General,1,General - General,9,General,2,Medium
+1972,Female   ,Married,50,45-54      ,15,North,1,Arab,2,Arab - Other,1,Arab,2,Medium
+1973,Female   ,Married,50,45-54      ,15,North,1,Arab,2,Arab - Other,1,Arab,1,Low
+1974,Male    ,Married,49,45-54      ,15,North,1,Arab,1,Arabs-Bedouins,1,Arab,1,Low
+1975,Male    ,Married,49,45-54      ,15,North,9,General,1,General - General,9,General,2,Medium
+1976,Male    ,Married,49,45-54      ,15,North,1,Arab,2,Arab - Other,1,Arab,1,Low
+1977,Female   ,Married,48,45-54      ,15,North,1,Arab,1,Arabs-Bedouins,1,Arab,2,Medium
+1978,Male    ,Married,49,45-54      ,15,North,9,General,1,General - General,9,General,1,Low
+1979,Male    ,Married,48,45-54      ,15,North,1,Arab,2,Arab - Other,1,Arab,1,Low
+1980,Male    ,Married,48,45-54      ,15,North,1,Arab,2,Arab - Other,1,Arab,1,Low
+1981,Male    ,Married,47,45-54      ,15,North,9,General,1,General - General,9,General,2,Medium
+1982,Female   ,Single,47,45-54      ,15,North,9,General,1,General - General,9,General,1,Low
+1983,Male    ,Married,47,45-54      ,15,North,1,Arab,2,Arab - Other,1,Arab,1,Low
+1984,Female   ,Married,47,45-54      ,15,North,1,Arab,2,Arab - Other,1,Arab,2,Medium
+1985,Female   ,Married,47,45-54      ,15,North,1,Arab,2,Arab - Other,1,Arab,1,Low
+1986,Male    ,Married,47,45-54      ,15,North,9,General,1,General - General,9,General,2,Medium
+1987,Female   ,Single,47,45-54      ,15,North,1,Arab,1,Arabs-Bedouins,1,Arab,2,Medium
+1988,Female   ,Single,46,45-54      ,15,North,1,Arab,2,Arab - Other,1,Arab,1,Low
+1989,Female   ,Married,46,45-54      ,15,North,1,Arab,2,Arab - Other,1,Arab,2,Medium
+1990,Male    ,Single,46,45-54      ,15,North,9,General,1,General - General,9,General,2,Medium
+1991,Male    ,Married,46,45-54      ,15,North,1,Arab,2,Arab - Other,1,Arab,1,Low
+1992,Male    ,Married,45,45-54      ,15,North,9,General,3,General - Circassians,9,General,2,Medium
+1993,Female   ,Married,45,45-54      ,15,North,1,Arab,2,Arab - Other,1,Arab,1,Low
+1994,Female   ,Married,45,45-54      ,15,North,1,Arab,2,Arab - Other,1,Arab,1,Low
+1995,Female   ,Married,44,35-44      ,15,North,9,General,1,General - General,9,General,2,Medium
+1996,Male    ,Married,44,35-44      ,15,North,1,Arab,2,Arab - Other,1,Arab,1,Low
+1997,Female   ,Married,44,35-44      ,15,North,1,Arab,2,Arab - Other,1,Arab,1,Low
+1998,Female   ,Single,44,35-44      ,15,North,9,General,1,General - General,9,General,2,Medium
+1999,Male    ,Married,44,35-44      ,15,North,1,Arab,2,Arab - Other,1,Arab,1,Low
+2000,Female   ,Married,42,35-44      ,15,North,1,Arab,2,Arab - Other,1,Arab,1,Low
+2001,Female   ,Married,43,35-44      ,15,North,1,Arab,2,Arab - Other,1,Arab,1,Low
+2002,Female   ,Married,42,35-44      ,15,North,9,General,1,General - General,9,General,2,Medium
+2003,Male    ,Married,42,35-44      ,15,North,1,Arab,2,Arab - Other,1,Arab,1,Low
+2004,Male    ,Married,42,35-44      ,15,North,1,Arab,2,Arab - Other,1,Arab,1,Low
+2005,Female   ,Single,42,35-44      ,15,North,1,Arab,2,Arab - Other,1,Arab,2,Medium
+2006,Female   ,Married,41,35-44      ,15,North,1,Arab,2,Arab - Other,1,Arab,1,Low
+2007,Female   ,Married,40,35-44      ,15,North,1,Arab,2,Arab - Other,1,Arab,1,Low
+2008,Male    ,Married,41,35-44      ,15,North,1,Arab,2,Arab - Other,1,Arab,1,Low
+2009,Female   ,Single,40,35-44      ,15,North,1,Arab,2,Arab - Other,1,Arab,1,Low
+2010,Female   ,Married,40,35-44      ,15,North,1,Arab,2,Arab - Other,1,Arab,1,Low
+2011,Female   ,Single,53,45-54      ,15,North,9,General,1,General - General,9,General,1,Low
+2012,Male    ,Married,58,55-64      ,15,North,9,General,1,General - General,9,General,1,Low
+2013,Female   ,Single,71,65-74      ,15,North,9,General,1,General - General,9,General,1,Low
+2014,Male    ,Married,68,65-74      ,15,North,9,General,2,General- Religious,9,General,1,Low
+2015,Male    ,Married,66,65-74      ,15,North,9,General,1,General - General,9,General,2,Medium
+2016,Male    ,Married,55,55-64      ,15,North,9,General,1,General - General,9,General,1,Low
+2017,Male    ,Married,73,65-74      ,15,North,9,General,1,General - General,9,General,2,Medium
+2018,Female   ,Married,69,65-74      ,15,North,9,General,1,General - General,9,General,2,Medium
+2019,Female   ,Single,81,75-84      ,15,North,9,General,1,General - General,9,General,1,Low
+2020,Male    ,Married,59,55-64      ,15,North,9,General,1,General - General,9,General,2,Medium
+2021,Female   ,Married,69,65-74      ,15,North,9,General,1,General - General,9,General,2,Medium
+2022,Male    ,Married,67,65-74      ,15,North,9,General,1,General - General,9,General,1,Low
+2023,Female   ,Married,64,55-64      ,15,North,9,General,1,General - General,9,General,2,Medium
+2024,Male    ,Married,72,65-74      ,15,North,9,General,1,General - General,9,General,2,Medium
+2025,Male    ,Married,59,55-64      ,15,North,9,General,2,General- Religious,9,General,1,Low
+2026,Male    ,Married,59,55-64      ,15,North,9,General,1,General - General,9,General,2,Medium
+2027,Female   ,Single,70,65-74      ,15,North,9,General,1,General - General,9,General,2,Medium
+2028,Female   ,Single,56,55-64      ,15,North,9,General,1,General - General,9,General,2,Medium
+2029,Male    ,Married,60,55-64      ,15,North,9,General,1,General - General,9,General,1,Low
+2030,Male    ,Married,58,55-64      ,15,North,9,General,1,General - General,9,General,2,Medium
+2031,Male    ,Married,66,65-74      ,15,North,9,General,1,General - General,9,General,2,Medium
+2032,Female   ,Married,61,55-64      ,15,North,9,General,1,General - General,9,General,2,Medium
+2033,Female   ,Married,49,45-54      ,15,North,9,General,1,General - General,9,General,2,Medium
+2034,Male    ,Married,59,55-64      ,15,North,9,General,1,General - General,9,General,2,Medium
+2035,Male    ,Married,54,45-54      ,15,North,9,General,1,General - General,9,General,2,Medium
+2036,Male    ,Married,60,55-64      ,15,North,9,General,1,General - General,9,General,1,Low
+2037,Male    ,Married,52,45-54      ,15,North,9,General,1,General - General,9,General,2,Medium
+2038,Female   ,Married,57,55-64      ,15,North,9,General,1,General - General,9,General,1,Low

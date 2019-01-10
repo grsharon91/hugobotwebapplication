@@ -1,0 +1,139 @@
+﻿@model HugoBotWebApplication.ViewModels.KarmaLegoExistingViewModel
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Upload dataset for Pattern Recognition</h2>
+
+<style>
+    .glyphicon.glyphicon-asterisk {
+        font-size: 10px;
+    }
+
+    #Path input[type=file] {
+        display: none;
+        margin: 10px;
+    }
+
+        #Path input[type=file] + label {
+            display: inline-block;
+            margin: 20px;
+            padding: 4px 32px;
+            background-color: #FFFFFF;
+            border: solid 1px #666F77;
+            border-radius: 6px;
+            color: #666F77;
+        }
+
+        #Path input[type=file]:active + label {
+            background-image: none;
+            background-color: #2D6C7A;
+            color: #FFFFFF;
+        }
+</style>
+@using (Html.BeginForm("Edit", "KarmaLego", FormMethod.Post, new { enctype = "multipart/form-data", id = "UploadDatasetForm", name = "UploadDatasetForm" }))
+
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="input-group col-md-10">
+            <label class="control-label col-md-2"> Min Vertical Support</label>
+            @*@Html.LabelFor(model => model.MinimumVerticalSupport, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.MinimumVerticalSupport, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.MinimumVerticalSupport, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <br />
+        <div class="input-group col-md-10">
+            @Html.LabelFor(model => model.MaximumGap, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.MaximumGap, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.MaximumGap, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <br />
+
+        <div class="input-group col-md-10">
+            @Html.LabelFor(model => model.Epsilon, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Epsilon, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Epsilon, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <br />
+
+        <div class="input-group col-md-10">
+            @Html.LabelFor(model => model.Visibility, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @if (User.Identity.IsAuthenticated)
+                {
+                    @Html.DropDownListFor(model => model.Visibility, new SelectList(new[] { "Public", "Private" }), new { @ID = "VisibilityDropDown", @name = "VisibilityDropDown", @class = "form-control" })
+
+                }
+                else
+                {
+                    @Html.DropDownListFor(model => model.Visibility, new SelectList(new[] { "Public" }), new { @ID = "VisibilityDropDown", @name = "VisibilityDropDown", @class = "form-control" })
+
+                }
+                @Html.ValidationMessageFor(model => model.Visibility, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <br />
+
+
+       
+
+        <div class="input-group col-md-10">
+            <div class="col-md-10 col-md-offset-2">
+
+                <input type="submit" id="Upload" name="Upload" value="Upload" class="btn btn-warning" readonly />
+                @*@Html.ValidationMessage("Path", new { @class = "text-danger" })*@
+
+                <label id="LoadingLabel" style="display: none">Uploading... When finished you will be redirected to datasets page</label>
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        $('#Path').change(function () {
+            $('#Path1').text($("#Path").val().split("\\").slice(-1)[0]);
+            $("#Upload").prop("disabled", false);
+
+        });
+
+    </script>
+    <script>
+        $('#hide').change(function () {
+            $('#uploadVmap').text($("#hide").val().split("\\").slice(-1)[0]);
+
+        });
+    </script>
+    <script>
+        $('#CategoryDropDown').change(function () {
+            var category = $("#CategoryDropDown option:selected").text();
+            if (category == 'Other') {
+                $("#CategoryOtherEdit").show();
+                $("#CategoryDropDown").attr("name", "None")
+            }
+            else {
+                //if user select 'other' and later select something else, you should hide textbox
+                $("#CategoryOtherEdit").hide();
+                $("#CategoryDropDown").attr("name", "Category")
+            }
+
+        });
+    </script>
+}

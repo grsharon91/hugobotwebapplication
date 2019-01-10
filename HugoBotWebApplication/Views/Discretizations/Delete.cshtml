@@ -1,0 +1,128 @@
+﻿@model HugoBotWebApplication.Models.Discretization
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Discretization</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AbstractionMethod)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AbstractionMethod)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ClassSeparator)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClassSeparator)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BinsNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BinsNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AbstractedTimeSerires)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AbstractedTimeSerires)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsVmap)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsVmap)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VmapPath)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VmapPath)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DatasetID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DatasetID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DatasetName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DatasetName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Owner)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Owner)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Category)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Visibility)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Visibility)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Rating)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rating)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Path)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Path)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

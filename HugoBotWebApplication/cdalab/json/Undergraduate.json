@@ -1,0 +1,20 @@
+[
+    {
+      "id": "shay-sakazi",
+      "name": "Shay Sakazi",
+      "facebook": "https://www.facebook.com/shaysakazi",
+      "linkedin": "https://www.linkedin.com/in/shay-sakazi-b245586b/",
+      "mail": "sakazis@post.bgu.ac.il",
+      "image": "shaySakazi.jpg",
+      "about":"Implementing a motion detection on wearable devices by using deep learning techniques."
+    },
+    {
+      "id": "ido-sakazi",
+      "name": "Ido Sakazi",
+      "facebook": "https://www.facebook.com/profile.php?id=100006087766913",
+      "linkedin": "https://linkedin.com/in/ido-sakazi-53519865",
+      "mail": "sakazi@post.bgu.ac.il",
+      "image": "idoSakazi.jpg",
+      "about":"Implementing a motion detection on wearable devices by using deep learning techniques."
+    }
+]

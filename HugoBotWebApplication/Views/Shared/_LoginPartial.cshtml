@@ -1,0 +1,30 @@
+﻿@using HugoBotWebApplication.Models;
+@using System.Security.Principal;
+@using System.Web;
+@using Microsoft.AspNet.Identity.Owin;
+@using Microsoft.AspNet.Identity;
+@if (Request.IsAuthenticated)
+{
+	using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+	{
+		@Html.AntiForgeryToken()
+
+		<ul class="nav navbar-nav navbar-right">
+			<li class="nav-item">
+				@Html.ActionLink("Hello " + User.Identity.GetFirstName() + " " + User.Identity.GetLastName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", @class = "nav-link" })
+			</li>
+			<li class="nav-item"><a class="nav-link" href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+		</ul>
+	}
+}
+else
+{
+	<ul class="nav navbar-nav navbar-right">
+	<li class="nav-item"><a class="nav-link" id="registerLink" href="@Url.Action("Register", "Account")"> <span class="fas fa-user"></span> Sign Up</a></li>
+	<li class="nav-item"><a class="nav-link" id="loginLink" href="@Url.Action("Login", "Account")"> <span class="fas fa-lock"></span> Login</a></li>
+	@*<li><a  href="@Url.Action("Register", "Account")"> <span class="glyphicon glyphicon-user">Sign Up</span></a></li>*@
+	@*  <li><a id="loginLink" href="@Url.Action("Login", "Account", routeValues: null)"> <span class="glyphicon glyphicon-log-in">Log in</span></a></li>*@
+	@*<li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink", })</li>*@
+	@*  <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink", @class = "glyphicon glyphicon - log -in" })</li>*@
+	</ul>
+}

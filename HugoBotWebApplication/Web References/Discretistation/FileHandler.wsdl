@@ -1,0 +1,578 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="UploadEntities">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="guid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="entities" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadEntitiesResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetEntities">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="guid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEntitiesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEntitiesResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Discretization">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="path" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DiscretizationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DiscretizationResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsDatasetExists">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fileByteStream" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsDatasetExistsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IsDatasetExistsResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="hex" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendDatasetAndVmapToServer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="datasetName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fileByteStream" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="vmap" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendDatasetAndVmapToServerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendDatasetAndVmapToServerResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadDatasetWhole">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="datasetName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fileByteStream" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="vmap" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="entities" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadDatasetWholeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UploadDatasetWholeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fileNames" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFileResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExpertDiscretization">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="path" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cutpoints" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExpertDiscretizationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExpertDiscretizationResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsFileExists">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fileName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsFileExistsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IsFileExistsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetClasses">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="path" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetClassesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetClassesResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetChunks">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="path" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChunksResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetChunksResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChunk">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="path" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChunkResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetChunkResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStates">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="path" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStatesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStatesResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="UploadEntitiesSoapIn">
+    <wsdl:part name="parameters" element="tns:UploadEntities" />
+  </wsdl:message>
+  <wsdl:message name="UploadEntitiesSoapOut">
+    <wsdl:part name="parameters" element="tns:UploadEntitiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEntitiesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEntities" />
+  </wsdl:message>
+  <wsdl:message name="GetEntitiesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEntitiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="DiscretizationSoapIn">
+    <wsdl:part name="parameters" element="tns:Discretization" />
+  </wsdl:message>
+  <wsdl:message name="DiscretizationSoapOut">
+    <wsdl:part name="parameters" element="tns:DiscretizationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsDatasetExistsSoapIn">
+    <wsdl:part name="parameters" element="tns:IsDatasetExists" />
+  </wsdl:message>
+  <wsdl:message name="IsDatasetExistsSoapOut">
+    <wsdl:part name="parameters" element="tns:IsDatasetExistsResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendDatasetAndVmapToServerSoapIn">
+    <wsdl:part name="parameters" element="tns:SendDatasetAndVmapToServer" />
+  </wsdl:message>
+  <wsdl:message name="SendDatasetAndVmapToServerSoapOut">
+    <wsdl:part name="parameters" element="tns:SendDatasetAndVmapToServerResponse" />
+  </wsdl:message>
+  <wsdl:message name="UploadDatasetWholeSoapIn">
+    <wsdl:part name="parameters" element="tns:UploadDatasetWhole" />
+  </wsdl:message>
+  <wsdl:message name="UploadDatasetWholeSoapOut">
+    <wsdl:part name="parameters" element="tns:UploadDatasetWholeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFileSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFile" />
+  </wsdl:message>
+  <wsdl:message name="GetFileSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExpertDiscretizationSoapIn">
+    <wsdl:part name="parameters" element="tns:ExpertDiscretization" />
+  </wsdl:message>
+  <wsdl:message name="ExpertDiscretizationSoapOut">
+    <wsdl:part name="parameters" element="tns:ExpertDiscretizationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsFileExistsSoapIn">
+    <wsdl:part name="parameters" element="tns:IsFileExists" />
+  </wsdl:message>
+  <wsdl:message name="IsFileExistsSoapOut">
+    <wsdl:part name="parameters" element="tns:IsFileExistsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetClassesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetClasses" />
+  </wsdl:message>
+  <wsdl:message name="GetClassesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetClassesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetChunksSoapIn">
+    <wsdl:part name="parameters" element="tns:GetChunks" />
+  </wsdl:message>
+  <wsdl:message name="GetChunksSoapOut">
+    <wsdl:part name="parameters" element="tns:GetChunksResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetChunkSoapIn">
+    <wsdl:part name="parameters" element="tns:GetChunk" />
+  </wsdl:message>
+  <wsdl:message name="GetChunkSoapOut">
+    <wsdl:part name="parameters" element="tns:GetChunkResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStatesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStates" />
+  </wsdl:message>
+  <wsdl:message name="GetStatesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStatesResponse" />
+  </wsdl:message>
+  <wsdl:portType name="FileHandlerSoap">
+    <wsdl:operation name="UploadEntities">
+      <wsdl:input message="tns:UploadEntitiesSoapIn" />
+      <wsdl:output message="tns:UploadEntitiesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEntities">
+      <wsdl:input message="tns:GetEntitiesSoapIn" />
+      <wsdl:output message="tns:GetEntitiesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Discretization">
+      <wsdl:input message="tns:DiscretizationSoapIn" />
+      <wsdl:output message="tns:DiscretizationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsDatasetExists">
+      <wsdl:input message="tns:IsDatasetExistsSoapIn" />
+      <wsdl:output message="tns:IsDatasetExistsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendDatasetAndVmapToServer">
+      <wsdl:input message="tns:SendDatasetAndVmapToServerSoapIn" />
+      <wsdl:output message="tns:SendDatasetAndVmapToServerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadDatasetWhole">
+      <wsdl:input message="tns:UploadDatasetWholeSoapIn" />
+      <wsdl:output message="tns:UploadDatasetWholeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFile">
+      <wsdl:input message="tns:GetFileSoapIn" />
+      <wsdl:output message="tns:GetFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExpertDiscretization">
+      <wsdl:input message="tns:ExpertDiscretizationSoapIn" />
+      <wsdl:output message="tns:ExpertDiscretizationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsFileExists">
+      <wsdl:input message="tns:IsFileExistsSoapIn" />
+      <wsdl:output message="tns:IsFileExistsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetClasses">
+      <wsdl:input message="tns:GetClassesSoapIn" />
+      <wsdl:output message="tns:GetClassesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChunks">
+      <wsdl:input message="tns:GetChunksSoapIn" />
+      <wsdl:output message="tns:GetChunksSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChunk">
+      <wsdl:input message="tns:GetChunkSoapIn" />
+      <wsdl:output message="tns:GetChunkSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStates">
+      <wsdl:input message="tns:GetStatesSoapIn" />
+      <wsdl:output message="tns:GetStatesSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="FileHandlerSoap" type="tns:FileHandlerSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UploadEntities">
+      <soap:operation soapAction="http://tempuri.org/UploadEntities" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEntities">
+      <soap:operation soapAction="http://tempuri.org/GetEntities" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Discretization">
+      <soap:operation soapAction="http://tempuri.org/Discretization" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsDatasetExists">
+      <soap:operation soapAction="http://tempuri.org/IsDatasetExists" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendDatasetAndVmapToServer">
+      <soap:operation soapAction="http://tempuri.org/SendDatasetAndVmapToServer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadDatasetWhole">
+      <soap:operation soapAction="http://tempuri.org/UploadDatasetWhole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFile">
+      <soap:operation soapAction="http://tempuri.org/GetFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExpertDiscretization">
+      <soap:operation soapAction="http://tempuri.org/ExpertDiscretization" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsFileExists">
+      <soap:operation soapAction="http://tempuri.org/IsFileExists" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetClasses">
+      <soap:operation soapAction="http://tempuri.org/GetClasses" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChunks">
+      <soap:operation soapAction="http://tempuri.org/GetChunks" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChunk">
+      <soap:operation soapAction="http://tempuri.org/GetChunk" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStates">
+      <soap:operation soapAction="http://tempuri.org/GetStates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="FileHandlerSoap12" type="tns:FileHandlerSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UploadEntities">
+      <soap12:operation soapAction="http://tempuri.org/UploadEntities" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEntities">
+      <soap12:operation soapAction="http://tempuri.org/GetEntities" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Discretization">
+      <soap12:operation soapAction="http://tempuri.org/Discretization" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsDatasetExists">
+      <soap12:operation soapAction="http://tempuri.org/IsDatasetExists" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendDatasetAndVmapToServer">
+      <soap12:operation soapAction="http://tempuri.org/SendDatasetAndVmapToServer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadDatasetWhole">
+      <soap12:operation soapAction="http://tempuri.org/UploadDatasetWhole" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFile">
+      <soap12:operation soapAction="http://tempuri.org/GetFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExpertDiscretization">
+      <soap12:operation soapAction="http://tempuri.org/ExpertDiscretization" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsFileExists">
+      <soap12:operation soapAction="http://tempuri.org/IsFileExists" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetClasses">
+      <soap12:operation soapAction="http://tempuri.org/GetClasses" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChunks">
+      <soap12:operation soapAction="http://tempuri.org/GetChunks" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChunk">
+      <soap12:operation soapAction="http://tempuri.org/GetChunk" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStates">
+      <soap12:operation soapAction="http://tempuri.org/GetStates" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="FileHandler">
+    <wsdl:port name="FileHandlerSoap" binding="tns:FileHandlerSoap">
+      <soap:address location="http://132.72.64.23/WebService/FileHandler.asmx" />
+    </wsdl:port>
+    <wsdl:port name="FileHandlerSoap12" binding="tns:FileHandlerSoap12">
+      <soap12:address location="http://132.72.64.23/WebService/FileHandler.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

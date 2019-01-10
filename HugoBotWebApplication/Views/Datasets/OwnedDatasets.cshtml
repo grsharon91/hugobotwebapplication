@@ -1,0 +1,298 @@
+﻿@model HugoBotWebApplication.ViewModels.DatasetIndexViewModel
+
+@{
+	ViewBag.Title = "Index";
+}
+
+<h2>Data sets</h2>
+<style>
+	.rating {
+		unicode-bidi: bidi-override;
+		direction: rtl;
+	}
+
+		.rating > span {
+			display: inline;
+			position: relative;
+			width: 1.1em;
+		}
+
+			.rating > span:hover:before,
+			.rating > span:hover ~ span:before {
+				content: "\2605";
+				position: absolute;
+			}
+</style>
+<p style="display:inline">
+	@*@Html.DropDownList("a", new SelectList(new[] { "", "View all", "View raw datasets", "View discretized datasets" }))*@
+	@*<button title="Upload new Dataset" class="btn btn-warning" type="button" onclick="location.href='@Url.Action("Create", "Datasets")'"> <span class="glyphicon glyphicon-upload"></span> Upload Dataset </button>*@
+	@*<button title="Upload new Dataset for discretization" class="btn btn-success" type="button" onclick="location.href='@Url.Action("Create", "Discretizations")'"> <span class="glyphicon glyphicon-upload"></span> Upload Dataset for discretization </button>*@
+	@*<button tistle="Upload new discretized for Pattern Discovery" class="btn btn-warning" type="button" onclick="location.href='@Url.Action("Create", "KarmaLego")'"> <span class="glyphicon glyphicon-upload"></span> Upload Dataset for Pattern Discovery </button>*@
+
+	<button id="downloadDatasetButton_New" title="Share Datasets" class="btn btn-primary" type="button" onclick="downloadDatasets()"> <span class="glyphicon glyphicon-download"></span>Share Selected Datasets</button>
+	@*<img src="~/Images/greensquare.png" /> - Discretized*@
+	@*<button title="Help" class="btn btn-primary" style="position:absolute;right:255px;" type="button"><span class="glyphicon glyphicon-question-sign"></span></button>*@
+
+</p>
+<br />
+<div>
+	<br />
+
+	<span class="glyphicon glyphicon-search"></span>
+	<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for Dataset">
+
+</div>
+<table id="DatasetsTable" class="table table-bordered">
+	<tr style="background-color:#7979d2">
+		<th>
+		</th>
+		<th>
+			DatasetName
+		</th>
+		<th>
+			Category
+		</th>
+		@*<th>
+				Visibility
+			</th>*@
+		@*<th>
+				Rating
+			</th>*@
+		<th>Type</th>
+		<th>
+			Parameters
+		</th>
+		<th>
+			Actions
+		</th>
+		
+		<th>
+			Status
+		</th>
+
+
+	</tr>
+	@foreach (var item in Model.Datasets)
+	{
+		
+			<tr>
+				<td>
+					@Html.CheckBox("DatasetsRecords", false, new { @ID = "dataset_" + item.DatasetID, @value = item.DatasetID })
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.DatasetName)
+				</td>
+
+				<td>
+					@Html.DisplayFor(modelItem => item.Category)
+				</td>
+				@*<td>
+						@Html.DisplayFor(modelItem => item.Visibility)
+					</td>*@
+				@*<td class="rating">*@
+				@*@Html.DisplayFor(modelItem => item.Rating)*@
+				@*   <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>*@
+				@* </td>*@
+				<td>Raw</td>
+				<td></td>
+
+				<td>
+					@Html.ActionLink("Display metadata", "DisplayMetadata", new { id = item.DatasetID }, new { @class = "btn btn-success" })
+					@Html.ActionLink("Discretize", "Edit", new { id = item.DatasetID }, new { @class = "btn btn-primary" })
+				</td>
+			
+
+				<td>
+					<label>@item.ParametersIsReady</label>
+				</td>
+			</tr>
+		
+
+
+		foreach (var discretization in item.Discretizations)
+		{
+
+			<tr>
+				<td>
+					@Html.CheckBox("DiscretizationRecords", false, new { @ID = "discretization_" + discretization.DiscretizationID, @value = discretization.DiscretizationID })
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.DatasetName)
+				</td>
+
+				<td>
+					@Html.DisplayFor(modelItem => item.Category)
+				</td>
+				@*<td>
+						@Html.DisplayFor(modelItem => item.Visibility)
+					</td>*@
+				@*<td class="rating">*@
+				@*@Html.DisplayFor(modelItem => item.Rating)*@
+				@*   <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>*@
+				@* </td>*@
+				<td>
+					<label> @discretization.Parameters.Split('$')[0]</label>
+				</td>
+				<td>
+					@foreach (var param in discretization.Parameters.Split('_'))
+					{
+						var param_value = param.Split(':');
+						if (param_value.Length > 1)
+						{
+							<label>@param_value[0] : @param_value[1]</label>
+							<br />
+						}
+
+					}
+				</td>
+
+
+				<td>
+					@Html.ActionLink("Display metadata", "DisplayMetadata", new { id = item.DatasetID }, new { @class = "btn btn-success" })
+
+				</td>
+				
+
+				<td>
+					<label>@item.ParametersIsReady</label>
+				</td>
+			</tr>
+
+		}
+
+	}
+
+</table>
+
+@section Scripts {
+	<script>
+        $(document).ready(function () {
+
+            $("#Upload").prop("disabled", true);
+            $("#LoadingLabel").hide();
+            $("#CategoryDropDown").val("");
+            $('table td input').each(function () {
+                if (this.type == "checkbox") {
+                    $(this).attr('checked', false);
+                    console.log(this.value, this.attributes, $(this).is(":checked"));
+
+                }
+            });
+        });
+	</script>
+
+	<script>
+        function downloadDatasets() {
+
+            var datasetRecordsChecked = [];
+            var discretizationRecordsChecked = [];
+            var datasetRecords = document.getElementsByName("DatasetsRecords");
+            var discretizationRecords = document.getElementsByName("DiscretizationRecords");
+
+            for (var i = 0; i < datasetRecords.length; i++) {
+                if (datasetRecords[i].checked) {
+                    datasetRecordsChecked.push(datasetRecords[i].value);
+                }
+            }
+            for (var i = 0; i < discretizationRecords.length; i++) {
+                if (discretizationRecords[i].checked) {
+                    discretizationRecordsChecked.push(discretizationRecords[i].value);
+                }
+            }
+            $.ajax({
+        type: 'POST',
+        url: '@Url.Action("Download")',
+        datatype: 'JSON',
+                data: { DatasetsRecords: datasetRecordsChecked, DiscretizationsRecords: discretizationRecordsChecked },
+        success: function (returnValue) {
+
+            window.location = "/Datasets/DownloadFiles?parameters=" + returnValue;
+        },
+        error: function () {
+            alert("Oops! Something went wrong");
+        }
+    })
+
+            //downloadPath = "location.href='/Download/" + x + "?method=" + abstractionMethodName + "'";
+            //$('table td input').each(function () {
+            //    if (this.type == "checkbox") {
+            //        $("#downloadDataasetButtonNew").attr("onclick",)
+            //        console.log(this.value, this.attributes, $(this).is(":checked"));
+
+            //    }
+            //});
+            //var table = document.getElementById("DatasetsTable");
+            //for (var i = 0, row; row = table.rows[i]; i++) {
+            //    //iterate through rows
+            //    //rows would be accessed using the "row" variable assigned in the for loop
+            //    var checkBoxFordataset(row.cells.item(0).firstElementChild);
+            //    //for (var j = 0, col; col = row.cells[j]; j++) {
+            //    //    //iterate through columns
+            //    //    //columns would be accessed using the "col" variable assigned in the for loop
+            //    //}
+            //}
+        }
+
+	</script>
+	<script>
+        function fchange(x) {
+            console.log(x)
+            var abstractionMethodName = $("#DiscretizationMethods_" + x + " option:selected").text();
+            console.log(abstractionMethodName);
+            var downloadPath = $('#downloadDatasetButton').attr("onclick");
+            downloadPath = "location.href='/Download/" + x + "?method=" + abstractionMethodName + "'";
+            console.log(downloadPath);
+            $('#downloadDatasetButton_' + x).attr("onclick", downloadPath);
+            console.log(downloadPath);
+
+            //$("#hahaha").text = "afasfas";
+            //$("#hahaha").val = "afasfas";
+
+        }
+	</script>
+
+	<script>
+        function myFunction() {
+            // Declare variables
+            var input, filter, table, tr, td, i;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("DatasetsTable");
+            tr = table.getElementsByTagName("tr");
+
+            // Loop through all table rows, and hide those who don't match the search query
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[1];
+                tdCategory = tr[i].getElementsByTagName("td")[2];
+                if (td) {
+                    if (td.innerHTML.toUpperCase().indexOf(filter) > -1 || tdCategory.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+
+            }
+        }
+	</script>
+
+	<script src="d3.min.js?v=3.2.8"></script>
+
+	<script type="text/javascript" charset="utf-8">
+        d3.text("data.csv", function (data) {
+            var parsedCSV = d3.csv.parseRows(data);
+
+            var container = d3.select("body")
+                .append("table")
+
+                .selectAll("tr")
+                .data(parsedCSV).enter()
+                .append("tr")
+
+                .selectAll("td")
+                .data(function (d) { return d; }).enter()
+                .append("td")
+                .text(function (d) { return d; });
+        });
+	</script>
+}

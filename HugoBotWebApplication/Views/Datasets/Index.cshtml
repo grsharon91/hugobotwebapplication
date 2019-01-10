@@ -1,0 +1,403 @@
+﻿@model HugoBotWebApplication.ViewModels.DatasetIndexViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@*<h2>Data sets</h2>*@
+<br />
+
+<style>
+    .filterable {
+        margin-top: 15px;
+    }
+
+        .filterable .panel-heading .pull-right {
+            margin-top: -20px;
+        }
+
+        .filterable .filters input[disabled] {
+            background-color: transparent;
+            border: none;
+            cursor: auto;
+            box-shadow: none;
+            padding: 0;
+            height: auto;
+        }
+
+            .filterable .filters input[disabled]::-webkit-input-placeholder {
+                color: #333;
+            }
+
+            .filterable .filters input[disabled]::-moz-placeholder {
+                color: #333;
+            }
+
+            .filterable .filters input[disabled]:-ms-input-placeholder {
+                color: #333;
+            }
+
+    .rating {
+        unicode-bidi: bidi-override;
+        direction: rtl;
+    }
+
+        .rating > span {
+            display: inline;
+            position: relative;
+            width: 1.1em;
+        }
+
+            .rating > span:hover:before,
+            .rating > span:hover ~ span:before {
+                content: "\2605";
+                position: absolute;
+            }
+</style>
+@*<button id="FirstStepsButton" title="First steps" class="btn " type="button" onclick="location.href='@Url.Action("FirstSteps", "Home")'" style="background-color:#006400; color:white"> <span class="glyphicon glyphicon-info-sign"></span> First steps with HugoBot</button>*@
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card filterable">
+            <div class=".card-header bg-primary" style="color:white">
+                <div class="float-right">
+                    <button class="btn btn-primary btn-sm btn-filter">
+                        <span class="fas fa-filter"> </span>
+                        Filter
+                    </button>
+                </div>
+            </div>
+
+            <div class="card-body">
+                <h4 class="card-title">My Datasets</h4>
+                <p style="display:inline">
+                    @*@Html.DropDownList("a", new SelectList(new[] { "", "View all", "View raw datasets", "View discretized datasets" }))*@
+                    <button title="Upload new Dataset" class="btn btn-sm btn-warning" type="button" onclick="location.href='@Url.Action("Create", "Datasets")'"> <span class="fas fa-upload"> </span> Upload Dataset </button>
+                    @*<button title="Upload new Dataset for discretization" class="btn btn-sm btn-success" type="button" onclick="location.href='@Url.Action("Create", "Discretizations")'"> <span class="glyphicon glyphicon-upload"></span> Upload Dataset for discretization </button>*@
+                    @*<button tistle="Upload new discretized for Pattern Discovery" class="btn btn-warning" type="button" onclick="location.href='@Url.Action("Create", "KarmaLego")'"> <span class="glyphicon glyphicon-upload"></span> Upload Dataset for Pattern Discovery </button>*@
+
+                    <button id="downloadDatasetButton_New" title="Download Dataset" class="btn btn-sm btn-primary" type="button" onclick="downloadDatasets()"> <span class="fas fa-download"> </span> Download Selected Datasets</button>
+                    @*<img src="~/Images/greensquare.png" / - Discretized*@
+                    @*<button title="Help" class="btn btn-primary" style="position:absolute;right:255px;" type="button"><span class="glyphicon glyphicon-question-sign"></span></button>*@
+
+                </p>
+                <hr />
+                <div class=" col-md-12 col-sm-12 col-lg-12" ">
+                    <table id="DatasetsTable" class="table d-md-table table-responsive table-hover table-striped ">
+                        <thead>
+                            <tr class="filters">
+                                <th>
+                                </th>
+                                <th>
+                                    <input type="text" class="form-control" placeholder="DatasetName" disabled>
+                                </th>
+                                <th>
+                                    <input type="text" class="form-control" placeholder="Category" disabled>
+
+                                </th>
+                                @*<th>
+                                        Visibility
+                                    </th>*@
+                                @*<th>
+                                        Rating
+                                    </th>*@
+                                <th>
+                                    <input type="text" class="form-control" placeholder="Size" disabled>
+                                </th>
+                                <th>
+                                    <input type="text" class="form-control" placeholder="Actions" disabled>
+                                </th>
+                                 @if(User.Identity.Name == "hugobotsupp@gmail.com")
+                                 {
+                                       <th>
+                                    <input type="text" class="form-control" placeholder="Owner" disabled>
+                                    </th>
+                                 }
+                              
+
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.Datasets)
+                            {
+                                if ((item.Owner != null && item.Owner.Email == User.Identity.Name) || User.Identity.Name == "hugobotsupp@gmail.com")
+                                {
+                            <tr>
+                                <td>
+                                    @Html.CheckBox("DatasetsRecords", false, new { @ID = "dataset_" + item.DatasetID, @value = item.DatasetID })
+                                </td>
+                                <td style="cursor: pointer" onclick="window.location.href='@Url.Action("Details", "Datasets", new { id = item.DatasetID})'">
+                                    @Html.DisplayFor(modelItem => item.DatasetName)
+                                </td>
+
+                                <td style="cursor: pointer" onclick="window.location.href='@Url.Action("Details", "Datasets", new { id = item.DatasetID})'">
+                                    @Html.DisplayFor(modelItem => item.Category)
+                                </td>
+                                @*<td>
+            @Html.DisplayFor(modelItem => item.Visibility)
+        </td>*@
+                                @*<td class="rating">*@
+                                @*@Html.DisplayFor(modelItem => item.Rating)*@
+                                @*   <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>*@
+                                @* </td>*@
+                                <td onclick="window.location.href='@Url.Action("Details", "Datasets", new { id = item.DatasetID})'" style="cursor: pointer">
+                                    @Math.Round(item.Size, 3) MB
+                                </td>
+                                <td style="cursor: pointer" onclick="window.location.href='@Url.Action("Details", "Datasets", new { id = item.DatasetID})'">
+                                    <a class="btn  btn-sm btn-warning font-weight-bold" href="@Url.Action("Details", "Datasets", new { id = item.DatasetID})" style="color:white"> <span class="fas fa-info"></span> nfo</a>
+                                    @*<a class=" btn  btn-sm btn-primary font-weight-bold " href="/Discretizations/Edit/@item.DatasetID" style="color:white"> <span class="fas fa-chart-bar"></span> Discretize</a>*@
+
+                                    @*<div>
+                <nav class="navbar  navbar-light bg-transparent">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor_@item.DatasetID" aria-controls="navbarColor__@item.DatasetID" aria-expanded="false" aria-label="Toggle navigation" style="">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarColor_@item.DatasetID">
+                        <ul class="navbar-nav mr-auto">
+                            <li>
+                                <a class="nav-item nav-link font-weight-bold bg-warning" href="/Datasets/Details/@item.DatasetID" style="color:white"> <span class="fas fa-info"></span>Browse</a>
+                            </li>
+                            <li>
+                                <a class="nav-item nav-link font-weight-bold bg-primary" href="/Discretizations/Edit/@item.DatasetID" style="color:white"> <span class="fas fa-chart-bar"></span> Discretize</a>
+                            </li>
+
+                        </ul>
+
+                    </div>
+                </nav>
+
+            </div>*@
+
+
+
+                                    @if (User.Identity.Name == "hugobotsupp@gmail.com")
+                                    {
+                                    <td>@item.Owner.FirstName &nbsp; @item.Owner.LastName</td>
+                                }
+
+
+
+
+                                </tr>
+                                }
+
+
+
+                            }
+                        </tbody>
+                        <tfoot>
+
+                        </tfoot>
+                    </table>
+                    @if (Model.Datasets.Where(item => item.Owner.Email == User.Identity.Name).ToList().Count == 0)
+                    {
+                        <div class="text-center">
+                            <p>
+                                You haven't uploaded any datasets yet
+                            </p>
+                        </div>
+
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
+    @*<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>*@
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap4.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#DatasetsTable").DataTable({
+                "searching": false,
+                "pageLength": 5,
+                "ordering": false,
+                "lengthChange": false,
+                "language": {
+                    "info": "Showing _START_ - _END_ out of _TOTAL_ datasets"
+                }
+
+            });
+            $("#Upload").prop("disabled", true);
+            $("#LoadingLabel").hide();
+            $("#CategoryDropDown").val("");
+            $('table td input').each(function () {
+                if (this.type == "checkbox") {
+                    $(this).attr('checked', false);
+                    console.log(this.value, this.attributes, $(this).is(":checked"));
+
+                }
+            });
+            $('.filterable .btn-filter').click(function () {
+                var $panel = $(this).parents('.filterable'),
+                    $filters = $panel.find('.filters input'),
+                    $tbody = $panel.find('.table tbody');
+                if ($filters.prop('disabled') == true) {
+                    $filters.prop('disabled', false);
+                    $filters.first().focus();
+                } else {
+                    $filters.val('').prop('disabled', true);
+                    $tbody.find('.no-result').remove();
+                    $tbody.find('tr').show();
+                }
+            });
+            $('.filterable .filters input').keyup(function (e) {
+                /* Ignore tab key */
+                var code = e.keyCode || e.which;
+                if (code == '9') return;
+                /* Useful DOM data and selectors */
+                var $input = $(this),
+                    inputContent = $input.val().toLowerCase(),
+                    $panel = $input.parents('.filterable'),
+                    column = $panel.find('.filters th').index($input.parents('th')),
+                    $table = $panel.find('.table'),
+                    $rows = $table.find('tbody tr');
+                /* Dirtiest filter function ever ;) */
+                var $filteredRows = $rows.filter(function () {
+                    var value = $(this).find('td').eq(column).text().toLowerCase();
+                    return value.indexOf(inputContent) === -1;
+                });
+                /* Clean previous no-result if exist */
+                $table.find('tbody .no-result').remove();
+                /* Show all rows, hide filtered ones (never do that outside of a demo ! xD) */
+                $rows.show();
+                $filteredRows.hide();
+                /* Prepend no-result row if all rows are filtered */
+                if ($filteredRows.length === $rows.length) {
+                    $table.find('tbody').prepend($('<tr class="no-result text-center"><td colspan="' + $table.find('.filters th').length + '">No result found</td></tr>'));
+                }
+            });
+        });
+
+    </script>
+
+    <script>
+        function downloadDatasets() {
+
+            var datasetRecordsChecked = [];
+			var discretizationRecordsChecked = [];
+			var karmaLegoRecordsChecked = [];
+            var datasetRecords = document.getElementsByName("DatasetsRecords");
+            var discretizationRecords = document.getElementsByName("DiscretizationRecords");
+			var karmaLegoRecords = document.getElementsByName("KarmaLegoRecords");
+            for (var i = 0; i < datasetRecords.length; i++) {
+                if (datasetRecords[i].checked) {
+                    datasetRecordsChecked.push(datasetRecords[i].value);
+                }
+            }
+            for (var i = 0; i < discretizationRecords.length; i++) {
+                if (discretizationRecords[i].checked) {
+                    discretizationRecordsChecked.push(discretizationRecords[i].value);
+                }
+			}
+			for (var i = 0; i < karmaLegoRecords.length; i++) {
+				if (karmaLegoRecords[i].checked) {
+					karmaLegoRecordsChecked.push(karmaLegoRecords[i].value);
+				}
+			}
+            $.ajax({
+                type: 'POST',
+                url: '@Url.Action("Download")',
+                datatype: 'JSON',
+                data: {
+                    DatasetsRecords: datasetRecordsChecked, DiscretizationsRecords: discretizationRecordsChecked,
+                    KarmaLegoRecords: karmaLegoRecordsChecked
+                },
+                success: function (returnValue) {
+
+                    window.location = "/Datasets/DownloadFiles?parameters=" + returnValue;
+                },
+                error: function () {
+                    alert("Oops! Something went wrong");
+                }
+            });
+
+            //downloadPath = "location.href='/Download/" + x + "?method=" + abstractionMethodName + "'";
+            //$('table td input').each(function () {
+            //    if (this.type == "checkbox") {
+            //        $("#downloadDataasetButtonNew").attr("onclick",)
+            //        console.log(this.value, this.attributes, $(this).is(":checked"));
+
+            //    }
+            //});
+            //var table = document.getElementById("DatasetsTable");
+            //for (var i = 0, row; row = table.rows[i]; i++) {
+            //    //iterate through rows
+            //    //rows would be accessed using the "row" variable assigned in the for loop
+            //    var checkBoxFordataset(row.cells.item(0).firstElementChild);
+            //    //for (var j = 0, col; col = row.cells[j]; j++) {
+            //    //    //iterate through columns
+            //    //    //columns would be accessed using the "col" variable assigned in the for loop
+            //    //}
+            //}
+        }
+
+    </script>
+    <script>
+        function fchange(x) {
+            console.log(x)
+            var abstractionMethodName = $("#DiscretizationMethods_" + x + " option:selected").text();
+            console.log(abstractionMethodName);
+            var downloadPath = $('#downloadDatasetButton').attr("onclick");
+            downloadPath = "location.href='/Download/" + x + "?method=" + abstractionMethodName + "'";
+            console.log(downloadPath);
+            $('#downloadDatasetButton_' + x).attr("onclick", downloadPath);
+            console.log(downloadPath);
+
+            //$("#hahaha").text = "afasfas";
+            //$("#hahaha").val = "afasfas";
+
+        }
+    </script>
+
+    <script>
+        function myFunction() {
+            // Declare variables
+            var input, filter, table, tr, td, i;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("DatasetsTable");
+            tr = table.getElementsByTagName("tr");
+
+            // Loop through all table rows, and hide those who don't match the search query
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[1];
+                tdCategory = tr[i].getElementsByTagName("td")[2];
+                if (td) {
+                    if (td.innerHTML.toUpperCase().indexOf(filter) > -1 || tdCategory.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+
+            }
+        }
+    </script>
+
+    <script src="d3.min.js?v=3.2.8"></script>
+
+    <script type="text/javascript" charset="utf-8">
+        d3.text("data.csv", function (data) {
+            var parsedCSV = d3.csv.parseRows(data);
+
+            var container = d3.select("body")
+                .append("table")
+
+                .selectAll("tr")
+                .data(parsedCSV).enter()
+                .append("tr")
+
+                .selectAll("td")
+                .data(function (d) { return d; }).enter()
+                .append("td")
+                .text(function (d) { return d; });
+        });
+    </script>
+}

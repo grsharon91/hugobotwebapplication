@@ -1,0 +1,105 @@
+﻿@*@model IEnumerable<HugoBotWebApplication.Models.Discretization>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.AbstractionMethod)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ClassSeparator)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BinsNumber)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.AbstractedTimeSerires)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.IsVmap)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VmapPath)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DatasetID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DatasetName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Owner)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Category)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Visibility)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Rating)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Path)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.AbstractionMethod)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ClassSeparator)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BinsNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AbstractedTimeSerires)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsVmap)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VmapPath)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DatasetID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DatasetName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Owner)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Category)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Visibility)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Rating)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Path)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.DiscretizationID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.DiscretizationID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.DiscretizationID })
+        </td>
+    </tr>
+}
+
+</table>*@

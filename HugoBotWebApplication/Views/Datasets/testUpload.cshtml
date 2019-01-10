@@ -1,0 +1,46 @@
+﻿<form id="uploader">
+	<input id="fileInput" type="file" multiple>
+	<input type="submit" value="Upload file" />
+</form>
+
+<script>
+	document.getElementById('uploader').onsubmit = function () {
+    var formdata = new FormData(); //FormData object
+		var fileInput = document.getElementById('fileInput');
+		console.log(fileInput)
+		//Iterating through each files selected in fileInput
+		console.log(fileInput.files)
+    for (i = 0; i < fileInput.files.length; i++) {
+		//Appending each file to FormData object
+		console.log(fileInput.files[i].name)
+		console.log(formdata)
+		formdata.append(fileInput.files[i].name, fileInput.files[i]);
+		console.log(formdata)
+		}
+		console.log(formdata)
+		for (var p of formdata) {
+			console.log(p);
+		}
+		console.log("aa")
+		$.ajax({
+			type: "POST",
+			data: formdata,
+			contentType: false, // Not to set any content header  
+			processData: false, // Not to process data  
+			url: '@Url.Action("ProcessFile")',
+			//datatype: 'JSON',	
+			success: function (response) {
+				if (response.success) {
+					alert(response.responseText);
+				} else {
+					// DoSomethingElse()
+					alert(response.responseText);
+				}
+			},
+			error: function (response) {
+				alert("error!");  // 
+			}
+
+		});
+}   
+</script>	

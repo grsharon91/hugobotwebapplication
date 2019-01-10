@@ -1,0 +1,87 @@
+[
+    {
+      "id": "stav-Sapir-master",
+      "name": "Stav Sapir",
+      "image": "stav.png"
+    },
+    {
+      "id": "zamiramos",
+      "name": "Amos Zamir",
+      "image": "amosZamir.jpg",
+      "linkedin": "https://www.linkedin.com/in/amos-zamir-a91364b0/",
+      "mail": "zamiramos@gmail.com",
+      "about": "Research in collective chemosensing"
+    },
+    {
+      "id": "nofar-Sarafian-master",
+      "name": "Nofar Sarafian",
+      "image": "nofar.jpg",
+      "linkedin": "https://www.linkedin.com/in/nofar-sarafian-482413102/",
+      "mail": "nofarsa@post.bgu.ac.il",
+      "about":
+        "Master student at the Department of Information Systems Engineering. Her thesis subject is Classification drivern predictive TIRPs Discovery"
+    },
+    {
+      "id": "maya-Schvetz-master",
+      "name": "Maya Schvetz",
+      "image": "maya.jpg",
+      "linkedin": "https://www.linkedin.com/in/maya-schvetz-02322266/",
+      "mail": "mayaschvetz@gmail.com",
+      "about": "My thesis subject is partially matched time intervals related patterns based classification, focusing on run time detection algorithm evaluation and improving classification results using partially match detection algorithms. The main database that I'm working on for my research is coming from the MIMIC III intensive care database focusing on the creation of specific cohorts of Sepsis acquired during ICU admission."
+    },
+    {
+      "id": "guy7145",
+      "name": "Guy Danielli",
+      "image": "guyDanielli.png",
+      "linkedin": "https://www.linkedin.com/in/guy-danielli-298287b5",
+      "facebook": "facebook.com/guy.danielli",
+      "mail": "guy7145@gmail.com",
+      "about": "Thesis research about using committee diversity for active learning in Query by Committee. Project with IBM in JavaScript malware detection."
+    },
+    {
+      "id": "nevoItzhak",
+      "name": "Nevo Itzhak",
+      "image": "nevo.png",
+      "linkedin": "https://www.linkedin.com/in/nevoitzhak/",
+      "mail": "nevoit@post.bgu.ac.il",
+      "about": "Call Center Calls Prediction with Amdocs"
+    },
+    {
+      "id": "ofirdvi",
+      "name": "Ofir Dvir",
+      "image": "ofirDvir.jpg",
+      "facebook": "https://www.facebook.com/ofir.dvir.9?ref=bookmarks",
+      "mail": "ofirdvi@post.bgu.ac.il",
+      "about": "Will be update in the future"
+    },
+    {
+      "id": "guyShitrit",
+      "name": "Guy Shitrit",
+      "image": "none.png"
+    },
+    {
+      "id": "danielleSakov",
+      "name": "Danielle Sakov",
+      "image": "none.png"
+    },
+    {
+      "id": "noaLemberger",
+      "name": "Noa Lemberger",
+      "image": "noaLemberger.jpg"
+    },
+    {
+      "id": "omerHarel",
+      "name": "Omer Harel",
+      "image": "none.png"
+    },
+    {
+      "id": "pavelNovitzky",
+      "name": "Pavel Novitzky",
+      "image": "none.png"
+    },
+    {
+      "id": "talIvshin",
+      "name": "Tal Ivshin",
+      "image": "none.png"
+    }
+  ]

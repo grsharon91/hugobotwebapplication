@@ -1,0 +1,3 @@
+id,gender,single/marries,age,age_group,Area_code,Area_name,Market_code,Market,Sub_market_code,Sub_market,Social_type_code,Social_type,SocioEconomic_code,SocioEconomic_type
+1,Male,Single,35,35-44,1,Jerusalem,9,General,2,General- Religious,9,General,2,Medium
+2,Female,Single,36,35-44,1,Jerusalem,9,General,1,General - General,9,General,2,Medium

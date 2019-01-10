@@ -1,0 +1,1436 @@
+﻿@model HugoBotWebApplication.ViewModels.DatasetViewModel
+
+@{
+    ViewBag.Title = "Upload Dataset";
+    HtmlHelper.ClientValidationEnabled = false;
+    HtmlHelper.UnobtrusiveJavaScriptEnabled = false;
+}
+<style>
+    .anyClass {
+        height: 150px;
+        overflow-y: scroll;
+    }
+
+    .loader {
+        border: 16px solid #f3f3f3; /* Light grey */
+        border-top: 16px solid #3498db; /* Blue */
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        animation: spin 2s linear infinite;
+    }
+
+    @@keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+    /* Hide all steps by default: */
+    .tab {
+        display: none;
+    }
+
+    /* Make circles that indicate the steps of the form: */
+    .step {
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #bbbbbb;
+        border: none;
+        border-radius: 50%;
+        display: inline-block;
+        opacity: 0.5;
+    }
+
+        /* Mark the active step: */
+        .step.active {
+            opacity: 1;
+        }
+
+        /* Mark the steps that are finished and valid: */
+        .step.finish {
+            background-color: #4CAF50;
+        }
+
+    .glyphicon.glyphicon-asterisk {
+        font-size: 10px;
+    }
+
+    #datasetFile input[type=file] {
+        display: none;
+        margin: 10px;
+    }
+
+        #datasetFile input[type=file] + label {
+            display: inline-block;
+            margin: 20px;
+            padding: 4px 32px;
+            background-color: #FFFFFF;
+            border: solid 1px #666F77;
+            border-radius: 6px;
+            color: #666F77;
+        }
+
+        #datasetFile input[type=file]:active + label {
+            background-image: none;
+            background-color: #2D6C7A;
+            color: #FFFFFF;
+        }
+
+    #hide input[type=file] {
+        display: none;
+        margin: 10px;
+    }
+
+        #hide input[type=file] + label {
+            display: inline-block;
+            margin: 20px;
+            padding: 4px 32px;
+            background-color: #FFFFFF;
+            border: solid 1px #666F77;
+            border-radius: 6px;
+            color: #666F77;
+        }
+
+        #hide input[type=file]:active + label {
+            background-image: none;
+            background-color: #2D6C7A;
+            color: #FFFFFF;
+        }
+
+    #hide2 input[type=file] {
+        display: none;
+        margin: 10px;
+    }
+
+        #hide2 input[type=file] + label {
+            display: inline-block;
+            margin: 20px;
+            padding: 4px 32px;
+            background-color: #FFFFFF;
+            border: solid 1px #666F77;
+            border-radius: 6px;
+            color: #666F77;
+        }
+
+        #hide2 input[type=file]:active + label {
+            background-image: none;
+            background-color: #2D6C7A;
+            color: #FFFFFF;
+        }
+
+    input.error, textarea.error {
+        border: 1px dotted red;
+    }
+</style>
+@*<h2>Upload Dataset</h2>
+    Unsure about the format?*@
+@*<a href="@Url.Action("FirstSteps", "Home")" id="FirstStepsButton" title="First steps" class="btn " type="button" target="_blank" style="background-color:#006400; color:white"> <span class="glyphicon glyphicon-info-sign"></span> Take a look at first steps with HugoBot</a>*@
+<br />
+<div class="modal" id="myModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Dataset uploaded</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                Your dataset has been succefully uploaded
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+@using (Html.BeginForm("Create", "Datasets", FormMethod.Post, new { enctype = "multipart/form-data", id = "UploadDatasetForm" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="col-sm-12">
+        <ul class="nav nav-pills nav-justified thumbnail setup-panel  " id="myTab">
+            <li class="nav-item">
+                <a name="step" id="Step1" href="#home" data-toggle="pill" class="nav-link active btn btn-outline-primary" onclick="nextPrev(-1)">
+
+                    <h4 class="list-group-item-heading">Step 1</h4>
+
+                    <p class="list-group-item-text">Upload Dataset File</p>
+
+                </a>
+            </li>
+            <li class="nav-item">
+                <a name="step" id="Step2" href="#" data-toggle="pill" class="nav-link btn btn-outline-primary " onclick="ProceedToVmap()">
+
+                    <h4 class="list-group-item-heading">Step 2</h4>
+
+                    <p class="list-group-item-text">Upload Map FIle</p>
+
+                </a>
+            </li>
+            <li class="nav-item">
+                <a name="step" id="Step3" href="#" data-toggle="pill" class="nav-link btn btn-outline-primary " onclick="Step3()">
+
+                    <h4 class="list-group-item-heading">Step 3</h4>
+
+                    <p class="list-group-item-text">Upload Entites FIle</p>
+
+                </a>
+            </li>
+        </ul>
+    </div>
+    <br />
+    <br />
+    <div class="tab-content">
+        <div class="card ">
+            <div class="card-header bg-primary" style="color:white"> Dataset </div>
+
+            <div class="card-body ">
+                <div class="tab">
+                    <div class="form-horizontal">
+                        <hr />
+                        <div id="DatasetFileErrorsDiv" class=" col-md-12">
+                            <ul id="DatasetFileErrors" class=" anyClass"></ul>
+                        </div>
+                        @*<button type="button" class="btn btn-primary" onclick="alertStuff(0)">
+                                CLOSE
+                            </button>
+                            <button type="button" class="btn btn-primary" onclick="alertStuff(1)">
+                                SHOW
+                            </button>
+                            <div id="DatasetFileErrors2" class="alert alert-warning  fade show" role="alert">
+                                <button type="button" class="close" data-toggle="collapse" data-target="#DatasetFileErrors">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>*@
+
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="form-group row">
+                            @*@Html.LabelFor(model => model.DatasetName, htmlAttributes: new { @class = "col-form-label col-sm-2" })*@
+                            <label class="col-form-label col-sm-2" for="DatasetName">Dataset name</label>
+                            <div class="col-sm-10">
+                                @Html.EditorFor(model => model.DatasetName, new { htmlAttributes = new { @class = "form-control" } })
+                                @*<span>
+                                        <span class="glyphicon glyphicon-asterisk"></span>
+                                    </span>*@
+                                @*@Html.ValidationMessageFor(model => model.DatasetName, "", new { @class = "text-danger" })*@
+                            </div>
+                        </div>
+
+                        <br>
+
+                        <div class="form-group row">
+                            @Html.LabelFor(model => model.Category, htmlAttributes: new { @class = "col-form-label col-sm-2" })
+                            <div class="col-sm-10">
+                                @Html.DropDownListFor(model => model.Category, new SelectList(new[] { "", "Medical", "Financial", "Psychological", "Other" }), new { @ID = "CategoryDropDown", @name = "CategoryDropDown", @class = "form-control" })
+                                <span>
+                                    <span class="glyphicon glyphicon-asterisk"></span>
+                                </span>
+                                @*@Html.ValidationMessageFor(model => model.Category, "", new { @class = "text-danger" })*@
+                            </div>
+                            <div class=" offset-2 col-md-10">
+                                @Html.EditorFor(model => model.Category, new { htmlAttributes = new { @ID = "CategoryOtherEdit", @class = "form-control", @Style = "display:none;", @placeholder = "Enter Category" } })
+
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-group row">
+                            @Html.LabelFor(model => model.Visibility, htmlAttributes: new { @class = "col-form-label col-md-2" })
+                            <div class="col-md-10">
+                                @if (User.Identity.IsAuthenticated)
+                                {
+                                    @Html.DropDownListFor(model => model.Visibility, new SelectList(new[] { "Public", "Private" }), new { @ID = "VisibilityDropDown", @name = "VisibilityDropDown", @class = "form-control" })
+
+                                }
+                                else
+                                {
+                                    @Html.DropDownListFor(model => model.Visibility, new SelectList(new[] { "Public" }), new { @ID = "VisibilityDropDown", @name = "VisibilityDropDown", @class = "form-control" })
+
+                                }
+                                @Html.ValidationMessageFor(model => model.Visibility, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <br />
+                        <div class="form-group row">
+                            <div class="col-form-label   col-md-2">
+                                <label>Dataset File</label>
+                            </div>
+
+                            <div class=" col-md-10">
+                                <div id="DatasetFile" style="display: inline">
+                                    <label style="font-size: 17px" class="btn btn-warning">
+                                        <span id="Path1">Browse</span>
+                                        <input id="datasetFile" accept=".csv" type="file" name="datasetFile" class="btn btn-success" style="display: none;" />
+                                    </label>
+                                    <label class="label label-primary" id="filePath" style="display:none;font-size: 16px"></label>
+                                    <span id="Dataset_file_error"></span>
+                                </div>
+                                @*<span id="datasetHelp" style="color:green" title="" class="glyphicon glyphicon-question-sign"></span>*@
+                            </div>
+
+
+                        </div>
+                        <br />
+
+
+                        <br />
+                        <div class="formgroup row">
+                            <div class="col-form-label col-md-2">
+                                <label>Description</label>
+                            </div>
+                            <div class="col-md-10">
+                                <textarea class="form-control text-area single-line"
+                                          id="Description"
+                                          name="DatasetDescription"
+                                          rows="5"
+                                          cols="15" style="max-width:280px"></textarea>
+                            </div>
+                        </div>
+
+                        <br />
+                        <div class="row">
+                            <div class="col-md-4">
+                                <button id="ProceedToVmapBtn" type="button" class="btn btn-outline-warning" onclick="ProceedToVmap()">Validate Dataset file and proceed to step 2</button>
+
+                            </div>
+                            <div id="Step1Loader" class="loader" style="display:none"></div>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="tab">
+                    @*<select class="form-control" id="vmapOptions" onchange="vmapOption()" style="max-width: 280px">
+            <option value="uploadVmapFileOption">Upload a file</option>
+            <option value="createOnSiteVmapOption">Create on site</option>
+
+        </select>*@
+                    <div id="vmapFileErrorsDiv" class=" col-md-12">
+                        <ul id="vmapFileErrors" class="anyClass"></ul>
+                    </div>
+                    <div class="col-md-12">
+                        <span id="Errors" class="text-danger">
+                            @*@ViewBag.Errors*@
+                        </span>
+                    </div>
+                    <div class="row">
+                        <div class=" col-4 ">
+                            <div class="row">
+                                <div class="btn-group" role="group" aria-label="...">
+                                    <button id="vmapCreationBtn" type="button" class="btn btn-sm btn-outline-warning" onclick="processVmap(0)" data-toggle="tooltip" data-placement="left" title="Create a new variable map from the dataset's properties">
+                                        <span class="fas fa-edit"></span>
+                                        Create new variable map
+                                    </button>
+                                    <button id="vmapLoadingBtn" type="button" class="btn btn-sm btn-outline-warning" onclick="showVmap(1)" data-toggle="tooltip" data-placement="left" title="Upload a new variable map which you will be able to edit in th table below">
+                                        <span class="fas fa-upload"></span>
+                                        Upload variable map
+                                    </button>
+
+                                    <button id="ProceedToStep3Btn" type="button" class="btn btn-sm btn-outline-warning" onclick="Step3()">
+                                        Proceed to step 3
+                                    </button>
+
+                                </div>
+                            </div>
+                            <div class="row">
+
+                            </div>
+                            <div class="row"></div>
+                        </div>
+
+
+                        <div class="col-3 offset-4">
+                            <div class="row">
+                                Errors Legend
+                            </div>
+                            <div class="row">
+                                <img src="~/Images/yellowsquare.png" /> &nbsp; - &nbsp; Duplicate values
+                            </div>
+                            <br />
+                            <div class="row">
+                                <img src="~/Images/redsquare.png" /> &nbsp; - &nbsp; Missing values
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div id="vmapFileDiv" class="col-12">
+
+                            <div id="UploadVmapDiv" class="  btn-group" role="group" aria-label="..." style="display:none">
+                                <div class="form-group row" id="VMap">
+                                    <div class="col-form-label col-md-1">
+                                        Map File:
+
+                                    </div>
+                                    <div class="col-md-11">
+                                        <label style="font-size: 17px" class="btn btn-warning">
+
+                                            <span id="uploadVmap">Browse</span>
+                                            <input id="hide" accept=".csv" type="file" name="vmapFile" class="btn btn-warning" style="display: none;" />
+
+                                        </label>
+                                        <label class="label label-primary" id="filePath" style="display:none;font-size: 16px"></label>
+                                        <span id="VMap_file_error"></span>
+                                    </div>
+
+                                </div>
+
+                                <button id="vmapLoadingBtn" type="button" class="btn btn-sm btn-outline-warning" onclick="processVmap(1)">
+                                    <span class="fas fa-upload"></span>
+                                    Upload
+                                </button>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <div id="Step2Loader" class="loader" style="display:none"></div>
+
+
+                    <span id="metadataErrors" class="text-danger">
+
+                    </span>
+                    @*<button type="button" id="bestButton" class="btn btn-primary" onclick="addRow()"> Add new Row</button>*@
+                    <table id="metadataTable" class="table">
+                        <thead>
+                            <tr>
+                                <th>Variable ID</th>
+                                <th>Variable Name</th>
+                                <th> Description </th>
+                            </tr>
+                        </thead>
+
+                        <tbody></tbody>
+                    </table>
+
+                    <button id="ProceedToStep3Btn2" type="button" class="btn btn-sm btn-outline-warning" onclick="Step3()">
+                        Proceed to step 3
+                    </button>
+                </div>
+                <div class="tab">
+                    <div id="entityFileDiv" class="form-group ">
+                        <div class="form-group row">
+                            <div class="col-form-label col-md-1">
+                                <label>Entities:</label>
+                            </div>
+
+                            <div class="checkbox col-md-11">
+                                <div id="Entity">
+                                    <label style="font-size: 17px" class="btn btn-warning">
+                                        <span id="uploadEntity">Browse</span>
+                                        <input id="hide2" accept=".csv" type="file" name="Entity_file" class="btn btn-warning" style="display: none;" />
+
+                                    </label>
+                                    <label class="label label-primary" id="EntityPath" style="display:none;font-size: 16px"></label>
+                                    <span id="VMap_file_error"></span>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                    <button type="button" class="btn btn-sm btn-warning" onclick="SendDatasetFiles()">
+                        Finish & Submit
+                    </button>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+    @*<div style="text-align:center;margin-top:40px;">
+            <span class="step"></span>
+            <span class="step"></span>
+        </div>*@
+
+}
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+   
+    <script src=" https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.js"></script>
+    <script>
+
+    </script>
+    <script>
+        $(document).ready(function () {
+
+            $.validator.setDefaults({
+                ignore: []
+            });
+            var errorsTag = document.getElementById("DatasetFileErrors");
+            errorsTag.style.display = 'none';
+            var vmapErrorTag = document.getElementById("vmapFileErrors");
+            vmapErrorTag.style.display = 'none';
+            document.getElementById("Step2").disabled = true;
+            document.getElementById("Step3").disabled = true;
+            $("#Step3").addClass("disabled");
+            $("#CategoryDropDown").val("");
+            $("#LoadingLabel").hide();
+            $("#datasetHelp").tooltip({ content: '<img src="http://icdn.pro/images/fr/a/v/avatar-barbe-brun-homme-utilisateur-icone-9665-128.png" />' });
+            $("#riverroad").tooltip({ content: '<img src="http://icdn.pro/images/fr/a/v/avatar-barbe-brun-homme-utilisateur-icone-9665-128.png" />' });
+
+            //$('[data-toggle="tooltip"]').tooltip();
+        })
+
+    </script>
+
+
+    <script>
+        function alertStuff(flag) {
+            if (flag == 0) {
+                $(".alert").fadeOut(1000);
+            }
+            if (flag == 1) {
+                $(".alert").fadeIn(1000);
+            }
+        }
+    </script>
+
+    <script>
+        function showVmap(n) {
+            if (n == 0) {
+                document.getElementById("UploadVmapDiv").style.display = 'none';
+            }
+
+            else {
+                document.getElementById("UploadVmapDiv").style.display = 'block';
+                if (n == 1) {
+                    var old_tbody = document.getElementById("metadataTable").getElementsByTagName('tbody')[0];
+                    var new_tbody = document.createElement('tbody');
+                    old_tbody.parentNode.replaceChild(new_tbody, old_tbody);
+                    document.getElementById("metadataErrors").innerHTML = "";
+                }
+            }
+        }
+    </script>
+    <script>
+        $("#datasetHelp").tooltip({ content: '<img src="/Images/DatasetFormatImage.png" />' });
+        $("#datasetHelp").tooltip({ content: '<img src="http://icdn.pro/images/fr/a/v/avatar-barbe-brun-homme-utilisateur-icone-9665-128.png" />' });
+        $("#riverroad").tooltip({ content: '<img src="http://icdn.pro/images/fr/a/v/avatar-barbe-brun-homme-utilisateur-icone-9665-128.png" />' });
+
+    </script>
+    <script>
+        $(function () {
+            // Initialize form validation on the registration form.
+            // It has the name attribute "registration"
+            $('#UploadDatasetForm').validate({
+                errorElement: 'span',
+                errorClass: "text-danger field-validation-error",
+                // Specify validation rules
+                rules: {
+                    // The key name on the left side is the name attribute
+                    // of an input field. Validation rules are defined
+                    // on the right side
+
+                    DatasetName: {
+                        required: true
+                    },
+                    Category: {
+                        required: true
+                    },
+
+                    Visiblity: {
+                        required: true
+                    },
+                    datasetFile: {
+                        required: true
+                    },
+                    //VMap_file: {
+                    //	required: true
+                    //},
+                    DatasetDescription: {
+                        required: true
+                    }
+
+                },
+                // Specify validation error messages
+                messages: {
+                    DatasetDescription: { required: "Please provide a description for your dataset" },
+                    DatasetName: { required: "Please specify a name for the dataset" },
+                    Category: { required: "Please choose a category" },
+                    Visiblity: { required: "Please choose visibliy for your dataset" },
+                    datasetFile: { required: "Please choose a dataset file to upload" },
+                    VMap_file: { required: "Please choose a variable map file to upload" }
+                },
+                errorPlacement: function (error, element) {
+
+                    if (element.attr("name") == "VMap_file") {
+                        error.insertAfter("#VMap_file_error")
+                    }
+                    else if (element.attr("name") == "datasetFile") {
+                        error.insertAfter("#Dataset_file_error")
+                    }
+                    else
+                        error.insertAfter(element);
+                },
+                // Make sure the form is submitted to the destination defined
+                // in the "action" attribute of the form when valid
+                submitHandler: function (form) {
+                    form.submit();
+                }
+            });
+        });
+    </script>
+    @*<script src="~/Scripts/Datasets/Validation.js"></script>*@
+    <script>
+
+
+    </script>
+    <script>
+        $('#hide').change(function () {
+            $('#uploadVmap').text($("#hide").val().split("\\").slice(-1)[0]);
+
+        });
+        $('#hide2').change(function () {
+            $('#uploadEntity').text($("#hide2").val().split("\\").slice(-1)[0]);
+
+        });
+    </script>
+    <script>
+        $('#CategoryDropDown').change(function () {
+            var category = $("#CategoryDropDown option:selected").text();
+            if (category == 'Other') {
+                $("#CategoryOtherEdit").show();
+                $("#CategoryDropDown").attr("name", "None")
+            }
+            else {
+                //if user select 'other' and later select something else, you should hide textbox
+                $("#CategoryOtherEdit").hide();
+                $("#CategoryDropDown").attr("name", "Category")
+            }
+
+        });
+    </script>
+    <script>
+        $('#hide').change(function () {
+            $('#uploadVmap').text($("#hide").val().split("\\").slice(-1)[0]);
+
+        });
+    </script>
+    <script>
+        $('#datasetFile').change(function () {
+            $('#Path1').text($("#datasetFile").val().split("\\").slice(-1)[0]);
+
+
+        });
+    </script>
+    <script>
+        function createRows(table, n) {
+            var count = table.rows.length;
+            for (var i = 0; i < n; i++) {
+                var row = table.insertRow(count);
+                var cell1 = row.insertCell(0);
+                var cell2 = row.insertCell(1);
+                var cell3 = row.insertCell(2);
+                //cell1.innerHTML = "Please Enter an id for the new variable";
+                //cell2.innerHTML = "Please Enter a name for the new variable";
+                //cell1.a = "contenteditable=\"true\"";
+                cell1.setAttribute("contenteditable", "false");
+                var TemporalPropertyIDInput = document.createElement("input")
+                var TemporalPropertyIDErrorSpan = document.createElement("span")
+                TemporalPropertyIDErrorSpan.setAttribute("class", "text-danger")
+                TemporalPropertyIDInput.setAttribute("name", "TemporalPropertyID");
+                TemporalPropertyIDInput.setAttribute("type", "text");
+                TemporalPropertyIDInput.setAttribute("class", "form-control")
+                TemporalPropertyIDInput.setAttribute("onchange", "changeId(1)")
+                cell1.appendChild(TemporalPropertyIDInput);
+                cell1.appendChild(TemporalPropertyIDErrorSpan);
+
+
+                cell2.setAttribute("contenteditable", "false");
+                var TemporalPropertyNameInput = document.createElement("input");
+                TemporalPropertyNameInput.setAttribute("name", "TemporalPropertyName");
+                TemporalPropertyNameInput.setAttribute("type", "text")
+                TemporalPropertyNameInput.setAttribute("class", "form-control");
+                TemporalPropertyNameInput.setAttribute("onchange", "changeId(1)")
+                cell2.appendChild(TemporalPropertyNameInput)
+
+
+                cell3.setAttribute("contenteditable", "false");
+
+                var DescriptionInput = document.createElement("input");
+                DescriptionInput.setAttribute("type", "text")
+                DescriptionInput.setAttribute("class", "form-control");
+                DescriptionInput.setAttribute("name", "Description");
+                DescriptionInput.setAttribute("onchange", "changeId(1)")
+                cell3.appendChild(DescriptionInput)
+
+
+                count += 1;
+            }
+
+        }
+    </script>
+
+    <script>
+		var vmapProperties;
+		var datasetProperties;
+		var vmapTable;
+		var currentIds = [];
+		var pathIsChnaged = false;
+		$('#datasetFile').change(function () {
+			$('#Path1').text($("#datasetFile").val().split("\\").slice(-1)[0]);
+			$("#Upload").prop("disabled", false);
+			pathIsChnaged = true;
+
+		});
+		function addRow(vmapTable) {
+
+			var count = vmapTable.rows.length;
+			var row = vmapTable.insertRow(count);
+			var cell1 = row.insertCell(0);
+			var cell2 = row.insertCell(1);
+			var cell3 = row.insertCell(2);
+			//cell1.innerHTML = "Please Enter an id for the new variable";
+			//cell2.innerHTML = "Please Enter a name for the new variable";
+			//cell1.a = "contenteditable=\"true\"";
+			cell1.setAttribute("contenteditable", "false");
+			var TemporalPropertyIDInput = document.createElement("input")
+			var TemporalPropertyIDErrorSpan = document.createElement("span")
+			TemporalPropertyIDErrorSpan.setAttribute("class", "text-danger")
+			TemporalPropertyIDInput.setAttribute("name", "TemporalPropertyID");
+			TemporalPropertyIDInput.setAttribute("type", "text");
+			TemporalPropertyIDInput.setAttribute("class", "form-control")
+			TemporalPropertyIDInput.setAttribute("onchange", "changeId(1)")
+			cell1.appendChild(TemporalPropertyIDInput);
+			cell1.appendChild(TemporalPropertyIDErrorSpan);
+
+
+			cell2.setAttribute("contenteditable", "false");
+			var TemporalPropertyNameInput = document.createElement("input");
+			TemporalPropertyNameInput.setAttribute("name", "TemporalPropertyName");
+			TemporalPropertyNameInput.setAttribute("type", "text")
+			TemporalPropertyNameInput.setAttribute("class", "form-control");
+			TemporalPropertyNameInput.setAttribute("onchange", "changeId(1)")
+			cell2.appendChild(TemporalPropertyNameInput)
+
+
+			cell3.setAttribute("contenteditable", "false");
+
+			var DescriptionInput = document.createElement("input");
+			DescriptionInput.setAttribute("type", "text")
+			DescriptionInput.setAttribute("class", "form-control");
+            DescriptionInput.setAttribute("name", "Description");
+            DescriptionInput.setAttribute("onchange", "changeId(1)")
+			cell3.appendChild(DescriptionInput)
+		}
+        function populateTable(vmap, vmapErrors, vmapDatasetErrors) {
+            document.getElementById("vmapCreationBtn").disabled = true;
+
+			var vmapLength = vmap.length;
+            var Oldtable = document.getElementById("metadataTable").getElementsByTagName('tbody')[0];
+            var table = document.createElement('tbody');
+
+            console.log(table);
+            //for (var i = 0; i < table.rows.length; i++) {
+            //    table.deleteRow(i)
+            //    console.log(i)
+            //}
+			vmapTable = table;
+            createRows(table, datasetProperties.length);
+            console.log(table)
+
+            for (var i = 0; i < Math.min(table.rows.length, vmapLength); i++) {
+				//j = i + 1;
+                j = i;
+				var row = table.rows[j];
+				var TemporalPropertyIDCell = row.cells[0];
+				var TemporalPropertyNameCell = row.cells[1];
+				var DescriptionCell = row.cells[2];
+				//TemporalPropertyIDCell.innerHTML = "<input type=text value=" + vmap[i]["TemporalPropertyID"] + "/>"
+
+				//TemporalPropertyIDCell.innerHTML = vmap[i]["TemporalPropertyID"];
+				TemporalPropertyIDCell.children[0].value = vmap[i]["TemporalPropertyID"];
+				TemporalPropertyIDCell.children[0].disabled = false;
+				//TemporalPropertyNameCell.innerHTML = vmap[i]["TemporalPropertyName"];
+				TemporalPropertyNameCell.children[0].value = vmap[i]["TemporalPropertyName"];
+				//DescriptionCell.innerHTML = vmap[i]["Description"];
+				DescriptionCell.children[0].value = vmap[i]["Description"];
+				currentIds[i] = vmap[i]["TemporalPropertyID"];
+				//if (vmapErrors[i] != "") {
+				//	//row.setAttribute("class", "table-danger");
+    //                //row.setAttribute("style", "background-color:#ff8080");
+    //                TemporalPropertyNameCell.children[0].setAttribute("style", "background-color:#ff8080")
+				//	document.getElementById("metadataErrors").innerHTML = document.getElementById("metadataErrors").innerHTML + "<br/>" + vmapErrors[i];
+				//	//TemporalPropertyIDCell.setAttribute("contenteditable", "true");
+				//	//TemporalPropertyIDCell.setAttribute("id", i)
+				//	//TemporalPropertyIDCell.setAttribute("onblur", "changeId("+ i +")");
+				//	//row.setAttribute("id", "row_" + i)
+				//	//changeId(1)
+				//}
+			}
+            for (var i = 0; i < datasetProperties.length; i++) {
+				//if (vmapDatasetErrors[i] != "") {
+				//	document.getElementById("metadataErrors").innerHTML = document.getElementById("metadataErrors").innerHTML + "<br/>" + vmapDatasetErrors[i];
+				//}
+			}
+			if (vmap.length < datasetProperties.length) {
+				for (var i = 0; i < datasetProperties.length - vmap.length; i++) {
+					addRow(vmapTable);
+				}
+
+			}
+            Oldtable.parentNode.replaceChild(table, Oldtable)
+            document.getElementById("vmapCreationBtn").removeAttribute("disabled");
+            document.getElementById("vmapLoadingBtn").removeAttribute("disabled");
+            changeId(1);
+
+        }
+
+		function changeId(id) {
+			console.log(datasetProperties)
+			//console.log(id);
+			//console.log(idChanged)
+			@*var keys = @Html.Raw(Json.Encode(Model.Vmap.Keys));*@
+            var isValid = true
+
+			var currentIds = []
+			var currIdsflags = [];
+
+			var currentNames = [];
+            var currNamesflags = [];
+
+            var currentDescriptions = [];
+            var currDescriptionsflags = []
+
+			var changedRow = document.getElementById("row_" + id)
+			//var changedId = parseInt($("#" + id).html());
+			//console.log(changedId)
+			//console.log(datasetProperties.indexOf(changedId))
+            if (vmapTable.rows.length == 0) {
+                return false;
+            }
+			for (var i = 0; i < vmapTable.rows.length; i++) {
+				var row = vmapTable.rows[i];
+				var currId = row.cells[0].children[0].value.trim();
+				var currName = row.cells[1].children[0].value.trim();
+                var currDescription = row.cells[2].children[0].value.trim();
+
+				currentIds[i] = currId;
+                currentNames[i] = currName
+                currentDescriptions[i] = currDescription
+
+				currIdsflags[i] = true
+                currNamesflags[i] = true;
+                currDescriptionsflags[i] = true
+			}
+			for (var i = 0; i < vmapTable.rows.length; i++) {
+				var same_count = 0;
+				var row = vmapTable.rows[i];
+				var currId = row.cells[0].children[0].value;
+                var currName = row.cells[1].children[0].value;
+                var currDescription = row.cells[2].children[0].value;
+
+				console.log(currId)
+				console.log("NAME: " + currName)
+				console.log(/^ *$/.test(currName))
+
+				same_count_names = 0;
+                same_count_descriptions = 0;
+				for (var k = 0; k < vmapTable.rows.length; k++) {
+					if (currentIds[k] == currId && k != i ) {
+						//vmapTable.rows[k].cells[0].children[0].setAttribute("style", "background-color:#ff8080");
+      //                  vmapTable.rows[i].cells[0].children[0].setAttribute("style", "background-color:#ff8080");
+
+                        if (vmapTable.rows[k].cells[0].getAttribute("style") != "background-color:#ff8080") {
+                            vmapTable.rows[k].cells[0].setAttribute("style", "background-color:#ffeb99");
+                        }
+                        if (vmapTable.rows[i].cells[0].getAttribute("style") != "background-color:#ff8080") {
+                            vmapTable.rows[i].cells[0].setAttribute("style", "background-color:#ffeb99");
+                        }
+						same_count += 1;
+						currIdsflags[i] = false
+						currIdsflags[k] = false
+						isValid = false;
+					}
+					if (same_count == 0 && currIdsflags[i]) {
+                        vmapTable.rows[i].cells[0].removeAttribute("style")
+						//vmapTable.rows[i].cells[0].children[0].removeAttribute("style")
+
+                    }
+
+                    if (currentDescriptions[k] === currDescription && k != i) {
+                        //vmapTable.rows[k].cells[2].children[0].setAttribute("style", "background-color:#ff8080");
+                        //vmapTable.rows[i].cells[2].children[0].setAttribute("style", "background-color:#ff8080");
+
+                        if (!(/^ *$/.test(vmapTable.rows[k].cells[2].children[0].value))) {
+                            vmapTable.rows[k].cells[2].setAttribute("style", "background-color:#ffeb99");
+                        }
+                        if (!(/^ *$/.test(vmapTable.rows[i].cells[2].children[0].value))){
+                        vmapTable.rows[i].cells[2].setAttribute("style", "background-color:#ffeb99");
+                        }
+
+                        same_count_descriptions += 1;
+                        currDescriptionsflags[i] = false
+                        currDescriptionsflags[k] = false
+                        isValid = false;
+                    }
+                    if (same_count_descriptions == 0 && currDescriptionsflags[i]) {
+                        //vmapTable.rows[i].cells[2].children[0].removeAttribute("style")
+                        vmapTable.rows[i].cells[2].removeAttribute("style")
+
+                    }
+
+					if (currentNames[k] === currName && k != i ) {
+						//vmapTable.rows[k].cells[1].children[0].setAttribute("style", "background-color:#ff8080");
+                        //                  vmapTable.rows[i].cells[1].children[0].setAttribute("style", "background-color:#ff8080");
+                        if (!(/^ *$/.test(vmapTable.rows[k].cells[1].children[0].value))) {
+                            vmapTable.rows[k].cells[1].setAttribute("style", "background-color:#ffeb99");
+                        }
+                        if (!(/^ *$/.test(vmapTable.rows[i].cells[1].children[0].value))) {
+                            vmapTable.rows[i].cells[1].setAttribute("style", "background-color:#ffeb99");
+                        }
+						same_count_names += 1;
+						currNamesflags[i] = false
+						currNamesflags[k] = false
+						isValid = false;
+					}
+					if (same_count_names == 0 && currNamesflags[i]) {
+                        //vmapTable.rows[i].cells[1].children[0].removeAttribute("style")
+                        vmapTable.rows[i].cells[1].removeAttribute("style")
+
+                    }
+
+
+
+                }
+                if (/^ *$/.test(currName)) {
+                    currNamesflags[i] = false;
+                    isValid = false;
+                    //row.cells[1].children[0].setAttribute("style", "background-color:#ff8080");
+                    row.cells[1].setAttribute("style", "background-color:#ff8080");
+
+
+
+                }
+                if (/^ *$/.test(currDescription)) {
+                    currDescriptionsflags[i] = false;
+                    isValid = false;
+                    //row.cells[2].children[0].setAttribute("style", "background-color:#ff8080");
+                    row.cells[2].setAttribute("style", "background-color:#ff8080");
+
+                }
+
+
+
+                if (isNaN(currId) || /^ *$/.test(currId)) {
+                    //row.cells[0].children[0].setAttribute("style", "background-color:#ff8080");
+                    row.cells[0].setAttribute("style", "background-color:#ff8080");
+
+                    currIdsflags[i] = false;
+                    isValid = false;
+                }
+                else {
+                    if (currIdsflags[i]) {
+                        //row.cells[0].children[0].removeAttribute("style");
+                        row.cells[0].removeAttribute("style");
+
+                    }
+                }
+				if (datasetProperties.indexOf(Number(currId)) == -1) {
+                    //row.cells[0].children[0].setAttribute("style", "background-color:#ff8080");
+                    row.cells[0].setAttribute("style", "background-color:#ff8080");
+					row.cells[0].children[1].innerHTML = "Id doesn't exist in dataset"
+					currIdsflags[i] = false
+					isValid = false;
+				}
+				else {
+					row.cells[0].children[1].innerHTML = "";
+					if (currIdsflags[i]) {
+						row.cells[0].children[1].innerHTML = "";
+                        //vmapTable.rows[i].cells[0].children[0].removeAttribute("style");
+                        vmapTable.rows[i].cells[0].removeAttribute("style");
+
+					}
+
+				}
+				if (currIdsflags[i]) {
+					//vmapTable.rows[i].cells[0].children[0].removeAttribute("style");
+                    vmapTable.rows[i].cells[0].removeAttribute("style");
+
+				}
+				if (currNamesflags[i]) {
+                    //vmapTable.rows[i].cells[1].children[0].removeAttribute("style");
+                    vmapTable.rows[i].cells[1].removeAttribute("style");
+
+                }
+
+                if (currDescriptionsflags[i]) {
+                    //vmapTable.rows[i].cells[2].children[0].removeAttribute("style");
+                    vmapTable.rows[i].cells[2].removeAttribute("style");
+
+                }
+
+
+			}
+
+			return isValid
+		}
+
+
+
+		function vmapOption() {
+			var vmapOptions = document.getElementById("vmapOptions");
+			var selectedOption = vmapOptions.options[vmapOptions.selectedIndex].value;
+			var vmapCreationBtn = document.getElementById("vmapCreationBtn");
+			var vmapleDiv = document.getElementById('vmapFileDiv');
+			if (selectedOption === "uploadVmapFileOption") {
+				vmapCreationBtn.innerHTML = "Validate vmap";
+				vmapFileDiv.style.display = 'block';
+			}
+
+			if (selectedOption === "createOnSiteVmapOption") {
+				vmapCreationBtn.innerHTML = "Create vmap";
+				vmapFileDiv.style.display = 'none';
+
+
+			}
+        }
+        function Step3() {
+            if ($("#UploadDatasetForm").valid()) {
+                if (changeId(1)) {
+                    $("#Step2").removeClass("active");
+                    $("#Step1").removeClass("active");
+                    $("#Step3").addClass("active");
+                    nextPrev(3)
+                }
+                else {
+                    alert("Please fill the missing information")
+                    console.log("LDDSDS")
+                    $("#Step3").removeClass("active");
+                    $("#Step2").addClass("active");
+                    nextPrev(1)
+
+
+                }
+            }
+            else {
+                $("#Step3").removeClass("active");
+                $("#Step2").removeClass("active");
+                $("#Step1").addClass("active");
+                nextPrev(-1);
+            }
+
+        }
+        function ProceedToVmap() {
+            console.log("ags")
+            if ($("#UploadDatasetForm").valid() ) {
+                console.log("ISVALID")
+                if (pathIsChnaged) {
+                    document.getElementById("ProceedToVmapBtn").setAttribute("disabled", "disabled");
+                    document.getElementById("Step1Loader").style.display = "block";
+                    processDatasetFile()
+                }
+
+                else {
+                    console.log("OK")
+
+                    $("#Step1").removeClass("active");
+                    $("#Step3").removeClass("active");
+                    $("#Step2").addClass("active");
+                    nextPrev(1)
+
+				}
+
+
+
+			}
+			else {
+				$("#Step1").addClass("active");
+				$("#Step2").removeClass("active");
+
+			}
+        }
+        function fillDatasetErrors(errors) {
+            var errorsList = errors.split("<br>");
+            var oldErrorsDiv = document.getElementById("DatasetFileErrorsDiv");
+            var errorsTag = document.getElementById("DatasetFileErrors");
+            var errorsTagNew = document.createElement("ul");
+
+            oldErrorsDiv.replaceChild(errorsTagNew, errorsTag);
+            errorsTagNew.setAttribute("id", "DatasetFileErrors");
+            errorsTagNew.setAttribute("class", "anyClass");
+            errorsTagNew.style.display = 'block';
+
+            var generalError = document.createElement("li");
+            generalError.setAttribute("class", "text-danger");
+            generalError.innerHTML = "<h5>The dataset isn't in the correct format, see errors below:</h5>"
+            errorsTagNew.appendChild(generalError);
+
+            for (var i = 0; i < errorsList.length; i++) {
+                var errorListItem = document.createElement("li");
+                errorListItem.innerHTML = errorsList[i];
+                errorsTagNew.appendChild(errorListItem);
+            }
+
+        }
+        function fillVmapErrors(errors) {
+            console.log(errors);
+            var errorsList = errors;
+            var oldErrorsDiv = document.getElementById("vmapFileErrorsDiv");
+            var errorsTag = document.getElementById("vmapFileErrors");
+            var errorsTagNew = document.createElement("ul");
+
+            oldErrorsDiv.replaceChild(errorsTagNew, errorsTag);
+            errorsTagNew.setAttribute("id", "vmapFileErrors");
+            errorsTagNew.setAttribute("class", "anyClass");
+            errorsTagNew.style.display = 'block';
+
+            var generalError = document.createElement("li");
+            generalError.setAttribute("class", "text-danger");
+            generalError.innerHTML = "<h5>The variable map  isn't in the correct format, see errors below:</h5>"
+            errorsTagNew.appendChild(generalError);
+
+            for (var i = 0; i < errorsList.length; i++) {
+                var errorListItem = document.createElement("li");
+                errorListItem.innerHTML = errorsList[i];
+                errorsTagNew.appendChild(errorListItem);
+            }
+
+        }
+
+		function processDatasetFile() {
+			var formdata = new FormData(); //FormData object
+			var fileInput = document.getElementById('datasetFile');
+			console.log(fileInput)
+			//Iterating through each files selected in fileInput
+			console.log(fileInput.files)
+		for (i = 0; i < fileInput.files.length; i++) {
+			//Appending each file to FormData object
+			console.log(fileInput.files[i].name)
+			console.log(formdata)
+			formdata.append('datasetFile', fileInput.files[i]);
+			console.log(formdata)
+			}
+			console.log(formdata)
+			for (var p of formdata) {
+				console.log(p);
+			}
+            console.log("aa")
+            $("#Step2").addClass("disabled");
+
+			$.ajax({
+				type: "POST",
+				data: formdata,
+				contentType: false, // Not to set any content header
+				processData: false, // Not to process data
+				url: '@Url.Action("ProcessDatasetFile")',
+				//async: false,
+				//datatype: 'JSON',
+				success: function (response) {
+					console.log(response)
+                    //document.getElementById("DatasetFileErrors2").innerHTML = response;
+                    fillDatasetErrors(response);
+					//pathIsChnaged = false;
+                    if (response === "") {
+                        var errorsTag = document.getElementById("DatasetFileErrors");
+                        errorsTag.style.display = 'none';
+
+                        alert("Your dataset has been validated successfully");
+						$("#Step1").removeClass("active");
+                        $("#Step2").addClass("active");
+                        $("#Step2").removeClass("disabled");
+                        $("#Step3").removeClass("disabled");
+                        $("#Step3").removeClass("active");
+                        pathIsChnaged = false;
+                        document.getElementById("ProceedToVmapBtn").removeAttribute("disabled");
+                        document.getElementById("Step1Loader").style.display = "none";
+                        nextPrev(1);
+
+
+                    }
+                    document.getElementById("ProceedToVmapBtn").removeAttribute("disabled");
+                    document.getElementById("Step1Loader").style.display = "none";
+					//document.getElementById("Errors").innerHTML = response[0];
+					//alert(":D")
+                    $("#Step2").removeClass("disabled");
+				},
+				error: function (response) {
+					alert("error!");  //
+				}
+
+			});
+		}
+        function afterSubmit(response, statusText, xhr, $form) {
+            if (response.success) {
+                console.log("SUBBBB");
+                $("#myModal").modal();
+            } else {
+                alert('Oh snap!');
+            }
+        }
+        function SendDatasetFiles() {
+
+            if (changeId(1)) {
+                document.getElementById("UploadDatasetForm").submit();
+                @*var options = {
+                    success: afterSubmit  // post-submit callback
+                };
+
+                //$('#UploadDatasetForm').submit(function (e) {
+                //    $(this).ajaxSubmit(options);
+                //});
+                //console.log("SUBMITTED");
+                //var res = document.getElementById("UploadDatasetForm").submit();
+                //console.log(res);
+                //if (res == "Success")
+                //    $("#myModal").modal();
+                //else {
+                //    alert("error");
+
+                //}
+                 $.ajax({
+                    type: "POST",
+                    contentType: false, // Not to set any content header
+                    processData: false, // Not to process data
+                    url: '@Url.Action("SubmitDataset")',
+                    //async: false,
+                    //datatype: 'JSON',
+                    success: function (response) {
+                        console.log(response)
+                        //document.getElementById("Errors").innerHTML = response[0];
+                        //alert(":D")
+
+                    },
+                    error: function (response) {
+                        alert("error!");  //
+                    }
+
+                });*@
+				@*$.ajax({
+					type: "POST",
+					data: formdata,
+					contentType: false, // Not to set any content header
+					processData: false, // Not to process data
+					url: '@Url.Action("SubmitFiles")',
+					//async: false,
+					//datatype: 'JSON',
+					success: function (response) {
+						console.log(response)
+						if (response["Errors"] === "") {
+							var vmap = response["Vmap"];
+							var vmapErrors = response["VmapErrors"];
+							var vmapDatasetErrors = response["VmapDatasetErrors"]
+							vmapProperties = response["Vmaproperties"];
+							datasetProperties = response["DatasetProperties"];
+							populateTable(vmap, vmapErrors, vmapDatasetErrors)
+						}
+						//document.getElementById("Errors").innerHTML = response[0];
+						//alert(":D")
+
+					},
+					error: function (response) {
+						alert("error!");  //
+					}
+
+				});*@
+			}
+			else {
+				alert("Please fix errors")
+			}
+
+		}
+
+        function processVmap(existing) {
+            if ($("#UploadDatasetForm").valid()) {
+                document.getElementById("Errors").innerHTML = "";
+                document.getElementById('UploadVmapDiv').style.display = 'none';
+                document.getElementById("vmapCreationBtn").setAttribute("disabled", "disabled");
+                document.getElementById("vmapLoadingBtn").setAttribute("disabled", "disabled");
+                document.getElementById("Step2Loader").style.display = 'block';
+                var formdata = new FormData(); //FormData object
+                var fileInput = document.getElementById('datasetFile');
+			    var fileInputVmap = document.getElementById('hide');
+			    console.log(fileInput)
+			    //Iterating through each files selected in fileInput
+			    console.log(fileInput.files)
+		        for (i = 0; i < fileInput.files.length; i++) {
+			        //Appending each file to FormData object
+			        console.log(fileInput.files[i].name)
+			        console.log(formdata)
+			        formdata.append('datasetFile', fileInput.files[i]);
+			        vmapFileDiv = document.getElementById("vmapFileDiv")
+                    if (existing === 1) {
+				        formdata.append('vmapFile', fileInputVmap.files[i]);
+			        }
+
+			        console.log(formdata)
+			        }
+			        console.log(formdata)
+			        for (var p of formdata) {
+				        console.log(p);
+			        }
+			        console.log("aa")
+			        $.ajax({
+				        type: "POST",
+				        data: formdata,
+				        contentType: false, // Not to set any content header
+				        processData: false, // Not to process data
+				        url: '@Url.Action("ProcessVmapFile")',
+				        //async: false,
+				        //datatype: 'JSON',
+				        success: function (response) {
+                            console.log(response)
+                            var vmap = response["Vmap"];
+                            var vmapErrors = response["VmapErrors"];
+                            var vmapDatasetErrors = response["VmapDatasetErrors"]
+                            vmapProperties = response["Vmaproperties"];
+                            datasetProperties = response["DatasetProperties"];
+                            if (response["Errors"] === "") {
+                                
+                                console.log(document.getElementById("vmapCreationBtn"));
+                                populateTable(vmap, vmapErrors, vmapDatasetErrors)
+                                document.getElementById("Step2Loader").style.display = 'none';
+                            }
+                            else {
+                                fillVmapErrors(response["Errors"]);
+                                //document.getElementById("Errors").innerHTML = response["Errors"];
+                                populateTable(vmap, vmapErrors, vmapDatasetErrors)
+                                document.getElementById("vmapCreationBtn").removeAttribute("disabled");
+                                document.getElementById("vmapLoadingBtn").removeAttribute("disabled");
+                                document.getElementById("Step2Loader").style.display = 'none';
+                            }
+					        //alert(":D")
+
+				        },
+				        error: function (response) {
+					        alert("error!");  //
+				        }
+
+			        });
+				        }
+		        }
+
+    </script>
+
+
+    <script>
+
+    </script>
+    <script>
+        $('#UploadDatasetForm').submit(function () {
+            if ($(this).valid()) {
+                $(this).find(':submit').attr('disabled', 'disabled');
+                if (document.getElementById("datasetFile").files.length != 0) {
+                    $("#LoadingLabel").show()
+
+                }
+                else {
+                    $("input[type=submit]").attr("disabled", "disabled");
+                }
+
+            }
+
+        });
+    </script>
+    <script>
+        var currentTab = 0; // Current tab is set to be the first tab (0)
+        showTab(currentTab); // Display the current tab
+        function showTab(n) {
+            // This function will display the specified tab of the form ...
+            var x = document.getElementsByClassName("tab");
+            x[n].style.display = "block";
+            // ... and fix the Previous/Next buttons:
+            //if (n == 0) {
+            //	document.getElementById("prevBtn").style.display = "none";
+            //} else {
+            //	document.getElementById("prevBtn").style.display = "inline";
+            //}
+            //if (n == (x.length - 1)) {
+            //	document.getElementById("nextBtn").innerHTML = "Submit";
+            //} else {
+            //	document.getElementById("nextBtn").innerHTML = "Next";
+            //}
+            // ... and run a function that displays the correct step indicator:
+            fixStepIndicator(n)
+        }
+
+        function nextPrev(n) {
+            var x = document.getElementsByClassName("tab");
+            if (n === 3) {
+                if (changeId(1)) {
+                    x[currentTab].style.display = "none";
+                    currentTab = 2
+                    showTab(currentTab);
+                    console.log(changeId(1))
+                }
+                else {
+                    console.log("HELLO")
+
+                    console.log(currentTab)
+                }
+            }
+
+
+            if (n === -1) {
+                x[currentTab].style.display = "none";
+                currentTab = 0
+                showTab(currentTab);
+            }
+            if (n === 1) {
+                console.log("ASFS")
+                x[currentTab].style.display = "none";
+                currentTab = 1
+                showTab(currentTab);
+            }
+            // This function will figure out which tab to display
+            // Exit the function if any field in the current tab is invalid:
+            //if (n == 1 && !validateForm()) return false;
+            // Hide the current tab:
+            //console.log(currentTab);
+            //if (currentTab >= 0) {
+            //	x[currentTab].style.display = "none";
+            //}
+
+            //// Increase or decrease the current tab by 1:
+            //currentTab = currentTab + n;
+            //// if you have reached the end of the form... :
+            //if (currentTab > 1) {
+            //	currentTab = 1
+            //}
+            //if (currentTab < 0) {
+            //	currentTab = 0;
+            //}
+            //if (currentTab >= x.length) {
+            //	//...the form gets submitted:
+            //	//document.getElementById("regForm").submit();
+            //	return false;
+            //}
+            //// Otherwise, display the correct tab:
+            //showTab(currentTab);
+        }
+
+
+
+        function fixStepIndicator(n) {
+            // This function removes the "active" class of all steps...
+            var i, x = document.getElementsByClassName("step");
+            for (i = 0; i < x.length; i++) {
+                x[i].className = x[i].className.replace("active", "");
+            }
+            //... and adds the "active" class to the current step:
+            x[n].className += " active";
+        }
+    </script>
+
+
+}
+
+

@@ -1,0 +1,5 @@
+TemporalPropertyID,TemporalPropertyName,Description
+-1,SujectGender,The class variable defining the gender of our subject
+1,BPM,The heart beats per minute measurement of our subject
+2,Temperature,The body temperature measurement in celsius of our subject
+3,PupilDilation,The pupil dilation in milimeters of our subject

@@ -1,0 +1,18 @@
+[
+    {
+      "id": "alu1",
+      "name": "Example1 Alumni",
+      "image": "none.png",
+      "years": "2015-2016",
+      "about":
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec et placerat dui. In posuere metus et elit placerat tristique. Maecenas eu est in sem ullamcorper tincidunt."
+    },
+    {
+      "id": "alu2",
+      "name": "Example2 Alumni",
+      "image": "none.png",
+      "years": "2017-2019",
+      "about":
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec et placerat dui. In posuere metus et elit placerat tristique. Maecenas eu est in sem ullamcorper tincidunt."
+    }
+  ]

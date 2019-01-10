@@ -1,0 +1,289 @@
+[
+    {
+        "id": "Outcomes-Prediction-via-Time-Intervals-Related-Patterns",
+        "name": "Outcomes Prediction via Time Intervals Related Patterns",
+        "authors": "Robert Moskovitch, Colin Walsh, Fei Wang, George Hripcsak, Nicholas Tatonetti",
+        "year": "2015",
+        "journal": "IEEE International Conference on Data Mining (ICDM), Atlantic City, USA"
+    },
+    {
+        "id": "Efficient-Condition-Severity-Classification",
+        "name": "An Active Learning Framework for Efficient Condition Severity Classification",
+        "authors": "Nir Nissim, Mary Regina Boland, Robert Moskovitch, Nicholas Tatonetti, Yuval Elovici, Yuval Shahar and George Hripcsak",
+        "year": "2015",
+        "journal": "Artificial Intelligence in Medicine, Pavia, Italy"
+    },
+    {
+        "id": "Prediction-Biomedical-Events-via-Time-Intervals-Mining",
+        "name": "Prediction of Biomedical Events via Time Intervals Mining",
+        "authors": "Robert Moskovitch, Colin Walsh, George Hripcsak, Nicholas Tatonetti",
+        "year": "2014",
+        "journal": "ACM KDD Workshop on Connected Health in Big Data Era, NYC, USA"
+    },
+    {
+        "id": "Efficient-Condition-Severity-Classification-2014",
+        "name": "An Active Learning Enhancement for Conditions Severity Classification",
+        "authors": "Nir Nissim, Mary Boland, Robert Moskovitch, Nicholas Tatonetti, Yuval Elovici, Yuval Shahar, George Hripcsak",
+        "year": "2014",
+        "journal": "ACM KDD on Workshop on Connected Health at Big Data Era, NYC, USA"
+    },
+    {
+        "id": "Semantic- Considerations-Time-Intervals-Mining",
+        "name": "Semantic Considerations in Time Intervals Mining",
+        "authors": "Alex Shknevsky, Robert Moskovitch, Yuval Shahar",
+        "year": "2014",
+        "journal": "ACM KDD on Workshop on Connected Health at Big Data Era, NYC, USA"
+    },
+    {
+        "id": "Active-Learning-framework-Enhancing-Detection-Malicious-PDF-2014",
+        "name": "ALPD: Active Learning framework for Enhancing the Detection of Malicious PDF Files aimed at Organizations",
+        "authors": "Nir Nissim, Aviad Cohen, Robert Moskovitch, Assaf Shabtai, Mattan Edry, Oren Barad and Yuval Elovici",
+        "year": "2014",
+        "journal": "IEEE Joint Conference on Intelligence and Security Informatics, Hague, Netherlands"
+    },
+    {
+        "id": "Physiological-Predictors-based-Temporal-Clustering-Patients",
+        "name": "Physiological Predictors based on Temporal Clustering of Patients",
+        "authors": "Robert Moskovitch, Nicholas Tatonetti",
+        "year": "2014",
+        "journal": "American Medical IA-Translational Biomedical Informatics 2014, San Francisco, USA"
+    },
+    {
+        "id": "Medical-Temporal-Knowledge-Discovery-Temporal-Abstraction",
+        "name": "Medical Temporal-Knowledge Discovery via Temporal Abstraction",
+        "authors": "Robert Moskovitch, Yuval Shahar",
+        "year": "2009",
+        "link": "Moskovitch.MedicalKarmaLego.AMIA09.pdf",
+        "journal": "American Medical Informatics Association (AMIA), San Francisco, USA"
+    },
+    {
+        "id": "Classification-ICU-Patients-Temporal-Abstraction",
+        "name": "Classification of ICU Patients via Temporal Abstraction and Temporal Patterns Mining",
+        "authors": "Robert Moskovitch, Niels Peek, Yuval Shahar",
+        "year": "2009",
+        "link": "Moskovitch.ICU_TIRP_Classification.IDAMAP09.pdf",
+        "journal": "IDAMAP 2009, Verona, Italy"
+    },
+    {
+        "id": "Identity-Theft",
+        "name": "Identity Theft, Computers and Behavioral Biometrics",
+        "authors": "Robert Moskovitch, Clint Feher, Arik Messerman, Niklas Kirschnick, Tarik Mustafik, Ahmet Camtepe, Bernhard Lohlein, Ulrich Heister, Sebastian Moller, Lior Rokach, Yuval Elovici",
+        "year": "2009",
+        "link": "Moskovitch.IdentityTheftComputersAndBehavioralBiometrics.ISI09.pdf",
+        "journal": "IEEE Intelligence and Security Informatics, Dallas, USA"
+    },
+    {
+        "id": "Chronological-Evaluation-Unknown-Malcode-Detection",
+        "name": "A Chronological Evaluation of Unknown Malcode Detection Pacific Asia Workshop",
+        "authors": "Robert Moskovitch, Clint Feher, Yuval Elovici",
+        "year": "2009",
+        "link": "Moskovitch.ChronoUnknownMalcodeDetection.PasISI09.pdf",
+        "journal": "Intelligence and Security Informatics, Bangkok, Thailand"
+    },
+    {
+        "id": "Unknown-Malcode-Detection-Using-OPCODE-Representation",
+        "name": "Unknown Malcode Detection Using OPCODE Representation",
+        "authors": "Robert Moskovitch, Clint Feher, Nir Tzachar, Eugene Berger, Marina Gitelman, Shlomi Dolev, Yuval Elovici",
+        "year": "2008",
+        "link": "Moskovitch.OPCODE_UnknownMalcodeDetection.EuroISI08.pdf",
+        "journal": "European Conference on Intelligence and Security Informatics, Esbjerg, Denmark"
+    },
+    {
+        "id": "Active-Learning-Improve-Detection-Unknown-Worms",
+        "name": "Active Learning To Improve the Detection of Unknown Worms",
+        "authors": "Robert Moskovitch, Nir Nissim, Roman Englert, Yuval Elovici",
+        "year": "2008",
+        "link": "Moskovitch.AL4UnWorms.Fusion2008.pdf",
+        "journal": "International Conference on Information Fusion, Cologne, Germany"
+    },
+    {
+        "id": "Unknown-Malcode-Detection-Text-Categorization",
+        "name": "Unknown Malcode Detection via Text Categorization and the Imbalance Problem",
+        "authors": "Robert Moskovitch, Dima Stopel, Clint Feher, Nir Nissim and Yuval Elovici",
+        "year": "2008",
+        "link": "Moskovitch.UnMalcodeDet.ISI08.pdf",
+        "journal": "IEEE Intelligence and Security Informatics, Taiwan Best Paper Honorable Mention Awards"
+    },
+    {
+        "id": "Unknown-Malcode-Detection-Chronological-Evaluation",
+        "name": "Unknown Malcode Detection A Chronological Evaluation",
+        "authors": "Robert Moskovitch, Clint Feher and Yuval Elovici",
+        "year": "2008",
+        "link": "Moskovitch.UnMalcodeDet-Chrono.ISI08.pdf",
+        "journal": "IEEE Intelligence and Security Informatics, Taiwan"
+    },
+    {
+        "id": "Unknown-Malicious-Code-Detection-Practical-Issues",
+        "name": "Unknown Malicious Code Detection Practical Issues",
+        "authors": "Robert Moskovitch and Yuval Elovici",
+        "year": "2008",
+        "journal": "European Conference on Warfare and Security, Plymouth, UK"
+    },
+    {
+        "id": "Discovery-Temporal-Patterns-from-Multivariate-Time-Oriented-Data",
+        "name": "Discovery of Temporal Patterns from Multivariate Time Oriented Data via Temporal Abstraction",
+        "authors": "Robert Moskovitch and Yuval Shahar",
+        "year": "2007",
+        "journal": "The 7th Israeli Association of Artificial Intelligence Symposium Ashkelon, December"
+    },
+    {
+        "id": "Applying-Machine-Learning-Techniques",
+        "name": "Applying Machine Learning Techniques for Detection of Malicious Code in Network Traffic",
+        "authors": "Yuval Elovici, Asaf Shabtai, Robert Moskovitch, Gil Tahan, Chana Glezer",
+        "year": "2007",
+        "journal": "German Conference on Artificial Intelligence (KI), Osnabruck, Germany"
+    },
+    {
+        "id": "Improving-Detection-Unknown-Computer-Worms-Activity",
+        "name": "Improving the Detection of Unknown Computer Worms Activity using Active Learning",
+        "authors": "Robert Moskovitch, Nir Nissim, Dima Stopel, Clint Feher, Roman Englert and Yuval Elovici",
+        "year": "2007",
+        "link": "Moskovitch.UWuSVM-AL.KI2007.pdf",
+        "journal": "German Conference on Artificial Intelligence (KI), Osnabruck, Germany"
+    },
+    {
+        "id": "Mining-Time-Oriented-Data-Temporal-Abstraction",
+        "name": "Mining Time Oriented Data via Temporal Abstraction",
+        "authors": "Robert Moskovitch",
+        "year": "2007",
+        "journal": "Doctoral Consortium at Artificial Intelligence in Medicine Europe Amsterdam, The Netherlands"
+    },
+    {
+        "id": "Temporal-Discretization-medical-time-series",
+        "name": "Temporal Discretization of medical time series - A comparative study",
+        "authors": "Revital Azulay, Robert Moskovitch, Dima Stopel, Marion Verduijn, Evert de Jonge, and Yuval Shahar",
+        "year": "2007",
+        "link": "2007.Azulay.TempDiscret.IDAMAP07.pdf",
+        "journal": "Intelligence Data Analysis in Medicine and Pharmacology (IDAMAP), Amsterdam, The Netherlands"
+    },
+    {
+        "id": "Analysis-ICU-Patients-Using-Time-Series-Knowledge-Mining-Method",
+        "name": "Analysis of ICU Patients Using the Time Series Knowledge Mining Method",
+        "authors": "Robert Moskovitch, Dima Stopel, Marion Verduijn, Niels Peek, Evert de Jonge, and Yuval Shahar",
+        "year": "2007",
+        "link": "Moskovitch.ICU_TSKM.IDAMAP07.pdf",
+        "journal": "Intelligent Data Analysis in Medicine and Pharmacology (IDAMAP), Amsterdam, The Netherlands"
+    },
+    {
+        "id": "Experiments-Hierarchical-Concept-Based-Search",
+        "name": "Experiments with Hierarchical Concept-Based Search",
+        "authors": "R Moskovitch, R Saadon, E Behiri, S Martins, A Weiss, Y Shahar",
+        "year": "2007",
+        "link": "Moskovitch.VaiduryaI.Medinfo07.pdf",
+        "journal": "Medinfo, Brisbane, Australia"
+    },
+    {
+        "id": "Hierarchical-Expansion-Concept-Based-Search",
+        "name": "Hierarchical Expansion for Concept-Based Search",
+        "authors": "R Sa'adon, R Moskovitch, Y Shahar",
+        "year": "2007",
+        "link": "Saadon.VaiduryaII.Medinfo07.Poster.pdf",
+        "journal": "Medinfo, Brisbane, Australia"
+    },
+    {
+        "id": "Host-Based-Intrusion-Detection-Using-Machine-Learning",
+        "name": "Host Based Intrusion Detection Using Machine Learning",
+        "authors": "R. Moskovitch, S. Pluderman, I. Gus, D. Stopel, C. Feher, Y. Parmet, Y. Shahar and Y. Elovici",
+        "year": "2007",
+        "link": "HostBasedIntrusionDetectionUsingML_AsiaCCS07.pdf",
+        "journal": "IEEE Information and Security Informatics, Rutgers University, New Jersey, US"
+    },
+    {
+        "id": "Malicious-Code-Detection-Acquisition-Using-Active-Learning",
+        "name": "Malicious Code Detection and Acquisition Using Active Learning",
+        "authors": "R. Moskovitch, N. Nissim and Y. Elovici",
+        "year": "2007",
+        "link": "Moskovitch.UMCD-AL.ISI2007b.pdf",
+        "journal": "IEEE Information and Security Informatics, Rutgers University, New Jersey, US"
+    },
+    {
+        "id": "Detection-Unknown-Computer-Worms-Activity",
+        "name": "Detection of Unknown Computer Worms Activity Based on Computer Behavior using Data Mining",
+        "authors": "R. Moskovitch, I. Gus, S. Pluderman, D. Stopel, C. Glezer, Y. Shahar and Y. Elovici",
+        "year": "2007",
+        "link": "2007.CISDA07_IEEE_DetectingWormsUsingDM.pdf",
+        "journal": "IEEE Symposium on Computational Intelligence and Data Mining, Honolulu, Hawaii"
+    },
+    {
+        "id": "Improving-Worm-Detection-Artificial-Neural-Networks",
+        "name": "Improving Worm Detection with Artificial Neural Networks through Feature Selection and Temporal Analysis Techniques",
+        "authors": "D. Stopel, Z. Boger, R. Moskovitch, Y. Shahar and Y. Elovici",
+        "year": "2006",
+        "link": "Stopel.ImproveWormANNDetection.ICNN06.pdf",
+        "journal": "International Conference on Neural Networks, Barcelona"
+    },
+    {
+        "id": "Multiple-Ontology-Template-Based-Query",
+        "name": "A Multiple-Ontology Template-Based Query Interface for a Clinical-Guidelines Search Engine",
+        "authors": "R. Moskovitch, T. Lavie, A. Leibowitz, Y. Denekump, Y. Shahar",
+        "year": "2006",
+        "link": "Moskovitch.VaiduryaTBQI.CGP06(ECAI).pdf",
+        "journal": "ECAI workshop on AI in Healthcare, Riva Del Garda"
+    },
+    {
+        "id": "Application-Artificial-Neural-Networks-Techniques",
+        "name": "Application of Artificial Neural Networks Techniques to Computer Worm Detections",
+        "authors": "D. Stopel, Z. Boger, R. Moskovitch, Y. Shahar and Y. Elovici",
+        "year": "2006",
+        "link": "Stopel.ANNWormDetection.WCCI2006.pdf",
+        "journal": "IEEE International Joint Conference on Neural Networks, Vancouver"
+    },
+    {
+        "id": "Temporal-Data-Mining-Based-Temporal-Abstractions",
+        "name": "Temporal Data Mining Based on Temporal Abstractions",
+        "authors": "Robert Moskovitch, Yuval Shahar",
+        "link": "Moskovitch.TDM-TDM05.pdf",
+        "year": "2005",
+        "journal": "IEEE ICDM workshop on Temporal Data Mining, Houston, US"
+    },
+    {
+        "id": "Multi-Classification-Clinical-Guidelines",
+        "name": "Multi-Classification of Clinical Guidelines in Concept Hierarchies",
+        "authors": "D Sona, P Avesani, R Moskovitch",
+        "year": "2005",
+        "link": "Sona.IDAMAP2005.pdf",
+        "journal": "Intelligent Data Analysis in Medicine and Pharmacology, Aberdeen, Scotland, UK"
+    },
+    {
+        "id": "Automated-Multi-Classification-Clinical-Guidelines",
+        "name": "Automated Multi-Classification of Clinical Guidelines in Concept Hierarchies",
+        "authors": "D Sona, P Avesani, R Moskovitch",
+        "year": "2005",
+        "journal": "Artificial Intelligence in Medicine Aberdeen, Scotland, UK"
+    },
+    {
+        "id": "Vaidurya-Concept-Based-Context-Sensitive-Search-Engine-For-Clinical-Guidelines",
+        "name": "Vaidurya - A Concept-Based, Context-Sensitive Search Engine For Clinical Guidelines",
+        "authors": "R. Moskovitch , A. Hessing and Y. Shahar",
+        "year": "2004",
+        "journal": "Joint conference of AMIA & MedInfo, San Fransico, USA Student Paper Awards Competition Finalist"
+    },
+    {
+        "id": "Multiple-Hierarchical-Classification-Free-Text-Clinical-Guidelines",
+        "name": "Multiple Hierarchical Classification of Free-Text Clinical Guidelines",
+        "authors": "Robert Moskovitch , Shiva Cohen-Kashi, Uzi Dror, Iftah Levy, Amit Maimon and Yuval Shahar",
+        "year": "2004",
+        "journal": "Intelligent Data Analysis in Medicine and Pharmacology, Stanford University, California, USA"
+    },
+    {
+        "id": "Multi-Ontology-Customized-Search-Query-Interface",
+        "name": "A Multi Ontology Customized Search Query Interface for Searching Clinical Guidelines",
+        "authors": "R. Moskovitch and Y. Shahar",
+        "year": "2004",
+        "journal": "CGP-2004, Prague"
+    },
+    {
+        "id": "DEGEL-A-Hybrid-Multiple-Ontology-Framework",
+        "name": "DEGEL: A Hybrid, Multiple-Ontology Framework for Specification and Retrieval of Clinical Guidelines",
+        "authors": "Y. Shahar, O. Young, E. Shalom, A. Mayafit, R. Moskovitch , A. Hessing and M. Galperin",
+        "year": "2003",
+        "journal": "Artificial Intelligence in Medicine Europe 2003, 10, Protaras, Cyprus"
+    },
+    {
+        "id": "Hybrid-Framework-for-Representation",
+        "name": "A Hybrid Framework for Representation and use of Clinical Guidelines",
+        "authors": "Y. Shahar, O. Young, E. Shalom, R. Moskovitch , D. Boaz and M. Galperin",
+        "year": "2002",
+        "journal": "Proceedings of the American Medical Informatics Association"
+    }
+]
