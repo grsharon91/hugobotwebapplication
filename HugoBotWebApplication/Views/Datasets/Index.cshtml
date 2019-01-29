@@ -69,14 +69,14 @@
             </div>
 
             <div class="card-body">
-                <h4 class="card-title">My Datasets</h4>
+                <h4 class="card-title">Private Datasets</h4>
                 <p style="display:inline">
                     @*@Html.DropDownList("a", new SelectList(new[] { "", "View all", "View raw datasets", "View discretized datasets" }))*@
                     <button title="Upload new Dataset" class="btn btn-sm btn-warning" type="button" onclick="location.href='@Url.Action("Create", "Datasets")'"> <span class="fas fa-upload"> </span> Upload Dataset </button>
                     @*<button title="Upload new Dataset for discretization" class="btn btn-sm btn-success" type="button" onclick="location.href='@Url.Action("Create", "Discretizations")'"> <span class="glyphicon glyphicon-upload"></span> Upload Dataset for discretization </button>*@
                     @*<button tistle="Upload new discretized for Pattern Discovery" class="btn btn-warning" type="button" onclick="location.href='@Url.Action("Create", "KarmaLego")'"> <span class="glyphicon glyphicon-upload"></span> Upload Dataset for Pattern Discovery </button>*@
 
-                    <button id="downloadDatasetButton_New" title="Download Dataset" class="btn btn-sm btn-primary" type="button" onclick="downloadDatasets()"> <span class="fas fa-download"> </span> Download Selected Datasets</button>
+                    @*<button id="downloadDatasetButton_New" title="Download Dataset" class="btn btn-sm btn-primary" type="button" onclick="downloadDatasets()"> <span class="fas fa-download"> </span> Download Selected Datasets</button> *@
                     @*<img src="~/Images/greensquare.png" / - Discretized*@
                     @*<button title="Help" class="btn btn-primary" style="position:absolute;right:255px;" type="button"><span class="glyphicon glyphicon-question-sign"></span></button>*@
 
@@ -96,24 +96,25 @@
 
                                 </th>
                                 @*<th>
-                                        Visibility
-                                    </th>*@
+                        Visibility
+                    </th>*@
                                 @*<th>
-                                        Rating
-                                    </th>*@
+                        Rating
+                    </th>*@
                                 <th>
                                     <input type="text" class="form-control" placeholder="Size" disabled>
                                 </th>
                                 <th>
                                     <input type="text" class="form-control" placeholder="Actions" disabled>
                                 </th>
-                                 @if(User.Identity.Name == "hugobotsupp@gmail.com")
-                                 {
-                                       <th>
+                                <th>
                                     <input type="text" class="form-control" placeholder="Owner" disabled>
-                                    </th>
-                                 }
-                              
+                                </th>
+                                <th>
+                                    <input type="text" class="form-control" placeholder="Visibility" disabled>
+                                </th>
+
+
 
 
                             </tr>
@@ -121,66 +122,67 @@
                         <tbody>
                             @foreach (var item in Model.Datasets)
                             {
-                                if ((item.Owner != null && item.Owner.Email == User.Identity.Name) || User.Identity.Name == "hugobotsupp@gmail.com")
+                                if ((item.Owner != null && item.Owner.Email == User.Identity.Name) || (item.Visibility == "Private" && User.Identity.Name == "hugobotsupp@gmail.com"))
                                 {
-                            <tr>
-                                <td>
-                                    @Html.CheckBox("DatasetsRecords", false, new { @ID = "dataset_" + item.DatasetID, @value = item.DatasetID })
-                                </td>
-                                <td style="cursor: pointer" onclick="window.location.href='@Url.Action("Details", "Datasets", new { id = item.DatasetID})'">
-                                    @Html.DisplayFor(modelItem => item.DatasetName)
-                                </td>
+                                    <tr>
+                                        <td>
+                                            @Html.CheckBox("DatasetsRecords", false, new { @ID = "dataset_" + item.DatasetID, @value = item.DatasetID })
+                                        </td>
+                                        <td style="cursor: pointer" onclick="window.location.href='@Url.Action("Details", "Datasets", new { id = item.DatasetID})'">
+                                            @Html.DisplayFor(modelItem => item.DatasetName)
+                                        </td>
 
-                                <td style="cursor: pointer" onclick="window.location.href='@Url.Action("Details", "Datasets", new { id = item.DatasetID})'">
-                                    @Html.DisplayFor(modelItem => item.Category)
-                                </td>
-                                @*<td>
-            @Html.DisplayFor(modelItem => item.Visibility)
-        </td>*@
-                                @*<td class="rating">*@
-                                @*@Html.DisplayFor(modelItem => item.Rating)*@
-                                @*   <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>*@
-                                @* </td>*@
-                                <td onclick="window.location.href='@Url.Action("Details", "Datasets", new { id = item.DatasetID})'" style="cursor: pointer">
-                                    @Math.Round(item.Size, 3) MB
-                                </td>
-                                <td style="cursor: pointer" onclick="window.location.href='@Url.Action("Details", "Datasets", new { id = item.DatasetID})'">
-                                    <a class="btn  btn-sm btn-warning font-weight-bold" href="@Url.Action("Details", "Datasets", new { id = item.DatasetID})" style="color:white"> <span class="fas fa-info"></span> nfo</a>
-                                    @*<a class=" btn  btn-sm btn-primary font-weight-bold " href="/Discretizations/Edit/@item.DatasetID" style="color:white"> <span class="fas fa-chart-bar"></span> Discretize</a>*@
+                                        <td style="cursor: pointer" onclick="window.location.href='@Url.Action("Details", "Datasets", new { id = item.DatasetID})'">
+                                            @Html.DisplayFor(modelItem => item.Category)
+                                        </td>
+                                        @*<td>
+                                @Html.DisplayFor(modelItem => item.Visibility)
+                            </td>*@
+                                        @*<td class="rating">*@
+                                        @*@Html.DisplayFor(modelItem => item.Rating)*@
+                                        @*   <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>*@
+                                        @* </td>*@
+                                        <td onclick="window.location.href='@Url.Action("Details", "Datasets", new { id = item.DatasetID})'" style="cursor: pointer">
+                                            @Math.Round(item.Size, 3) MB
+                                        </td>
+                                        <td style="cursor: pointer" onclick="window.location.href='@Url.Action("Details", "Datasets", new { id = item.DatasetID})'">
+                                            <a class="btn  btn-sm btn-warning font-weight-bold" href="@Url.Action("Details", "Datasets", new { id = item.DatasetID})" style="color:white"> <span class="fas fa-info"></span> nfo</a>
+                                            @*<a class=" btn  btn-sm btn-primary font-weight-bold " href="/Discretizations/Edit/@item.DatasetID" style="color:white"> <span class="fas fa-chart-bar"></span> Discretize</a>*@
 
-                                    @*<div>
-                <nav class="navbar  navbar-light bg-transparent">
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor_@item.DatasetID" aria-controls="navbarColor__@item.DatasetID" aria-expanded="false" aria-label="Toggle navigation" style="">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
+                                            @*<div>
+                                    <nav class="navbar  navbar-light bg-transparent">
+                                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor_@item.DatasetID" aria-controls="navbarColor__@item.DatasetID" aria-expanded="false" aria-label="Toggle navigation" style="">
+                                            <span class="navbar-toggler-icon"></span>
+                                        </button>
 
-                    <div class="collapse navbar-collapse" id="navbarColor_@item.DatasetID">
-                        <ul class="navbar-nav mr-auto">
-                            <li>
-                                <a class="nav-item nav-link font-weight-bold bg-warning" href="/Datasets/Details/@item.DatasetID" style="color:white"> <span class="fas fa-info"></span>Browse</a>
-                            </li>
-                            <li>
-                                <a class="nav-item nav-link font-weight-bold bg-primary" href="/Discretizations/Edit/@item.DatasetID" style="color:white"> <span class="fas fa-chart-bar"></span> Discretize</a>
-                            </li>
+                                        <div class="collapse navbar-collapse" id="navbarColor_@item.DatasetID">
+                                            <ul class="navbar-nav mr-auto">
+                                                <li>
+                                                    <a class="nav-item nav-link font-weight-bold bg-warning" href="/Datasets/Details/@item.DatasetID" style="color:white"> <span class="fas fa-info"></span>Browse</a>
+                                                </li>
+                                                <li>
+                                                    <a class="nav-item nav-link font-weight-bold bg-primary" href="/Discretizations/Edit/@item.DatasetID" style="color:white"> <span class="fas fa-chart-bar"></span> Discretize</a>
+                                                </li>
 
-                        </ul>
+                                            </ul>
 
-                    </div>
-                </nav>
+                                        </div>
+                                    </nav>
 
-            </div>*@
-
-
-
-                                    @if (User.Identity.Name == "hugobotsupp@gmail.com")
-                                    {
-                                    <td>@item.Owner.FirstName &nbsp; @item.Owner.LastName</td>
-                                }
+                                </div>*@
 
 
 
+                                        <td>@item.Owner.FirstName &nbsp; @item.Owner.LastName</td>
 
-                                </tr>
+                                        <td style="cursor: pointer" onclick="window.location.href='@Url.Action("Details", "Datasets", new { id=item.DatasetID})'">
+                                            @Html.DisplayFor(modelItem => item.Visibility)
+                                        </td>
+
+
+
+
+                                    </tr>
                                 }
 
 
@@ -200,6 +202,7 @@
                         </div>
 
                     }
+                    <button id="downloadDatasetButton_New" title="Download Dataset" class="btn btn-sm btn-primary" type="button" onclick="downloadDatasets()" style="background-color:#006400; color:white"> <span class="fas fa-download"> </span> Download Selected Datasets</button>
                 </div>
             </div>
         </div>

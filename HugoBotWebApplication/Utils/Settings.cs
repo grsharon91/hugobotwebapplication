@@ -15,12 +15,15 @@ namespace HugoBotWebApplication.Utils
                     {"EXPERT", "Expert" },
                     {"KMEANS", "Kmeans" },
                     {"BINARY", "Binary" },
-                    {"TD4C", "TD4C" },
                     {"SAX", "SAX" },
-                    {"KARMALEGO", "KarmaLego"}
+                    {"TD4C", "TD4C" },
+                    {"KARMALEGO", "KarmaLego"},
+                    
+
+
                 };
 
-        private static readonly List<string> distanceMeasureMethods = new List<string> {"TD4C"};
+        private static readonly List<string> distanceMeasureMethods = new List<string> { "TD4C" };
 
         public static Dictionary<string, string> MethodEncodingToMethodName => methodEncodingToMethodName;
 

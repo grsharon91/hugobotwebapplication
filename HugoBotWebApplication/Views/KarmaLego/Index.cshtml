@@ -8,7 +8,7 @@
     <div class="row">
         <div class="col-md-4">
             <a href="@Url.Action("Details", "Datasets", new { id = @Model.Dataset.DatasetID})" class="btn btn-outline-primary w-100" style="font-weight: bold">
-                @Model.Dataset.DatasetName
+                @Model.Dataset.DatasetName Info
             </a>
         </div>
         <div class="col-md-4">
@@ -27,28 +27,20 @@
             Time Intervals Mining using KarmaLego
         </div>
         <div class="card-body">
-            <div class="card-title">
-                Dataset name : @Model.Dataset.DatasetName
+            <div class="card-title" style="text-align: center; font-size: large">
+                <b> @Model.Dataset.DatasetName </b>
             </div>
             <table id="discretizationTable" class="table">
                 <thead>
                     <tr>
-                        <th>
-
-                        </th>
-                        <th>
-                            Abstracted Datasets
-                        </th>
-                        <th>
-                            Epslion
-                        </th>
-                        <th>
-                            Max Gap
-                        </th>
-                        <th>
-                            Minimum vertical support
-                        </th>
-
+                        <th>                            </th>
+                        <th> Method Name                </th>
+                        <th> Bins Number                </th>
+                        <th> Interpolation Gap          </th>
+                        <th> Window Size                </th>
+                        <th> Epsilon                    </th>
+                        <th> Max Gap                    </th>
+                        <th> Minimum Vertical Support   </th>
                     </tr>
 
                 </thead>
@@ -60,62 +52,44 @@
                             var methodParameters = discretization.DownloadPath.Split('/');
                             var methodName = methodParameters[1];
                             var methodFinalParameters = methodParameters[2].Split('_');
-                            <tr id="discretization_@discretization.DiscretizationID">
-                                <td>
-                                    @Html.CheckBox("DiscretizationRecords", false, new { @value = discretization.DiscretizationID, @onchange = "rowChecked(\"discretization_" + discretization.DiscretizationID + "\")" })
+                    <tr id="discretization_@discretization.DiscretizationID">
+                        <td>
+                            @Html.CheckBox("DiscretizationRecords", false, new { @value = discretization.DiscretizationID, @onchange = "rowChecked(\"discretization_" + discretization.DiscretizationID + "\")" })
 
-                                </td>
-                                <td>
-                                    Name: @methodName
-                                    @if (Model.RegularMethods.Contains(methodName))
-                                    {
-                                        @:Bins number: @methodFinalParameters[0]
-                                        @: Interpolation Gap : @methodFinalParameters[1]
-                                        @: Window Size : @methodFinalParameters[2]
+                        </td>
+                        
+                        @if (Model.RegularMethods.Contains(methodName))
+                        {
+                            <td> @methodName                </td>
+                            <td> @methodFinalParameters[0]  </td>
+                            <td> @methodFinalParameters[1]  </td>
+                            <td> @methodFinalParameters[2]  </td>
+                        }
 
+                        @if (Model.DistanceMeasureMethods.Contains(methodName))
+                        {
+                            <td> @methodName @methodFinalParameters[1]  </td>
+                            <td> @methodFinalParameters[0]              </td>
+                            <td> @methodFinalParameters[2]              </td>
+                            <td> @methodFinalParameters[3]              </td>
+                        }
 
+                        <td>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                    }
-                                    @if (Model.DistanceMeasureMethods.Contains(methodName))
-                                    {
-                                        @:Bins number: @methodFinalParameters[0]
-                                        @: Distance Measure: @methodFinalParameters[1]
-                                        @: Interpolation Gap: @methodFinalParameters[2]
-                                        @: Window Size: @methodFinalParameters[3]
-                                    }
-
-                                </td>
+                            <input name="Epsilon" class="form-control" type="number" disabled="disabled" onchange="checkEpsilon(discretization_@discretization.DiscretizationID)" />
+                            <span class="text-danger"></span>
+                        </td>
+                        <td>
+                            <input name="MaxGap" class="form-control" type="number" disabled="disabled" onchange="checkMaxGap(discretization_@discretization.DiscretizationID)" />
+                            <span class="text-danger"></span>
+                        </td>
+                        <td>
+                            <input name="VerticalSupport" class="form-control" disabled="disabled" onchange="checkVerticalSupport(discretization_@discretization.DiscretizationID)" />
+                            <span class="text-danger"></span>
+                        </td>
 
 
-                                <td>
-
-                                    <input name="Epsilon" class="form-control" type="number" disabled="disabled" onchange="checkEpsilon(discretization_@discretization.DiscretizationID)" />
-                                    <span class="text-danger"></span>
-                                </td>
-                                <td>
-                                    <input name="MaxGap" class="form-control" type="number" disabled="disabled" onchange="checkMaxGap(discretization_@discretization.DiscretizationID)" />
-                                    <span class="text-danger"></span>
-                                </td>
-                                <td>
-                                    <input name="VerticalSupport" class="form-control" disabled="disabled" onchange="checkVerticalSupport(discretization_@discretization.DiscretizationID)" />
-                                    <span class="text-danger"></span>
-                                </td>
-
-
-                            </tr>
+                    </tr>
                         }
 
                     }
@@ -142,41 +116,24 @@
 </div>
 <div class="col-md-12">
     <div class="card">
-        <div class="card-header bg-primary font-weight-light" style="color:white" ">
+        <div class="card-header bg-primary font-weight-light" style="color:white">
             Results
         </div>
         <div class="card-body">
             <div class="card-title">
             </div>
-            <button id="downloadDatasetButton_New" title="Download Dataset" class="btn btn-sm btn-primary" type="button" onclick="downloadDatasets()" style="background-color:#006400; color:white">
-                <span class="fas fa-download"> </span> Download Selected Pattern discovered files
-            </button>
-
             <table id="karmaLegoTable" class="table">
                 <thead>
                     <tr>
-                        <th>
-
-                        </th>
-                        <th>
-                            Configuration
-                        </th>
-                        <th>
-                            Epslion
-                        </th>
-                        <th>
-                            Max Gap
-                        </th>
-                        <th>
-                            Vertical support %
-                        </th>
-
-                        <th>
-
-                        </th>
-                        <th>
-                            Status
-                        </th>
+                        <th> Method Name        </th>
+                        <th> Bins Number        </th>
+                        <th> Interpolation Gap  </th>
+                        <th> Window Size        </th>
+                        <th> Epslion            </th>
+                        <th> Max Gap            </th>
+                        <th> Vertical support % </th>
+                        <th>                    </th>
+                        <th> Status             </th>
                     </tr>
 
                 </thead>
@@ -191,71 +148,71 @@
                         var methodParameters = karmaLego.Discretization.DownloadPath.Split('/');
                         var methodName = methodParameters[1];
                         var methodFinalParameters = methodParameters[2].Split('_');
-                        <tr id="karmaLego_@karmaLego.KarmaLegoID">
-                            <td>
-                                @if (karmaLego.IsReady == "Ready")
-                                {
-                                    @Html.CheckBox("KarmaLegoRecords", false, new { @ID = "karmalego_" + karmaLego.KarmaLegoID, @value = karmaLego.KarmaLegoID })
+                    <tr id="karmaLego_@karmaLego.KarmaLegoID">
+                        <td>
+                            @methodName
+                        </td>
+                        @if (Model.RegularMethods.Contains(methodName))
+                        {
+                            <td> @methodFinalParameters[0] </td>
+                            <td> @methodFinalParameters[1] </td>
+                            <td> @methodFinalParameters[2] </td>
+                        }
 
+                        @if (Model.DistanceMeasureMethods.Contains(methodName))
+                        {
+                            <td> @methodFinalParameters[0] </td>
+                            <td> @methodFinalParameters[2] </td>
+                            <td> @methodFinalParameters[3] </td>
+                        }
+
+
+                        <td>
+                            @karmaLegomethodFinalParameters[0]
+
+                        </td>
+                        <td>
+                            @karmaLegomethodFinalParameters[1]
+
+                        </td>
+                        <td>
+                            @karmaLegomethodFinalParameters[2]
+
+                        </td>
+
+                        <td>
+                            @if ((karmaLego.IsReady == "Ready") && karmaLego.Fold == 1)
+                            {
+                                var tempList = Model.Classes[karmaLego.KarmaLegoID].ToList();
+                                if (tempList.Count == 2)
+                                {
+                                    tempList.Add("Merged");
                                 }
 
-                            </td>
-                            <td>
-                                Name: @methodName
-                                @if (Model.RegularMethods.Contains(methodName))
-                                {
-                                    @:Bins number: @methodFinalParameters[0]
-                                    @: Interpolation Gap : @methodFinalParameters[1]
-                                    @: Window Size : @methodFinalParameters[2]
+                                @Html.DropDownList("classes", new SelectList(tempList), new { @ID = "ClassesDropDown_" + karmaLego.KarmaLegoID.ToString(), @class = "form-control" })
+                                <button type="button" class="btn btn-outline-warning" onclick="visualizePatterns(@karmaLego.KarmaLegoID)">Visualize patterns</button>
+                            }
+                            else
+                            {
+
+                            }
+
+                        </td>
+                        <td>
+                            @if (karmaLego.IsReady == "Ready")
+                             {
+                                <button id="downloadDatasetButton_New" title="Download Dataset" class="btn btn-sm btn-primary" type="button" onclick="downloadDataset(@karmaLego.KarmaLegoID)" style="background-color:#006400; color:white">
+                                    <span class="fas fa-download"> </span> Download
+                                </button>
+                             }
+                             else
+                             {
+                                    @karmaLego.IsReady
+                             }
+                        </td>
 
 
-
-
-                                }
-                                @if (Model.DistanceMeasureMethods.Contains(methodName))
-                                {
-                                    @:Bins number: @methodFinalParameters[0]
-                                    @: Distance Measure: @methodFinalParameters[1]
-                                    @: Interpolation Gap: @methodFinalParameters[2]
-                                    @: Window Size: @methodFinalParameters[3]
-                                }
-                            </td>
-
-                            <td>
-                                @karmaLegomethodFinalParameters[0]
-
-                            </td>
-                            <td>
-                                @karmaLegomethodFinalParameters[1]
-
-                            </td>
-                            <td>
-                                @karmaLegomethodFinalParameters[2]
-
-                            </td>
-
-                            <td>
-                                @if ((karmaLego.IsReady == "Ready") && karmaLego.Fold == 1)
-                                {
-                                    var tempList = Model.Classes[karmaLego.KarmaLegoID].ToList();
-                                    if (tempList.Count == 2)
-                                    {
-                                        tempList.Add("Merged");
-                                    }
-
-                                    @Html.DropDownList("classes", new SelectList(tempList), new { @ID = "ClassesDropDown_" + karmaLego.KarmaLegoID.ToString(), @class = "form-control" })
-                                    <button type="button" class="btn btn-outline-warning" onclick="visualizePatterns(@karmaLego.KarmaLegoID)">Visualize patterns</button>
-                                }
-                                else
-                                {
-
-                                }
-
-                            </td>
-                            <td>
-                                @karmaLego.IsReady
-                            </td>
-                        </tr>
+                                </tr>
                     }
                 </tbody>
 
@@ -272,7 +229,7 @@
         function checkVerticalSupport(id) {
             console.log(id);
             var currentRowChecked = id;
-            var currentRowCheckedVerticalSupport = currentRowChecked.cells[4]
+            var currentRowCheckedVerticalSupport = currentRowChecked.cells[7]
             var verticalSupportValue = parseFloat(currentRowCheckedVerticalSupport.children[0].value);
             if (isNaN(verticalSupportValue) || (verticalSupportValue < 0 || verticalSupportValue > 100)) {
                 currentRowCheckedVerticalSupport.children[1].innerHTML = "vertical support must be between 0 and 100";
@@ -287,7 +244,7 @@
         function checkMaxGap(id) {
             console.log(id);
             var currentRowChecked = id;
-            var currentRowCheckedMaxGap = currentRowChecked.cells[3];
+            var currentRowCheckedMaxGap = currentRowChecked.cells[6];
             var maxGapValue = parseFloat(currentRowCheckedMaxGap.children[0].value);
             if (Number.isInteger(maxGapValue) == false || maxGapValue < 0) {
                 currentRowCheckedMaxGap.children[1].innerHTML = "max gap must be at least 0";
@@ -302,7 +259,7 @@
         function checkEpsilon(id) {
             console.log(id);
             var currentRowChecked = id;
-            var currentRowCheckedEpsilon = currentRowChecked.cells[2];
+            var currentRowCheckedEpsilon = currentRowChecked.cells[5];
             var maxGapValue = parseFloat(currentRowCheckedEpsilon.children[0].value);
             if (Number.isInteger(maxGapValue) == false || maxGapValue < 0) {
                 currentRowCheckedEpsilon.children[1].innerHTML = "Epsilon must be at least 0";
@@ -318,13 +275,13 @@
             document.getElementById("discoverPatternsBtnError").innerHTML = "";
             var currentRowChecked = document.getElementById(id);
             var currentRowCheckedCheckBox = currentRowChecked.cells[0].children[0];
-            var currentRowCheckedEpsilon = currentRowChecked.cells[2].children[0];
-            var currentRowCheckedMaxGap = currentRowChecked.cells[3].children[0];
+            var currentRowCheckedEpsilon = currentRowChecked.cells[5].children[0];
+            var currentRowCheckedMaxGap = currentRowChecked.cells[6].children[0];
             //var currentRowCheckedFold = currentRowChecked.cells[5].children[0];
 
             console.log(id)
             console.log(currentRowChecked)
-            var currentRowCheckedVerticalSupport = currentRowChecked.cells[4].children[0];
+            var currentRowCheckedVerticalSupport = currentRowChecked.cells[7].children[0];
             if (currentRowCheckedCheckBox.checked == true) {
                 currentRowCheckedEpsilon.disabled = false;
                 currentRowCheckedMaxGap.disabled = false;
@@ -335,9 +292,9 @@
                 currentRowCheckedEpsilon.disabled = true;
                 currentRowCheckedMaxGap.disabled = true;
                 currentRowCheckedVerticalSupport.disabled = true;
-                currentRowChecked.cells[3].children[1].innerHTML = "";
-                currentRowChecked.cells[2].children[1].innerHTML = "";
-                currentRowChecked.cells[4].children[1].innerHTML = "";
+                currentRowChecked.cells[6].children[1].innerHTML = "";
+                currentRowChecked.cells[5].children[1].innerHTML = "";
+                currentRowChecked.cells[7].children[1].innerHTML = "";
                 //currentRowCheckedFold.disabled = true;
             }
 
@@ -363,9 +320,9 @@
                         fieldsValidated = false;
                     }
 					var id = discretizationTableRows[i].id;
-					var epsilon = discretizationTableRows[i].cells[2].children[0].value;
-					var maxGap = discretizationTableRows[i].cells[3].children[0].value;
-                    var verticalSupport = discretizationTableRows[i].cells[4].children[0].value;
+					var epsilon = discretizationTableRows[i].cells[5].children[0].value;
+					var maxGap = discretizationTableRows[i].cells[6].children[0].value;
+                    var verticalSupport = discretizationTableRows[i].cells[7].children[0].value;
                     //var Fold = discretizationTableRows[i].cells[5].children[0].value;
 
 					paramsToSend.push([id.split('_')[1], epsilon, maxGap, verticalSupport, "1"].join('_'));
@@ -464,9 +421,9 @@
                     console.log(response)
                     // If Merged need to go another location
                     if (classesDropDownSelectedOption === "Merged")
-                        window.location = "/KarmaLegoV/MergedIndex";
+                        window.location = "/hugobot/KarmaLegoV/MergedIndex";
                     else {
-                        window.location = "/KarmaLegoV/Index";
+                        window.location = "/hugobot/KarmaLegoV/Index";
 
                     }
 				},
@@ -480,6 +437,27 @@
     </script>
 
     <script>
+        function downloadDataset(karmaLegoID) {
+             $.ajax({
+                type: 'POST',
+                url: '@Url.Action("DownloadKarmaLego")',
+                datatype: 'JSON',
+                 data: {
+                     Id: karmaLegoID
+                },
+                success: function (returnValue) {
+
+					window.location = "/hugobot/KarmaLego/GetKarmaLegos?parameters=" + returnValue;
+                },
+                error: function () {
+                    alert("Oops! Something went wrong");
+                }
+            });
+
+        }
+    </script>
+
+   <!-- <script>
         function downloadDatasets() {
 
             var datasetRecordsChecked = [];
@@ -533,5 +511,5 @@
             //}
         }
 
-    </script>
+    </script> -->
 }

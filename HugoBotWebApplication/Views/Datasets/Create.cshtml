@@ -203,16 +203,16 @@
                             <ul id="DatasetFileErrors" class=" anyClass"></ul>
                         </div>
                         @*<button type="button" class="btn btn-primary" onclick="alertStuff(0)">
-                                CLOSE
-                            </button>
-                            <button type="button" class="btn btn-primary" onclick="alertStuff(1)">
-                                SHOW
-                            </button>
-                            <div id="DatasetFileErrors2" class="alert alert-warning  fade show" role="alert">
-                                <button type="button" class="close" data-toggle="collapse" data-target="#DatasetFileErrors">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>*@
+            CLOSE
+        </button>
+        <button type="button" class="btn btn-primary" onclick="alertStuff(1)">
+            SHOW
+        </button>
+        <div id="DatasetFileErrors2" class="alert alert-warning  fade show" role="alert">
+            <button type="button" class="close" data-toggle="collapse" data-target="#DatasetFileErrors">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>*@
 
                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                         <div class="form-group row">
@@ -221,8 +221,8 @@
                             <div class="col-sm-10">
                                 @Html.EditorFor(model => model.DatasetName, new { htmlAttributes = new { @class = "form-control" } })
                                 @*<span>
-                                        <span class="glyphicon glyphicon-asterisk"></span>
-                                    </span>*@
+                    <span class="glyphicon glyphicon-asterisk"></span>
+                </span>*@
                                 @*@Html.ValidationMessageFor(model => model.DatasetName, "", new { @class = "text-danger" })*@
                             </div>
                         </div>
@@ -283,7 +283,6 @@
                         <br />
 
 
-                        <br />
                         <div class="formgroup row">
                             <div class="col-form-label col-md-2">
                                 <label>Description</label>
@@ -297,6 +296,14 @@
                             </div>
                         </div>
 
+                        <br />
+                        <div class="form-group row">
+                            <label class="col-form-label col-sm-2" for="DatasetSource">Dataset source</label>
+                            <div class="col-sm-10">
+                                @Html.EditorFor(model => model.DatasetSource, new { htmlAttributes = new { @class = "form-control" } })
+                                <small id="help" class="form-text text-muted">Declare the dataset's source</small>
+                            </div>
+                        </div>
                         <br />
                         <div class="row">
                             <div class="col-md-4">

@@ -9,7 +9,7 @@
 <div class="row">
     <div class="col-md-4">
             <a href="@Url.Action("Details", "Datasets", new { id = @Model.DatasetID})" class="btn btn-outline-primary w-100" style="font-weight: bold">
-                @Model.DatasetName
+                @Model.DatasetName Info
             </a>
         </div>
     <div class="col-md-4">
@@ -47,19 +47,19 @@
                 <div class="card-body">
 
                     <p class="card-text">
-                        <label style="font-weight: 900">Dataset name:</label> 
-                         @Model.DatasetName
+                        <label style="font-weight: 900">Dataset name:</label>
+                        @Model.DatasetName
 
                     </p>
                     <p class="card-text">
                         <label style="font-weight: 900">Category: </label>
-                          @Model.Category
-</p>
+                        @Model.Category
+                    </p>
                     <p class="card-text">
                         @if (Model.Owner != null)
                         {
-                            @: <label style="font-weight: 900">Owner:</label> 
-                             @Model.Owner.FirstName @Model.Owner.LastName
+                            @: <label style="font-weight: 900">Owner:</label>
+                            @Model.Owner.FirstName @Model.Owner.LastName
 
 
 
@@ -72,9 +72,25 @@
                         }
                     </p>
                     <p class="card-text">
+                        @if (Model.DatasetSource != null)
+                        {
+                            @: <label style="font-weight: 900">Source:</label>
+                            @Model.DatasetSource
+
+
+
+
+                        }
+                        else
+                        {
+                            @: <label style="font-weight: 900"> Source:</label>
+                            @: Unknown
+                        }
+                    </p>
+                    <p class="card-text">
                         <label style="font-weight: 900">Description: </label>
-                         @Model.Description
-</p>
+                        @Model.Description
+                    </p>
                 </div>
             </div>
             <hr />

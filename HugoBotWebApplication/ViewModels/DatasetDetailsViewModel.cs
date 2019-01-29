@@ -31,5 +31,7 @@ namespace HugoBotWebApplication.ViewModels
 		public VariableMetadata[] Metadata {get; set;}
 		public int NumberOfEntities { get; set; }
 		public int NumberOfProperties { get; set; }
-	}
+        public string DatasetSource { get; set; }
+
+    }
 }

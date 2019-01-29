@@ -17,6 +17,7 @@ namespace HugoBotWebApplication.ViewModels
         public string Path { get; set; }
         public string VmapPath { get; set; }
 		public string DatasetDescription { get; set; }
+        public string DatasetSource { get; set; }
 		public List<string> TemporalPropertyID { get; set; }
 		public List<string> TemporalPropertyName { get; set; }
 		public List<string> Description { get; set; }

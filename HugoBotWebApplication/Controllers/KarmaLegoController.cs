@@ -42,6 +42,12 @@ namespace HugoBotWebApplication.Controllers
             return String.Join(" ", downloadPath);
         }
 
+        public string DownloadKarmaLego (int ID)
+        {
+            var discretization = db.KarmaLegos.Find(ID);
+            return discretization.DownloadPath;
+        }
+
 
         // GET: KarmaLego
         public ActionResult Index(int? id)

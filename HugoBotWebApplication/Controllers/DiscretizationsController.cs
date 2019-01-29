@@ -56,6 +56,13 @@ namespace HugoBotWebApplication.Controllers
             string downloadPath = discretizationService.GetDownloadPath(discretizations);
             return downloadPath;
 		}
+
+        public string DownloadDiscretization(int ID)
+        {
+            string downloadPath = discretizationRepository.Get(ID).DownloadPath;
+            return downloadPath;
+        }
+
         public async Task<ActionResult> Edit(int? id)
        {
             string currentUserId = User.Identity.GetUserId();

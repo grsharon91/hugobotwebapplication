@@ -73,8 +73,18 @@ namespace HugoBotWebApplication.Services
             }
             return ";" + formattedParams;
         }
-        
-   
+
+        private int HasClass(List <string> temporalPropertyID)
+        {
+            var ans = 0;
+            foreach (var id in temporalPropertyID)
+            {
+                int i=Int32.Parse(id);
+                if (i < 0)
+                    ans = 1;
+            }
+                return ans;
+        }
 
         public byte[] GetDatasetFile(Dataset dataset)
         {
@@ -125,8 +135,8 @@ namespace HugoBotWebApplication.Services
                 NumberOfDownloads = 0,
                 NumberOfViews = 0,
                 DateUploaded = DateTime.Now,
-                EntitiesPath = datasetPath + "/Entities"
-
+                EntitiesPath = datasetPath + "/Entities",
+                hasClass = HasClass(datasetViewModel.TemporalPropertyID)
 
         };
         }

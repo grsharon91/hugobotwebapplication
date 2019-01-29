@@ -42,6 +42,7 @@ namespace HugoBotWebApplication.Models
         public double Size { get; set; }
         public DateTime DateUploaded{ get; set; }
         public string EntitiesPath { get; set; }
+        public int hasClass { get; set; }
 
     }
 }
