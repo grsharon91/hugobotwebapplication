@@ -525,7 +525,6 @@
     <Compile Include="Models\Formats_Handling\FileHelpersTypeExtensions.cs" />
     <Compile Include="Models\Formats_Handling\Measurement.cs" />
     <Compile Include="Models\Formats_Handling\VariableMetadata.cs" />
-    <Compile Include="Models\HugoBotWebApplicationContext.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="ViewModels\KarmaLegoExistingViewModel.cs" />
     <Compile Include="ViewModels\KarmaLegoIndexViewModel.cs" />
@@ -594,7 +593,6 @@
     </Content>
     <Content Include="Content\toastr.less" />
     <Content Include="Content\toastr.scss" />
-    <Content Include="ClassDiagram1.cd" />
     <Content Include="Content\bootstrap.min.css.map" />
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-reboot.min.css.map" />
@@ -1535,7 +1533,6 @@
     <Content Include="webfonts\fa-brands-400.eot" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="NewFolder1\" />
     <Folder Include="Scripts\KarmaLego\" />
   </ItemGroup>
   <ItemGroup>
