@@ -44,5 +44,8 @@ namespace HugoBotWebApplication.Models
         public string EntitiesPath { get; set; }
         public int hasClass { get; set; }
 
+        public byte [] metaData { get; set; }
+        public byte [] DatasetFile { get; set; }
+
     }
 }

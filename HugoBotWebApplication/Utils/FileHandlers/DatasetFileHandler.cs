@@ -20,6 +20,11 @@ namespace HugoBotWebApplication.Utils.FileHandlers
             throw new NotImplementedException();
         }
 
+        public Measurement[] ReadBytesToArray(byte[] fileArray)
+        {
+            throw new NotImplementedException();
+        }
+
         public Measurement[] ReadFileToArray(string path)
         {
             throw new NotImplementedException();

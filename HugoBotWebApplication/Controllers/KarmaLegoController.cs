@@ -83,7 +83,7 @@ namespace HugoBotWebApplication.Controllers
             {
                 foreach (var kl in disc.KarmaLegos)
                 {
-                        kl.IsReady = new Discretistation.FileHandler().IsFileExists(kl.DownloadPath);
+                       // kl.IsReady = new Discretistation.FileHandler().IsFileExists(kl.DownloadPath);
                         db.Entry(kl).State = EntityState.Modified;
                   
                 }
@@ -92,7 +92,7 @@ namespace HugoBotWebApplication.Controllers
             db.SaveChanges();
 
             List<Discretization> discretizations = dataset.Discretizations;
-            Discretistation.FileHandler fileHandler = new Discretistation.FileHandler();
+           // Discretistation.FileHandler fileHandler = new Discretistation.FileHandler();
             List<KarmaLego> karmaLegos = new List<KarmaLego>();
             Dictionary<int, string[]> klClasses = new Dictionary<int, string[]>();
             foreach (var discretization in discretizations)
@@ -103,9 +103,13 @@ namespace HugoBotWebApplication.Controllers
                 }
             }
             foreach (var kl in karmaLegos)
-            {   if(new Discretistation.FileHandler().IsFileExists(kl.DownloadPath)== "Ready" && kl.Fold  == 1)
+            {  // if(new Discretistation.FileHandler().IsFileExists(kl.DownloadPath)== "Ready" && kl.Fold  == 1)
+            //    {
+            //        klClasses[kl.KarmaLegoID] = fileHandler.GetClasses(kl.DownloadPath + "/KARMALEGOV");
+            //    }
+                if(kl.IsReady == "Ready" && kl.Fold == 1)
                 {
-                    klClasses[kl.KarmaLegoID] = fileHandler.GetClasses(kl.DownloadPath + "/KARMALEGOV");
+                    klClasses[kl.KarmaLegoID] = new string[] { "" }; ////// NEED TO CHANGE
                 }
                 else
                 {

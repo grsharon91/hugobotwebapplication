@@ -9,6 +9,7 @@ namespace HugoBotWebApplication.Utils.FileHandlers
 {
     interface IFileHandler<T>
     {
+        T[] ReadBytesToArray(byte[] fileArray);
         T[] ReadFileToArray(string path);
         byte[] GetBytesFromFile(string path);
         byte[] GetBytesFromArray(T[] fileArray);

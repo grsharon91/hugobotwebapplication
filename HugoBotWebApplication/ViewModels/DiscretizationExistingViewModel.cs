@@ -11,9 +11,9 @@ namespace HugoBotWebApplication.ViewModels
 		{
 
 		}
-		public readonly string[] RegularMethods = { "EQW", "EQF", "PERSIST", "BINARY", "KMEANS", "SAX" };
-		public readonly string [] DistanceMeasureMethods = { "TD4C" };
-		public readonly string [] knowledgeBasedMethods = { "EXPERT" };
+		//public readonly string[] RegularMethods = { "EQW", "EQF", "PERSIST", "BINARY", "KMEANS", "SAX" };
+		//public readonly string [] DistanceMeasureMethods = { "TD4C" };
+		//public readonly string [] knowledgeBasedMethods = { "EXPERT" };
 
 		public Dataset Dataset { get; set; }
         public int DatasetID { get; set; }

@@ -45,6 +45,24 @@ namespace HugoBotWebApplication.Utils.FileHandlers
             return metadata;
         }
 
+        public VariableMetadata[] ReadBytesToArray(byte [] fileArray)
+        {
+            VariableMetadata[] metadata = { };
+            var vmapEngine = new FileHelperEngine<VariableMetadata>();
+            try
+            {
+                Stream s = new MemoryStream(fileArray);
+                StreamReader file = new StreamReader(s);
+                metadata = vmapEngine.ReadStream(file);
+
+            }
+            catch (Exception)
+            {
+                 
+            }
+            return metadata;
+        }
+
         public void WriteFile(string vmapPath)
         {
             throw new NotImplementedException();

@@ -60,23 +60,6 @@
             color: #FFFFFF;
         }
 </style>
-@*<div class="table-responsive">
-        <table id="discretizationTable" class="table table-bordered " style=" table-layout: fixed">
-            <thead>
-                <tr>
-                    <th style="width:20%" scope="col">Method</th>
-                    <th style="width:8%" scope="col">Bins number</th>
-                    <th style="width:8%" scope="col">Max gap</th>
-                    <th style="width:8%" scope="col">Window size</th>
-                    <th style="width:20%" scope="col">Distance measure</th>
-                    <th style="width:15%" scope="col">States file</th>
-                    <th style="width:10%" scope="col">Visibility</th>
-
-                </tr>
-            </thead>
-            <tbody id="discretizationTableBody"></tbody>
-        </table>
-    </div>*@
 
 @using (Html.BeginForm("Edit", "Datasets", FormMethod.Post, new { enctype = "multipart/form-data", id = "UploadDatasetForm", name = "UploadDatasetForm" }))
 
@@ -87,15 +70,18 @@
     <div class="row">
         <div class="col-md-4">
             <a href="@Url.Action("Details", "Datasets", new { id = @Model.DatasetID})" class="btn btn-outline-primary w-100" style="font-weight: bold">
-                @Model.Dataset.DatasetName Info
+                <b style="color: red"> @Model.Dataset.DatasetName </b> Info
             </a>
         </div>
         <div class="col-md-4">
-            <a href="@Url.Action("Edit", "Discretizations", new { id = @Model.DatasetID})" class="btn btn-outline-primary w-100" style="font-weight: bold">Temporal Abstraction </a>
+            <a href="@Url.Action("Edit", "Discretizations", new { id = @Model.DatasetID})" class="btn btn-primary w-100" style="font-weight: bold">Temporal Abstraction </a>
         </div>
         <div class="col-md-4">
             <a href="@Url.Action("Index", "KarmaLego", new { id = @Model.DatasetID})" class="btn btn-outline-primary w-100" style="font-weight: bold"> Time Intervals Mining</a>
         </div>
+        @*<div class="col-md-3">
+            <a href="@Url.Action("Index", "KarmaLego", new { id = @Model.DatasetID})" class="btn btn-outline-primary w-100" style="font-weight: bold"> visualization</a>
+        </div>*@
     </div>
     <br />
     <div class="row">
@@ -105,18 +91,12 @@
                     Temporal Abstraction
                 </div>
                 <div class="card-body">
-                    <h4>
-                        @Model.Dataset.DatasetName
-                    </h4>
-
-                    <br />
                     <div class="row">
                         <div class="col-md-4">
                             <div class="card align-items-center h-100">
                                 <br />
                                 <div id="windowSizeDiv" class="form-group">
                                     <label class="" for="WindowSize" data-toggle="tooltip" data-placemenat="left" title="The size of each frame  in a PAA(Piecewise Aggregate Approximation) for the data(window size of value , won't approximate using paa)">PAA Window size</label>
-                                    @*@Html.EditorFor(model => model.WindowSize, new { htmlAttributes = new { @class = "form-control", @value = "" } })*@
                                     <input type="number" value="1" class="form-control text-box single-line" id="WindowSize" name="WindowSize" data-toggle="tooltip" data-placement="left" title="The size of each frame  in a PAA(Piecewise Aggregate Approximation) for the data(window size of value , won't approximate using paa)" />
                                     <small id="windowSizeHelp" class="form-text text-muted">Window size must be at least 1</small>
                                 </div>
@@ -133,7 +113,6 @@
                                         <option value="KMEANS" data-toggle="tooltip" title="algorithm with uniform initialization and Manhattan distance used to obtain K clusters">Kmeans</option>
                                         <option value="SAX" data-toggle="tooltip" title="First convert the time series to PAA representation, then covert the PAA to symbols">SAX</option>
                                         <option value="EXPERT">Knowledge Based</option>
-                                        <!--    <option value="TD4C">TD4C</option> -->
                                         <option value="TD4C" id="TD4C" data-toggle="tooltip" disabled="disabled" title="Can't use this algorithm since the dataset has no class">TD4C_Cosine</option>
                                         <option value="TD4C" id="TD4C1" data-toggle="tooltip" disabled="disabled" title="Can't use this algorithm since the dataset has no class">TD4C_Entropy</option>
                                         <option value="TD4C" id="TD4C2" data-toggle="tooltip" disabled="disabled" title="Can't use this algorithm since the dataset has no class">TD4C_KullbackLiebler</option>
@@ -144,13 +123,21 @@
 
                                 <div id="binsNumberDiv" class="form-group ">
 
-                                    @*@Html.LabelFor(model => model.BinsNumber, htmlAttributes: new { @class = "" })*@
                                     <label class="" for="BinsNumber" data-toggle="tooltip" data-placement="top" title="Number of states to use for the abstraction">Number of states</label>
-                                    @*@Html.EditorFor(model => model.BinsNumber, new { htmlAttributes = new { @class = "form-control", @value = "", @data-toggle="tooltip", @data-placement = "top", @title = "Tooltip on top" } })*@
                                     <input class="form-control text-box single-line" id="BinsNumber" name="BinsNumber" type="number" value="2" data-toggle="tooltip" data-placement="left" title="Number of states to use for the abstraction">
                                     <small id="binsNumberHelp" class="form-text text-muted">Number of states must be at least 2</small>
-                                    @*<span class="glyphicon glyphicon-asterisk"></span>*@
-                                    @*@Html.ValidationMessageFor(model => model.BinsNumber, "", new { @class = "text-danger" })*@
+                                </div>
+                                <div id="statesFileDiv" class="form-group " style="display:none">
+                                    <label class="" for="statesFile">States file</label>
+
+                                    <div id="statesFile" style="display: inline">
+                                        <label style="font-size: 17px" class="btn btn-warning">
+                                            <span id="Path1">Browse</span>
+                                            <input id="Path" accept=".csv" type="file" name="Path" class="btn btn-success" style="display: none;" />
+                                        </label>
+                                        <label class="label label-primary" id="filePath" style="display:none;font-size: 16px"></label>
+                                        <span id="Dataset_file_error"></span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -158,95 +145,13 @@
                             <div class="card align-items-center h-100">
                                 <br />
                                 <div id="maxGapDiv" class="form-group">
-                                    @*@Html.LabelFor(model => model.MaxGap, htmlAttributes: new { @class = "" })*@
                                     <label class="" for="MaxGap" data-toggle="tooltip" data-placement="left" title="An interpolation gap for decding the maximunm gap between 2 time points in order to connect them and create an interval">Interpolation gap</label>
                                     <input class="form-control text-box single-line" value="-1" id="MaxGap" name="MaxGap" type="number" data-toggle="tooltip" data-placement="left" title="An interpolation gap for decding the maximunm gap between 2 time points in order to connect them and create an interval" />
-                                    @*@Html.EditorFor(model => model.MaxGap, new { htmlAttributes = new { @class = "form-control" } })*@
                                     <small id="maxGaprHelp" class="form-text text-muted">Interpolation gap must be at least -1</small>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!--      <h5>
-                              Step 1
-                          </h5>
-                          <div class="row">
-                              <div id="windowSizeDiv" class="form-group col-md-4">
-                                  <label class="" for="WindowSize" data-toggle="tooltip" data-placemenat="left" title="The size of each frame  in a PAA(Piecewise Aggregate Approximation) for the data(window size of value , won't approximate using paa)">PAA Window size</label>
-                                  @*@Html.EditorFor(model => model.WindowSize, new { htmlAttributes = new { @class = "form-control", @value = "" } })*@
-                                  <input type="number" value="1" class="form-control text-box single-line" id="WindowSize" name="WindowSize" data-toggle="tooltip" data-placement="left" title="The size of each frame  in a PAA(Piecewise Aggregate Approximation) for the data(window size of value , won't approximate using paa)" />
-                                  <small id="windowSizeHelp" class="form-text text-muted">Window size must be at least 1</small>
-                              </div>
-                          </div>
-
-                          <h5>
-                              Step 2
-                          </h5>
-                          <div class="row">
-                              <div id="abstractionMethodsDiv" class="form-group col-md-4">
-                                  <label class="" for="abstractionMethodsDropdownList">Abstraction method</label>
-                                  <select id="abstractionMethodsDropdownList" class="form-control" onchange="methodChanged()">
-                                      <option value="EQF">Equal Frequency</option>
-                                      <option value="EQW">Equal Width</option>
-                                      <option value="PERSIST">Persist</option>
-                                      <option value="KMEANS">Kmeans</option>
-                                      <option value="SAX">SAX</option>
-                                      <option value="EXPERT">Knowledge Based</option>
-                                  <!--    <option value="TD4C">TD4C</option>
-                                      <option value="TD4C">TD4C_Cosine</option>
-                                      <option value="TD4C">TD4C_Entropy</option>
-                                      <option value="TD4C">TD4C_KullbackLiebler</option>
-
-
-                                  </select>
-                              </div>
-
-                              <div id="binsNumberDiv" class="form-group col-md-4 ">
-
-                                  @*@Html.LabelFor(model => model.BinsNumber, htmlAttributes: new { @class = "" })*@
-                                  <label class="" for="BinsNumber" data-toggle="tooltip" data-placement="top" title="Number of states to use for the abstraction">Number of states</label>
-                                  @*@Html.EditorFor(model => model.BinsNumber, new { htmlAttributes = new { @class = "form-control", @value = "", @data-toggle="tooltip", @data-placement = "top", @title = "Tooltip on top" } })*@
-                                  <input class="form-control text-box single-line" id="BinsNumber" name="BinsNumber" type="number" value="2" data-toggle="tooltip" data-placement="left" title="Number of states to use for the abstraction">
-                                  <small id="binsNumberHelp" class="form-text text-muted">Number of states must be at least 2</small>
-                                  @*<span class="glyphicon glyphicon-asterisk"></span>*@
-                                  @*@Html.ValidationMessageFor(model => model.BinsNumber, "", new { @class = "text-danger" })*@
-                              </div>
-                            </div>
-
-                              <h5>
-                                  Step 3
-                              </h5>
-                              <div class="row">
-                                  <div id="maxGapDiv" class="form-group col-md-4 ">
-                                      @*@Html.LabelFor(model => model.MaxGap, htmlAttributes: new { @class = "" })*@
-                                      <label class="" for="MaxGap" data-toggle="tooltip" data-placement="left" title="An interpolation gap for decding the maximunm gap between 2 time points in order to connect them and create an interval">Interpolation gap</label>
-                                      <input class="form-control text-box single-line" value="-1" id="MaxGap" name="MaxGap" type="number" data-toggle="tooltip" data-placement="left" title="An interpolation gap for decding the maximunm gap between 2 time points in order to connect them and create an interval" />
-                                      @*@Html.EditorFor(model => model.MaxGap, new { htmlAttributes = new { @class = "form-control" } })*@
-                                      <small id="maxGaprHelp" class="form-text text-muted">Interpolation gap must be at least -1</small>
-                                  </div>
-                              </div> -->
-                    <!--       <div id="distanceMeasureDiv" class="form-group " style="display:none">
-                               <label class="" for="distanceMeasureDropdownList">Distance measure</label>
-                               <select id="distanceMeasureDropdownList" class="form-control" name="distanceMeasureDropdownList">
-                                   <option value="Cosine">Cosine</option>
-                                   <option value="Entropy">Entropy</option>
-                                   <option value="KullbackLiebler">KullbackLiebler</option>
-
-
-                               </select>
-                           </div> -->
-                           <div id="statesFileDiv" class="form-group " style="display:none">
-                               <label class="" for="statesFile">States file</label>
-
-                               <div id="statesFile" style="display: inline">
-                                   <label style="font-size: 17px" class="btn btn-warning">
-                                       <span id="Path1">Browse</span>
-                                       <input id="Path" accept=".csv" type="file" name="Path" class="btn btn-success" style="display: none;" />
-                                   </label>
-                                   <label class="label label-primary" id="filePath" style="display:none;font-size: 16px"></label>
-                                   <span id="Dataset_file_error"></span>
-                               </div>
-                           </div> 
                     <br />
                     <div class="btn-group" role="group" aria-label="...">
                         <button type="button" class="btn btn-outline-primary" onclick="addConfiguration()">
@@ -291,7 +196,7 @@
     <div class="col-md-12">
         <div class="card">
             <div class="card-header bg-primary" style="color:white">
-                Previous Temporal Abstractions
+                Previously Abstracted Datasets
             </div>
             <div class="card-body">
                 <div>
@@ -303,9 +208,9 @@
                 <table class="table">
                     <thead>
                         <tr>
-                            <th style="width:20%" scope="col">Method</th>
                             <th style="width:10%" scope="col">PAA Window size</th>
-                            <th style="width:10%" scope="col">Bins number</th>
+                            <th style="width:20%" scope="col">Method</th>
+                            <th style="width:10%" scope="col">Bins number/States file</th>
                             <th style="width:10%" scope="col">Interpolation gap</th>
                             <!--	<th style="width:15%" scope="col">States file</th>  -->
                             <th style="width:10%" scope="col">Status</th>
@@ -317,40 +222,43 @@
                         {
                             var methodPathSplited = discretization.DownloadPath.Split('/');
                             var methodParams = methodPathSplited[methodPathSplited.Length - 1].Split('_');
-                            var methodVal = methodPathSplited[methodPathSplited.Length - 2];
+                            //var methodVal = methodPathSplited[methodPathSplited.Length - 2];
                         <tr>
                             <td>
-                                @if (Model.RegularMethods.Contains(methodVal))
-                                {
-                                    @discretization.FullName
-                                }
-                                @if (Model.DistanceMeasureMethods.Contains(methodVal))
-                                {
-                                    <p>@discretization.FullName @methodParams[1]</p>
-                                }
+                                @*@if (Model.RegularMethods.Contains(methodVal))
+        {
+            @discretization.FullName
+        }
+        @if (Model.DistanceMeasureMethods.Contains(methodVal))
+        {
+            <p>@discretization.FullName @methodParams[1]</p>
+        }*@
+                                @methodParams[2].Substring(0, methodParams[2].Length - 3)
                             </td>
                             <td>
-                                @if (Model.RegularMethods.Contains(methodVal))
+                                @*@if (Model.RegularMethods.Contains(methodVal))
                                 {
                                     @methodParams[2];
                                 }
                                 @if (Model.DistanceMeasureMethods.Contains(methodVal))
                                 {
                                     @methodParams[3];
-                                }
+                                }*@
+                                @methodParams[0]
                             </td>
                             <td>
-                                @if (Model.RegularMethods.Contains(methodVal))
+                                @*@if (Model.RegularMethods.Contains(methodVal))
                                 {
                                     @methodParams[0];
                                 }
                                 @if (Model.DistanceMeasureMethods.Contains(methodVal))
                                 {
                                     @methodParams[0];
-                                }
+                                }*@
+                                @methodParams[1].Substring(0, methodParams[1].Length - 4)
                             </td>
                             <td>
-                                @if (Model.RegularMethods.Contains(methodVal))
+                                @*@if (Model.RegularMethods.Contains(methodVal))
                                 {
                                     @methodParams[1];
                                 }
@@ -361,14 +269,12 @@
                                         @methodParams[2];
                                     }
 
-                                }
+                                }*@
+                                @methodParams[3].Substring(0, methodParams[3].Length - 7)
                             </td>
 
                             <!--            <td>
-                   @if (Model.DistanceMeasureMethods.Contains(methodVal))
-                   {
-                       @methodParams[1];
-                   }
+      
                </td>
                  <td>
 
@@ -387,7 +293,12 @@
                                 }
                                 else
                                 {
-                                    <label>@discretization.ParametersIsReady</label>
+                                    <div>
+                                        <button id="downloadDatasetButton_New" title="Discretization In Progress" class="btn btn-sm btn-primary" type="button" disabled >
+                                            <span class="fas fa-download"> </span> Download
+                                        </button>
+
+                                    </div>
                                 }
                             </td>
 

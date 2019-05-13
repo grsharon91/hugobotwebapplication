@@ -12,6 +12,7 @@ using HugoBotWebApplication.Models.Repositories;
 using HugoBotWebApplication.Utils.FileHandlers;
 using HugoBotWebApplication.ViewModels;
 using Microsoft.AspNet.Identity;
+
 namespace HugoBotWebApplication.Services
 {
     public class DatasetService
@@ -116,7 +117,7 @@ namespace HugoBotWebApplication.Services
             return allFiles;
         }
 
-        public Dataset CreateDatasetFromDatasetViewModel(DatasetViewModel datasetViewModel,int datasetId, string datasetPath, string vmapPath,ApplicationUser currentUser)
+        public Dataset CreateDatasetFromDatasetViewModel(DatasetViewModel datasetViewModel,int datasetId, string datasetPath, string vmapPath,ApplicationUser currentUser, byte [] metadata)
         {
             return new Dataset()
             {
@@ -130,20 +131,22 @@ namespace HugoBotWebApplication.Services
                 Visibility = datasetViewModel.Visibility,
                 Rating = 0,
                 Type = "Raw",
-				Description = datasetViewModel.DatasetDescription,
+                Description = datasetViewModel.DatasetDescription,
                 DatasetID = datasetId,
                 NumberOfDownloads = 0,
                 NumberOfViews = 0,
                 DateUploaded = DateTime.Now,
                 EntitiesPath = datasetPath + "/Entities",
-                hasClass = HasClass(datasetViewModel.TemporalPropertyID)
+                hasClass = HasClass(datasetViewModel.TemporalPropertyID),
+                metaData = metadata
 
         };
         }
 
         public DatasetDetailsViewModel CreateDatasetDetailsViewModel(Dataset dataset)
         {
-            VariableMetadata[] metadata = metadataFileHandler.ReadFileToArray(dataset.VmapPath); 
+            //VariableMetadata[] metadata = metadataFileHandler.ReadFileToArray(dataset.VmapPath); 
+            VariableMetadata[] metadata = metadataFileHandler.ReadBytesToArray(dataset.metaData);
             DatasetDetailsViewModel datasetDetailsViewModel = new DatasetDetailsViewModel()
             {
                 DatasetID = dataset.DatasetID,
@@ -181,11 +184,22 @@ namespace HugoBotWebApplication.Services
         }
 
 
-        public string UploadDatasetFiles(string datasetName, HttpPostedFileBase datasetFile, byte[] metadataFileBytes, HttpPostedFileBase entitiesFile)
+        //public string UploadDatasetFiles(string datasetName, HttpPostedFileBase datasetFile, byte[] metadataFileBytes, HttpPostedFileBase entitiesFile)
+        //{
+        //    //string datasetPath = fileTransferrer.SendDatasetFiles(datasetName, fileTransferrer.GetBytesFromFile(datasetFile), metadataFileBytes);
+        //    //fileTransferrer.SendEntitiesFile(datasetPath, fileTransferrer.GetBytesFromFile(entitiesFile));
+        //    //return datasetPath;
+        //    DateTime date = DateTime.Now;
+        //    string datasetPath = "~/App_Data/uploads/" + datasetFile.FileName.Substring(0, datasetFile.FileName.Length - 4) + "_" +
+        //                 date.ToString("yyyy_MM_dd_H_mm_ss") + "/" + datasetFile.FileName;
+        //    return datasetPath;
+        //}
+
+          public string getPath(string fileName, string date)
         {
-            string datasetPath = fileTransferrer.SendDatasetFiles(datasetName, fileTransferrer.GetBytesFromFile(datasetFile), metadataFileBytes);
-            fileTransferrer.SendEntitiesFile(datasetPath, fileTransferrer.GetBytesFromFile(entitiesFile));
-            return datasetPath;
+            string path = "~/App_Data/uploads/" + fileName.Substring(0, fileName.Length - 4) + "_" +
+                        date + "/" + fileName;
+            return path;
         }
 
         public object CreateMetadataFileFromDatasetFile(HttpPostedFileBase datasetFile)
@@ -445,10 +459,10 @@ namespace HugoBotWebApplication.Services
 
         public Dataset GetDataset(HttpPostedFileBase datasetFile)
         {
-            string datasetPath = fileTransferrer.GetDatasetPath(datasetFile);
-            Dataset dataset = datasetRepository.GetByPath(datasetPath);
-            if (dataset != null && dataset.Visibility == "Public")
-                return dataset;
+            //string datasetPath = fileTransferrer.GetDatasetPath(datasetFile);
+            //Dataset dataset = datasetRepository.GetByPath(datasetPath);
+            //if (dataset != null && dataset.Visibility == "Public")
+            //    return dataset;
             return null;
         }
     }

@@ -29,6 +29,7 @@ namespace HugoBotWebApplication.Utils.FileHandlers
         private string _vmapPath;
         private readonly HttpFileCollectionBase _files;
 		public bool vmapExists { get; set; }
+        public byte[] fileArr { get; set; }
 
 
 		public HttpFileCollectionBase Files => _files;
@@ -47,7 +48,8 @@ namespace HugoBotWebApplication.Utils.FileHandlers
             var datasetFile = _files["datasetFile"];
             HttpPostedFileBase vmapFile;
             HttpPostedFileBase expertFile;
-			
+            DateTime date = DateTime.Now;
+
             try
             {
                 expertFile = _files["expert_param"];
@@ -69,10 +71,22 @@ namespace HugoBotWebApplication.Utils.FileHandlers
 				vmapExists = false;	
 			}
             Path.Combine(datasetFile.FileName);
-            _path = Path.Combine(inputFolder, datasetFile.FileName);
+            _path = Path.Combine(inputFolder, datasetFile.FileName);//, datasetFile.FileName.Substring(0, datasetFile.FileName.Length - 4) + "_" +
+                        // date.ToString("yyyy_MM_dd_H_mm_ss") + "csv");
             datasetFile.SaveAs(_path);
 
             _files = files;
+        }
+
+        public byte [] getFileToArray()
+        {
+            var file = _files["datasetFile"];
+            //  FileStream stream = new FileStream(_path, FileMode.Create);
+            //byte[] ans = new byte[file.InputStream.Length];
+            fileArr = new byte[file.InputStream.Length];
+            file.InputStream.Read(fileArr, 0, (int) file.InputStream.Length);
+           // stream.Read(ans, 0, (int)stream.Length);
+            return fileArr;
         }
 
         

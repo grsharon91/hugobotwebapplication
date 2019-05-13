@@ -30,6 +30,7 @@ namespace HugoBotWebApplication.Controllers
         private readonly DatasetService datasetService;
         private DiscretizationService discretizationService = new DiscretizationService();
         private readonly SecurityService securityService;
+        //private Task task;
         public DiscretizationsController()
         {
             db = new ApplicationDbContext();
@@ -88,7 +89,19 @@ namespace HugoBotWebApplication.Controllers
             FileTransferrer fileTransferrer = new FileTransferrer();
             foreach (var disc in dataset.Discretizations)
             {
-                disc.ParametersIsReady = new Discretistation.FileHandler().IsFileExists(disc.DownloadPath);
+                // disc.ParametersIsReady = new Discretistation.FileHandler().IsFileExists(disc.DownloadPath);
+
+
+                if (System.IO.Directory.Exists(Server.MapPath(disc.DownloadPath)))
+                //if (task != null)
+                  //  if(task.IsCompleted)
+                {
+                    disc.ParametersIsReady = "Ready";
+                }
+                else
+                {
+                    disc.ParametersIsReady = "In Progress";
+                }
                 discretizationRepository.Edit(disc);
             }
             datasetRepository.SaveChanges();
@@ -114,7 +127,7 @@ namespace HugoBotWebApplication.Controllers
             // Check that there are *not* knowledge based methods in the request
             if(methodsList[0] != "")
             {
-                discretizationService.Discretize(methodsList.Select(method => dataset.Path + "/" + method).ToArray());
+                discretizationService.Discretize(methodsList, dataset.Path);
                 List<Discretization> discretizations = discretizationService.CreateDiscretizations(dataset, methodsList);
                 for (int i = 0; i < discretizations.Count; i++)
                 {

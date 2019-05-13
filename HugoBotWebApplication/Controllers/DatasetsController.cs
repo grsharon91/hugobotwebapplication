@@ -28,6 +28,7 @@ namespace HugoBotWebApplication.Controllers
         private readonly DatasetService datasetService;
         private readonly DiscretizationService discretizationService = new DiscretizationService();
         private readonly SecurityService securityService;
+        private byte[] fileArr;
         private MetadataViewModel metadataViewModel = new MetadataViewModel();
         public DatasetsController ()
         {
@@ -36,7 +37,7 @@ namespace HugoBotWebApplication.Controllers
             discretizationRepository = new DiscretizationRepository(db);
             datasetService = new DatasetService(datasetRepository);
             securityService = new SecurityService(datasetRepository);
-            
+
         }
         // GET: Datasets
         // TODO
@@ -48,7 +49,7 @@ namespace HugoBotWebApplication.Controllers
             {
                 foreach (var disc in dataset.Discretizations)
                 {
-                    disc.ParametersIsReady = discretistationFileHandler.IsFileExists(disc.DownloadPath);
+                   // disc.ParametersIsReady = discretistationFileHandler.IsFileExists(disc.DownloadPath);
                         //disc.ParametersIsReady = "Ready";
                     discretizationRepository.Edit(disc);
 
@@ -175,12 +176,18 @@ namespace HugoBotWebApplication.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            byte[] datasetFiles = datasetService.GetAllFiles(dataset);
+
+            string inputFolder = Server.MapPath(dataset.Path);
+
+           // string path = Path.Combine(inputFolder, datasetFile.FileName.Substring(0, datasetFile.FileName.Length - 4) + "_Vmap.csv");
+            //string path = dataset.Path.Substring(0, dataset.Path.Length - 11);
+            //byte[] datasetFiles = dataset.DatasetFile;
+            byte[] datasetFile = System.IO.File.ReadAllBytes(inputFolder);
             dataset.NumberOfDownloads += 1;
             datasetRepository.Edit(dataset);
             datasetRepository.SaveChanges();
        
-            return File(datasetFiles, ".zip", "Dataset" + DateTime.Now + ".zip");
+            return File(datasetFile, "text/csv", "Dataset" + DateTime.Now + ".csv");
         }
         public ActionResult DownloadDatasetFile(int? id)
 		{
@@ -257,21 +264,36 @@ namespace HugoBotWebApplication.Controllers
             Dataset dataset = datasetService.GetDataset(Request.Files["datasetFile"]);
             if (dataset != null)
                 return "This dataset already exists under the name: " + dataset.DatasetName;
-			string inputFolderPath = Server.MapPath(("~/App_Data/uploads"));
-			InputHandler inputHandler = new InputHandler(Request.Files, inputFolderPath);
+            var datasetFile = Request.Files["datasetFile"];
+            DateTime date = DateTime.Now;
+            string dir = "~/App_Data/uploads/" + datasetFile.FileName.Substring(0, datasetFile.FileName.Length - 4) + "_" +
+                        date.ToString("yyyy_MM_dd_H") + "/";
+            string inputFolderPath = Server.MapPath(dir);
+            Directory.CreateDirectory(Server.MapPath(dir));
+          InputHandler inputHandler = new InputHandler(Request.Files, inputFolderPath);
 			InputValidationObject inputValidationObject = inputHandler.ValidateDatasetFiles();
 			if (!inputValidationObject.IsValid)
 			{
 				ViewBag.Errors = String.Join("<br>", inputValidationObject.Errors);
 			}
-			return String.Join("<br>", inputValidationObject.Errors);
+            string path = dir + datasetFile.FileName;
+           // FileStream stream = new FileStream(path, FileMode.Create);
+            fileArr = new byte[datasetFile.InputStream.Length];
+            fileArr = inputHandler.getFileToArray();
+            //stream.Read(fileArr, 0, (int)stream.Length);
+            //stream.Close();
+           // dataset.DatasetFile = file;
+            return String.Join("<br>", inputValidationObject.Errors);
 		}
 		[HttpPost]
 		public ActionResult ProcessVmapFile()
 		{
             var vmapFile = Request.Files["vmapFile"];
             var datasetFile = Request.Files["datasetFile"];
-            if(vmapFile != null)
+            //string inputFolderPath = Server.MapPath(("~/App_Data/uploads"));
+            //InputHandler inputHandler = new InputHandler(Request.Files, inputFolderPath);
+            //InputValidationObject inputValidationObject = inputHandler.ValidateDatasetFiles();
+            if (vmapFile != null)
                 return Json(datasetService.ProcessMetadataFile(vmapFile, datasetFile, ""));
             else
             {
@@ -283,7 +305,7 @@ namespace HugoBotWebApplication.Controllers
 
         [HttpPost]
         //[ValidateAntiForgeryToken]
-        public JsonResult Create(DatasetViewModel datasetViewModel)
+        public ActionResult Create(DatasetViewModel datasetViewModel)
         {
 
             if (ModelState.IsValid)
@@ -296,18 +318,25 @@ namespace HugoBotWebApplication.Controllers
                    datasetViewModel.TemporalPropertyName, datasetViewModel.Description);
 
                 // Transfer files
-                string datasetPath = datasetService.UploadDatasetFiles(datasetViewModel.DatasetName, Request.Files["datasetFile"], metadataFileBytes, Request.Files["Entity_file"]);
-                
+                //string datasetPath = datasetService.UploadDatasetFiles(datasetViewModel.DatasetName, Request.Files["datasetFile"], metadataFileBytes, Request.Files["Entity_file"]);
+                string date = DateTime.Now.ToString("yyyy_MM_dd_H");
+                string datasetPath = datasetService.getPath(Request.Files["datasetFile"].FileName, date);
+
                 // Create Dataset model
-                Dataset dataset = datasetService.CreateDatasetFromDatasetViewModel(datasetViewModel, datasetRepository.GetNextId(), datasetPath, datasetPath + "/vmap", currentUser);
+                Dataset dataset = datasetService.CreateDatasetFromDatasetViewModel(datasetViewModel, datasetRepository.GetNextId(), datasetPath, datasetPath + "/vmap", currentUser, metadataFileBytes);
                 dataset.Size = ((double)Request.Files["datasetFile"].ContentLength / 1024) / 1024;
-               
+                //dataset.DatasetFile = fileArr;
+                Stream s = Request.Files["datasetFile"].InputStream;
+                BinaryReader br = new BinaryReader(s);
+                byte [] file = br.ReadBytes((Int32)s.Length);
+                dataset.DatasetFile = file;
+
                 //Save dataset's information in database
                 datasetRepository.Add(dataset);
                 datasetRepository.SaveChanges();
-                return Json(new { success = true });
+                //return Json(new { success = true });
                   
-                //return RedirectToAction("Index");
+                return RedirectToAction("Index");
             }
 
             return Json(new { success = false });
@@ -340,7 +369,6 @@ namespace HugoBotWebApplication.Controllers
                     //discretistationFileHandler.GetFile()
                     //var y = 2;
                     string contentType_1 = "text/csv";
-
                     return File(downloadedDatasets_1, contentType_1, "Datasets" + DateTime.Now + ".csv");
                 }
 
@@ -382,8 +410,8 @@ namespace HugoBotWebApplication.Controllers
 
                 }
 			}
-           
-            if(discretizationsRecords != null)
+
+            if (discretizationsRecords != null)
             {
                 foreach (var discretizationsRecord in discretizationsRecords)
                 {
@@ -394,19 +422,20 @@ namespace HugoBotWebApplication.Controllers
                     allParamsToSend.Add(discretization.DownloadPath);
                 }
             }
-            if(karmaLegoRecords != null)
-			{
-				foreach (var karmaLegoRecord in karmaLegoRecords)
-				{
-					var kl = db.KarmaLegos.Find(Int32.Parse(karmaLegoRecord));
-					var discretization = kl.Discretization;
-					var datasetPath = discretization.Dataset.Path;
-					//if()
-					allParamsToSend.Add(kl.DownloadPath);
-				}
-			}
-            var allParamsToSendString = String.Join(" ", allParamsToSend);
-            return allParamsToSendString;
+            if (karmaLegoRecords != null)
+            {
+                foreach (var karmaLegoRecord in karmaLegoRecords)
+                {
+                    var kl = db.KarmaLegos.Find(Int32.Parse(karmaLegoRecord));
+                    var discretization = kl.Discretization;
+                    var datasetPath = discretization.Dataset.Path;
+                    //if()
+                    allParamsToSend.Add(kl.DownloadPath);
+                }
+            }
+
+                var allParamsToSendString = String.Join(" ", allParamsToSend);
+                return allParamsToSendString;
 
        
         }

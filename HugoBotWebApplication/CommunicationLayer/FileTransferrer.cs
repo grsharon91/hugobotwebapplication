@@ -28,6 +28,8 @@ namespace HugoBotWebApplication.CommunicationLayer
             file.InputStream.Flush();
             return fileBytes;
         }
+
+
         public string SendDatasetFiles(string datasetName, byte[] datasetFileBytes,byte[] vmapFileBytes)
         {
             return discretistationFileHandler.SendDatasetAndVmapToServer(datasetName,
