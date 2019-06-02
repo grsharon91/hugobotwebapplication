@@ -284,12 +284,13 @@
                             <td>
                                 @if (discretization.ParametersIsReady == "Ready")
                                 {
-                                    <div>
-                                        <button id="downloadDatasetButton_New" title="Download Dataset" class="btn btn-sm btn-primary" type="button" onclick="downloadDataset(@discretization.DiscretizationID)" style="background-color:#006400; color:white">
-                                            <span class="fas fa-download"> </span> Download
-                                        </button>
+                                <div>
+                                    @*<button id="downloadDatasetButton_New" title="Download Dataset" class="btn btn-sm btn-primary" type="button" onclick="downloadDataset(@discretization.DiscretizationID)" style="background-color:#006400; color:white">
+            <span class="fas fa-download"> </span> Download
+        </button>*@
+                                    <a href="@Url.Action("GetDiscretizations", "Discretizations", new { id = discretization.DiscretizationID})" class="btn btn-sm btn-primary" style="background-color:#006400; color:white">Download</a>
 
-                                    </div>
+                                </div>
                                 }
                                 else
                                 {

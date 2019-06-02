@@ -83,9 +83,16 @@ namespace HugoBotWebApplication.Controllers
             {
                 foreach (var kl in disc.KarmaLegos)
                 {
-                       // kl.IsReady = new Discretistation.FileHandler().IsFileExists(kl.DownloadPath);
-                        db.Entry(kl).State = EntityState.Modified;
-                  
+                    if (System.IO.Directory.Exists(Server.MapPath(kl.DownloadPath)))
+                    {
+                        kl.IsReady = "Ready";
+                    }
+                    else
+                    {
+                        kl.IsReady = "In Progress";
+                    }
+                    db.Entry(kl).State = EntityState.Modified;
+                
                 }
              
             }
@@ -109,7 +116,7 @@ namespace HugoBotWebApplication.Controllers
             //    }
                 if(kl.IsReady == "Ready" && kl.Fold == 1)
                 {
-                    klClasses[kl.KarmaLegoID] = new string[] { "" }; ////// NEED TO CHANGE
+                    klClasses[kl.KarmaLegoID] = karmaLegoService.getClasses(kl.DownloadPath);
                 }
                 else
                 {

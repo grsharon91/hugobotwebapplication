@@ -25,8 +25,10 @@ namespace HugoBotWebApplication.Services
                using (Process process = new Process())
                {
                    process.StartInfo.FileName = "CMD.exe";
-                    //NEED CHANGES IN ARGUMENTS//
-                    process.StartInfo.Arguments = "/c cd C:/Users/admin/Desktop/kfir && activate hugobot &&" + cli;
+                   // string path = "~/App_Data/kfir";
+                   // string fullPath = HttpContext.Current.Server.MapPath(path);
+                   //  process.StartInfo.Arguments = "/c cd " + fullPath + " && activate hugobot &&" + cli;
+                   process.StartInfo.Arguments = "/c cd C:/Users/admin/Desktop/kfir && activate hugobot &&" + cli;
                    process.StartInfo.UseShellExecute = false;
                    process.StartInfo.RedirectStandardOutput = true;
                    process.Start();

@@ -497,8 +497,8 @@
                     if (classesDropDownSelectedOption === "Merged")
                         window.location = "/hugobot/KarmaLegoV/MergedIndex";
                     else {
-                        window.location = "/hugobot/KarmaLegoV/Index";
-
+                        //window.location = "/hugobot/KarmaLegoV/Index";
+                        window.location.href = "@Url.Action("Index", "KarmaLegoV")";
                     }
 				},
 				error: function (response) {

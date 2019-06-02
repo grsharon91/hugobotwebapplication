@@ -28,6 +28,24 @@ namespace HugoBotWebApplication.Services
 			return String.Join("/", new[] { "KarmaLego", String.Join("_", new[] { kl.Epsilon.ToString(), kl.MaximumGap.ToString(), kl.MinimumVerticalSupport.ToString() }) });
 		}
 
+        // get the classes by the files in the karmaLego output - the name file is TIRPS_DISCERIZED_CLASSx
+        public string [] getClasses(string path)
+        {
+            string fullPath = HttpContext.Current.Server.MapPath(path);
+            string[] files = System.IO.Directory.GetFiles(fullPath);
+            List<string> classes = new List<string>();
+            foreach (string f in files)
+            {
+                string[] split = f.Split('_');
+                // get the "classx.csv" and remove the .csv 
+                string tmp = split[split.Length - 1];
+                tmp = tmp.Substring(0, tmp.Length - 4);
+                classes.Add(tmp);
+            }
+            //return array["class0", "class1" , ...]
+            return classes.ToArray();
+        }
+
 		//public List<Discretization> CreateDiscretizationsFromKarmaLegoViewModel(KarmaLegoViewModel karmaLegoViewModel)
 		//{
 		//	List<Discretization> discretizations = new List<Discretization>();
