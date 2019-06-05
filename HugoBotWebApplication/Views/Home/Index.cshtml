@@ -186,7 +186,7 @@
     <div class="wrap">
         <div class="prog"> Dataset Upload </div>
         <div class="prog"> Temporal Abstraction </div>
-        <div class="prog"> Time Interval Mining </div>
+        <div class="prog"> Time Intervals Mining </div>
         <div class="prog"> Visualization </div>
     </div>
 
@@ -236,9 +236,9 @@
                                     <th>
                                         <input type="text" class="form-control" placeholder="Size" disabled>
                                     </th>
-                                    <th>
+                                    @*<th>
                                         <input type="text" class="form-control" placeholder="Actions" disabled>
-                                    </th>
+                                    </th>*@
                                     <th>
                                         <input type="text" class="form-control" placeholder="Owner" disabled>
                                     </th>
@@ -273,8 +273,8 @@
                                     <td onclick="window.location.href='@Url.Action("Details", "Datasets", new { id=item.DatasetID})'" style="cursor: pointer">
                                         @Math.Round(item.Size, 3) MB
                                     </td>
-                                    <td style="cursor: pointer" onclick="window.location.href='@Url.Action("Details", "Datasets", new { id=item.DatasetID})'">
-                                        <a class="btn  btn-sm btn-warning font-weight-bold" href="@Url.Action("Details", "Datasets", new { id=item.DatasetID})" style="color:white"> <span class="fas fa-info"></span> nfo</a>
+                                    @*<td style="cursor: pointer" onclick="window.location.href='@Url.Action("Details", "Datasets", new { id=item.DatasetID})'">*@
+                                       <!-- <a class="btn  btn-sm btn-warning font-weight-bold" href="@Url.Action("Details", "Datasets", new { id=item.DatasetID})" style="color:white"> <span class="fas fa-info"></span> nfo</a> -->
                                         @*<a class=" btn  btn-sm btn-primary font-weight-bold " href="/Discretizations/Edit/@item.DatasetID" style="color:white"> <span class="fas fa-chart-bar"></span> Discretize</a>*@
 
                                         @*<div>

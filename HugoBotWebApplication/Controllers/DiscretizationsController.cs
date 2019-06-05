@@ -45,12 +45,19 @@ namespace HugoBotWebApplication.Controllers
         {
             return View();
         }
-		public ActionResult GetDiscretizations(string parameters)
+		public ActionResult GetDiscretizations(int id)
 		{
-			FileTransferrer fileTransferrer = new FileTransferrer();
-			return File(fileTransferrer.GetFilesFromServer(parameters), ".zip", "Discretizations" + DateTime.Now.ToShortDateString() + ".zip");
-
-		}
+            //FileTransferrer fileTransferrer = new FileTransferrer();
+            //return File(fileTransferrer.GetFilesFromServer(parameters), ".zip", "Discretizations" + DateTime.Now.ToShortDateString() + ".zip");
+            byte[] files = null;
+            string path = discretizationRepository.Get(id).DownloadPath;
+            string fullPath = Server.MapPath(path);
+            foreach (string file in Directory.GetFiles(fullPath))
+            {
+                files = System.IO.File.ReadAllBytes(file);
+            }
+            return File(files, ".zip", "Discretizations" + DateTime.Now.ToShortDateString() + ".zip");
+        }
 		public string DownloadDiscretizations(int [] discretizationIdList)
 		{
             List<Discretization> discretizations = discretizationIdList.Select(id => discretizationRepository.Get(id)).ToList();

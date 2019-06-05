@@ -42,8 +42,8 @@ namespace HugoBotWebApplication.Services
 
             System.Net.Mail.MailMessage m = new System.Net.Mail.MailMessage();
             m.From = new System.Net.Mail.MailAddress("hugobotsupp@gmail.com", "Hugobot new account confirmation");
-          //  m.To.Add("hugobotsupp@gmail.com");
-            m.To.Add("grsharon@post.bgu.ac.il");
+            m.To.Add("hugobotsupp@gmail.com");
+            m.To.Add("robertmo@bgu.ac.il");
 
             m.Subject = "Hugobot new account confirmation";
             m.Body = "A new account wants to register: <br>" +

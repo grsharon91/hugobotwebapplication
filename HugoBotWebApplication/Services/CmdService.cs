@@ -25,10 +25,12 @@ namespace HugoBotWebApplication.Services
                using (Process process = new Process())
                {
                    process.StartInfo.FileName = "CMD.exe";
-                    //NEED CHANGES IN ARGUMENTS//
-                    process.StartInfo.Arguments = "/c cd C:/Users/admin/Desktop/kfir && activate hugobot &&" + cli;
+                   string fullPath = Path.Combine(HttpRuntime.AppDomainAppPath, "App_Data/python");
+                   process.StartInfo.Arguments = "/c cd " + fullPath + " && " + cli;
                    process.StartInfo.UseShellExecute = false;
+                   process.StartInfo.RedirectStandardInput = true;
                    process.StartInfo.RedirectStandardOutput = true;
+                   process.StartInfo.RedirectStandardError = true;
                    process.Start();
 
                     // Synchronously read the standard output of the spawned process. 

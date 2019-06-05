@@ -460,7 +460,7 @@ namespace HugoBotWebApplication.Controllers
         public ActionResult LogOff()
         {
             AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
-            return RedirectToAction("Index", "Datasets");
+            return RedirectToAction("Index", "Home");
         }
 
         //
@@ -517,7 +517,7 @@ namespace HugoBotWebApplication.Controllers
             {
                 return Redirect(returnUrl);
             }
-            return RedirectToAction("Index", "Datasets");
+            return RedirectToAction("Index", "Home");
         }
 
         internal class ChallengeResult : HttpUnauthorizedResult

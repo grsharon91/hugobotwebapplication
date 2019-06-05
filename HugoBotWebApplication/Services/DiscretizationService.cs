@@ -96,8 +96,9 @@ namespace HugoBotWebApplication.Services
 
         public string Discretize(string[] methodsList, string path)
         {
-            string fullPath = HttpContext.Current.Server.MapPath(path);
-       //    List<Discretization> discretizations = new List<Discretization>();
+            path = path.Substring(2, path.Length-2);
+            string fullPath = Path.Combine(HttpRuntime.AppDomainAppPath, path);
+            //    List<Discretization> discretizations = new List<Discretization>();
             for (int i = 0; i < methodsList.Length; i++)
             {
                 List<string> methodParameters = methodsList[i].Split('/')[1].Split('_').ToList();
@@ -122,7 +123,7 @@ namespace HugoBotWebApplication.Services
                     methodName = getFullMethodName(methodName, "");
                 }
                 
-                string outputPath = fullPath.Substring(0, fullPath.Length - 4) + "\\discretizations";
+                string outputPath = fullPath.Substring(0, fullPath.Length - 4) + @"\discretizations";
                 if (!Directory.Exists(outputPath))
                     Directory.CreateDirectory(outputPath);
                 string cli = "python cli.py discretize -i " + fullPath +  " -o " + outputPath + " -pw " + windowSize + " -g " + maxGap + " dataset " + methodName +" " + binsNumber;
