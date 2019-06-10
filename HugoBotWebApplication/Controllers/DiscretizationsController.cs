@@ -18,6 +18,7 @@ using HugoBotWebApplication.CommunicationLayer;
 using System.Data.Entity.Validation;
 using System.Net;
 using System.Data.Entity;
+using System.IO.Compression;
 using static HugoBotWebApplication.Utils.Settings;
 namespace HugoBotWebApplication.Controllers
 {
@@ -47,17 +48,26 @@ namespace HugoBotWebApplication.Controllers
         }
 		public ActionResult GetDiscretizations(int id)
 		{
-            //FileTransferrer fileTransferrer = new FileTransferrer();
-            //return File(fileTransferrer.GetFilesFromServer(parameters), ".zip", "Discretizations" + DateTime.Now.ToShortDateString() + ".zip");
-            byte[] files = null;
             string path = discretizationRepository.Get(id).DownloadPath;
             string fullPath = Server.MapPath(path);
+            string tmp = fullPath + "\\tmp";
+            Directory.CreateDirectory(tmp);
+            string archive = fullPath + "\\Discretizations.zip";
             foreach (string file in Directory.GetFiles(fullPath))
             {
-                files = System.IO.File.ReadAllBytes(file);
+                System.IO.File.Copy(file, Path.Combine(tmp, Path.GetFileName(file)));
             }
-            return File(files, ".zip", "Discretizations" + DateTime.Now.ToShortDateString() + ".zip");
+            ZipFile.CreateFromDirectory(tmp, archive);
+            Directory.Delete(tmp,true);
+            FileStream files = new FileStream(archive, FileMode.Open, FileAccess.Read);
+            int len = (int)(files.Length);
+            Byte[] content = new Byte[len];
+            files.Read(content, 0, len);
+            files.Close();
+            System.IO.File.Delete(archive);
+            return File(content, ".zip", "Discretizations" + DateTime.Now.ToShortDateString() + ".zip");
         }
+
 		public string DownloadDiscretizations(int [] discretizationIdList)
 		{
             List<Discretization> discretizations = discretizationIdList.Select(id => discretizationRepository.Get(id)).ToList();

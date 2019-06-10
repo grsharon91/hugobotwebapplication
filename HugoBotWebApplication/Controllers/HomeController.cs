@@ -14,7 +14,11 @@ namespace HugoBotWebApplication.Controllers
 
         public ActionResult Index()
 		{
-            string currentUserId = User.Identity.GetUserId();
+            string currentUserId = null;
+            if (User != null && User.Identity != null) {
+                currentUserId = User.Identity.GetUserId();
+            }
+
             if (currentUserId != null)
             {
                 ApplicationUser user = db.Users.Find(currentUserId);

@@ -13,6 +13,7 @@ using System.Net;
 using HugoBotWebApplication.Models.Repositories;
 using System.Data.Entity.Validation;
 using System.Data.Entity;
+using System.IO.Compression;
 
 namespace HugoBotWebApplication.Controllers
 {
@@ -22,12 +23,29 @@ namespace HugoBotWebApplication.Controllers
 		private DiscretizationService discretizationService = new DiscretizationService();
 		private KarmaLegoService karmaLegoService = new KarmaLegoService();
 
-
-        public ActionResult GetKarmaLegos(string parameters)
+        public ActionResult GetKarmaLegos(int id)
         {
-            FileTransferrer fileTransferrer = new FileTransferrer();
-            return File(fileTransferrer.GetFilesFromServer(parameters), ".zip", "KarmaLego" + DateTime.Now.ToShortDateString() +".zip");
-
+            //FileTransferrer fileTransferrer = new FileTransferrer();
+            //return File(fileTransferrer.GetFilesFromServer(parameters), ".zip", "KarmaLego" + DateTime.Now.ToShortDateString() +".zip");
+            
+            string path = db.KarmaLegos.Find(id).DownloadPath;
+            string fullPath = Server.MapPath(path);
+            string tmp = fullPath + "\\tmp";
+            Directory.CreateDirectory(tmp);
+            string archive = fullPath + "\\KarmaLego.zip";
+            foreach (string file in Directory.GetFiles(fullPath))
+            {
+                System.IO.File.Copy(file, Path.Combine(tmp, Path.GetFileName(file)));
+            }
+            ZipFile.CreateFromDirectory(tmp, archive);
+            Directory.Delete(tmp, true);
+            FileStream files = new FileStream(archive, FileMode.Open, FileAccess.Read);
+            int len = (int)(files.Length);
+            Byte[] content = new Byte[len];
+            files.Read(content, 0, len);
+            files.Close();
+            System.IO.File.Delete(archive);
+            return File(content, ".zip", "KarmaLego" + DateTime.Now.ToShortDateString() + ".zip");
         }
 
         public string DownloadKarmaLegos(int[] discretizationIdList)
@@ -211,7 +229,7 @@ namespace HugoBotWebApplication.Controllers
                     db.KarmaLegos.Add(kl);
 				}
                 var llll = String.Join(" ", configsToSendList);
-                new Discretistation.FileHandler().Discretization(llll);
+                //new Discretistation.FileHandler().Discretization(llll);
                 db.SaveChanges();
                 List<string> klIds = new List<string>();
                 foreach (var kl in db.KarmaLegos)

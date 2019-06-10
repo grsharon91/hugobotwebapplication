@@ -13,7 +13,7 @@ namespace HugoBotWebApplication.Tests.Controllers
     public class DatasetControllerTest
     {
         [TestMethod]
-        public void Indez()
+        public void Index()
         {
 
             //Arrange

@@ -274,9 +274,10 @@
                             <td>
                                 @if (karmaLego.IsReady == "Ready")
                                 {
-                                    <button id="downloadDatasetButton_New" title="Download Dataset" class="btn btn-sm btn-primary" type="button" onclick="downloadDataset(@karmaLego.KarmaLegoID)" style="background-color:#006400; color:white">
-                                        <span class="fas fa-download"> </span> Download
-                                    </button>
+                                    @*<button id="downloadDatasetButton_New" title="Download Dataset" class="btn btn-sm btn-primary" type="button" onclick="downloadDataset(@karmaLego.KarmaLegoID)" style="background-color:#006400; color:white">
+                <span class="fas fa-download"> </span> Download
+            </button>*@
+                                    <a href="@Url.Action("GetKarmaLegos", "KarmaLego", new { id = karmaLego.KarmaLegoID})" class="btn btn-sm btn-primary" style="background-color:#006400; color:white"> <span class="fas fa-download"> </span> Download</a>
                                 }
                                 else
                                 {
