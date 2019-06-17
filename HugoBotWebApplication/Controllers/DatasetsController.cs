@@ -36,7 +36,7 @@ namespace HugoBotWebApplication.Controllers
             datasetRepository = new DatasetRepository(db);
             discretizationRepository = new DiscretizationRepository(db);
             datasetService = new DatasetService(datasetRepository);
-            securityService = new SecurityService(datasetRepository);
+            securityService = new SecurityService(datasetRepository, db);
 
         }
         // GET: Datasets
@@ -440,7 +440,33 @@ namespace HugoBotWebApplication.Controllers
        
         }
 
-       
+        public string AddViewPermission(string userEmail, int id)
+        {
+            var userToAdd = db.Users.Where(u => u.Email == userEmail);
+            if (!userToAdd.Any())
+                return "user doesn't exist! please try again";
+            //foreach (ApplicationUser user in userToAdd)
+            //{
+            //Dataset dataset = datasetRepository.Get(id);
+            //dataset.ViewPermission.Add(user);
+            // db.Datasets.Add()
+            ApplicationUser user = userToAdd.First();
+                var newViewPermission = new ViewPermissions
+                {
+                    Key = user.Id + id.ToString(),
+                    UserName = user.UserName,
+                    DatasetID = id
+                };
+
+            
+                db.ViewPermissions.Add(newViewPermission);
+                db.SaveChanges();
+                
+            return userEmail +" added!";
+        }
+
+
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)

@@ -252,74 +252,88 @@
                                 {
                                     if (item.Visibility == "Public" || (item.Owner != null && item.Owner.Email == User.Identity.Name) || User.Identity.Name == "hugobotsupp@gmail.com")
                                     {
-                                <tr>
-                                    <td>
-                                        @Html.CheckBox("DatasetsRecords", false, new { @ID = "dataset_" + item.DatasetID, @value = item.DatasetID })
-                                    </td>
-                                    <td style="cursor: pointer" onclick="window.location.href='@Url.Action("Details", "Datasets", new { id=item.DatasetID})'">
-                                        @Html.DisplayFor(modelItem => item.DatasetName)
-                                    </td>
+                                        <tr>
+                                            <td>
+                                                @Html.CheckBox("DatasetsRecords", false, new { @ID = "dataset_" + item.DatasetID, @value = item.DatasetID })
+                                            </td>
+                                            <td style="cursor: pointer" onclick="window.location.href='@Url.Action("Details", "Datasets", new { id=item.DatasetID})'">
+                                                @Html.DisplayFor(modelItem => item.DatasetName)
+                                            </td>
 
-                                    <td style="cursor: pointer" onclick="window.location.href='@Url.Action("Details", "Datasets", new { id=item.DatasetID})'">
-                                        @Html.DisplayFor(modelItem => item.Category)
-                                    </td>
-                                    @*<td>
-            @Html.DisplayFor(modelItem => item.Visibility)
-        </td>*@
-                                    @*<td class="rating">*@
-                                    @*@Html.DisplayFor(modelItem => item.Rating)*@
-                                    @*   <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>*@
-                                    @* </td>*@
-                                    <td onclick="window.location.href='@Url.Action("Details", "Datasets", new { id=item.DatasetID})'" style="cursor: pointer">
-                                        @Math.Round(item.Size, 3) MB
-                                    </td>
-                                    @*<td style="cursor: pointer" onclick="window.location.href='@Url.Action("Details", "Datasets", new { id=item.DatasetID})'">*@
-                                       <!-- <a class="btn  btn-sm btn-warning font-weight-bold" href="@Url.Action("Details", "Datasets", new { id=item.DatasetID})" style="color:white"> <span class="fas fa-info"></span> nfo</a> -->
-                                        @*<a class=" btn  btn-sm btn-primary font-weight-bold " href="/Discretizations/Edit/@item.DatasetID" style="color:white"> <span class="fas fa-chart-bar"></span> Discretize</a>*@
+                                            <td style="cursor: pointer" onclick="window.location.href='@Url.Action("Details", "Datasets", new { id=item.DatasetID})'">
+                                                @Html.DisplayFor(modelItem => item.Category)
+                                            </td>
 
-                                        @*<div>
-                <nav class="navbar  navbar-light bg-transparent">
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor_@item.DatasetID" aria-controls="navbarColor__@item.DatasetID" aria-expanded="false" aria-label="Toggle navigation" style="">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
 
-                    <div class="collapse navbar-collapse" id="navbarColor_@item.DatasetID">
-                        <ul class="navbar-nav mr-auto">
-                            <li>
-                                <a class="nav-item nav-link font-weight-bold bg-warning" href="/Datasets/Details/@item.DatasetID" style="color:white"> <span class="fas fa-info"></span>Browse</a>
-                            </li>
-                            <li>
-                                <a class="nav-item nav-link font-weight-bold bg-primary" href="/Discretizations/Edit/@item.DatasetID" style="color:white"> <span class="fas fa-chart-bar"></span> Discretize</a>
-                            </li>
+                                            <td onclick="window.location.href='@Url.Action("Details", "Datasets", new { id=item.DatasetID})'" style="cursor: pointer">
+                                                @Math.Round(item.Size, 3) MB
+                                            </td>
 
-                        </ul>
 
-                    </div>
-                </nav>
+                                            @if (item.Owner == null)
+                                            {
+                                                <td>No Owner</td>
+                                            }
+                                            else
+                                            {
+                                                <td style="cursor: pointer" onclick="window.location.href=@Url.Action("Details", "Datasets", new { id=item.DatasetID})'" onho>
+                                                    @item.Owner.FirstName &nbsp; @item.Owner.LastName
+                                                    @*<a style="color:orange" href="mailto:@item.Owner.Email">@item.Owner.Email</a>*@
+                                                </td>
+                                            }
 
-            </div>*@
-
-                                        @if (item.Owner == null)
-                                        {
-                                        <td>No Owner</td>
+                                            <td style="cursor: pointer" onclick="window.location.href='@Url.Action("Details", "Datasets", new { id=item.DatasetID})'">
+                                                @Html.DisplayFor(modelItem => item.Visibility)
+                                            </td>
+                                        </tr>
                                     }
                                     else
                                     {
-                                        <td style="cursor: pointer" onclick="window.location.href=@Url.Action("Details", "Datasets", new { id=item.DatasetID})'" onho>
-                                            @item.Owner.FirstName &nbsp; @item.Owner.LastName
-                                            @*<a style="color:orange" href="mailto:@item.Owner.Email">@item.Owner.Email</a>*@
-                                        </td>
-                                    }
+                                        foreach (var vp in Model.ViewPermissionsRecords)
+                                        {
+                                            if (vp.UserName == User.Identity.Name && vp.DatasetID == item.DatasetID)
+                                            {
+                                                <tr>
+                                                    <td>
+                                                        @Html.CheckBox("DatasetsRecords", false, new { @ID = "dataset_" + item.DatasetID, @value = item.DatasetID })
+                                                    </td>
+                                                    <td style="cursor: pointer" onclick="window.location.href='@Url.Action("Details", "Datasets", new { id=item.DatasetID})'">
+                                                        @Html.DisplayFor(modelItem => item.DatasetName)
+                                                    </td>
 
-                                        <td style="cursor: pointer" onclick="window.location.href='@Url.Action("Details", "Datasets", new { id=item.DatasetID})'">
-                                            @Html.DisplayFor(modelItem => item.Visibility)
-                                        </td>
-                                    </tr>
+                                                    <td style="cursor: pointer" onclick="window.location.href='@Url.Action("Details", "Datasets", new { id=item.DatasetID})'">
+                                                        @Html.DisplayFor(modelItem => item.Category)
+                                                    </td>
+
+
+                                                    <td onclick="window.location.href='@Url.Action("Details", "Datasets", new { id=item.DatasetID})'" style="cursor: pointer">
+                                                        @Math.Round(item.Size, 3) MB
+                                                    </td>
+
+
+                                                    @if (item.Owner == null)
+                                                    {
+                                                        <td>No Owner</td>
+                                                    }
+                                                    else
+                                                    {
+                                                        <td style="cursor: pointer" onclick="window.location.href=@Url.Action("Details", "Datasets", new { id=item.DatasetID})'" onho>
+                                                            @item.Owner.FirstName &nbsp; @item.Owner.LastName
+                                                            @*<a style="color:orange" href="mailto:@item.Owner.Email">@item.Owner.Email</a>*@
+                                                        </td>
+                                                    }
+
+                                                    <td style="cursor: pointer" onclick="window.location.href='@Url.Action("Details", "Datasets", new { id=item.DatasetID})'">
+                                                        @Html.DisplayFor(modelItem => item.Visibility)
+                                                    </td>
+                                                </tr>
+                                            }
                                         }
-
-
-
                                     }
+
+
+
+                                }
                             </tbody>
                             <tfoot>
 

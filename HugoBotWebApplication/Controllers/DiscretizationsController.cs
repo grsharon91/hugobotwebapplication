@@ -38,7 +38,7 @@ namespace HugoBotWebApplication.Controllers
             datasetRepository = new DatasetRepository(db);
             discretizationRepository = new DiscretizationRepository(db);
             distanceMeasuerDiscretizationRepository = new DistanceMeasureDiscretizationRepository(db);
-            securityService = new SecurityService(datasetRepository);
+            securityService = new SecurityService(datasetRepository, db);
             datasetService = new DatasetService(datasetRepository);
         }
         // GET: Discretizations/Create

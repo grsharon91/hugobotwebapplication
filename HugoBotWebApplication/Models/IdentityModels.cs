@@ -21,7 +21,9 @@ namespace HugoBotWebApplication.Models
 		public string Degree { get; set; }
         public bool OwnConfirmation { get; set; }
 
-		[InverseProperty("Users")]
+        [InverseProperty("ViewPermission")]
+        public virtual List <Dataset> ViewPermission { get; set; }
+        [InverseProperty("Users")]
 		public virtual List<UserGroup> Groups { get; set; }
 		[InverseProperty("Owner")]
 		public virtual List<UserGroup> OwnedGroups { get; set; }
@@ -71,6 +73,8 @@ namespace HugoBotWebApplication.Models
         public System.Data.Entity.DbSet<HugoBotWebApplication.Models.KarmaLego> KarmaLegos { get; set; }
         public System.Data.Entity.DbSet<HugoBotWebApplication.Models.TempDataset> TempDatasets{ get; set; }
         public System.Data.Entity.DbSet<HugoBotWebApplication.Models.TempDiscretization> TempDiscretizations{ get; set; }
+        public System.Data.Entity.DbSet<HugoBotWebApplication.Models.ViewPermissions> ViewPermissions { get; set; }
+        //  public ViewPermissionDBContext ViewPermissions { get; set; }
 
         public ApplicationDbContext()
             : base("ApplicationDbContext", throwIfV1Schema: false)

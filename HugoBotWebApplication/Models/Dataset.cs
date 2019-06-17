@@ -36,6 +36,8 @@ namespace HugoBotWebApplication.Models
 
         public virtual ApplicationUser Owner { get; set; }
         public virtual List<Discretization> Discretizations { get; set; }
+        [InverseProperty("ViewPermission")]
+        public virtual List<ApplicationUser> ViewPermission { get; set; }
 
         public int NumberOfDownloads { get; set; }
         public int NumberOfViews { get; set; }
