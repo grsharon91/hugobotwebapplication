@@ -77,18 +77,20 @@
         <a href="@Url.Action("Index", "KarmaLego", new { id = @Model.Dataset.DatasetID})" class="btn btn-outline-primary w-100 active" style="font-weight: bold"> Time Intervals Mining</a>
     </div>
 </div>*@
-<div class="wrap">
-    <div class="prog">
-        <a href="@Url.Action("Details", "Datasets", new { id = @Model.Dataset.DatasetID})" class="btn" style="color: white"> <b style="color: tomato"> @Model.Dataset.DatasetName  </b> Info </a>
-    </div>
-    <div class="prog">
-        <a href="@Url.Action("Edit", "Discretizations", new { id = @Model.Dataset.DatasetID})" class="btn" style="color: white">Temporal Abstraction </a>
-    </div>
-    <div class="prog">
-        <a href="@Url.Action("Index", "KarmaLego", new { id = @Model.Dataset.DatasetID})" class="btn" style="color: white"> Time Intervals Mining</a>
-    </div>
-    <div class="prog">
-        <a class="btn" style="color: white"> Visualization </a>
+<div class="col-md-12">
+    <div class="wrap">
+        <div class="prog">
+            <a href="@Url.Action("Details", "Datasets", new { id = @Model.Dataset.DatasetID})" class="btn" style="color: white"> <b style="color: tomato"> @Model.Dataset.DatasetName  </b> Info </a>
+        </div>
+        <div class="prog">
+            <a href="@Url.Action("Edit", "Discretizations", new { id = @Model.Dataset.DatasetID})" class="btn" style="color: white">Temporal Abstraction </a>
+        </div>
+        <div class="prog">
+            <a href="@Url.Action("Index", "KarmaLego", new { id = @Model.Dataset.DatasetID})" class="btn" style="color: white"> Time Intervals Mining</a>
+        </div>
+        <div class="prog">
+            <a class="btn" style="color: white"> Visualization </a>
+        </div>
     </div>
 </div>
 <br />
@@ -332,7 +334,8 @@
             }
             else {
                 currentRowCheckedMaxGap.children[1].innerHTML = "";
-                document.getElementById("vs").removeAttribute("disabled");
+                var vs = currentRowChecked.cells[7];
+                vs.children[0].removeAttribute("disabled");
                 return true;
             }
         }
@@ -348,7 +351,8 @@
             }
             else {
                 currentRowCheckedEpsilon.children[1].innerHTML = "";
-                document.getElementById("mg").removeAttribute("disabled");
+                var mg = currentRowChecked.cells[6];
+                mg.children[0].removeAttribute("disabled");
                 return true;
             }
         }
@@ -377,131 +381,12 @@
                 currentRowChecked.cells[6].children[1].innerHTML = "";
                 currentRowChecked.cells[5].children[1].innerHTML = "";
                 currentRowChecked.cells[7].children[1].innerHTML = "";
-                //currentRowCheckedFold.disabled = true;
+
             }
 
-            //function changeBtn() {
-            //    document.getElementById("vs").addEventListener("keyup", function () {
-            //        var epsilon = document.getElementsByName('Epsilon').value;
-            //        var maxGap = document.getElementsByName('MaxGap').value;
-            //        var verSup = document.getElementsByName('VerticalSupport').value;
-            //        if (epsilon != '' && maxGap != '' && verSup != '') {
-            //            document.getElementById('runBtn').removeAttribute("disabled");
-            //        }
-            //    });
-            //
         }
     </script>
-    @*<script>
-            $(document).ready(function () {
-                var epsilon = document.getElementsByName('Epsilon').value;
-                var maxGap = document.getElementsByName('MaxGap').value;
-                var verSup = document.getElementsByName('VerticalSupport').value;
-                if (epsilon == '' || maxGap == '' || verSup == '') {
-                    document.getElementById('discoverPatternsBtn').disabled = true;
-                }
-            })
-        </script>*@
-    @*<script>
-            function discoverPatterns() {
-                var fieldsValidated = true;
-                var atLeastOneRowChecked = false;
-                var discretizationTable = document.getElementById('discretizationTable').getElementsByTagName('tbody')[0];
-                var discretizationTableRows = discretizationTable.rows;
 
-                console.log(discretizationTableRows)
-                var paramsToSend = [];
-                for (var i = 0; i < discretizationTableRows.length; i++) {
-                    var discretizationCheckBox = discretizationTableRows[i].cells[0].children[0];
-                    console.log(discretizationCheckBox);
-                   // if (discretizationCheckBox.checked == true) {
-                        atLeastOneRowChecked = true;
-                        if (!checkEpsilon(discretizationTableRows[i]) | !checkMaxGap(discretizationTableRows[i]) | !checkVerticalSupport(discretizationTableRows[i])) {
-                            console.log("AFAFS");
-                            fieldsValidated = false;
-                        }
-                        var id = discretizationTableRows[i].id;
-                        var epsilon = discretizationTableRows[i].cells[5].children[0].value;
-                        var maxGap = discretizationTableRows[i].cells[6].children[0].value;
-                        var verticalSupport = discretizationTableRows[i].cells[7].children[0].value;
-                        //var Fold = discretizationTableRows[i].cells[5].children[0].value;
-
-                        paramsToSend.push([id.split('_')[1], epsilon, maxGap, verticalSupport, "1"].join('_'));
-                    //}
-                }
-                //if (!atLeastOneRowChecked) {
-                //    document.getElementById("discoverPatternsBtnError").innerHTML = "Please select at least one configuration";
-                //    return false;
-                //}
-
-                if (!fieldsValidated)
-                    return false;
-
-                document.getElementById("discoverPatternsBtn").setAttribute("disabled", "disabled");
-                console.log(paramsToSend)
-                var formdata = new FormData(); //FormData object
-                formdata.append("Configs", paramsToSend);
-                $.ajax({
-
-                    type: "POST",
-                    data: formdata,
-                    processData: false, // Not to process data
-                    url: '@Url.Action("DiscoverPatterns")',
-                    cache: false,
-                    contentType: false,
-                    processData: false,
-                    success: function (response) {
-                        if (response == "Success") {
-                            console.log(response)
-                            var discoverPatternsBtn = document.getElementById("discoverPatternsBtn")
-                            discoverPatternsBtn.setAttribute("disabled", "disabled")
-                            window.location.href = "@Url.Action("Index", "KarmaLego", new { id = @Model.Dataset.DatasetID })";
-                        }
-                        else {
-                            alert("error!");
-                        }
-
-                        //var ids = response["Ids"].split("_");
-                        //console.log(ids)
-                        //var classes = response["Classes"].split("_");
-                        //var karmaLegoTable = document.getElementById("karmaLegoTable");
-                        //var rowsLength = karmaLegoTable.rows.length;
-
-                        //for (var i = 0; i < paramsToSend.length; i++) {
-                        //    var paramsSplit = paramsToSend[i].split("_");
-                        //    var row = karmaLegoTable.insertRow(rowsLength);
-                        //    var cell1 = row.insertCell(0);
-                        //    var config = row.insertCell(1);
-                        //    var epsilon = row.insertCell(2);
-                        //    var maxGap = row.insertCell(3);
-                        //    var verticalSupport = row.insertCell(4);
-                        //    var visualizationAction = row.insertCell(5);
-                        //    config.innerHTML = "";
-                        //    epsilon.innerHTML = paramsSplit[1];
-                        //    maxGap.innerHTML = paramsSplit[2];
-                        //    verticalSupport.innerHTML = paramsSplit[3];
-
-                        //    var id = ids[i];
-                        //    var classes = classes[i].split(',');
-
-                        //    var classesDropDown = document.createElement("select");                 // Create a <li> node
-                        //    classesDropDown.setAttribute("id", "ClassesDropDown_" + id)
-                        //    classesDropDown.setAttribute("class", "form-control")
-                        //    for (var j = 0; j < classes.length; j++) {
-                        //        var classesOption = document.createElement("option");
-                        //        classesOption.innerHTML = classes[j]
-                        //        classesDropDown.appendChild(classesOption);
-                        //    }
-                        //    visualizationAction.appendChild(classesDropDown);
-                        //}
-                    },
-                    error: function (response) {
-                        alert("error!");  //
-                    }
-
-                });
-            }
-        </script>*@
     <script>
         function discoverPatterns(id) {
             var currentRowChecked = id;
@@ -563,15 +448,14 @@
 				contentType: false, // Not to set any content header
 				processData: false, // Not to process data
 				url: '@Url.Action("VisualizePatterns")',
-				//async: false,
-				//datatype: 'JSON',
+
 				success: function (response) {
                     console.log(response)
                     // If Merged need to go another location
                     if (classesDropDownSelectedOption === "Merged")
                         window.location = "/hugobot/KarmaLegoV/MergedIndex";
                     else {
-                        //window.location = "/hugobot/KarmaLegoV/Index";
+             
                         window.location.href = "@Url.Action("Index", "KarmaLegoV")";
                     }
 				},
@@ -605,59 +489,5 @@
         }
     </script>
 
-    <!-- <script>
-         function downloadDatasets() {
-
-             var datasetRecordsChecked = [];
-             var discretizationRecordsChecked = [];
-             var karmaLegoRecordsChecked = [];
-             var datasetRecords = document.getElementsByName("DatasetsRecords");
-             var discretizationRecords = document.getElementsByName("DiscretizationRecords");
-             var karmaLegoRecords = document.getElementsByName("KarmaLegoRecords");
-
-             for (var i = 0; i < karmaLegoRecords.length; i++) {
-                 if (karmaLegoRecords[i].checked) {
-                     karmaLegoRecordsChecked.push(karmaLegoRecords[i].value);
-                 }
-             }
-
-
-
-             $.ajax({
-                 type: 'POST',
-                 url: '@Url.Action("DownloadKarmaLegos")',
-                 datatype: 'JSON',
-                 data: {
-                     discretizationIdList: karmaLegoRecordsChecked
-                 },
-                 success: function (returnValue) {
-
-                     window.location = "/hugobot/KarmaLego/GetKarmaLegos?parameters=" + returnValue;
-                 },
-                 error: function () {
-                     alert("Oops! Something went wrong");
-                 }
-             });
-
-             //downloadPath = "location.href='/Download/" + x + "?method=" + abstractionMethodName + "'";
-             //$('table td input').each(function () {
-             //    if (this.type == "checkbox") {
-             //        $("#downloadDataasetButtonNew").attr("onclick",)
-             //        console.log(this.value, this.attributes, $(this).is(":checked"));
-
-             //    }
-             //});
-             //var table = document.getElementById("DatasetsTable");
-             //for (var i = 0, row; row = table.rows[i]; i++) {
-             //    //iterate through rows
-             //    //rows would be accessed using the "row" variable assigned in the for loop
-             //    var checkBoxFordataset(row.cells.item(0).firstElementChild);
-             //    //for (var j = 0, col; col = row.cells[j]; j++) {
-             //    //    //iterate through columns
-             //    //    //columns would be accessed using the "col" variable assigned in the for loop
-             //    //}
-             //}
-         }
-
-     </script> -->
+ 
 }

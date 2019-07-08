@@ -30,17 +30,6 @@ namespace HugoBotWebApplication.Controllers
 
                 string name = user.UserName;
                 var viewPermissions = db.ViewPermissions.Where(u => u.UserName == name);
-                //List<int> datasetsIdList = new List<int>();
-                //foreach (var vp in viewPermissions)
-                //{
-                //    datasetsIdList.Add(vp.DatasetID);
-                //}
-                //List<Dataset> datasetList = new List<Dataset>();
-                //var permittedDataset = db.Datasets.Where(d => datasetsIdList.Contains(d.DatasetID));
-                //foreach(Dataset ds in permittedDataset)
-                //{
-                //    datasetList.Add(ds);
-                //}
                 foreach (ViewPermissions vp in viewPermissions)
                 {
                     vpList.Add(vp);

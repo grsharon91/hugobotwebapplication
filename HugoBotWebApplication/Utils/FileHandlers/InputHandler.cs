@@ -218,75 +218,13 @@ namespace HugoBotWebApplication.Utils.FileHandlers
 
 
 
-
-
-            //string path = GetDatasetPath();
-            //try
-            //{
-            //    var engine = new FileHelperEngine<Measurement>();
-
-            //    //try
-            //    //{
-            //    var result = engine.ReadFile(_path);
-            //    var headers = engine.HeaderText;
-            //    var columnsNames = headers.Split(new string[] { "\r\n" }, StringSplitOptions.None)[0].Split(',');
-            //    var entityIDHeader = columnsNames[0];
-            //    var TemporalPropertyIDHeader = columnsNames[1];
-            //    var TimeStampHeader = columnsNames[2];
-            //    var TemporalPropertyValueHeader = columnsNames[3];
-            //    bool datasetFileValidated = true;
-
-
-            //    if (!String.Equals(entityIDHeader, "EntityID"))
-            //    {
-            //        errors += " EntityID column not found";
-            //        datasetFileValidated = false;
-            //    }
-
-            //    if (!String.Equals(TemporalPropertyIDHeader, "TemporalPropertyID"))
-            //    {
-            //        errors += " TemporalPropertyID column not found";
-            //        datasetFileValidated = false;
-            //    }
-            //    if (!String.Equals(TimeStampHeader, "TimeStamp"))
-            //    {
-            //        errors += " TimeStamp column not found";
-            //        datasetFileValidated = false;
-            //    }
-            //    if (!String.Equals(TemporalPropertyValueHeader, "TemporalPropertyValue"))
-            //    {
-            //        errors += " TemporalPropertyValue column not found";
-            //        datasetFileValidated = false;
-            //    }
-
-               
-
-            //    return new InputValidationObject(datasetFileValidated, errors);
-
-            //}
-            //catch (Exception ex)
-            //{
-            //    if (ex is NullValueNotFoundException)
-            //    {
-            //        errors = ex.Message.Split(new string[] { " Class" }, StringSplitOptions.None)[0];
-            //    }
-
-            //    else if (ex is FileHelpersException)
-            //    {
-            //        errors = ex.Message.Split(new string[] { " (the record" }, StringSplitOptions.None)[0];
-            //    }
-
-            //    return new InputValidationObject(false, errors);
-            //}
-
         }
 
         public HashSet<int> GetPropertiesIds()
         {
             HashSet<int> uniqueProperties = new HashSet<int>();
             var engine = new FileHelperEngine<Measurement>();
-            //try
-            //{
+
             var result = engine.ReadFile(_path);
             foreach (var item in result)
             {

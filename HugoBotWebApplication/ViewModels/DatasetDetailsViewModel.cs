@@ -22,8 +22,7 @@ namespace HugoBotWebApplication.ViewModels
 
 		public string VmapPath { get; set; }
 		public string Description { get; set; }
-		//[ForeignKey("ApplicationUser")]
-		//public string ApplicationUserID { get; set; }
+
 		public string OwnerID { get; set; }
 
 		public virtual ApplicationUser Owner { get; set; }

@@ -164,30 +164,16 @@
             transform: skew(-45deg);
         }
 
-        /*.prog:hover:before,
-        .prog:hover:after {
-            background: tomato;
-        }*/
 
 </style>
 
-<!--<br />
-<div class="container">
-	<div class="text-center">
-        
-		<h2>Welcome to <span style="color: dodgerblue">HugoBot</span></h2>
-        <p>Online Time Intervals Analytics</p>
-		<button id="FirstStepsButton" title="First steps" class="btn " type="button" onclick="location.href='@Url.Action("FirstSteps", "Home")'" style="background-color:#006400; color:white"> <span class="glyphicon glyphicon-info-sign"></span> First steps with HugoBot</button>
-       
-
-	</div>
-	<br /> -->
-
-    <div class="wrap">
-        <div class="prog"> Dataset Upload </div>
-        <div class="prog"> Temporal Abstraction </div>
-        <div class="prog"> Time Intervals Mining </div>
-        <div class="prog"> Visualization </div>
+    <div>
+        <div class="wrap">
+            <div class="prog"> Dataset Upload </div>
+            <div class="prog"> Temporal Abstraction </div>
+            <div class="prog"> Time Intervals Mining </div>
+            <div class="prog"> Visualization </div>
+        </div>
     </div>
 
 <br />
@@ -207,10 +193,7 @@
 				<div class="card-body" >
 					<h4 class="card-title">Datasets</h4>
                     <p style="display:inline">
-                        @*@Html.DropDownList("a", new SelectList(new[] { "", "View all", "View raw datasets", "View discretized datasets" }))*@
                         <button title="Upload new Dataset" class="btn btn-sm btn-warning" type="button" onclick="location.href='@Url.Action("Create", "Datasets")'"> <span class="fas fa-upload"> </span> Upload Dataset </button>
-                        @*<button title="Upload new Dataset for discretization" class="btn btn-sm btn-success" type="button" onclick="location.href='@Url.Action("Create", "Discretizations")'"> <span class="glyphicon glyphicon-upload"></span> Upload Dataset for discretization </button>*@
-                        @*<button tistle="Upload new discretized for Pattern Discovery" class="btn btn-warning" type="button" onclick="location.href='@Url.Action("Create", "KarmaLego")'"> <span class="glyphicon glyphicon-upload"></span> Upload Dataset for Pattern Discovery </button>*@
                         <button title="Show only private datasets" class="btn btn-sm btn-primary" type="button" onclick="location.href='@Url.Action("Index","Datasets")'"> Show only private datasets </button>
 
 
@@ -230,15 +213,9 @@
 
                                     </th>
 
-                                    @*<th>
-            Rating
-        </th>*@
                                     <th>
                                         <input type="text" class="form-control" placeholder="Size" disabled>
                                     </th>
-                                    @*<th>
-                                        <input type="text" class="form-control" placeholder="Actions" disabled>
-                                    </th>*@
                                     <th>
                                         <input type="text" class="form-control" placeholder="Owner" disabled>
                                     </th>
@@ -278,7 +255,6 @@
                                             {
                                                 <td style="cursor: pointer" onclick="window.location.href=@Url.Action("Details", "Datasets", new { id=item.DatasetID})'" onho>
                                                     @item.Owner.FirstName &nbsp; @item.Owner.LastName
-                                                    @*<a style="color:orange" href="mailto:@item.Owner.Email">@item.Owner.Email</a>*@
                                                 </td>
                                             }
 
@@ -319,7 +295,6 @@
                                                     {
                                                         <td style="cursor: pointer" onclick="window.location.href=@Url.Action("Details", "Datasets", new { id=item.DatasetID})'" onho>
                                                             @item.Owner.FirstName &nbsp; @item.Owner.LastName
-                                                            @*<a style="color:orange" href="mailto:@item.Owner.Email">@item.Owner.Email</a>*@
                                                         </td>
                                                     }
 
@@ -339,10 +314,6 @@
 
                             </tfoot>
                         </table>
-
-                        @*<button id="downloadDatasetButton_New" title="Download Dataset" class="btn btn-sm btn-primary" type="button" onclick="downloadDatasets()" style="background-color:#006400; color:white"> <span class="fas fa-download"> </span> Download Selected Datasets</button>*@
-                        @*<img src="~/Images/greensquare.png" / - Discretized*@
-                        @*<button title="Help" class="btn btn-primary" style="position:absolute;right:255px;" type="button"><span class="glyphicon glyphicon-question-sign"></span></button>*@
 
                     </div>
 				</div>
@@ -466,24 +437,7 @@
                 }
             });
 
-            //downloadPath = "location.href='/Download/" + x + "?method=" + abstractionMethodName + "'";
-            //$('table td input').each(function () {
-            //    if (this.type == "checkbox") {
-            //        $("#downloadDataasetButtonNew").attr("onclick",)
-            //        console.log(this.value, this.attributes, $(this).is(":checked"));
-
-            //    }
-            //});
-            //var table = document.getElementById("DatasetsTable");
-            //for (var i = 0, row; row = table.rows[i]; i++) {
-            //    //iterate through rows
-            //    //rows would be accessed using the "row" variable assigned in the for loop
-            //    var checkBoxFordataset(row.cells.item(0).firstElementChild);
-            //    //for (var j = 0, col; col = row.cells[j]; j++) {
-            //    //    //iterate through columns
-            //    //    //columns would be accessed using the "col" variable assigned in the for loop
-            //    //}
-            //}
+         
         }
 
 	</script>
@@ -498,8 +452,7 @@
 			$('#downloadDatasetButton_' + x).attr("onclick", downloadPath);
 			console.log(downloadPath);
 
-			//$("#hahaha").text = "afasfas";
-			//$("#hahaha").val = "afasfas";
+
 
 		}
 	</script>

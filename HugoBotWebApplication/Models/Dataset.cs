@@ -30,14 +30,11 @@ namespace HugoBotWebApplication.Models
         [DataType(DataType.Text)]
         public string VmapPath { get; set; }
 		public string Description { get; set; }
-		//[ForeignKey("ApplicationUser")]
-		//public string ApplicationUserID { get; set; }
 		public string OwnerID { get; set; }
 
         public virtual ApplicationUser Owner { get; set; }
         public virtual List<Discretization> Discretizations { get; set; }
-        [InverseProperty("ViewPermission")]
-        public virtual List<ApplicationUser> ViewPermission { get; set; }
+
 
         public int NumberOfDownloads { get; set; }
         public int NumberOfViews { get; set; }

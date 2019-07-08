@@ -128,15 +128,6 @@ namespace HugoBotWebApplication.Services
                     Directory.CreateDirectory(outputPath);
                 string cli = "python cli.py discretize -i " + fullPath +  " -o " + outputPath + " -pw " + windowSize + " -g " + maxGap + " dataset " + methodName +" " + binsNumber;
                 Task task = cmd.SendToDiscretization(cli, isDone);
-                //if (task.IsCompleted)
-                //{
-                //    taskCompleated[i] = "Ready";
-                //}
-                //else
-                //{
-                //    //taskCompleated[i] = "In Progress";
-
-                //}
                 
             }
 

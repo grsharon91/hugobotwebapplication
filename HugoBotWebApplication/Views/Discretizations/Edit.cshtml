@@ -126,22 +126,7 @@
     @Html.AntiForgeryToken()
     @Html.HiddenFor(model => model.DatasetID)
     <input type="text" id="AbstractionMethods" name="AbstractionMethods" value="" style="display:none" />
-    @*<div class="row">
-        <div class="col-md-4">
-            <a href="@Url.Action("Details", "Datasets", new { id = @Model.DatasetID})" class="btn btn-outline-primary w-100" style="font-weight: bold">
-                <b style="color: tomato"> @Model.Dataset.DatasetName </b> Info
-            </a>
-        </div>
-        <div class="col-md-4">
-            <a href="@Url.Action("Edit", "Discretizations", new { id = @Model.DatasetID})" class="btn btn-outline-primary w-100 active" style="font-weight: bold">Temporal Abstraction </a>
-        </div>
-        <div class="col-md-4">
-            <a href="@Url.Action("Index", "KarmaLego", new { id = @Model.DatasetID})" class="btn btn-outline-primary w-100" style="font-weight: bold"> Time Intervals Mining</a>
-        </div>
-        @*<div class="col-md-3">
-            <a href="@Url.Action("Index", "KarmaLego", new { id = @Model.DatasetID})" class="btn btn-outline-primary w-100" style="font-weight: bold"> visualization</a>
-        </div>
-    </div>*@
+
     <div class="wrap">
     <div class="prog">
         <a href="@Url.Action("Details", "Datasets", new { id = @Model.DatasetID})" class="btn" style="color: white"> <b style="color: tomato"> @Model.Dataset.DatasetName  </b> Info </a>
@@ -274,11 +259,7 @@
             </div>
             <div class="card-body">
                 <div>
-           <!--         <button id="downloadDatasetButton_New" title="Download Dataset" class="btn btn-sm btn-primary" type="button" onclick="downloadDatasets()" style="background-color:#006400; color:white">
-                        <span class="fas fa-download"> </span> Download selected datasets
-                    </button>
 
-                </div> -->
                 <table class="table table-striped">
                     <thead>
                         <tr>
@@ -286,7 +267,6 @@
                             <th style="width:20%" scope="col">Method</th>
                             <th style="width:10%" scope="col">Bins number/States file</th>
                             <th style="width:10%" scope="col">Interpolation gap</th>
-                            <!--	<th style="width:15%" scope="col">States file</th>  -->
                             <th style="width:10%" scope="col">Status</th>
 
                         </tr>
@@ -296,72 +276,32 @@
                         {
                             var methodPathSplited = discretization.DownloadPath.Split('/');
                             var methodParams = methodPathSplited[methodPathSplited.Length - 1].Split('_');
-                            //var methodVal = methodPathSplited[methodPathSplited.Length - 2];
+ 
                         <tr>
                             <td>
-                                @*@if (Model.RegularMethods.Contains(methodVal))
-        {
-            @discretization.FullName
-        }
-        @if (Model.DistanceMeasureMethods.Contains(methodVal))
-        {
-            <p>@discretization.FullName @methodParams[1]</p>
-        }*@
+
                                 @methodParams[2].Substring(0, methodParams[2].Length - 3)
                             </td>
                             <td>
-                                @*@if (Model.RegularMethods.Contains(methodVal))
-                                {
-                                    @methodParams[2];
-                                }
-                                @if (Model.DistanceMeasureMethods.Contains(methodVal))
-                                {
-                                    @methodParams[3];
-                                }*@
+
                                 @methodParams[0]
                             </td>
                             <td>
-                                @*@if (Model.RegularMethods.Contains(methodVal))
-                                {
-                                    @methodParams[0];
-                                }
-                                @if (Model.DistanceMeasureMethods.Contains(methodVal))
-                                {
-                                    @methodParams[0];
-                                }*@
+
                                 @methodParams[1].Substring(0, methodParams[1].Length - 4)
                             </td>
                             <td>
-                                @*@if (Model.RegularMethods.Contains(methodVal))
-                                {
-                                    @methodParams[1];
-                                }
-                                else
-                                {
-                                    if (Model.DistanceMeasureMethods.Contains(methodVal))
-                                    {
-                                        @methodParams[2];
-                                    }
 
-                                }*@
                                 @methodParams[3].Substring(0, methodParams[3].Length - 7)
                             </td>
 
-                            <!--            <td>
-      
-               </td>
-                 <td>
-
-      </td> -->
 
 
                             <td>
                                 @if (discretization.ParametersIsReady == "Ready")
                                 {
                                 <div>
-                                    @*<button id="downloadDatasetButton_New" title="Download Dataset" class="btn btn-sm btn-primary" type="button" onclick="downloadDataset(@discretization.DiscretizationID)" style="background-color:#006400; color:white">
-            <span class="fas fa-download"> </span> Download
-        </button>*@
+
                                     <a href="@Url.Action("GetDiscretizations", "Discretizations", new { id = discretization.DiscretizationID})" class="btn btn-sm btn-primary" style="background-color:#006400; color:white"> <span class="fas fa-download"> </span> Download</a>
                                 </div>
                                 }
@@ -398,7 +338,7 @@
             $("#CategoryDropDown").val("")
             $("#BinsNumber").val("2")
             $("#WindowSize").val("1")
-            //var distanceMeasureCellDropdownList = document.getElementById("distanceMeasureDropdownList");
+      
         });
     </script>
     <script>
@@ -534,8 +474,8 @@
 				var binsNumberCellInput = document.getElementById("BinsNumber");
 				var maxGapCellInput = document.getElementById("MaxGap");
 				var windowSizeCellInput = document.getElementById("WindowSize");
-				//var distanceMeasureCellDropdownList = document.getElementById("distanceMeasureDropdownList");
-                var selectedDistanceMeasure = ""; //= distanceMeasureCellDropdownList.options[distanceMeasureCellDropdownList.selectedIndex];
+			
+                var selectedDistanceMeasure = ""; 
                 if (selectedMethod.value == "TD4C") {
                     var distanceMeasureList = selectedMethod.text.split("_");
                     selectedDistanceMeasure = distanceMeasureList[1];
@@ -561,8 +501,7 @@
 
 
 
-					//	var distanceMeasureCell = methodRow.insertCell(4);
-                    //    distanceMeasureCell.innerHTML = selectedDistanceMeasure;
+
                         addedConfigurations.push(selectedMethod.value + '/' + [binsNumberCellInput.value, selectedDistanceMeasure, maxGapCellInput.value, windowSizeCellInput.value].join('_'))
 
 					}
@@ -650,14 +589,12 @@
 			var binsNumberCellInput = document.getElementById("binsNumberDiv");
 			var maxGapCellInput = document.getElementById("maxGapDiv");
 			var windowSizeCellInput = document.getElementById("windowSizeDiv");
-			//var distanceMeasureCellDropdownList = document.getElementById("distanceMeasureDiv");
 			var statesFileInput = document.getElementById("statesFileDiv");
 
 			if (regularMethods.indexOf(selectedMethodValue) != -1) {
 				binsNumberCellInput.style.display = 'block';
 				maxGapCellInput.style.display = 'block';
 				windowSizeCellInput.style.display = 'block';
-			//	distanceMeasureCellDropdownList.style.display = 'none';
 				statesFileInput.style.display = 'none';
 
 			}
@@ -666,7 +603,6 @@
 					binsNumberCellInput.style.display = 'block';
 					maxGapCellInput.style.display = 'block';
 					windowSizeCellInput.style.display = 'block';
-				//	distanceMeasureCellDropdownList.style.display = 'block';
 					statesFileInput.style.display = 'none';
 
 				}
@@ -675,7 +611,6 @@
 					binsNumberCellInput.style.display = 'none';
 					maxGapCellInput.style.display = 'block';
 					windowSizeCellInput.style.display = 'block';
-				//	distanceMeasureCellDropdownList.style.display = 'none';
 
 				}
 			}
@@ -699,25 +634,20 @@
 
 					type: "POST",
 					data: formdata,
-					//data: JSON.stringify({ sendDiscretizationViewModel: objToSend, files: formdata }),
-				//contentType: false, // Not to set any content header
 				processData: false, // Not to process data
 				url: '@Url.Action("SendToDiscretization")',
-				//async: false,
-				//datatype: 'JSON',
-				//contentType: "application/json",
+
 				cache: false,
 				contentType: false,
 				processData: false,
 				success: function (response) {
 					console.log(response)
 					window.location.href ="@Url.Action("Edit", "Discretizations", new { id = @Model.DatasetID })";
-					//document.getElementById("Errors").innerHTML = response[0];
-					//alert(":D")
+
 
 				},
                     error: function (response) {
-                        alert(response);  //
+                        alert(response);  
 				}
 
 			});
@@ -777,16 +707,12 @@
             windowSizeCellInput.setAttribute("id", "windowSize_" + row_id + ")")
 
             var distanceMeasureCell = methodRow.insertCell(4);
-            //	var distanceMeasureCellDropdownList = document.createElement("select");
-            //	distanceMeasureCellDropdownList.setAttribute("class", "form-control");
-            //	distanceMeasureCellDropdownList.setAttribute("id", "distanceMeasure_" + row_id + ")")
 
-            //distanceMeasureCell.appendChild(distanceMeasureCellDropdownList);
             for (var distanceMeasureKey in distanceMeausreList) {
                 var distanceMeasureOption = document.createElement("option");
                 distanceMeasureOption.innerHTML = distanceMeausreList[distanceMeasureKey];
                 distanceMeasureOption.value = methodKey;
-                //	distanceMeasureCellDropdownList.add(distanceMeasureOption, null);
+
             }
             var statesFileCell = methodRow.insertCell(5);
             var statesFileCellInput = document.createElement("input");

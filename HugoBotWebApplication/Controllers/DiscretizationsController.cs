@@ -4,8 +4,6 @@ using System.Threading.Tasks;
 using System.Web.Mvc;
 using HugoBotWebApplication.Models;
 using System.IO;
-//using FileHelpers;
-//using HugoBotWebApplication.file_formats;
 using Microsoft.AspNet.Identity;
 using FileHelpers;
 using HugoBotWebApplication.Models.Formats_Handling;
@@ -31,7 +29,6 @@ namespace HugoBotWebApplication.Controllers
         private readonly DatasetService datasetService;
         private DiscretizationService discretizationService = new DiscretizationService();
         private readonly SecurityService securityService;
-        //private Task task;
         public DiscretizationsController()
         {
             db = new ApplicationDbContext();
@@ -98,7 +95,6 @@ namespace HugoBotWebApplication.Controllers
             }
 
             Dataset dataset = datasetRepository.Get((int)id);
-            //Dataset dataset = await db.Datasets.FindAsync(id);
             if (dataset == null)
             {
                 return HttpNotFound();
@@ -106,12 +102,10 @@ namespace HugoBotWebApplication.Controllers
             FileTransferrer fileTransferrer = new FileTransferrer();
             foreach (var disc in dataset.Discretizations)
             {
-                // disc.ParametersIsReady = new Discretistation.FileHandler().IsFileExists(disc.DownloadPath);
 
 
                 if (System.IO.Directory.Exists(Server.MapPath(disc.DownloadPath)))
-                //if (task != null)
-                  //  if(task.IsCompleted)
+
                 {
                     disc.ParametersIsReady = "Ready";
                 }
@@ -131,7 +125,7 @@ namespace HugoBotWebApplication.Controllers
 
             });
         }
-        //TODO
+
         public string SendToDiscretization(SendDiscretizationViewModel sendDiscretizationViewModel)
 		{
 			string[] methodsList = Request.Form["Methods"].Split(',');
@@ -154,7 +148,7 @@ namespace HugoBotWebApplication.Controllers
             }
 
             // Knowledge based methods with files uploaded
-            //TODODODODO
+
             if (Request.Files.Count > 0)
 			{
 				foreach (var knowledgeBasedMethod in knowledgeBasedMethods)

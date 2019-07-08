@@ -447,7 +447,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controllers\HomeControllerTest.cs" />
     <Compile Include="Services\AttributeTest.cs" />
-    <Compile Include="Services\DiscretizeTest.cs" />
+    <Compile Include="Services\SecurityTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App.config" />

@@ -1100,10 +1100,10 @@
             errorsTagNew.setAttribute("class", "anyClass");
             errorsTagNew.style.display = 'block';
 
-            var generalError = document.createElement("li");
-            generalError.setAttribute("class", "text-danger");
-            generalError.innerHTML = "<h5>The variable map  isn't in the correct format, see errors below:</h5>"
-            errorsTagNew.appendChild(generalError);
+         //   var generalError = document.createElement("li");
+         //   generalError.setAttribute("class", "text-danger");
+         //   generalError.innerHTML = "<h5>The variable map  isn't in the correct format, see errors below:</h5>"
+         //   errorsTagNew.appendChild(generalError);
 
             for (var i = 0; i < errorsList.length; i++) {
                 var errorListItem = document.createElement("li");
@@ -1187,67 +1187,7 @@
 
             if (changeId(1)) {
                 document.getElementById("UploadDatasetForm").submit();
-                @*var options = {
-                    success: afterSubmit  // post-submit callback
-                };
 
-                //$('#UploadDatasetForm').submit(function (e) {
-                //    $(this).ajaxSubmit(options);
-                //});
-                //console.log("SUBMITTED");
-                //var res = document.getElementById("UploadDatasetForm").submit();
-                //console.log(res);
-                //if (res == "Success")
-                //    $("#myModal").modal();
-                //else {
-                //    alert("error");
-
-                //}
-                 $.ajax({
-                    type: "POST",
-                    contentType: false, // Not to set any content header
-                    processData: false, // Not to process data
-                    url: '@Url.Action("SubmitDataset")',
-                    //async: false,
-                    //datatype: 'JSON',
-                    success: function (response) {
-                        console.log(response)
-                        //document.getElementById("Errors").innerHTML = response[0];
-                        //alert(":D")
-
-                    },
-                    error: function (response) {
-                        alert("error!");  //
-                    }
-
-                });*@
-				@*$.ajax({
-					type: "POST",
-					data: formdata,
-					contentType: false, // Not to set any content header
-					processData: false, // Not to process data
-					url: '@Url.Action("SubmitFiles")',
-					//async: false,
-					//datatype: 'JSON',
-					success: function (response) {
-						console.log(response)
-						if (response["Errors"] === "") {
-							var vmap = response["Vmap"];
-							var vmapErrors = response["VmapErrors"];
-							var vmapDatasetErrors = response["VmapDatasetErrors"]
-							vmapProperties = response["Vmaproperties"];
-							datasetProperties = response["DatasetProperties"];
-							populateTable(vmap, vmapErrors, vmapDatasetErrors)
-						}
-						//document.getElementById("Errors").innerHTML = response[0];
-						//alert(":D")
-
-					},
-					error: function (response) {
-						alert("error!");  //
-					}
-
-				});*@
 			}
 			else {
 				alert("Please fix errors")
@@ -1291,8 +1231,6 @@
 				        contentType: false, // Not to set any content header
 				        processData: false, // Not to process data
 				        url: '@Url.Action("ProcessVmapFile")',
-				        //async: false,
-				        //datatype: 'JSON',
 				        success: function (response) {
                             console.log(response)
                             var vmap = response["Vmap"];
@@ -1308,17 +1246,16 @@
                             }
                             else {
                                 fillVmapErrors(response["Errors"]);
-                                //document.getElementById("Errors").innerHTML = response["Errors"];
                                 populateTable(vmap, vmapErrors, vmapDatasetErrors)
                                 document.getElementById("vmapCreationBtn").removeAttribute("disabled");
                                 document.getElementById("vmapLoadingBtn").removeAttribute("disabled");
                                 document.getElementById("Step2Loader").style.display = 'none';
                             }
-					        //alert(":D")
+				
 
 				        },
 				        error: function (response) {
-					        alert("error!");  //
+					        alert("error!");  
 				        }
 
 			        });
@@ -1354,18 +1291,6 @@
             // This function will display the specified tab of the form ...
             var x = document.getElementsByClassName("tab");
             x[n].style.display = "block";
-            // ... and fix the Previous/Next buttons:
-            //if (n == 0) {
-            //	document.getElementById("prevBtn").style.display = "none";
-            //} else {
-            //	document.getElementById("prevBtn").style.display = "inline";
-            //}
-            //if (n == (x.length - 1)) {
-            //	document.getElementById("nextBtn").innerHTML = "Submit";
-            //} else {
-            //	document.getElementById("nextBtn").innerHTML = "Next";
-            //}
-            // ... and run a function that displays the correct step indicator:
             fixStepIndicator(n)
         }
 
