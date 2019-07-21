@@ -21,13 +21,15 @@ namespace HugoBotWebApplication.Models
         public string Type { get; set; }
         public string Parameters { get; set; }
         public string ParametersIsReady { get; set; }
-        [Required()]
-        [DisplayName("Dataset file")]
-        [DataType(DataType.Text)]
+       // [Required()]
+       // [DisplayName("Dataset file")]
+       // [DataType(DataType.Text)]
+       [NotMapped]
         public string Path { get; set; }
-        [Required()]
-        [DisplayName("Vmap file")]
-        [DataType(DataType.Text)]
+       // [Required()]
+       // [DisplayName("Vmap file")]
+       // [DataType(DataType.Text)]
+       [NotMapped]
         public string VmapPath { get; set; }
 		public string Description { get; set; }
 		public string OwnerID { get; set; }

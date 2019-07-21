@@ -2,7 +2,9 @@
 using HugoBotWebApplication.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 
 namespace HugoBotWebApplication.Services
@@ -31,7 +33,7 @@ namespace HugoBotWebApplication.Services
         // get the classes by the files in the karmaLego output - the name file is TIRPS_DISCERIZED_CLASSx
         public string [] getClasses(string path)
         {
-            string fullPath = HttpContext.Current.Server.MapPath(path);
+            string fullPath = Path.Combine(HttpRuntime.AppDomainAppPath, path);
             string[] files = System.IO.Directory.GetFiles(fullPath);
             List<string> classes = new List<string>();
             foreach (string f in files)
@@ -46,14 +48,28 @@ namespace HugoBotWebApplication.Services
             return classes.ToArray();
         }
 
-		//public List<Discretization> CreateDiscretizationsFromKarmaLegoViewModel(KarmaLegoViewModel karmaLegoViewModel)
-		//{
-		//	List<Discretization> discretizations = new List<Discretization>();
+        public void sendToKL(string inputPath, string outputPath, double epsilon, double minVerticalSupport, int maxGap)
+        {
+            Directory.CreateDirectory(Path.Combine(HttpRuntime.AppDomainAppPath, outputPath));
+            CmdService cmd = new CmdService();
+            string cli = "python KarmaLegoRunner.py " + inputPath + " " + outputPath + " " + epsilon.ToString() + " " + minVerticalSupport.ToString() + " " + maxGap.ToString();
+            Task task = cmd.SendToCMD(cli, "HugobotKarmaLegoRunner");
+        }
 
-		//	//discretization.DatasetID = lastDatasetID + 1;
-		//	SetParametersForDataset(karmaLegoViewModel, discretizations);
-		//	return discretizations;
+        public string getPath (string discPath, int id)
+        {
+            string path = discPath + "/KarmaLego/" + id.ToString();
+            return path;
+        }
 
-		//}
-	}
+        //public List<Discretization> CreateDiscretizationsFromKarmaLegoViewModel(KarmaLegoViewModel karmaLegoViewModel)
+        //{
+        //	List<Discretization> discretizations = new List<Discretization>();
+
+        //	//discretization.DatasetID = lastDatasetID + 1;
+        //	SetParametersForDataset(karmaLegoViewModel, discretizations);
+        //	return discretizations;
+
+        //}
+    }
 }

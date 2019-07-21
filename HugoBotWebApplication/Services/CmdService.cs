@@ -11,13 +11,13 @@ namespace HugoBotWebApplication.Services
     public class CmdService
     {
 
-        public async Task SendToDiscretization(string cli, bool isDone)
+        public async Task SendToCMD(string cli, string fileToProccess)
         {
-            await callCMD(cli);
-            isDone = true;
+            await callCMD(cli, fileToProccess);
+      
         } 
 
-        private Task callCMD(string cli)
+        private Task callCMD(string cli, string fileToProccess)
         {
             string output = "";
             return Task.Run(() =>
@@ -25,7 +25,8 @@ namespace HugoBotWebApplication.Services
                using (Process process = new Process())
                {
                    process.StartInfo.FileName = "CMD.exe";
-                   string fullPath = Path.Combine(HttpRuntime.AppDomainAppPath, "App_Data/python");
+                   string path = "App_Data/" + fileToProccess;
+                   string fullPath = Path.Combine(HttpRuntime.AppDomainAppPath, path);
                    process.StartInfo.Arguments = "/c cd " + fullPath + " && " + cli;
                    process.StartInfo.UseShellExecute = false;
                    process.StartInfo.RedirectStandardInput = true;

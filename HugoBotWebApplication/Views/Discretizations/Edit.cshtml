@@ -274,25 +274,29 @@
                     <tbody>
                         @foreach (var discretization in Model.Discretizations)
                         {
-                            var methodPathSplited = discretization.DownloadPath.Split('/');
-                            var methodParams = methodPathSplited[methodPathSplited.Length - 1].Split('_');
- 
+                            //var methodPathSplited = discretization.DownloadPath.Split('/');
+                            //var methodParams = methodPathSplited[methodPathSplited.Length - 1].Split('_');
+
                         <tr>
                             <td>
 
-                                @methodParams[2].Substring(0, methodParams[2].Length - 3)
+                                @*@methodParams[2].Substring(0, methodParams[2].Length - 3)*@
+                                @discretization.WindowSize
                             </td>
                             <td>
 
-                                @methodParams[0]
+                                @*@methodParams[0]*@
+                                @discretization.FullName
                             </td>
                             <td>
 
-                                @methodParams[1].Substring(0, methodParams[1].Length - 4)
+                                @*@methodParams[1].Substring(0, methodParams[1].Length - 4)*@
+                                @discretization.BinsNumber
                             </td>
                             <td>
 
-                                @methodParams[3].Substring(0, methodParams[3].Length - 7)
+                                @*@methodParams[3].Substring(0, methodParams[3].Length - 7)*@
+                                @discretization.MaxGap
                             </td>
 
 
@@ -324,7 +328,7 @@
         </div>
     </div>
 </div>
-<table></table>
+</div>
 
 
 @section Scripts {

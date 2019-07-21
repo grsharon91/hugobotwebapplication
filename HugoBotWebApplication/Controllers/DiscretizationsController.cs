@@ -29,6 +29,7 @@ namespace HugoBotWebApplication.Controllers
         private readonly DatasetService datasetService;
         private DiscretizationService discretizationService = new DiscretizationService();
         private readonly SecurityService securityService;
+        private int id;
         public DiscretizationsController()
         {
             db = new ApplicationDbContext();
@@ -37,6 +38,7 @@ namespace HugoBotWebApplication.Controllers
             distanceMeasuerDiscretizationRepository = new DistanceMeasureDiscretizationRepository(db);
             securityService = new SecurityService(datasetRepository, db);
             datasetService = new DatasetService(datasetRepository);
+            id = discretizationRepository.GetNextId();
         }
         // GET: Discretizations/Create
         public ActionResult Create()
@@ -45,7 +47,8 @@ namespace HugoBotWebApplication.Controllers
         }
 		public ActionResult GetDiscretizations(int id)
 		{
-            string path = discretizationRepository.Get(id).DownloadPath;
+            Discretization disc = discretizationRepository.Get(id);
+            string path = discretizationService.getPath(datasetService.getPath(disc.DatasetID), id);
             string fullPath = Server.MapPath(path);
             string tmp = fullPath + "\\tmp";
             Directory.CreateDirectory(tmp);
@@ -103,9 +106,9 @@ namespace HugoBotWebApplication.Controllers
             foreach (var disc in dataset.Discretizations)
             {
 
-
-                if (System.IO.Directory.Exists(Server.MapPath(disc.DownloadPath)))
-
+                string discPath = discretizationService.getPath(datasetService.getPath(dataset.DatasetID), disc.DiscretizationID);
+                discPath += "/KL.txt";
+                if (System.IO.File.Exists(Server.MapPath(discPath)))
                 {
                     disc.ParametersIsReady = "Ready";
                 }
@@ -138,8 +141,8 @@ namespace HugoBotWebApplication.Controllers
             // Check that there are *not* knowledge based methods in the request
             if(methodsList[0] != "")
             {
-                discretizationService.Discretize(methodsList, dataset.Path);
-                List<Discretization> discretizations = discretizationService.CreateDiscretizations(dataset, methodsList);
+                discretizationService.Discretize(methodsList, datasetService.getPath(dataset.DatasetID), id);
+                List<Discretization> discretizations = discretizationService.CreateDiscretizations(dataset, methodsList, id, datasetService.getPath(dataset.DatasetID));
                 for (int i = 0; i < discretizations.Count; i++)
                 {
                     discretizations[i].Owner = currentUser;

@@ -19,17 +19,29 @@ namespace HugoBotWebApplication.Controllers
 {
     public class KarmaLegoController : Controller
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
-		private DiscretizationService discretizationService = new DiscretizationService();
-		private KarmaLegoService karmaLegoService = new KarmaLegoService();
+        private ApplicationDbContext db;
+		private DiscretizationService discretizationService;
+		private KarmaLegoService karmaLegoService;
+        private DatasetService datasetService;
+        private readonly DatasetRepository datasetRepository;
+        private readonly KLRepository klRepository;
+        private int id;
+
+        public KarmaLegoController()
+        {
+            db = new ApplicationDbContext();
+            datasetRepository = new DatasetRepository(db);
+            klRepository = new KLRepository(db);
+            discretizationService = new DiscretizationService();
+            karmaLegoService = new KarmaLegoService();
+            datasetService = new DatasetService(datasetRepository);
+        }
 
         public ActionResult GetKarmaLegos(int id)
         {
-            //FileTransferrer fileTransferrer = new FileTransferrer();
-            //return File(fileTransferrer.GetFilesFromServer(parameters), ".zip", "KarmaLego" + DateTime.Now.ToShortDateString() +".zip");
-            
-            string path = db.KarmaLegos.Find(id).DownloadPath;
-            string fullPath = Server.MapPath(path);
+
+            string fullPath = db.KarmaLegos.Find(id).DownloadPath;
+            //string fullPath = Server.MapPath(path);
             string tmp = fullPath + "\\tmp";
             Directory.CreateDirectory(tmp);
             string archive = fullPath + "\\KarmaLego.zip";
@@ -99,9 +111,12 @@ namespace HugoBotWebApplication.Controllers
             }
             foreach (var disc in dataset.Discretizations)
             {
+                string discPath = discretizationService.getPath(datasetService.getPath(disc.DatasetID), disc.DiscretizationID);
                 foreach (var kl in disc.KarmaLegos)
                 {
-                    if (System.IO.Directory.Exists(Server.MapPath(kl.DownloadPath)))
+                    string klResultPath = karmaLegoService.getPath(discPath, kl.KarmaLegoID);
+                    klResultPath += @"\kl-result.txt";
+                    if (System.IO.File.Exists(Server.MapPath(klResultPath)))
                     {
                         kl.IsReady = "Ready";
                     }
@@ -164,15 +179,15 @@ namespace HugoBotWebApplication.Controllers
 		public string DiscoverPatterns()
 		{
 			var karmaLegoConfigs = Request.Form["Configs"].Split(',');
-            List<int> discretizatonsIds = new List<int>();
-            List<int> currentDiscretizationIds = new List<int>();
+          //  List<int> discretizatonsIds = new List<int>();
+          //  List<int> currentDiscretizationIds = new List<int>();
             foreach (var klc in karmaLegoConfigs)
             {
                 var configs = klc.Split('_');
                 var configId = configs[0];
-                currentDiscretizationIds.Add(Int32.Parse(configId));
+              //  currentDiscretizationIds.Add(Int32.Parse(configId));
             }
-            var configsToSendList = new List<string>();
+           // var configsToSendList = new List<string>();
 			if(karmaLegoConfigs[0] != "")
 			{
 				foreach (var config in karmaLegoConfigs)
@@ -182,14 +197,18 @@ namespace HugoBotWebApplication.Controllers
                     var fold = configs[configs.Length - 1];
                     var configParams = configs.Skip(1).Take(configs.Length - 2).Select(x => x).ToArray();
 					Discretization d = db.Discretizations.Find(Int32.Parse(configId));
-                    var karmaLegoPath = d.DownloadPath + "/KARMALEGO/" + String.Join("_", configParams) + "/kfold/" + fold;
-                
-                    if(fold == "1")
-                    {
-                         karmaLegoPath = d.DownloadPath + "/KARMALEGO/" + String.Join("_", configParams);
+                    id = klRepository.GetNextId();
+                    var path = discretizationService.getPath(datasetService.getPath(d.DatasetID), d.DiscretizationID);
+                    var inputPath = Server.MapPath(path);
+                    var karmaLegoPath = inputPath + @"\KARMALEGO\" + id.ToString();
+                    inputPath += @"\KL.txt"; 
+                    
+                    //if(fold == "1")
+                    //{
+                    //     karmaLegoPath = d.DownloadPath + "/KARMALEGO/" + String.Join("_", configParams);
 
-                    }
-                    configsToSendList.Add(karmaLegoPath);
+                    //}
+                    //configsToSendList.Add(karmaLegoPath);
 					string currentUserId = User.Identity.GetUserId();
 					ApplicationUser currentUser = db.Users.FirstOrDefault(y => y.Id == currentUserId);
                     if (!Int32.TryParse(configParams[0], out int tempInt))
@@ -213,6 +232,10 @@ namespace HugoBotWebApplication.Controllers
                         if(tempDouble < 0 || tempDouble > 100)
                             return  "Vertical support value is not ok";
                     }
+                    var epsilon = Double.Parse(configParams[0]);
+                    var maxGap = Int32.Parse(configParams[1]);
+                    var minVerticalSupport = Double.Parse(configParams[2]);
+                    karmaLegoService.sendToKL(inputPath, karmaLegoPath, epsilon, minVerticalSupport, maxGap);
                     KarmaLego kl = new KarmaLego()
 					{
                         Discretization = d,
@@ -224,19 +247,18 @@ namespace HugoBotWebApplication.Controllers
 						Owner = currentUser,
                         Fold = Int32.Parse(fold)
 					};
-                    discretizatonsIds.Add(d.DiscretizationID);
+                    //discretizatonsIds.Add(d.DiscretizationID);
 
                     db.KarmaLegos.Add(kl);
 				}
-                var llll = String.Join(" ", configsToSendList);
-                //new Discretistation.FileHandler().Discretization(llll);
+                //var llll = String.Join(" ", configsToSendList);
                 db.SaveChanges();
-                List<string> klIds = new List<string>();
-                foreach (var kl in db.KarmaLegos)
-                {
-                    if(discretizatonsIds.IndexOf(kl.DiscretizationID) != -1 )
-                        klIds.Add(kl.KarmaLegoID.ToString());
-                }
+                //List<string> klIds = new List<string>();
+                //foreach (var kl in db.KarmaLegos)
+                //{
+                //    if(discretizatonsIds.IndexOf(kl.DiscretizationID) != -1 )
+                //        klIds.Add(kl.KarmaLegoID.ToString());
+                //}
                 return "Success";
                 //return Json(new
                 //{

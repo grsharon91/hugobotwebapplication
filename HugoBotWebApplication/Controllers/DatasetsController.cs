@@ -30,6 +30,7 @@ namespace HugoBotWebApplication.Controllers
         private readonly SecurityService securityService;
         private byte[] fileArr;
         private MetadataViewModel metadataViewModel = new MetadataViewModel();
+        private int id;
         public DatasetsController ()
         {
             db = new ApplicationDbContext();
@@ -37,6 +38,7 @@ namespace HugoBotWebApplication.Controllers
             discretizationRepository = new DiscretizationRepository(db);
             datasetService = new DatasetService(datasetRepository);
             securityService = new SecurityService(datasetRepository, db);
+            id = datasetRepository.GetNextId();
 
         }
         // GET: Datasets
@@ -175,9 +177,9 @@ namespace HugoBotWebApplication.Controllers
             }
 
 
-            string inputFolder = Server.MapPath(dataset.Path);
-
-            byte[] datasetFile = System.IO.File.ReadAllBytes(inputFolder);
+           // string inputFolder = Server.MapPath(datasetService.getPath(dataset.DatasetID));
+            string [] fileName = Directory.GetFiles(Server.MapPath(datasetService.getPath(dataset.DatasetID)));
+            byte[] datasetFile = System.IO.File.ReadAllBytes(fileName[0]);
             dataset.NumberOfDownloads += 1;
             datasetRepository.Edit(dataset);
             datasetRepository.SaveChanges();
@@ -260,18 +262,16 @@ namespace HugoBotWebApplication.Controllers
             if (dataset != null)
                 return "This dataset already exists under the name: " + dataset.DatasetName;
             var datasetFile = Request.Files["datasetFile"];
-            DateTime date = DateTime.Now;
-            string dir = "~/App_Data/uploads/" + datasetFile.FileName.Substring(0, datasetFile.FileName.Length - 4) + "_" +
-                        date.ToString("yyyy_MM_dd_H") + "/";
+            string dir = "~/App_Data/uploads/" + id.ToString() + "/";
             string inputFolderPath = Server.MapPath(dir);
             Directory.CreateDirectory(Server.MapPath(dir));
+            Directory.CreateDirectory(Server.MapPath(dir + @"\Discretizations\"));
           InputHandler inputHandler = new InputHandler(Request.Files, inputFolderPath);
 			InputValidationObject inputValidationObject = inputHandler.ValidateDatasetFiles();
 			if (!inputValidationObject.IsValid)
 			{
 				ViewBag.Errors = String.Join("<br>", inputValidationObject.Errors);
 			}
-            string path = dir + datasetFile.FileName;
             fileArr = new byte[datasetFile.InputStream.Length];
             fileArr = inputHandler.getFileToArray();
             return String.Join("<br>", inputValidationObject.Errors);
@@ -306,11 +306,10 @@ namespace HugoBotWebApplication.Controllers
                    datasetViewModel.TemporalPropertyName, datasetViewModel.Description);
 
                 // Transfer files
-                string date = DateTime.Now.ToString("yyyy_MM_dd_H");
-                string datasetPath = datasetService.getPath(Request.Files["datasetFile"].FileName, date);
+                string datasetPath = datasetService.getPath(id);
 
                 // Create Dataset model
-                Dataset dataset = datasetService.CreateDatasetFromDatasetViewModel(datasetViewModel, datasetRepository.GetNextId(), datasetPath, datasetPath + "/vmap", currentUser, metadataFileBytes);
+                Dataset dataset = datasetService.CreateDatasetFromDatasetViewModel(datasetViewModel, id, currentUser, metadataFileBytes, datasetPath);
                 dataset.Size = ((double)Request.Files["datasetFile"].ContentLength / 1024) / 1024;
                 //dataset.DatasetFile = fileArr;
                 Stream s = Request.Files["datasetFile"].InputStream;

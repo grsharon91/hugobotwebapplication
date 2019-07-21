@@ -133,10 +133,10 @@
 
                                 </td>
 
-                                <td> @methodParams[0]                                           </td>
-                                <td> @methodParams[2].Substring(0, methodParams[2].Length - 3)  </td>
-                                <td> @methodParams[1].Substring(0, methodParams[1].Length - 4)  </td>
-                                <td> @methodParams[3].Substring(0, methodParams[3].Length - 7)  </td>
+                                <td> @*@methodParams[0]*@  @discretization.FullName                                         </td>
+                                <td> @*@methodParams[2].Substring(0, methodParams[2].Length - 3)*@ @discretization.WindowSize </td>
+                                <td> @*@methodParams[1].Substring(0, methodParams[1].Length - 4)*@ @discretization.BinsNumber </td>
+                                <td> @*@methodParams[3].Substring(0, methodParams[3].Length - 7)*@ @discretization.MaxGap </td>
 
                                 <td>
 
@@ -217,7 +217,7 @@
                     {
                         var karmaLegomethodParameters = karmaLego.DownloadPath.Split('/');
                       //  var karmaLegomethodName = karmaLegomethodParameters[3];
-                        var karmaLegomethodFinalParameters = karmaLegomethodParameters[8].Split('_');
+                       // var karmaLegomethodFinalParameters = karmaLegomethodParameters[8].Split('_');
 
                         var methodParametersSplit = karmaLego.Discretization.DownloadPath.Split('/');
                         //var methodName = methodParameters[1];
@@ -225,13 +225,13 @@
                         var methodName = methodFinalParameters[0];
                         <tr id="karmaLego_@karmaLego.KarmaLegoID">
                             <td>
-                                @methodName
+                                @karmaLego.Discretization.FullName
                             </td>
                             @*@if (Model.RegularMethods.Contains(methodName))
                             {*@
-                                <td> @methodFinalParameters[1].Substring(0, methodFinalParameters[1].Length -4) </td>
-                                <td> @methodFinalParameters[3].Substring(0, methodFinalParameters[3].Length-7) </td>
-                                <td> @methodFinalParameters[2].Substring(0,methodFinalParameters[2].Length-3) </td>
+                                <td> @*@methodFinalParameters[1].Substring(0, methodFinalParameters[1].Length -4)*@ @karmaLego.Discretization.BinsNumber </td>
+                                <td> @*@methodFinalParameters[3].Substring(0, methodFinalParameters[3].Length-7)*@  @karmaLego.Discretization.MaxGap </td>
+                                <td> @*@methodFinalParameters[2].Substring(0,methodFinalParameters[2].Length-3)*@  @karmaLego.Discretization.WindowSize </td>
                             @*}*@
 
                             @*@if (Model.DistanceMeasureMethods.Contains(methodName))
@@ -243,15 +243,18 @@
 
 
                             <td>
-                                @karmaLegomethodFinalParameters[0]
+                                @*@karmaLegomethodFinalParameters[0]*@
+                                @karmaLego.Epsilon
 
                             </td>
                             <td>
-                                @karmaLegomethodFinalParameters[1]
+                                @*@karmaLegomethodFinalParameters[1]*@
+                                @karmaLego.MaximumGap
 
                             </td>
                             <td>
-                                @karmaLegomethodFinalParameters[2]
+                                @*@karmaLegomethodFinalParameters[2]*@
+                                @karmaLego.MinimumVerticalSupport
 
                             </td>
 
@@ -264,7 +267,7 @@
                                         tempList.Add("Merged");
                                     }
 
-                                    @Html.DropDownList("classes", new SelectList(tempList), new { @ID = "ClassesDropDown_" + karmaLego.KarmaLegoID.ToString(), @class = "form-control" })
+                                    @*@Html.DropDownList("classes", new SelectList(tempList), new { @ID = "ClassesDropDown_" + karmaLego.KarmaLegoID.ToString(), @class = "form-control" })*@
                                     <button type="button" class="btn btn-outline-warning" onclick="visualizePatterns(@karmaLego.KarmaLegoID)">Visualize patterns</button>
                                 }
                                 else
@@ -318,7 +321,9 @@
             }
             else {
                 currentRowCheckedVerticalSupport.children[1].innerHTML = "";
-                document.getElementById("discoverPatternsBtn").removeAttribute("disabled");
+                var btn = currentRowChecked.cells[8];
+                btn.children[0].removeAttribute("disabled");
+                //document.getElementById("discoverPatternsBtn").removeAttribute("disabled");
                 return true;
             }
         }
