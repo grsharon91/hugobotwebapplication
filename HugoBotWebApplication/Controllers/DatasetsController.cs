@@ -179,7 +179,12 @@ namespace HugoBotWebApplication.Controllers
 
            // string inputFolder = Server.MapPath(datasetService.getPath(dataset.DatasetID));
             string [] fileName = Directory.GetFiles(Server.MapPath(datasetService.getPath(dataset.DatasetID)));
-            byte[] datasetFile = System.IO.File.ReadAllBytes(fileName[0]);
+            //byte[] datasetFile = System.IO.File.ReadAllBytes(fileName[0]);
+            FileStream file = new FileStream(fileName[0], FileMode.Open, FileAccess.Read);
+            int len = (int)(file.Length);
+            Byte[] datasetFile = new Byte[len];
+            file.Read(datasetFile, 0, len);
+            file.Close();
             dataset.NumberOfDownloads += 1;
             datasetRepository.Edit(dataset);
             datasetRepository.SaveChanges();

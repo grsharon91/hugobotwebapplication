@@ -26,6 +26,7 @@ namespace HugoBotWebApplication.Controllers
         private readonly DatasetRepository datasetRepository;
         private readonly KLRepository klRepository;
         private int id;
+        private SecurityService securityService;
 
         public KarmaLegoController()
         {
@@ -35,6 +36,7 @@ namespace HugoBotWebApplication.Controllers
             discretizationService = new DiscretizationService();
             karmaLegoService = new KarmaLegoService();
             datasetService = new DatasetService(datasetRepository);
+            securityService = new SecurityService(datasetRepository, db);
         }
 
         public ActionResult GetKarmaLegos(int id)
@@ -104,7 +106,7 @@ namespace HugoBotWebApplication.Controllers
             }
             if (currentUser.Id != "4b67ae3b-8854-40a2-9751-8021070bf5ba")
             {
-                if (dataset == null || (dataset.Owner != null && dataset.OwnerID != currentUserId && dataset.Visibility == "Private"))
+                if (dataset == null || (dataset.Owner != null && dataset.OwnerID != currentUserId && dataset.Visibility == "Private" && !securityService.HasAccess(dataset.DatasetID, currentUserId)))
                 {
                     return HttpNotFound();
                 }
@@ -234,16 +236,16 @@ namespace HugoBotWebApplication.Controllers
                     }
                     var epsilon = Double.Parse(configParams[0]);
                     var maxGap = Int32.Parse(configParams[1]);
-                    var minVerticalSupport = Double.Parse(configParams[2]);
+                    var minVerticalSupport = Double.Parse(configParams[2])/100;
                     karmaLegoService.sendToKL(inputPath, karmaLegoPath, epsilon, minVerticalSupport, maxGap);
                     KarmaLego kl = new KarmaLego()
 					{
                         Discretization = d,
-						Epsilon = Double.Parse(configParams[0]),
+						Epsilon = epsilon,
 						DownloadPath = karmaLegoPath,
 						IsReady = "In Progress",
-						MaximumGap = Int32.Parse(configParams[1]),
-						MinimumVerticalSupport = Double.Parse(configParams[2]),
+						MaximumGap = maxGap,
+						MinimumVerticalSupport = minVerticalSupport,
 						Owner = currentUser,
                         Fold = Int32.Parse(fold)
 					};
