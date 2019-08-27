@@ -64,31 +64,21 @@
             transform: skew(-45deg);
         }
 </style>
-@*<div class="row">
-        <div class="col-md-4">
-                <a href="@Url.Action("Details", "Datasets", new { id = @Model.DatasetID})" class="btn btn-outline-primary w-100 active" style="font-weight: bold">
-                    <b style="color: tomato"> @Model.DatasetName  </b> Info
-                </a>
-            </div>
-        <div class="col-md-4">
-                <a href="@Url.Action("Edit", "Discretizations", new { id = @Model.DatasetID})" class="btn btn-outline-primary w-100" style="font-weight: bold">Temporal Abstraction </a>
-            </div>
-        <div class="col-md-4">
-            <a href="@Url.Action("Index", "KarmaLego", new { id = @Model.DatasetID})" class="btn btn-outline-primary w-100" style="font-weight: bold"> Time Intervals Mining</a>
+
+<div class="col-md-12">
+    <div class="wrap">
+        <div class="prog">
+            <a href="@Url.Action("Details", "Datasets", new { id = @Model.DatasetID})" class="btn" style="color: white"> <b style="color: tomato"> @Model.DatasetName  </b> Info </a>
         </div>
-    </div>*@
-<div class="wrap">
-    <div class="prog">
-        <a href="@Url.Action("Details", "Datasets", new { id = @Model.DatasetID})" class="btn" style="color: white"> <b style="color: tomato"> @Model.DatasetName  </b> Info </a>
-    </div>
-    <div class="prog">
-        <a href="@Url.Action("Edit", "Discretizations", new { id = @Model.DatasetID})" class="btn" style="color: white">Temporal Abstraction </a>
-    </div>
-    <div class="prog">
-        <a href="@Url.Action("Index", "KarmaLego", new { id = @Model.DatasetID})" class="btn" style="color: white"> Time Intervals Mining</a>
-    </div>
-    <div class="prog">
-        <a class="btn" style="color: white"> Visualization </a>
+        <div class="prog">
+            <a href="@Url.Action("Edit", "Discretizations", new { id = @Model.DatasetID})" class="btn" style="color: white">Temporal Abstraction </a>
+        </div>
+        <div class="prog">
+            <a href="@Url.Action("Index", "KarmaLego", new { id = @Model.DatasetID})" class="btn" style="color: white"> Time Intervals Mining</a>
+        </div>
+        <div class="prog">
+            <a class="btn" style="color: white"> Visualization </a>
+        </div>
     </div>
 </div>
 
@@ -96,19 +86,6 @@
 <br />
 
 <div class="container-fluid">
-    <!--   <div class="row">
-          <div class="col-md-12">
-              <div class="btn-group d-flex" role="group">
-                         <a href="@Url.Action("DownloadDatasetFile", "Datasets", new { id = @Model.DatasetID})" class="btn btn-outline-primary w-100">Download dataset </a>
-              <a href="@Url.Action("DownloadMetadataFile", "Datasets", new { id = @Model.DatasetID})" class="btn btn-outline-primary w-100">Download dataset's metadata</a>
-              <a href="@Url.Action("DownloadlEntitiesFile", "Datasets", new { id = @Model.DatasetID})" class="btn btn-outline-primary w-100">Download dataset's Entities </a>
-                  <a href="/hugobot/Datasets/DownloadAllDatasetFiles/@Model.DatasetID" class="btn btn-outline-primary w-100">Download all files</a>
-
-              </div>
-          </div>
-
-      </div>
-      <hr /> -->
 
     <div class="row ">
         <div class="col-md-5" style="max-height:510px">
@@ -190,9 +167,6 @@
 
                         </div>
 
-                        @*<div class="col-md-8">
-                                <canvas id="mycanvas" width="128" height="128"></canvas>
-                            </div>*@
                     </div>
 
 
@@ -201,7 +175,35 @@
             </div>
             <br />
             <div>
-                <a href="@Url.Action("DownloadAllDatasetFiles", "Datasets", new { id = @Model.DatasetID})" class="btn btn-sm btn-primary" style="background-color:#006400; color:white">Download Dataset files</a>
+                <a href="@Url.Action("DownloadAllDatasetFiles", "Datasets", new { id = @Model.DatasetID})" class="btn btn-sm btn-primary" style="background-color:#006400; color:white"><span class="fas fa-download"></span>Download Dataset files</a>
+                @if ((Model.Dataset.Visibility == "Private" && Model.Owner.Email == User.Identity.Name) || User.Identity.Name == "hugobotsupp@gmail.com")
+                {
+                    <a class="btn btn-sm btn-outline-primary" data-toggle="modal" data-target=".bootsrapmodal"><span class="fas fa-plus"></span> Add View Permission</a>
+                }
+
+                <div class="modal fade bootsrapmodal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <div class="modal-title"> <h5> Add user to dataset's view permissions </h5></div>
+                                <button data-dismiss="modal" class="close"> <span>&times;</span> </button>
+                            </div>
+                            <div class="modal-body">
+                                <p> add user by Email</p>
+                                <div class="row">
+                                    <input id="mailSearch" type="text" class="form-control" placeholder="User's Email" style="margin: auto">
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button class="btn btn-primary" onclick="searchUser(@Model.DatasetID)"> Add </button>
+                                <button class="btn" data-dismiss="modal"> Cancel </button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
             </div>
         </div>
         <div class="col-md-7">
@@ -250,33 +252,6 @@
             </div>
         </div>
     </div>
-    @*<div class="row">
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-header bg-primary font-weight-light" style="color:white">
-                        <span class="fas fa-info"></span>
-                        Basic Information
-                    </div>
-                    <div class="card-body">
-                        <p class="card-text">
-                            Dataset name: @Model.DatasetName
-
-                        </p>
-                        <p class="card-text">
-                            Category : @Model.Category
-                        </p>
-                        <p class="card-text">
-                            Description : @Model.Description
-                        </p>
-                        <p class="card-text">
-                            Owner : @Model.Owner
-                        </p>
-
-
-                    </div>
-                </div>
-            </div>
-        </div>*@
 </div>
 
 
@@ -343,11 +318,28 @@
                 type: 'pie',
                 data: data,
                 options: options
-
             });
         });
     </script>
     <script>
-
+        function searchUser(datasetID) {
+            var mailToSearch = $("#mailSearch").val()
+            $.ajax({
+                type: 'POST',
+                url: '@Url.Action("AddViewPermission")',
+                datatype: 'JSON',
+                data: {
+                    userEmail: mailToSearch,
+                    id: datasetID
+                },
+                success: function (response) {
+                    alert(response);
+                    window.location.href = "@Url.Action("Details", "Datasets", new { id = @Model.DatasetID })";
+                },
+                error: function () {
+                    alert("Oops! Something went wrong");
+                }
+            });
+        }
     </script>
 }

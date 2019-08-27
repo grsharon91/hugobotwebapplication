@@ -12,7 +12,7 @@ namespace HugoBotWebApplication.Models
     {
         public int DatasetID { get; set; }
         [Required()]
-        public string DatasetName{ get; set; }
+        public string DatasetName { get; set; }
         [Required()]
         public string Category { get; set; }
         public string Visibility { get; set; }
@@ -21,31 +21,32 @@ namespace HugoBotWebApplication.Models
         public string Type { get; set; }
         public string Parameters { get; set; }
         public string ParametersIsReady { get; set; }
-        [Required()]
-        [DisplayName("Dataset file")]
-        [DataType(DataType.Text)]
+        // [Required()]
+        // [DisplayName("Dataset file")]
+        // [DataType(DataType.Text)]
+        [NotMapped]
         public string Path { get; set; }
-        [Required()]
-        [DisplayName("Vmap file")]
-        [DataType(DataType.Text)]
+        // [Required()]
+        // [DisplayName("Vmap file")]
+        // [DataType(DataType.Text)]
+        [NotMapped]
         public string VmapPath { get; set; }
-		public string Description { get; set; }
-		//[ForeignKey("ApplicationUser")]
-		//public string ApplicationUserID { get; set; }
-		public string OwnerID { get; set; }
+        public string Description { get; set; }
+        public string OwnerID { get; set; }
 
         public virtual ApplicationUser Owner { get; set; }
         public virtual List<Discretization> Discretizations { get; set; }
 
+
         public int NumberOfDownloads { get; set; }
         public int NumberOfViews { get; set; }
         public double Size { get; set; }
-        public DateTime DateUploaded{ get; set; }
+        public DateTime DateUploaded { get; set; }
         public string EntitiesPath { get; set; }
         public int hasClass { get; set; }
 
-        public byte [] metaData { get; set; }
-        public byte [] DatasetFile { get; set; }
+        public byte[] metaData { get; set; }
+        public byte[] DatasetFile { get; set; }
 
     }
 }

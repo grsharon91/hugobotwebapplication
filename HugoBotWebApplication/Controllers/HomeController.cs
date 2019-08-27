@@ -13,28 +13,42 @@ namespace HugoBotWebApplication.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         public ActionResult Index()
-		{
-            string currentUserId = User.Identity.GetUserId();
+        {
+            string currentUserId = null;
+            List<ViewPermissions> vpList = new List<ViewPermissions>();
+            if (User != null && User.Identity != null)
+            {
+                currentUserId = User.Identity.GetUserId();
+            }
+
             if (currentUserId != null)
             {
                 ApplicationUser user = db.Users.Find(currentUserId);
-                if(!user.EmailConfirmed)
+                if (!user.EmailConfirmed)
                     ViewBag.Confirm = "Dear " + user.FirstName + " " + user.LastName + ", Please confirm your email address and wait for us to confirm your email in order to perform actions in the website. We thank you for your patience.";
-            }
 
-                
+
+                string name = user.UserName;
+                var viewPermissions = db.ViewPermissions.Where(u => u.UserName == name);
+                foreach (ViewPermissions vp in viewPermissions)
+                {
+                    vpList.Add(vp);
+                }
+            }
             DatasetIndexViewModel datasetIndexViewModel = new DatasetIndexViewModel()
             {
-				//DatasetsRecords = new List<string>(),
-				Datasets = db.Datasets.ToList()
-			};
-			return View(datasetIndexViewModel);
+                Datasets = db.Datasets.ToList(),
+                ViewPermissionsRecords = vpList
+            };
+
+
+            return View(datasetIndexViewModel);
         }
 
-		public ActionResult FirstSteps()
-		{
-			return View();
-		}
+        public ActionResult FirstSteps()
+        {
+            return View();
+        }
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";

@@ -4,66 +4,71 @@ using System.Threading.Tasks;
 using System.Web.Mvc;
 using HugoBotWebApplication.Models;
 using System.IO;
-//using FileHelpers;
-//using HugoBotWebApplication.file_formats;
 using Microsoft.AspNet.Identity;
-using FileHelpers;
-using HugoBotWebApplication.Models.Formats_Handling;
 using HugoBotWebApplication.ViewModels;
 using HugoBotWebApplication.Services;
 using System.Collections.Generic;
 using HugoBotWebApplication.Models.Repositories;
-using HugoBotWebApplication.Utils.FileHandlers;
 using HugoBotWebApplication.CommunicationLayer;
-using System.Data.Entity.Validation;
 using System.Net;
-using System.Data.Entity;
+using System.IO.Compression;
 using static HugoBotWebApplication.Utils.Settings;
 namespace HugoBotWebApplication.Controllers
 {
     public class DiscretizationsController : Controller
     {
-        private readonly  ApplicationDbContext db;
+        private readonly ApplicationDbContext db;
         private readonly DatasetRepository datasetRepository;
         private readonly DiscretizationRepository discretizationRepository;
         private readonly DistanceMeasureDiscretizationRepository distanceMeasuerDiscretizationRepository;
         private readonly DatasetService datasetService;
         private DiscretizationService discretizationService = new DiscretizationService();
         private readonly SecurityService securityService;
-        //private Task task;
+        private int id;
         public DiscretizationsController()
         {
             db = new ApplicationDbContext();
             datasetRepository = new DatasetRepository(db);
             discretizationRepository = new DiscretizationRepository(db);
             distanceMeasuerDiscretizationRepository = new DistanceMeasureDiscretizationRepository(db);
-            securityService = new SecurityService(datasetRepository);
+            securityService = new SecurityService(datasetRepository, db);
             datasetService = new DatasetService(datasetRepository);
+            id = discretizationRepository.GetNextId();
         }
         // GET: Discretizations/Create
         public ActionResult Create()
         {
             return View();
         }
-		public ActionResult GetDiscretizations(int id)
-		{
-            //FileTransferrer fileTransferrer = new FileTransferrer();
-            //return File(fileTransferrer.GetFilesFromServer(parameters), ".zip", "Discretizations" + DateTime.Now.ToShortDateString() + ".zip");
-            byte[] files = null;
-            string path = discretizationRepository.Get(id).DownloadPath;
+        public ActionResult GetDiscretizations(int id)
+        {
+            Discretization disc = discretizationRepository.Get(id);
+            string path = discretizationService.getPath(datasetService.getPath(disc.DatasetID), id);
             string fullPath = Server.MapPath(path);
+            string tmp = fullPath + "\\tmp";
+            Directory.CreateDirectory(tmp);
+            string archive = fullPath + "\\Discretizations.zip";
             foreach (string file in Directory.GetFiles(fullPath))
             {
-                files = System.IO.File.ReadAllBytes(file);
+                System.IO.File.Copy(file, Path.Combine(tmp, Path.GetFileName(file)));
             }
-            return File(files, ".zip", "Discretizations" + DateTime.Now.ToShortDateString() + ".zip");
+            ZipFile.CreateFromDirectory(tmp, archive);
+            Directory.Delete(tmp, true);
+            FileStream files = new FileStream(archive, FileMode.Open, FileAccess.Read);
+            int len = (int)(files.Length);
+            Byte[] content = new Byte[len];
+            files.Read(content, 0, len);
+            files.Close();
+            System.IO.File.Delete(archive);
+            return File(content, ".zip", "Discretizations" + DateTime.Now.ToShortDateString() + ".zip");
         }
-		public string DownloadDiscretizations(int [] discretizationIdList)
-		{
+
+        public string DownloadDiscretizations(int[] discretizationIdList)
+        {
             List<Discretization> discretizations = discretizationIdList.Select(id => discretizationRepository.Get(id)).ToList();
             string downloadPath = discretizationService.GetDownloadPath(discretizations);
             return downloadPath;
-		}
+        }
 
         public string DownloadDiscretization(int ID)
         {
@@ -72,7 +77,7 @@ namespace HugoBotWebApplication.Controllers
         }
 
         public async Task<ActionResult> Edit(int? id)
-       {
+        {
             string currentUserId = User.Identity.GetUserId();
             if (currentUserId == null)
                 return RedirectToAction("Register", "Account");
@@ -88,7 +93,6 @@ namespace HugoBotWebApplication.Controllers
             }
 
             Dataset dataset = datasetRepository.Get((int)id);
-            //Dataset dataset = await db.Datasets.FindAsync(id);
             if (dataset == null)
             {
                 return HttpNotFound();
@@ -96,12 +100,11 @@ namespace HugoBotWebApplication.Controllers
             FileTransferrer fileTransferrer = new FileTransferrer();
             foreach (var disc in dataset.Discretizations)
             {
-                // disc.ParametersIsReady = new Discretistation.FileHandler().IsFileExists(disc.DownloadPath);
+                
+                string discPath = discretizationService.getPath(datasetService.getPath(dataset.DatasetID), disc.DiscretizationID);
+                discPath += "/KL.txt";
+                if (System.IO.File.Exists(Server.MapPath(discPath)))
 
-
-                if (System.IO.Directory.Exists(Server.MapPath(disc.DownloadPath)))
-                //if (task != null)
-                  //  if(task.IsCompleted)
                 {
                     disc.ParametersIsReady = "Ready";
                 }
@@ -117,25 +120,25 @@ namespace HugoBotWebApplication.Controllers
                 DatasetID = (int)id,
                 Discretizations = dataset.Discretizations,
                 Dataset = dataset
-          
+
 
             });
         }
         //TODO
         public string SendToDiscretization(SendDiscretizationViewModel sendDiscretizationViewModel)
-		{
-			string[] methodsList = Request.Form["Methods"].Split(',');
-			var  knowledgeBasedMethods = Request.Form["KnowledgedBasedMethods"].Split(',');
-			FileTransferrer fileTransferrer = new FileTransferrer();
-			Dataset dataset = db.Datasets.Find(sendDiscretizationViewModel.id);
-			string currentUserId = User.Identity.GetUserId();
-			ApplicationUser currentUser = db.Users.FirstOrDefault(y => y.Id == currentUserId);
-           
+        {
+            string[] methodsList = Request.Form["Methods"].Split(',');
+            var knowledgeBasedMethods = Request.Form["KnowledgedBasedMethods"].Split(',');
+            FileTransferrer fileTransferrer = new FileTransferrer();
+            Dataset dataset = db.Datasets.Find(sendDiscretizationViewModel.id);
+            string currentUserId = User.Identity.GetUserId();
+            ApplicationUser currentUser = db.Users.FirstOrDefault(y => y.Id == currentUserId);
+
             // Check that there are *not* knowledge based methods in the request
-            if(methodsList[0] != "")
+            if (methodsList[0] != "")
             {
-                discretizationService.Discretize(methodsList, dataset.Path);
-                List<Discretization> discretizations = discretizationService.CreateDiscretizations(dataset, methodsList);
+                discretizationService.Discretize(methodsList,datasetService.getPath(dataset.DatasetID), id);
+                List<Discretization> discretizations = discretizationService.CreateDiscretizations(dataset, methodsList, id, datasetService.getPath(dataset.DatasetID));
                 for (int i = 0; i < discretizations.Count; i++)
                 {
                     discretizations[i].Owner = currentUser;
@@ -144,40 +147,39 @@ namespace HugoBotWebApplication.Controllers
             }
 
             // Knowledge based methods with files uploaded
-            //TODODODODO
             if (Request.Files.Count > 0)
-			{
-				foreach (var knowledgeBasedMethod in knowledgeBasedMethods)
-				{
-					var knowledgeBasedMethodSplit = knowledgeBasedMethod.ToString().Split('_');
-					var methodName = knowledgeBasedMethodSplit[0];
-					var fileName = knowledgeBasedMethodSplit[knowledgeBasedMethodSplit.Length - 1];
-					var maxGap = knowledgeBasedMethodSplit[1];
-					var windowSize = knowledgeBasedMethodSplit[2];
-					var statesFilyBytes = fileTransferrer.GetBytesFromFile(Request.Files[fileName]);
-					var methodDownloadPath = fileTransferrer.ExpertDataset(dataset.Path, methodName+ "/" + maxGap + "_" + windowSize, statesFilyBytes);
+            {
+                foreach (var knowledgeBasedMethod in knowledgeBasedMethods)
+                {
+                    var knowledgeBasedMethodSplit = knowledgeBasedMethod.ToString().Split('_');
+                    var methodName = knowledgeBasedMethodSplit[0];
+                    var fileName = knowledgeBasedMethodSplit[knowledgeBasedMethodSplit.Length - 1];
+                    var maxGap = knowledgeBasedMethodSplit[1];
+                    var windowSize = knowledgeBasedMethodSplit[2];
+                    var statesFilyBytes = fileTransferrer.GetBytesFromFile(Request.Files[fileName]);
+                    var methodDownloadPath = fileTransferrer.ExpertDataset(dataset.Path, methodName + "/" + maxGap + "_" + windowSize, statesFilyBytes);
 
                     Discretization d = new Discretization()
-					{
-						Dataset = dataset,
-						DownloadPath = methodDownloadPath,
-						Visibility = "",
-						Type = "Discretized",
-						Owner = currentUser,
-						FullName = MethodEncodingToMethodName[methodName],
-						ParametersIsReady = "In Progress"
-					};
-					db.Discretizations.Add(d);
-				}
-			
-			}
-			discretizationRepository.SaveChanges();
-			return "Discretizing...";
-			
-		}
-		
+                    {
+                        Dataset = dataset,
+                        DownloadPath = methodDownloadPath,
+                        Visibility = "",
+                        Type = "Discretized",
+                        Owner = currentUser,
+                        FullName = MethodEncodingToMethodName[methodName],
+                        ParametersIsReady = "In Progress"
+                    };
+                    db.Discretizations.Add(d);
+                }
 
-		protected override void Dispose(bool disposing)
+            }
+            discretizationRepository.SaveChanges();
+            return "Discretizing...";
+
+        }
+
+
+        protected override void Dispose(bool disposing)
         {
             if (disposing)
             {

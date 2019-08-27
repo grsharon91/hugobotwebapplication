@@ -126,36 +126,21 @@
     @Html.AntiForgeryToken()
     @Html.HiddenFor(model => model.DatasetID)
     <input type="text" id="AbstractionMethods" name="AbstractionMethods" value="" style="display:none" />
-    @*<div class="row">
-        <div class="col-md-4">
-            <a href="@Url.Action("Details", "Datasets", new { id = @Model.DatasetID})" class="btn btn-outline-primary w-100" style="font-weight: bold">
-                <b style="color: tomato"> @Model.Dataset.DatasetName </b> Info
-            </a>
-        </div>
-        <div class="col-md-4">
-            <a href="@Url.Action("Edit", "Discretizations", new { id = @Model.DatasetID})" class="btn btn-outline-primary w-100 active" style="font-weight: bold">Temporal Abstraction </a>
-        </div>
-        <div class="col-md-4">
-            <a href="@Url.Action("Index", "KarmaLego", new { id = @Model.DatasetID})" class="btn btn-outline-primary w-100" style="font-weight: bold"> Time Intervals Mining</a>
-        </div>
-        @*<div class="col-md-3">
-            <a href="@Url.Action("Index", "KarmaLego", new { id = @Model.DatasetID})" class="btn btn-outline-primary w-100" style="font-weight: bold"> visualization</a>
-        </div>
-    </div>*@
+
     <div class="wrap">
-    <div class="prog">
-        <a href="@Url.Action("Details", "Datasets", new { id = @Model.DatasetID})" class="btn" style="color: white"> <b style="color: tomato"> @Model.Dataset.DatasetName  </b> Info </a>
+        <div class="prog">
+            <a href="@Url.Action("Details", "Datasets", new { id = @Model.DatasetID})" class="btn" style="color: white"> <b style="color: tomato"> @Model.Dataset.DatasetName  </b> Info </a>
+        </div>
+        <div class="prog">
+            <a href="@Url.Action("Edit", "Discretizations", new { id = @Model.DatasetID})" class="btn" style="color: white">Temporal Abstraction </a>
+        </div>
+        <div class="prog">
+            <a href="@Url.Action("Index", "KarmaLego", new { id = @Model.DatasetID})" class="btn" style="color: white"> Time Intervals Mining</a>
+        </div>
+        <div class="prog">
+            <a class="btn" style="color: white"> Visualization </a>
+        </div>
     </div>
-    <div class="prog">
-        <a href="@Url.Action("Edit", "Discretizations", new { id = @Model.DatasetID})" class="btn" style="color: white">Temporal Abstraction </a>
-    </div>
-    <div class="prog">
-        <a href="@Url.Action("Index", "KarmaLego", new { id = @Model.DatasetID})" class="btn" style="color: white"> Time Intervals Mining</a>
-    </div>
-    <div class="prog">
-        <a class="btn" style="color: white"> Visualization </a>
-    </div>
-</div>
     <br />
     <div class="row">
         <div class="col-md-12">
@@ -219,14 +204,14 @@
                                 <br />
                                 <div id="maxGapDiv" class="form-group">
                                     <label class="" for="MaxGap" data-toggle="tooltip" data-placement="left" title="An interpolation gap for decding the maximunm gap between 2 time points in order to connect them and create an interval">Interpolation gap</label>
-                                    <input class="form-control text-box single-line" value="-1" id="MaxGap" name="MaxGap" type="number" data-toggle="tooltip" data-placement="left" title="An interpolation gap for decding the maximunm gap between 2 time points in order to connect them and create an interval" />
-                                    <small id="maxGaprHelp" class="form-text text-muted">Interpolation gap must be at least -1</small>
+                                    <input class="form-control text-box single-line" value="1" id="MaxGap" name="MaxGap" type="number" data-toggle="tooltip" data-placement="left" title="An interpolation gap for decding the maximunm gap between 2 time points in order to connect them and create an interval" />
+                                    <small id="maxGaprHelp" class="form-text text-muted">Interpolation gap must be at least 1</small>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <br />
-                    <div class="btn-group" role="group" aria-label="...">
+                    <div style="text-align: center">
                         <button type="button" class="btn btn-outline-primary" onclick="addConfiguration()">
                             <span class="fas fa-plus"></span>
                             Add configuration
@@ -239,7 +224,7 @@
             </div>
         </div>
         <div class="col-md-12">
-            <div id ="config" class="card" style="display: none">
+            <div id="config" class="card" style="display: none">
                 <table id="discretizationTable" class="table" style=" table-layout: fixed; display: none">
                     <thead>
                         <tr>
@@ -247,18 +232,19 @@
                             <th style="width:8%" scope="col">PAA Window size</th>
                             <th style="width:8%" scope="col">Bins number</th>
                             <th style="width:8%" scope="col">Max gap</th>
-                            <th style="width:15%" scope="col">States file</th>
+                            <th style="width:15%" scope="col">@*States file*@</th>
 
                         </tr>
                     </thead>
                     <tbody id="discretizationTableBody"></tbody>
                 </table>
-                <div class="btn-group">
-                    <button id="sendToDiscretizationBtn" type="button" class="btn btn-outline-warning" onclick="sendToDiscretization()">
+                <div style="text-align: center">
+                    <button id="sendToDiscretizationBtn" type="button" class="btn btn-outline-primary" onclick="sendToDiscretization()">
                         <span class="fas fa-share-square"></span>
                         Send to Discretization
                     </button>
                 </div>
+                <br />
             </div>
         </div>
 
@@ -274,117 +260,76 @@
             </div>
             <div class="card-body">
                 <div>
-           <!--         <button id="downloadDatasetButton_New" title="Download Dataset" class="btn btn-sm btn-primary" type="button" onclick="downloadDatasets()" style="background-color:#006400; color:white">
-                        <span class="fas fa-download"> </span> Download selected datasets
-                    </button>
 
-                </div> -->
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th style="width:10%" scope="col">PAA Window size</th>
-                            <th style="width:20%" scope="col">Method</th>
-                            <th style="width:10%" scope="col">Bins number/States file</th>
-                            <th style="width:10%" scope="col">Interpolation gap</th>
-                            <!--	<th style="width:15%" scope="col">States file</th>  -->
-                            <th style="width:10%" scope="col">Status</th>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th style="width:10%" scope="col">PAA Window size</th>
+                                <th style="width:20%" scope="col">Method</th>
+                                <th style="width:10%" scope="col">Bins number/States file</th>
+                                <th style="width:10%" scope="col">Interpolation gap</th>
+                                <th style="width:10%" scope="col">Status</th>
 
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach (var discretization in Model.Discretizations)
-                        {
-                            var methodPathSplited = discretization.DownloadPath.Split('/');
-                            var methodParams = methodPathSplited[methodPathSplited.Length - 1].Split('_');
-                            //var methodVal = methodPathSplited[methodPathSplited.Length - 2];
-                        <tr>
-                            <td>
-                                @*@if (Model.RegularMethods.Contains(methodVal))
-        {
-            @discretization.FullName
-        }
-        @if (Model.DistanceMeasureMethods.Contains(methodVal))
-        {
-            <p>@discretization.FullName @methodParams[1]</p>
-        }*@
-                                @methodParams[2].Substring(0, methodParams[2].Length - 3)
-                            </td>
-                            <td>
-                                @*@if (Model.RegularMethods.Contains(methodVal))
-                                {
-                                    @methodParams[2];
-                                }
-                                @if (Model.DistanceMeasureMethods.Contains(methodVal))
-                                {
-                                    @methodParams[3];
-                                }*@
-                                @methodParams[0]
-                            </td>
-                            <td>
-                                @*@if (Model.RegularMethods.Contains(methodVal))
-                                {
-                                    @methodParams[0];
-                                }
-                                @if (Model.DistanceMeasureMethods.Contains(methodVal))
-                                {
-                                    @methodParams[0];
-                                }*@
-                                @methodParams[1].Substring(0, methodParams[1].Length - 4)
-                            </td>
-                            <td>
-                                @*@if (Model.RegularMethods.Contains(methodVal))
-                                {
-                                    @methodParams[1];
-                                }
-                                else
-                                {
-                                    if (Model.DistanceMeasureMethods.Contains(methodVal))
-                                    {
-                                        @methodParams[2];
-                                    }
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var discretization in Model.Discretizations)
+                            {
+                                //var methodPathSplited = discretization.DownloadPath.Split('/');
+                                //var methodParams = methodPathSplited[methodPathSplited.Length - 1].Split('_');
 
-                                }*@
-                                @methodParams[3].Substring(0, methodParams[3].Length - 7)
-                            </td>
+                                <tr>
+                                    <td>
 
-                            <!--            <td>
-      
-               </td>
-                 <td>
+                                        @*@methodParams[2].Substring(0, methodParams[2].Length - 3)*@
+                                        @discretization.WindowSize
+                                    </td>
+                                    <td>
 
-      </td> -->
+                                        @*@methodParams[0]*@
+                                        @discretization.FullName
+                                    </td>
+                                    <td>
+
+                                        @*@methodParams[1].Substring(0, methodParams[1].Length - 4)*@
+                                        @discretization.BinsNumber
+                                    </td>
+                                    <td>
+
+                                        @*@methodParams[3].Substring(0, methodParams[3].Length - 7)*@
+                                        @discretization.MaxGap
+                                    </td>
 
 
-                            <td>
-                                @if (discretization.ParametersIsReady == "Ready")
-                                {
-                                <div>
-                                    @*<button id="downloadDatasetButton_New" title="Download Dataset" class="btn btn-sm btn-primary" type="button" onclick="downloadDataset(@discretization.DiscretizationID)" style="background-color:#006400; color:white">
-            <span class="fas fa-download"> </span> Download
-        </button>*@
-                                    <a href="@Url.Action("GetDiscretizations", "Discretizations", new { id = discretization.DiscretizationID})" class="btn btn-sm btn-primary" style="background-color:#006400; color:white"> <span class="fas fa-download"> </span> Download</a>
-                                </div>
-                                }
-                                else
-                                {
-                                    <div>
-                                        <button id="downloadDatasetButton_New" title="Discretization In Progress" class="btn btn-sm btn-primary" type="button" disabled >
-                                            <span class="fas"> </span> Hugoboting..
-                                        </button>
 
-                                    </div>
-                                }
-                            </td>
+                                    <td>
+                                        @if (discretization.ParametersIsReady == "Ready")
+                                        {
+                                            <div>
 
-                        </tr>
-                        }
-                    </tbody>
-                </table>
+                                                <a href="@Url.Action("GetDiscretizations", "Discretizations", new { id = discretization.DiscretizationID})" class="btn btn-sm btn-primary" style="background-color:#006400; color:white"> <span class="fas fa-download"> </span> Download</a>
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <div>
+                                                <button id="downloadDatasetButton_New" title="Discretization In Progress" class="btn btn-sm btn-primary" type="button" disabled>
+                                                    <span class="fas"> </span> Hugoboting..
+                                                </button>
+
+                                            </div>
+                                        }
+                                    </td>
+
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
 </div>
-<table></table>
 
 
 @section Scripts {
@@ -398,7 +343,7 @@
             $("#CategoryDropDown").val("")
             $("#BinsNumber").val("2")
             $("#WindowSize").val("1")
-            //var distanceMeasureCellDropdownList = document.getElementById("distanceMeasureDropdownList");
+
         });
     </script>
     <script>
@@ -433,20 +378,14 @@
                         number: true,
                         min: -1
                     },
-
-
                     WindowSize: {
                         required: true,
                         number: true,
                         min: 1
                     },
-
                     Visiblity: {
                         required: true
                     }
-
-
-
                 },
                 // Specify validation error messages
                 messages: {
@@ -461,9 +400,7 @@
                     td4c_param: "Please select at least one scoring method",
                     WindowSize: "Please enter a windows size of at least 1",
                     abstraction_method: "Please select at least one abstraction method"
-
                 },
-
                 errorPlacement: function (error, element) {
                     if (element.attr("name") == "td4c_param") {
                         error.insertAfter(".td4c_error");
@@ -490,7 +427,6 @@
                 }
             });
         });
-
     </script>
 
     <script>
@@ -508,7 +444,6 @@
                 op2.title = "search set of cut-offs to abstract a variables into meaningfully different states for each class";
             }
         }
-
     </script>
 
     <script>
@@ -521,9 +456,7 @@
 		var knowledgeBasedMethods = ["EXPERT"];
 		var distanceMeasureMethods = ["TD4C"];
 		var discretizationTable = document.getElementById('discretizationTable').getElementsByTagName('tbody')[0];
-
 		var formdata = new FormData(); //FormData object
-
 		function addConfiguration() {
 			if ($("#UploadDatasetForm").valid()) {
                 console.log("VALID")
@@ -534,37 +467,26 @@
 				var binsNumberCellInput = document.getElementById("BinsNumber");
 				var maxGapCellInput = document.getElementById("MaxGap");
 				var windowSizeCellInput = document.getElementById("WindowSize");
-				//var distanceMeasureCellDropdownList = document.getElementById("distanceMeasureDropdownList");
-                var selectedDistanceMeasure = ""; //= distanceMeasureCellDropdownList.options[distanceMeasureCellDropdownList.selectedIndex];
+
+                var selectedDistanceMeasure = "";
                 if (selectedMethod.value == "TD4C") {
                     var distanceMeasureList = selectedMethod.text.split("_");
                     selectedDistanceMeasure = distanceMeasureList[1];
                 }
-
                 if (distanceMeasureMethods.indexOf(selectedMethod.value) != -1) {
                     if (addedConfigurations.indexOf(selectedMethod.value + '/' + [binsNumberCellInput.value, selectedDistanceMeasure, maxGapCellInput.value, windowSizeCellInput.value].join('_')) == -1) {
 						var methodRow = discretizationTable.insertRow(discretizationTable.rows.length);
 						methodRow.setAttribute("id", "row_" + row_id);
                         var row_id = discretizationTable.rows.length;
-
 						var methodNamesCell = methodRow.insertCell(0);
                         methodNamesCell.innerHTML = selectedMethod.text;
-
                         var windowSizeCell = methodRow.insertCell(1);
                         windowSizeCell.innerHTML = windowSizeCellInput.value;
-
 						var binsNumberCell = methodRow.insertCell(2);
 						binsNumberCell.innerHTML = binsNumberCellInput.value;
-
 						var maxGapCell = methodRow.insertCell(3);
 						maxGapCell.innerHTML = maxGapCellInput.value;
-
-
-
-					//	var distanceMeasureCell = methodRow.insertCell(4);
-                    //    distanceMeasureCell.innerHTML = selectedDistanceMeasure;
                         addedConfigurations.push(selectedMethod.value + '/' + [binsNumberCellInput.value, selectedDistanceMeasure, maxGapCellInput.value, windowSizeCellInput.value].join('_'))
-
 					}
 				}
 				if (regularMethods.indexOf(selectedMethod.value) != -1) {
@@ -572,28 +494,20 @@
 						var methodRow = discretizationTable.insertRow(discretizationTable.rows.length);
 						methodRow.setAttribute("id", "row_" + row_id);
                         var row_id = discretizationTable.rows.length;
-
 						var methodNamesCell = methodRow.insertCell(0);
                         methodNamesCell.innerHTML = selectedMethod.text;
-
                         var windowSizeCell = methodRow.insertCell(1);
                         windowSizeCell.innerHTML = windowSizeCellInput.value;
-
 						var binsNumberCell = methodRow.insertCell(2);
 						binsNumberCell.innerHTML = binsNumberCellInput.value;
-
 						var maxGapCell = methodRow.insertCell(3);
 						maxGapCell.innerHTML = maxGapCellInput.value;
-
-
-
                         addedConfigurations.push(selectedMethod.value + '/' + [ binsNumberCellInput.value, maxGapCellInput.value, windowSizeCellInput.value].join('_'))
 						var distanceMeasureCell = methodRow.insertCell(4);
 					}
 				}
 				if (knowledgeBasedMethods.indexOf(selectedMethod.value) != -1) {
 					var fileInput = document.getElementById('Path');
-
                     if (knowledgeBasedConfigurations.indexOf(selectedMethod.value + '/' + [maxGapCellInput.value, windowSizeCellInput.value, fileInput.files[i].name.replace(/_/g, '%')].join('_')) == -1) {
 						var methodRow = discretizationTable.insertRow(discretizationTable.rows.length);
 						methodRow.setAttribute("id", "row_" + row_id);
@@ -601,14 +515,9 @@
 						var methodNamesCell = methodRow.insertCell(0);
 						methodNamesCell.innerHTML = selectedMethod.text;
 						methodRow.insertCell(1);
-
 						var statesFileCellInput = document.getElementById("Path1");
-
-
-
 						var maxGapCell = methodRow.insertCell(2);
 						maxGapCell.innerHTML = maxGapCellInput.value;
-
 						var windowSizeCell = methodRow.insertCell(3);
 						windowSizeCell.innerHTML = windowSizeCellInput.value;
 						methodRow.insertCell(4);
@@ -623,7 +532,6 @@
 							console.log(fileInput.files[i].name)
 							console.log(formdata)
 							formdata.append(fileInput.files[i].name.replace(/_/g, '%'), fileInput.files[i]);
-
                             knowledgeBasedConfigurations.push(selectedMethod.value + '/' + [maxGapCellInput.value, windowSizeCellInput.value, fileInput.files[i].name.replace(/_/g, '%')].join('_'));
 							console.log(formdata)
 						}
@@ -632,97 +540,67 @@
 							console.log(p);
 						}
 					}
-
-
 				}
 				console.log(addedConfigurations)
 				console.log(knowledgeBasedConfigurations)
-
 			}
-
-
 		}
 		function methodChanged() {
 			var methodNamesCellDropdownList = document.getElementById("abstractionMethodsDropdownList");
 			var selectedMethod = methodNamesCellDropdownList.options[methodNamesCellDropdownList.selectedIndex];
 			var selectedMethodValue = selectedMethod.value;
-
 			var binsNumberCellInput = document.getElementById("binsNumberDiv");
 			var maxGapCellInput = document.getElementById("maxGapDiv");
 			var windowSizeCellInput = document.getElementById("windowSizeDiv");
-			//var distanceMeasureCellDropdownList = document.getElementById("distanceMeasureDiv");
 			var statesFileInput = document.getElementById("statesFileDiv");
-
 			if (regularMethods.indexOf(selectedMethodValue) != -1) {
 				binsNumberCellInput.style.display = 'block';
 				maxGapCellInput.style.display = 'block';
 				windowSizeCellInput.style.display = 'block';
-			//	distanceMeasureCellDropdownList.style.display = 'none';
 				statesFileInput.style.display = 'none';
-
 			}
 			else {
 				if (distanceMeasureMethods.indexOf(selectedMethodValue) != -1) {
 					binsNumberCellInput.style.display = 'block';
 					maxGapCellInput.style.display = 'block';
 					windowSizeCellInput.style.display = 'block';
-				//	distanceMeasureCellDropdownList.style.display = 'block';
 					statesFileInput.style.display = 'none';
-
 				}
 				if (knowledgeBasedMethods.indexOf(selectedMethodValue) != -1) {
 					statesFileInput.style.display = 'block';
 					binsNumberCellInput.style.display = 'none';
 					maxGapCellInput.style.display = 'block';
 					windowSizeCellInput.style.display = 'block';
-				//	distanceMeasureCellDropdownList.style.display = 'none';
-
 				}
 			}
-
 		}
-
 		function sendToDiscretization() {
 			var discretizationTable = document.getElementById('discretizationTable').getElementsByTagName('tbody')[0];
 			console.log(discretizationTable.rows.length)
 			if (discretizationTable.rows.length >= 1) {
 				document.getElementById("sendToDiscretizationBtn").disabled = true;
 			document.getElementById("sendingText").innerHTML = "Sending to discretization, you wiil be redirected to the details page";
-
-
-
 				formdata.append("Methods", addedConfigurations);
 				formdata.append("ID", @Model.DatasetID);
 				formdata.append("KnowledgedBasedMethods", knowledgeBasedConfigurations )
 			var objToSend = { id: @Model.DatasetID, methods: addedConfigurations }
 				$.ajax({
-
 					type: "POST",
 					data: formdata,
-					//data: JSON.stringify({ sendDiscretizationViewModel: objToSend, files: formdata }),
-				//contentType: false, // Not to set any content header
 				processData: false, // Not to process data
 				url: '@Url.Action("SendToDiscretization")',
-				//async: false,
-				//datatype: 'JSON',
-				//contentType: "application/json",
 				cache: false,
 				contentType: false,
 				processData: false,
 				success: function (response) {
 					console.log(response)
 					window.location.href ="@Url.Action("Edit", "Discretizations", new { id = @Model.DatasetID })";
-					//document.getElementById("Errors").innerHTML = response[0];
-					//alert(":D")
-
 				},
                     error: function (response) {
-                        alert(response);  //
+                        alert(response);
 				}
-
 			});
 			}
-
 		}
     </script>
     <script>
@@ -731,8 +609,6 @@
         var visibilityList = ["Public", "Private"]
         var discretizationTable = document.getElementById('discretizationTable').getElementsByTagName('tbody')[0];
         function addMethodRow() {
-
-
             // Insert a row in the table at the last row
             var methodRow = discretizationTable.insertRow(discretizationTable.rows.length);
             var row_id = discretizationTable.rows.length;
@@ -751,7 +627,6 @@
                 methodNameOption.value = methodKey;
                 methodNamesCellDropdownList.add(methodNameOption, null);
             }
-
             var binsNumberCell = methodRow.insertCell(1);
             var binsNumberCellInput = document.createElement("input");
             binsNumberCellInput.type = "number";
@@ -760,33 +635,22 @@
             binsNumberCell.setAttribute("style", "width: 20 %")
             binsNumberCellInput.setAttribute("style", "width: 20 %")
             binsNumberCell.appendChild(binsNumberCellInput);
-
-
             var maxGapCell = methodRow.insertCell(2);
             var maxGapCellInput = document.createElement("input");
             maxGapCellInput.type = "number";
             maxGapCellInput.setAttribute("class", "form-control")
             maxGapCell.appendChild(maxGapCellInput);
-
-
             var windowSizeCell = methodRow.insertCell(3);
             var windowSizeCellInput = document.createElement("input");
             windowSizeCellInput.type = "number";
             windowSizeCellInput.setAttribute("class", "form-control")
             windowSizeCell.appendChild(windowSizeCellInput);
             windowSizeCellInput.setAttribute("id", "windowSize_" + row_id + ")")
-
             var distanceMeasureCell = methodRow.insertCell(4);
-            //	var distanceMeasureCellDropdownList = document.createElement("select");
-            //	distanceMeasureCellDropdownList.setAttribute("class", "form-control");
-            //	distanceMeasureCellDropdownList.setAttribute("id", "distanceMeasure_" + row_id + ")")
-
-            //distanceMeasureCell.appendChild(distanceMeasureCellDropdownList);
             for (var distanceMeasureKey in distanceMeausreList) {
                 var distanceMeasureOption = document.createElement("option");
                 distanceMeasureOption.innerHTML = distanceMeausreList[distanceMeasureKey];
                 distanceMeasureOption.value = methodKey;
-                //	distanceMeasureCellDropdownList.add(distanceMeasureOption, null);
             }
             var statesFileCell = methodRow.insertCell(5);
             var statesFileCellInput = document.createElement("input");
@@ -797,13 +661,10 @@
             var methodNameDropdownListSelectedValue = methodNamesCellDropdownList.options[methodNamesCellDropdownList.selectedIndex].value;
             console.log(methodNameDropdownListSelectedValue)
             changeRow("methodNameRow_" + row_id)
-
-
             var visibilityCell = methodRow.insertCell(6);
             var visibilityCellDropdownList = document.createElement("select");
             visibilityCellDropdownList.setAttribute("class", "form-control");
             visibilityCellDropdownList.setAttribute("id", "visibility_" + row_id)
-
             visibilityCell.appendChild(visibilityCellDropdownList);
             for (var distanceMeasureKey in visibilityList) {
                 var distanceMeasureOption = document.createElement("option");
@@ -811,8 +672,6 @@
                 distanceMeasureOption.value = methodKey;
                 visibilityCellDropdownList.add(distanceMeasureOption, null);
             }
-
-
         }
     </script>
 
@@ -820,22 +679,18 @@
     <script>
         $('#hide').change(function () {
             $('#uploadVmap').text($("#hide").val().split("\\").slice(-1)[0]);
-
         });
     </script>
     <script>
         $('#Path').change(function () {
             $('#Path1').text($("#Path").val().split("\\").slice(-1)[0]);
             $("#Upload").prop("disabled", false);
-
-
         });
     </script>
     <script>
         function showMethods() {
             if ($("#methodsCheckboxes").css("display") == 'none') {
                 $("#methodsCheckboxes").show();
-
             }
             else {
                 $("#methodsCheckboxes").hide();
@@ -848,7 +703,6 @@
             var tag = "#" + methodName + "_parameters"
             if ($(tag).css("display") == 'none') {
                 $(tag).show();
-
             }
             else {
                 $(tag).hide();
@@ -869,7 +723,6 @@
                 $("#CategoryOtherEdit").hide();
                 $("#CategoryDropDown").attr("name", "Category")
             }
-
         });
     </script>
 
@@ -887,7 +740,6 @@
                 }
             });
         });
-
     </script>
     <script>
         $(function () {
@@ -922,11 +774,9 @@
                 $(this).find(':submit').attr('disabled', 'disabled');
                 if (document.getElementById("Path").files.length != 0) {
                     $("#LoadingLabel").show()
-
                     var abstractMethodsFieldset = document.getElementById("methodsCheckboxes");
                     var abstractMethodsFieldsetTags = ['input'];
                     var fields = abstractMethodsFieldset.getElementsByTagName("input");
-
                     var methodsString = "";
                     console.log(methodsString);
                     for (var fieldi = fields.length; fieldi-- > 0;) {
@@ -939,13 +789,10 @@
                     methodsString = methodsString.slice(0, -1);
                     $("#AbstractionMethods").val(methodsString);
                     $("#AbstractionMethods").text(methodsString);
-
                 }
-
                 else {
                     ("input[type=submit]").attr("disabled", "disabled");
                 }
-
             }
         });
     </script>
@@ -953,27 +800,21 @@
         function setDatasetName() {
             console.log("Hi")
             $("#DatasetName").val($("#Path1").text());
-
         }
     </script>
     <script>
         function downloadDatasets() {
-
             var datasetRecordsChecked = [];
 			var discretizationRecordsChecked = [];
 			var karmaLegoRecordsChecked = [];
             var datasetRecords = document.getElementsByName("DatasetsRecords");
             var discretizationRecords = document.getElementsByName("DiscretizationRecords");
 			var karmaLegoRecords = document.getElementsByName("KarmaLegoRecords");
-
             for (var i = 0; i < discretizationRecords.length; i++) {
                 if (discretizationRecords[i].checked) {
                     discretizationRecordsChecked.push(discretizationRecords[i].value);
                 }
 			}
-
-
-
             $.ajax({
                 type: 'POST',
                 url: '@Url.Action("DownloadDiscretizations")',
@@ -982,20 +823,16 @@
 					discretizationIdList: discretizationRecordsChecked
                 },
                 success: function (returnValue) {
-
 					window.location = "/hugobot/Discretizations/GetDiscretizations?parameters=" + returnValue;
                 },
                 error: function () {
                     alert("Oops! Something went wrong");
                 }
             });
-
-
         }
+    </script>
 
-    </script> 
-
-   <script>
+    <script>
        function downloadDataset(discretizationID) {
             $.ajax({
                 type: 'POST',
@@ -1005,17 +842,13 @@
                     Id: discretizationID
                 },
                 success: function (returnValue) {
-
 					window.location = "/hugobot/Discretizations/GetDiscretizations?parameters=" + returnValue;
                 },
                 error: function () {
                     alert("Oops! Something went wrong");
                 }
             });
-
-
         }
-
     </script>
 
 

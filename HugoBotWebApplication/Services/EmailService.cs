@@ -19,19 +19,26 @@ namespace HugoBotWebApplication.Services
                 Subject = "Email confirmation",
                 Body = 
 
-                "Dear " + user.FirstName + " " + user.LastName + "," +    
+                "Dear " + user.FirstName + " " + user.LastName + "," +
                 "<BR/> " +
-                "Thank you for your registration, " +
-                "After clicking the link below, an email will be sent to the hugobot support in order to  " +
-                "confirm your identity, please be patient. " +
-                "<a href=\"" + callbackUrl + "\">link</a><br/>" ,
-            
+                "Thank you for your registration to " +
+                 "<a href =\"https://cdalab.ise.bgu.ac.il/hugobot/\">Hugobot</a>" +
+                "<BR/>" +
+                "Please click " +
+                "<a href =\"" + callbackUrl + "\">here</a>" +
+                " to verify your email address." +
+                "<BR/>" +
+                "After clicking the link, you will need to wait for approval by the system administrator to be able to use Hugobot's features. " +
+                "<BR/> <BR/>" +
+                "Thanks! " +
+                "<BR/>" +
+                "The Hugobot Team",
+
                 IsBodyHtml = true
             };
             System.Net.Mail.SmtpClient smtp = new System.Net.Mail.SmtpClient("smtp.gmail.com", 587)
             {
                 Credentials = new System.Net.NetworkCredential("hugobotsupp@gmail.com", "hugoHugoBot8102"),
-                //smtp.Sem = () => true; //Solution for client certificate error
                 EnableSsl = true
             };
             smtp.Send(m);
@@ -55,7 +62,6 @@ namespace HugoBotWebApplication.Services
             System.Net.Mail.SmtpClient smtp = new System.Net.Mail.SmtpClient("smtp.gmail.com", 587)
             {
                 Credentials = new System.Net.NetworkCredential("hugobotsupp@gmail.com", "hugoHugoBot8102"),
-                //smtp.Sem = () => true; //Solution for client certificate error
                 EnableSsl = true
             };
             smtp.Send(m);
@@ -80,7 +86,6 @@ namespace HugoBotWebApplication.Services
             };
             System.Net.Mail.SmtpClient smtp = new System.Net.Mail.SmtpClient("smtp.gmail.com", 587);
             smtp.Credentials = new System.Net.NetworkCredential("hugobotsupp@gmail.com", "hugoHugoBot8102");
-            //smtp.Sem = () => true; //Solution for client certificate error
             smtp.EnableSsl = true;
             smtp.Send(m);
             return true;

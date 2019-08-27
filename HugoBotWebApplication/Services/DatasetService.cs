@@ -31,9 +31,7 @@ namespace HugoBotWebApplication.Services
                     {"BINARY", "Binary" },
                     {"TD4C", "TD4C" },
                     {"KARMALEGO", "KarmaLego"}
-                    //{"$TD4C_Entropy", "TD4C_Entropy" },
-                    //{"$TD4C_Cosine", "TD4C_Cosine" },
-                    //{"$TD4C_KullbackLiebler", "TD4C_KullbackLiebler" },
+
 
                 };
         private List<string> methodsWithParameters = new List<string> { "TD4C" };
@@ -75,16 +73,16 @@ namespace HugoBotWebApplication.Services
             return ";" + formattedParams;
         }
 
-        private int HasClass(List <string> temporalPropertyID)
+        private int HasClass(List<string> temporalPropertyID)
         {
             var ans = 0;
             foreach (var id in temporalPropertyID)
             {
-                int i=Int32.Parse(id);
+                int i = Int32.Parse(id);
                 if (i < 0)
                     ans = 1;
             }
-                return ans;
+            return ans;
         }
 
         public byte[] GetDatasetFile(Dataset dataset)
@@ -98,11 +96,11 @@ namespace HugoBotWebApplication.Services
         public byte[] GetEntitiesFile(Dataset dataset)
         {
             FileTransferrer fileTransferrer = new FileTransferrer();
-            byte [] entitiesFile = fileTransferrer.GetFilesFromServer(dataset.EntitiesPath);
+            byte[] entitiesFile = fileTransferrer.GetFilesFromServer(dataset.EntitiesPath);
             return entitiesFile;
         }
 
-        public  byte [] GetMetadataFile(Dataset dataset)
+        public byte[] GetMetadataFile(Dataset dataset)
         {
             FileTransferrer fileTransferrer = new FileTransferrer();
             byte[] vmapFile = fileTransferrer.GetFilesFromServer(dataset.VmapPath);
@@ -117,7 +115,7 @@ namespace HugoBotWebApplication.Services
             return allFiles;
         }
 
-        public Dataset CreateDatasetFromDatasetViewModel(DatasetViewModel datasetViewModel,int datasetId, string datasetPath, string vmapPath,ApplicationUser currentUser, byte [] metadata)
+        public Dataset CreateDatasetFromDatasetViewModel(DatasetViewModel datasetViewModel, int datasetId, ApplicationUser currentUser, byte[] metadata, string path)
         {
             return new Dataset()
             {
@@ -125,8 +123,6 @@ namespace HugoBotWebApplication.Services
                 Category = datasetViewModel.Category,
                 Parameters = "",
                 ParametersIsReady = "Ready",
-                Path = datasetPath,
-                VmapPath = vmapPath,
                 Owner = currentUser,
                 Visibility = datasetViewModel.Visibility,
                 Rating = 0,
@@ -136,16 +132,16 @@ namespace HugoBotWebApplication.Services
                 NumberOfDownloads = 0,
                 NumberOfViews = 0,
                 DateUploaded = DateTime.Now,
-                EntitiesPath = datasetPath + "/Entities",
                 hasClass = HasClass(datasetViewModel.TemporalPropertyID),
-                metaData = metadata
+                metaData = metadata,
+                Path = path,
 
-        };
+            };
         }
 
         public DatasetDetailsViewModel CreateDatasetDetailsViewModel(Dataset dataset)
         {
-            //VariableMetadata[] metadata = metadataFileHandler.ReadFileToArray(dataset.VmapPath); 
+
             VariableMetadata[] metadata = metadataFileHandler.ReadBytesToArray(dataset.metaData);
             DatasetDetailsViewModel datasetDetailsViewModel = new DatasetDetailsViewModel()
             {
@@ -164,7 +160,6 @@ namespace HugoBotWebApplication.Services
 
         public byte[] CreateMetadataFile(List<string> temporalPropertyIds, List<string> temporalPropertyNames, List<string> description)
         {
-            //string currentUserId = User.Identity.GetUserId();
             int propertiesCount = temporalPropertyIds.Count;
             var variableMetadata = new VariableMetadata[propertiesCount];
 
@@ -178,34 +173,22 @@ namespace HugoBotWebApplication.Services
                 };
             }
 
-            byte[] metadataFileBytes = metadataFileHandler.GetBytesFromArray(variableMetadata); 
-            
+            byte[] metadataFileBytes = metadataFileHandler.GetBytesFromArray(variableMetadata);
+
             return metadataFileBytes;
         }
 
 
-        //public string UploadDatasetFiles(string datasetName, HttpPostedFileBase datasetFile, byte[] metadataFileBytes, HttpPostedFileBase entitiesFile)
-        //{
-        //    //string datasetPath = fileTransferrer.SendDatasetFiles(datasetName, fileTransferrer.GetBytesFromFile(datasetFile), metadataFileBytes);
-        //    //fileTransferrer.SendEntitiesFile(datasetPath, fileTransferrer.GetBytesFromFile(entitiesFile));
-        //    //return datasetPath;
-        //    DateTime date = DateTime.Now;
-        //    string datasetPath = "~/App_Data/uploads/" + datasetFile.FileName.Substring(0, datasetFile.FileName.Length - 4) + "_" +
-        //                 date.ToString("yyyy_MM_dd_H_mm_ss") + "/" + datasetFile.FileName;
-        //    return datasetPath;
-        //}
-
-          public string getPath(string fileName, string date)
+        public string getPath(int id)
         {
-            string path = "~/App_Data/uploads/" + fileName.Substring(0, fileName.Length - 4) + "_" +
-                        date + "/" + fileName;
+            string path = "~/App_Data/uploads/" + id.ToString() + "/";
             return path;
         }
 
         public object CreateMetadataFileFromDatasetFile(HttpPostedFileBase datasetFile)
         {
             Measurement[] datasetArray = datasetFileHandler.ReadHttpPostedFileBaseToArray(datasetFile);
-            int [] datasetPropertiesArray = GetPropertiesIdsFromDatasetFileArray(datasetArray).ToArray();
+            int[] datasetPropertiesArray = GetPropertiesIdsFromDatasetFileArray(datasetArray).ToArray();
             List<VariableMetadata> vmapToSend = new List<VariableMetadata>();
 
             for (int i = 0; i < datasetPropertiesArray.Length; i++)
@@ -259,27 +242,8 @@ namespace HugoBotWebApplication.Services
                 missingFromDatasetFileErrors[i] = "";
             for (int i = 0; i < missingFromMetadataFileErrors.Length; i++)
                 missingFromMetadataFileErrors[i] = "";
-            //for (int i = 0; i < metadataArray.Length; i++)
-            //{
-          
 
-            //    var varaiableMetadata = metadataArray[i];
-            //    Match temporalPropertyNameMatch = Regex.Match(varaiableMetadata.TemporalPropertyName, "^[a-zA-Z0-9]*$");
-            //    if (!temporalPropertyNameMatch.Success)
-            //    {
-            //        return new
-            //        {
-            //            Errors = "Please enter only alphanumeric characters in Name & Description",
-            //            Vmap = metadataArray,
-            //            VmapErrors = missingFromDatasetFileErrors,
-            //            VmapDatasetErrors = missingFromMetadataFileErrors,
-            //            DatasetProperties = datasetProperties,
-            //            VmapProperties = vmapProperties
 
-            //        };
-            //    }
-            //}
-           
             vmapIdsLength = metadataArray.Length;
             missingFromDatasetFileErrors = new string[vmapIdsLength];
             for (int i = 0; i < metadataArray.Length; i++)
@@ -343,7 +307,7 @@ namespace HugoBotWebApplication.Services
                 List<VariableMetadata> variableMetadataList = new List<VariableMetadata>();
                 Dictionary<string, List<string>> linesDict = new Dictionary<string, List<string>>();
                 Dictionary<string, string> duplicateLinesDict = new Dictionary<string, string>();
-            
+
 
                 if (!String.Equals(TemporalPropertyIDHeader, "TemporalPropertyID"))
                 {
@@ -366,9 +330,9 @@ namespace HugoBotWebApplication.Services
                     VariableMetadata variableMetadata = new VariableMetadata();
                     if (parser.ColumnCount < 3)
                     {
-                        if(parser.ColumnCount == 1)
+                        if (parser.ColumnCount == 1)
                         {
-                            if(int.TryParse(parser[0], out int parsedId))
+                            if (int.TryParse(parser[0], out int parsedId))
                             {
                                 variableMetadata.TemporalPropertyID = parsedId;
                             }
@@ -379,7 +343,7 @@ namespace HugoBotWebApplication.Services
                             variableMetadata.TemporalPropertyName = "";
                             variableMetadata.Description = "";
                         }
-                        if(parser.ColumnCount == 2)
+                        if (parser.ColumnCount == 2)
                         {
                             if (int.TryParse(parser[0], out int parsedId))
                             {
@@ -438,12 +402,12 @@ namespace HugoBotWebApplication.Services
 
 
                 VariableMetadata[] metadataArray = variableMetadataList.ToArray();
-                /*metadataFileHandler.ReadHttpPostedFileBaseToArray(vmapFile)*/
+
 
                 Measurement[] datasetArray = datasetFileHandler.ReadHttpPostedFileBaseToArray(datasetFile);
                 return ProcessValidatedMetadataFile(metadataArray, datasetArray, errors);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return new
                 {
@@ -459,12 +423,8 @@ namespace HugoBotWebApplication.Services
 
         public Dataset GetDataset(HttpPostedFileBase datasetFile)
         {
-            //string datasetPath = fileTransferrer.GetDatasetPath(datasetFile);
-            //Dataset dataset = datasetRepository.GetByPath(datasetPath);
-            //if (dataset != null && dataset.Visibility == "Public")
-            //    return dataset;
+
             return null;
         }
     }
 }
-   

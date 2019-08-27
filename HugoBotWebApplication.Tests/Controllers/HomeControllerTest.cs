@@ -22,7 +22,7 @@ namespace HugoBotWebApplication.Tests.Controllers
             ViewResult result = controller.Index() as ViewResult;
 
             // Assert
-            Assert.IsNotNull(result);
+            Assert.IsFalse(result == null);
         }
 
         [TestMethod]

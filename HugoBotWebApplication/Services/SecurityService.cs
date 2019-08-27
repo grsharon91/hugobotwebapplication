@@ -10,11 +10,13 @@ namespace HugoBotWebApplication.Services
     public class SecurityService
     {
         private DatasetRepository datasetRepository;
-        
+        private ApplicationDbContext db;
 
-        public SecurityService(DatasetRepository datasetRepository)
+
+        public SecurityService(DatasetRepository datasetRepository, ApplicationDbContext db)
         {
             this.datasetRepository = datasetRepository;
+            this.db = db;
         }
 
         public bool HasAccess(int datasetId, string userId)
@@ -24,9 +26,18 @@ namespace HugoBotWebApplication.Services
             Dataset dataset = datasetRepository.Get(datasetId);
             bool hasAccess = true;
 
-            if (userId != null && dataset.OwnerID != userId)
+            ApplicationUser user = db.Users.Find(userId);
+            ViewPermissions vp = new ViewPermissions
+            {
+                Key = user.Id + datasetId.ToString(),
+                UserName = user.UserName,
+                DatasetID = datasetId
+            };
+            var searchVP = db.ViewPermissions.Find(vp.Key);
+
+            if (userId != null && dataset.OwnerID != userId && dataset.Visibility == "Private" && searchVP == null)
                 return false;
-           
+
             return hasAccess;
         }
     }

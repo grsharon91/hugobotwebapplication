@@ -50,11 +50,6 @@ namespace HugoBotWebApplication.Models
 			return (claim != null) ? claim.Value : string.Empty;
 		}
 
-		//public static string GetFirstName(this IIdentity identity)
-		//{
-		//	var userManager = HttpContext.Current.GetOwinContext().GetUserManager<ApplicationUserManager>();
-		//	return userManager.FindById(identity.GetUserId()).FirstName;
-		//}
 		public static string GetLastName(this IIdentity identity)
 		{
 			var claim = ((ClaimsIdentity)identity).FindFirst("LastName");
@@ -71,6 +66,7 @@ namespace HugoBotWebApplication.Models
         public System.Data.Entity.DbSet<HugoBotWebApplication.Models.KarmaLego> KarmaLegos { get; set; }
         public System.Data.Entity.DbSet<HugoBotWebApplication.Models.TempDataset> TempDatasets{ get; set; }
         public System.Data.Entity.DbSet<HugoBotWebApplication.Models.TempDiscretization> TempDiscretizations{ get; set; }
+        public System.Data.Entity.DbSet<HugoBotWebApplication.Models.ViewPermissions> ViewPermissions { get; set; }
 
         public ApplicationDbContext()
             : base("ApplicationDbContext", throwIfV1Schema: false)

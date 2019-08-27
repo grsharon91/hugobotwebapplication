@@ -9,7 +9,8 @@ namespace HugoBotWebApplication.ViewModels
         public List<string> DatasetsRecords { get; set; }
         public List<string> DiscretizationsRecords { get; set; }
 		public List<string> KarmaLegoRecords { get; set; }
-		public string abc { get; set; }
+        public List<ViewPermissions> ViewPermissionsRecords { get; set; }
+        public string abc { get; set; }
 
 
     }
